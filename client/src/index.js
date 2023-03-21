@@ -7,6 +7,12 @@ const GlobalStyle = createGlobalStyle`
   body {
     padding: 0;
     margin: 0;
+
+    -ms-user-select: none;
+    -moz-user-select: -moz-none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    user-select: none;
   }
 `;
 
