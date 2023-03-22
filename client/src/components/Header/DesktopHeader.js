@@ -9,7 +9,7 @@ export default function Desktop(){
             <LogoWrapper><Logo/></LogoWrapper>
             <MenuList>
                 <ListItems to="/flavor">FLAVOR</ListItems>
-                <ListItems>AMOUNT</ListItems>
+                <ListItems to="/amount">AMOUNT</ListItems>
                 <ListItems>0%</ListItems>
             </MenuList>
         </DesktopHeader>
@@ -44,16 +44,16 @@ const MenuList = styled.div`
 
 const ListItems = styled(Link)`
     width: 190px;
-
+    height: 100%;
     display: grid;
     place-items: center;
 
     color: black;
     font-size: 25px;
     text-decoration: none;
-    transition: 0.3s;
     &:hover{
         color: #8E6C62;
+        border-bottom: 2px solid #8E6C62;
     }
     
 `;

@@ -19,19 +19,11 @@ export default function Flavor() {
                     <CategoryList>
                         <ListWrapper>
                             <CategoryItems />
-                            <span>DRY</span>
+                            <span>SHORT</span>
                         </ListWrapper>
                         <ListWrapper>
                             <CategoryItems />
-                            <span>FRUIT</span>
-                        </ListWrapper>
-                        <ListWrapper>
-                            <CategoryItems />
-                            <span>SWEET</span>
-                        </ListWrapper>
-                        <ListWrapper>
-                            <CategoryItems />
-                            <span>HOT</span>
+                            <span>LONG</span>
                         </ListWrapper>
                     </CategoryList>
                 </CategoryWrapper>
@@ -61,14 +53,14 @@ const Container = styled.div`
     position: relative;
     height: calc(var(--vh, 1vh) * 100);
     margin: 0 20% 0 20%; 
-    
+
     display: grid;
     justify-items: center;
 `;
 
 const CategoryWrapper = styled.div`
     margin-top: 50px;
-    width: 970px;
+    width: 900px;
     height: 90px;
 
     display: grid;
@@ -81,8 +73,8 @@ const CategoryWrapper = styled.div`
 
 const CategoryList = styled.div`
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 46px;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 170px;
 `;
 
 const ListWrapper = styled.div`
