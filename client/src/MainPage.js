@@ -3,12 +3,15 @@ import styled from "styled-components";
 import Header from "./components/Header/Header";
 
 export default function Main() {
+
     function setScreenSize() {
         let vh = window.innerHeight * 0.01;
 
         document.documentElement.style.setProperty('--vh', `${vh}px`);
     }
+
     setScreenSize();
+    
     return (<>
         <Header />
         <MainPage>

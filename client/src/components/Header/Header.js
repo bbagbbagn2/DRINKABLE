@@ -3,13 +3,23 @@ import DesktopHeader from "./DesktopHeader";
 import MobileHeader from "./MobileHeader";
 
 export default function Header() {
-    const [screenWidth, setScreenWidth] = useState(0);
-    useEffect(() => {
-        window.addEventListener('resize', () => {setScreenWidth(window.innerWidth)});
-    });
-    useEffect(() => {
-        setScreenWidth(window.innerWidth);
-    }, []);
+  const [screenWidth, setScreenWidth] = useState(0);
 
-    return (screenWidth < 900 ? <MobileHeader /> : <DesktopHeader />);
+  useEffect(() => {
+    setScreenWidth(window.innerWidth);
+  }, []);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setScreenWidth(window.innerWidth);
+    };
+
+    window.addEventListener("resize", handleResize);
+
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
+
+  return screenWidth < 900 ? <MobileHeader /> : <DesktopHeader />;
 }

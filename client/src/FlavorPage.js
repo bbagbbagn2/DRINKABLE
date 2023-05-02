@@ -1,15 +1,28 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import styled from "styled-components";
-import InfiniteScroll from 'react-infinite-scroller';
 import Header from "./components/Header/Header";
+import axios from "axios";
 
 export default function Flavor() {
-    function setScreenSize() {
-        let vh = window.innerHeight * 0.01;
+    const [cocktail, setCocktail] = useState([]);
 
-        document.documentElement.style.setProperty('--vh', `${vh}px`);
-    }
+    useEffect(() => {
+        axios.get('/info')
+            .then(response => {
+                setCocktail(response.data);
+            })
+            .catch(error => {
+                console.log(error);
+            });
+    }, []);
+
+    useEffect(() => {
+        function setScreenSize() {
+          let vh = window.innerHeight * 0.01;
+          document.documentElement.style.setProperty("--vh", `${vh}px`);
+        }
     setScreenSize();
+    }, []);
 
     return (<>
         <Header />
@@ -28,6 +41,11 @@ export default function Flavor() {
                         <ListWrapper>
                             <CategoryItems />
                             <span>SWEET</span>
+                            <ul>
+                            {cocktail.map(cocktail => (
+                                    <h2>{cocktail.name}</h2>
+                            ))}
+                        </ul>
                         </ListWrapper>
                         <ListWrapper>
                             <CategoryItems />
@@ -36,18 +54,11 @@ export default function Flavor() {
                     </CategoryList>
                 </CategoryWrapper>
                 <ItemWrapper>
-                    <InfiniteScroll
-                        pageStart={0}
-                        hasMore={true || false}
-                        useWindow={false}>
-                        <Items />
-                    </InfiniteScroll>
                 </ItemWrapper>
             </Container>
         </MainPage>
     </>)
 }
-
 const MainPage = styled.div`
     position: absolute;
     top: 100px;

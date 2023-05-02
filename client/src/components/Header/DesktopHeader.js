@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import styled from "styled-components";
 import Logo from "../Logo";
 
-export default function Desktop(){
+export default function App(){
     return(
         <DesktopHeader>
             <LogoWrapper><Logo/></LogoWrapper>
