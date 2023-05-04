@@ -1,20 +1,19 @@
-import React from "react";
+import React, { useEffect } from "react";
 import styled from "styled-components";
 import InfiniteScroll from 'react-infinite-scroller';
 import Header from "./components/Header/Header";
+import { setScreenSize } from './utils';
 
 export default function Flavor() {
-    function setScreenSize() {
-        let vh = window.innerHeight * 0.01;
+    useEffect(()=>{
+        setScreenSize();
+    }, []);
 
-        document.documentElement.style.setProperty('--vh', `${vh}px`);
-    }
-    setScreenSize();
-
-    return (<>
+    return (
+    <>
         <Header />
-        <MainPage>
-            <Container>
+        <Container>
+            <Wrapper>
                 <CategoryWrapper>
                     <CategoryList>
                         <ListWrapper>
@@ -43,25 +42,24 @@ export default function Flavor() {
                         <Items />
                     </InfiniteScroll>
                 </ItemWrapper>
-            </Container>
-        </MainPage>
-    </>)
+            </Wrapper>
+        </Container>
+    </>
+    );
 }
 
-const MainPage = styled.div`
-    position: absolute;
-    top: 100px;
-    width: 100%;
+const Container = styled.div`
+    padding-top: 100px;
     height: calc(var(--vh, 1vh) * 100);
-
+    display: grid;
+    place-items: center;
     background: #EDEAE3;
 `;
 
-const Container = styled.div`
-    position: relative;
-    height: calc(var(--vh, 1vh) * 100);
+const Wrapper = styled.div`
+    width: 1200px;
+    height: 100%;
     margin: 0 20% 0 20%; 
-    
     display: grid;
     justify-items: center;
 `;
@@ -70,10 +68,8 @@ const CategoryWrapper = styled.div`
     margin-top: 50px;
     width: 970px;
     height: 90px;
-
     display: grid;
-    place-content: center;
-
+    place-items: center;
     background: #FFFFFF;
     border: none;
     border-radius: 70px 70px;
@@ -93,7 +89,6 @@ const ListWrapper = styled.div`
 const CategoryItems = styled.div`
     width: 30px;
     height 30px;
-    
     background: #C1ABA2;
     border: none;
     border-radius: 50%;
@@ -113,7 +108,6 @@ const ItemWrapper = styled.div`
 const Items = styled.div`
     width: 282px;
     height: 354px;
-
     background: #FFFFFF;
     border: none;
 `;
