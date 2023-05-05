@@ -1,95 +1,87 @@
-import React from "react";
-import styled from "styled-components";
-import Header from "./components/Header/Header";
+import React, { useLayoutEffect, useEffect } from 'react';
+import styled from 'styled-components';
+import Header from './components/Header/Header';
+import { setScreenSize } from './utils';
 
 export default function Main() {
+    useLayoutEffect(() => {
+        setScreenSize();
+    }, []);
 
-    function setScreenSize() {
-        let vh = window.innerHeight * 0.01;
+    useEffect(() => {
+        function handleResize() {
+          setScreenSize();
+        }
+        window.addEventListener('resize', handleResize);
+        return () => window.removeEventListener('resize', handleResize);
+      }, []);
 
-        document.documentElement.style.setProperty('--vh', `${vh}px`);
-    }
-
-    setScreenSize();
-    
-    return (<>
-        <Header />
-        <MainPage>
-            <RecommendContainer>
-                <RecommendWrapper>
-                    <RecommendTitle>DRINKABLE's</RecommendTitle>
-                    <RecommendMessage>Cocktail</RecommendMessage>
-                    <RecommendMessage>Classification</RecommendMessage>
+    return (
+        <>
+            <Header />
+            <Container>
+                <Wrapper>
+                    <TitleWrapper>
+                        <Title>DRINKABLE's</Title>
+                        <Message>Cocktail</Message>
+                        <Message>Classification</Message>
+                    </TitleWrapper>
                     <LinkContainer>
                         <LinkWrapper>
                             <LinkMessage>Cocktail's Title</LinkMessage>
                         </LinkWrapper>
                     </LinkContainer>
-                </RecommendWrapper>
-            </RecommendContainer>
-        </MainPage>
-    </>)
+                </Wrapper>
+            </Container>
+        </>
+    );
 }
 
-const MainPage = styled.div`            
+const Container = styled.div`            
     position: fixed;
     top: 80px;
     width: 100vw;
     height: calc(var(--vh, 1vh) * 100);
-`;
-
-const RecommendContainer = styled.div`
-    width: 100vw;
-    height: calc(var(--vh, 1vh) * 100);
-    
+    display: grid;
+    place-items: center;
     background: #EDEAE3;
 `;
 
-const RecommendWrapper = styled.div`
-    position: relative;
-    top: 150px;
-    width: auto;
-    height: calc(var(--vh, 1vh) * 100);
-    margin: 0 20% 0 20%; 
+const Wrapper = styled.div`
+    width: 1200px;
+    height: 100%;
 `;
 
-const RecommendTitle = styled.h1`
-    position: relative;
-    margin-bottom: 0;
-    margin-left: 0;
-    
+const TitleWrapper = styled.div`
+    padding-top: 160px;
+`;
+const Title = styled.h1`
     font-size: 28px;
     font-weight: 600;
+    margin-bottom: 0;
+    margin-left: 0;
 `;
 
-const RecommendMessage = styled(RecommendTitle)`
-    margin: 0;    
-
+const Message = styled(Title)`
     font-size: 65px;
+    margin: 0;    
 `
-
 const LinkContainer = styled.div`
-    margin-top: 93px;
-
+    height: 50%;
     display: grid;
     place-content: end;
-    place-items: end;
 `;
 
 const LinkWrapper = styled.div`
     width: 384px;
     height: 384px;
-
     display: grid;
     place-items: center;
-
     background: #8E6C62;
     cursor: pointer;
 `;
 
-const LinkMessage = styled(RecommendMessage)`
-    margin: 20px;
-
+const LinkMessage = styled(Message)`
     font-size: 42px;
     color: #EDEAE3;
 `;
