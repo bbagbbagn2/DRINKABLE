@@ -7,7 +7,7 @@ router.get('/info', (req, res) => {
 
     sql_pool.query(sql, (error, results, fields) => {
       if (error) throw error;
-      res.send(results);
+      else res.send(results);
     });
   });
 
