@@ -14,7 +14,7 @@ export default function Desktop() {
                 <ItemsWrapper>
                     <Items to="/flavor">FLAVOR</Items>
                     <Items to="/amount">AMOUNT</Items>
-                    <Items>0%</Items>
+                    <Items to="#">0%</Items>
                 </ItemsWrapper>
                 <MobileMenuWrapper>
                     <AiOutlineMenu size="27" fill='#8E6C62' />

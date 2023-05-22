@@ -1,6 +1,6 @@
 import React, { useLayoutEffect, useEffect } from 'react';
 import styled from 'styled-components';
-import Header from './components/Header/Header';
+import Header from './components/Header';
 import ItemWrapper from './components/FlavorPage/ItemWrapper';
 import { setScreenSize } from './utils';
 

@@ -23,9 +23,10 @@ export default function Main() {
                 <Container>
                     <Wrapper>
                         <TitleWrapper>
-                            <Title>DRINKABLE's</Title>
-                            <Message>Cocktail</Message>
-                            <Message>Classification</Message>
+                            <div>
+                                <Title>DRINKABLE's</Title>
+                                <Message>- Cocktail Classification -</Message>
+                            </div>
                         </TitleWrapper>
                         <LinkContainer>
                             <LinkWrapper>
@@ -39,6 +40,7 @@ export default function Main() {
     );
 }
 const Page = styled.div`
+    padding-top: 65px;
     width: 100%;
 `
 
@@ -63,18 +65,25 @@ const Wrapper = styled.div`
 `;
 
 const TitleWrapper = styled.div`
-    padding-top: 13%;
+    width: 100%;
+    height: 658px;
+    display: grid;
+    place-items: center;
 `;
-const Title = styled.p`
-    font-size: 28px;
-    font-weight: 600;
+const Title = styled.h1`
+    margin-top: 160px;
     margin-bottom: 0;
-    margin-left: 0;
+    color: #8E6C62;
+    font-size: 125px;
+    line-height: 0.9em;
 `;
 
 const Message = styled(Title)`
-    font-size: 65px;
-    margin: 0;    
+    margin: 0;
+    margin-top: 25px;
+    line-height: 0.5em;
+    text-align: center;
+    font-size: 25px;
 `
 const LinkContainer = styled.div`
     display: grid;
