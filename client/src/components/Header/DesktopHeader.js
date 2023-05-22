@@ -15,8 +15,8 @@ export default function Desktop() {
                     <MenuItems to="/amount">AMOUNT</MenuItems>
                     <MenuItems>0%</MenuItems>
                 </MenuWrapper>
-                <div></div>
-                </Wrapper>
+                <div />
+            </Wrapper>
         </Container>
     );
 }
@@ -43,7 +43,6 @@ const LogoWrapper = styled.div`
 `;
 
 const MenuWrapper = styled.div`
-    height: 100%;    
     display: grid;
     grid-template-columns: repeat(3,1fr);
     place-items: center;
@@ -55,13 +54,13 @@ const MenuItems = styled(Link)`
     display: grid;
     place-items: center;
     color: black;
-    font-size: 25px;
+    font-size: 15px;
+    font-weight: medium;
+    letter-spacing: 1.909091px;
     text-decoration: none;
     
     &:hover{
         color: #8E6C62;
-        border-bottom: 2px solid #8E6C62;
     }
     
 `;
-//맛(술, 리프레싱, 프루트, 스위트, 스무디, 핫), 용량(많은, 작은), 무알콜

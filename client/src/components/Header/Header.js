@@ -16,7 +16,7 @@ export default function Header() {
         };
     }, []);
 
-    const isMobile = screenWidth <= 768;
+    const isMobile = screenWidth <= 1024;
 
     return isMobile ? <MobileHeader /> : <DesktopHeader />;
 }
