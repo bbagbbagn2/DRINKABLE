@@ -12,6 +12,8 @@ export default function Desktop() {
                     <Logo />
                 </LogoWrapper>
                 <ItemsWrapper>
+                    <Items to="/">HOME</Items>
+                    <Items to="/">ABOUT</Items>
                     <Items to="/flavor">FLAVOR</Items>
                     <Items to="/amount">AMOUNT</Items>
                     <Items to="#">0%</Items>
@@ -50,9 +52,8 @@ const Wrapper = styled.div`
 const LogoWrapper = styled.div``;
 
 const ItemsWrapper = styled.div`
-    padding: 0 10%;
     display: grid;
-    grid-template-columns: repeat(3,1fr);
+    grid-template-columns: repeat(5,1fr);
     place-items: center;
 
     @media (max-width: 1024px) {
