@@ -21,7 +21,7 @@ export default function Main() {
             <Header />
             <Page>
                 <Container>
-                <BackgroundWrapper/>
+                    <BackgroundWrapper />
                     <Wrapper>
                         <TitleWrapper>
                             <div>
@@ -61,7 +61,6 @@ const Container = styled.div`
     position: absolute;
     top: 65px;
     width: 100%;
-    height: calc(var(--vh, 1vh) * 100);
     display: grid;
     background: #FFFFFF;
 `;
@@ -127,7 +126,7 @@ const X = styled.p`
     line-height: 1.4em;
     font-size: 16px;
     color: #8E6C62;
-`; 
+`;
 
 const Introduce = styled.p`
     margin-top: 49px;

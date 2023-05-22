@@ -1,19 +1,40 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 import Logo from './Logo';
 import { AiOutlineMenu } from "react-icons/ai";
 
 export default function Desktop() {
+
+    const [scrollPosition, setScrollPosition] = useState(0);
+
+    const handleAbout = () => {
+        const targetHeight = 658;
+        window.scrollTo({
+            top: targetHeight,
+            behavior: 'smooth',
+        });
+        setScrollPosition(targetHeight);
+    };
+
+    const handleHome = () => {
+        const targetHeight = 0;
+        window.scrollTo({
+            top: targetHeight,
+            behavior: 'smooth',
+        });
+        setScrollPosition(targetHeight);
+    };
+
     return (
         <Container>
             <Wrapper>
-                <LogoWrapper>
+                <LogoWrapper onClick={handleHome}>
                     <Logo />
                 </LogoWrapper>
                 <ItemsWrapper>
-                    <Items to="/">HOME</Items>
-                    <Items to="/">ABOUT</Items>
+                    <Items to="/" onClick={handleHome}>HOME</Items>
+                    <Items to="/" onClick={handleAbout}>ABOUT</Items>
                     <Items to="/flavor">FLAVOR</Items>
                     <Items to="/amount">AMOUNT</Items>
                     <Items to="#">0%</Items>
@@ -86,4 +107,4 @@ const MobileMenuWrapper = styled.div`
         justify-content: end;
         cursor: pointer;
     }
-`
+`;
