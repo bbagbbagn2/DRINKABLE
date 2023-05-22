@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 import Logo from '../Logo';
+import { AiOutlineMenu } from "react-icons/ai";
 
 export default function Desktop() {
     return (
@@ -10,12 +11,14 @@ export default function Desktop() {
                 <LogoWrapper>
                     <Logo />
                 </LogoWrapper>
-                <MenuWrapper>
-                    <MenuItems to="/flavor">FLAVOR</MenuItems>
-                    <MenuItems to="/amount">AMOUNT</MenuItems>
-                    <MenuItems>0%</MenuItems>
-                </MenuWrapper>
-                <div />
+                <ItemsWrapper>
+                    <Items to="/flavor">FLAVOR</Items>
+                    <Items to="/amount">AMOUNT</Items>
+                    <Items>0%</Items>
+                </ItemsWrapper>
+                <MobileMenuWrapper>
+                <AiOutlineMenu size="27" fill='#8E6C62'/>
+                </MobileMenuWrapper>
             </Wrapper>
         </Container>
     );
@@ -24,10 +27,11 @@ export default function Desktop() {
 const Container = styled.div`
     position: fixed;
     width: 100%;
-    height: 100px;
+    height: 65px;
     display: grid;
     align-items: center;
-    background: #EDEAE3;
+    background: #FFFFFF;
+    border-bottom: 2px solid #8E6C62; 
     z-index: 999;
 `;
 
@@ -37,30 +41,48 @@ const Wrapper = styled.div`
     grid-template-columns: 250px 1fr 10%;
     align-items: center;
     justify-items: stretch;
+
+    @media (max-width: 1024px) {
+        grid-template-columns: 250px 1fr;
+    }
 `;
 
-const LogoWrapper = styled.div`
-`;
+const LogoWrapper = styled.div``;
 
-const MenuWrapper = styled.div`
+const ItemsWrapper = styled.div`
+    padding: 0 10%;
     display: grid;
     grid-template-columns: repeat(3,1fr);
     place-items: center;
+
+    @media (max-width: 1024px) {
+        display: none;
+    }
 `;
 
-const MenuItems = styled(Link)`
+const Items = styled(Link)`
     width: 190px;
     height: 100%;
     display: grid;
     place-items: center;
-    color: black;
-    font-size: 15px;
+    color: #8E6C62;
+    font-size: 14px;
     font-weight: medium;
-    letter-spacing: 1.909091px;
     text-decoration: none;
+    letter-spacing: 1.909091px;
     
     &:hover{
-        color: #8E6C62;
+        color: #4E3C36;
     }
     
 `;
+
+const MobileMenuWrapper = styled.div`
+    display: none;
+
+    @media (max-width: 1024px) {
+        display: grid;
+        justify-content: end;
+        cursor: pointer;
+    }
+`

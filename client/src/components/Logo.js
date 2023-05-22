@@ -11,4 +11,6 @@ export default function Logo() {
     );
 }
 
-const Svg = styled(SvgLogo)``;
+const Svg = styled(SvgLogo)`
+    display: grid;
+`;

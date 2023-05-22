@@ -15,7 +15,7 @@ export default function Mobile() {
 const Container = styled.div`
     position: fixed;
     width: 100vw;
-    height: 100px;
+    height: 65px;
     display: grid;
     place-items: center;
     background: #EDEAE3;
@@ -23,6 +23,5 @@ const Container = styled.div`
 `;
 
 const LogoWrapper = styled.div`
-    margin: 33.3px 55px;
 `;
 
