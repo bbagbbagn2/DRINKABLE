@@ -19,10 +19,10 @@ export default function Main() {
     return (
         <>
             <Header />
-            <Page className='MainPage'>
-                <Container className='Container'>
-                    <Wrapper className='Wrapper'>
-                        <TitleWrapper className='TitleWrapper'>
+            <Page>
+                <Container>
+                    <Wrapper>
+                        <TitleWrapper>
                             <Title>DRINKABLE's</Title>
                             <Message>Cocktail</Message>
                             <Message>Classification</Message>

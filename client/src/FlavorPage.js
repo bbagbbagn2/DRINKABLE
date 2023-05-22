@@ -8,7 +8,6 @@ export default function Flavor() {
     return (
         <>
             <Header />
-            <CategoryWrapper />
             <ItemWrapper />
         </>
     );
