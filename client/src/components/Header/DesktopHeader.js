@@ -6,6 +6,7 @@ import Logo from '../Logo';
 export default function Desktop() {
     return (
         <Container>
+            <Wrapper>
                 <LogoWrapper>
                     <Logo />
                 </LogoWrapper>
@@ -14,27 +15,34 @@ export default function Desktop() {
                     <MenuItems to="/amount">AMOUNT</MenuItems>
                     <MenuItems>0%</MenuItems>
                 </MenuWrapper>
+                <div></div>
+                </Wrapper>
         </Container>
     );
 }
 
 const Container = styled.div`
     position: fixed;
-    width: 100vw;
+    width: 100%;
     height: 100px;
     display: grid;
-    grid-template-columns: 300px 62% 19%;
-    place-items: center;
-    opacity: 0.5;
+    align-items: center;
+    background: #EDEAE3;
     z-index: 999;
 `;
 
+const Wrapper = styled.div`
+    margin: 0 6.5%;
+    display: grid;
+    grid-template-columns: 250px 1fr 10%;
+    align-items: center;
+    justify-items: stretch;
+`;
+
 const LogoWrapper = styled.div`
-    margin: 33.3px 55px;
 `;
 
 const MenuWrapper = styled.div`
-    margin: 0 306px;
     height: 100%;    
     display: grid;
     grid-template-columns: repeat(3,1fr);
