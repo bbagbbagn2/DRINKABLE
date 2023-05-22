@@ -21,6 +21,7 @@ export default function Main() {
             <Header />
             <Page>
                 <Container>
+                <BackgroundWrapper/>
                     <Wrapper>
                         <TitleWrapper>
                             <div>
@@ -43,18 +44,29 @@ const Page = styled.div`
     padding-top: 65px;
     width: 100%;
 `
-
-const Container = styled.div`       
+const BackgroundWrapper = styled.img`
+    position: absolute;
+    width: 100vw;
+    height: 658px;
+    background-image: url(https://static.wixstatic.com/media/42dbaa_60e2f5a9fac14516a5a44e95c05cc330.jpg/v1/fill/w_1289,h_658,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/42dbaa_60e2f5a9fac14516a5a44e95c05cc330.jpg);
+    background-size: cover;
+    z-index: 0;
+`;
+const Container = styled.div`
+    position: absolute;
+    top: 65px;
     width: 100%;
     height: calc(var(--vh, 1vh) * 100);
     display: grid;
     background: #FFFFFF;
 `;
 
+
 const Wrapper = styled.div`
     padding: 0 6%;
     display: grid;
     align-content: stretch;
+    z-index: 1;
 
     @media (max-width: 768px) {
         padding-top: 8%;
@@ -71,8 +83,7 @@ const TitleWrapper = styled.div`
     place-items: center;
 `;
 const Title = styled.h1`
-    margin-top: 160px;
-    margin-bottom: 0;
+    margin: 0;
     color: #8E6C62;
     font-size: 125px;
     line-height: 0.9em;
