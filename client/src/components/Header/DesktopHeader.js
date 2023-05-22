@@ -17,7 +17,7 @@ export default function Desktop() {
                     <Items>0%</Items>
                 </ItemsWrapper>
                 <MobileMenuWrapper>
-                <AiOutlineMenu size="27" fill='#8E6C62'/>
+                    <AiOutlineMenu size="27" fill='#8E6C62' />
                 </MobileMenuWrapper>
             </Wrapper>
         </Container>
