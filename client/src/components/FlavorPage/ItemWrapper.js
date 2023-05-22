@@ -80,12 +80,12 @@ export default function Flavor() {
 };
 
 const Page = styled.div`
-height: 100vh;
-padding-top: 100px;
-display: grid;
-place-items: center;
-place-content: center;
-background: #EDEAE3;
+    height: 100vh;
+    padding-top: 100px;
+    display: grid;
+    place-items: center;
+    place-content: center;
+    background: #EDEAE3;
 `;
 
 const CategoryWrapper = styled.div`
