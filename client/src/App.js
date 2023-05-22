@@ -13,7 +13,6 @@ function App() {
         <Route exact path="/amount" element={<AmountPage/>} />
       </Routes>
     </Router>
-    
   );
 }
 

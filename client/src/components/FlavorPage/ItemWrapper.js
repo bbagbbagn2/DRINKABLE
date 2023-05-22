@@ -21,7 +21,6 @@ export default function Flavor() {
     return (
         <Page>
             <Container>
-                
                     <InfiniteScroll
                         pageStart={0}
                         hasMore={true}
@@ -64,13 +63,6 @@ const ItemWrapper = styled.div`
     display: inline-block;
     background: #FFFFFF;
     border: none;
-`;
-
-const ItemList = styled.div`
-    display: grid;
-    grid-template-columns: repeat(auto-fit,minmax(290px,1fr));
-    gap: 24px;
-    justify-items: center;
 `;
 
 const ItemBox = styled.div`

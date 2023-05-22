@@ -10,52 +10,62 @@ export default function Main() {
 
     useEffect(() => {
         function handleResize() {
-          setScreenSize();
+            setScreenSize();
         }
         window.addEventListener('resize', handleResize);
         return () => window.removeEventListener('resize', handleResize);
-      }, []);
+    }, []);
 
     return (
         <>
             <Header />
-            <Container>
-                <Wrapper>
-                    <TitleWrapper>
-                        <Title>DRINKABLE's</Title>
-                        <Message>Cocktail</Message>
-                        <Message>Classification</Message>
-                    </TitleWrapper>
-                    <LinkContainer>
-                        <LinkWrapper>
-                            <LinkMessage>Cocktail's Title</LinkMessage>
-                        </LinkWrapper>
-                    </LinkContainer>
-                </Wrapper>
-            </Container>
+            <Page className='MainPage'>
+                <Container className='Container'>
+                    <Wrapper className='Wrapper'>
+                        <TitleWrapper className='TitleWrapper'>
+                            <Title>DRINKABLE's</Title>
+                            <Message>Cocktail</Message>
+                            <Message>Classification</Message>
+                        </TitleWrapper>
+                        <LinkContainer>
+                            <LinkWrapper>
+                                <LinkMessage>Cocktail's Title</LinkMessage>
+                            </LinkWrapper>
+                        </LinkContainer>
+                    </Wrapper>
+                </Container>
+            </Page>
         </>
     );
 }
+const Page = styled.div`
+    width: 100%;
+`
 
-const Container = styled.div`            
-    position: fixed;
-    top: 80px;
-    width: 100vw;
+const Container = styled.div`       
+    width: 100%;
     height: calc(var(--vh, 1vh) * 100);
     display: grid;
-    place-items: center;
     background: #EDEAE3;
 `;
 
 const Wrapper = styled.div`
-    width: 1200px;
-    height: 100%;
+    padding: 0 6%;
+    display: grid;
+    align-content: stretch;
+
+    @media (max-width: 768px) {
+        padding-top: 8%;
+        display: grid;
+        align-content: stretch;
+        justify-items: center;
+    }
 `;
 
 const TitleWrapper = styled.div`
-    padding-top: 160px;
+    padding-top: 13%;
 `;
-const Title = styled.h1`
+const Title = styled.p`
     font-size: 28px;
     font-weight: 600;
     margin-bottom: 0;
@@ -67,7 +77,6 @@ const Message = styled(Title)`
     margin: 0;    
 `
 const LinkContainer = styled.div`
-    height: 50%;
     display: grid;
     place-content: end;
 `;

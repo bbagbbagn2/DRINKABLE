@@ -25,10 +25,9 @@ const Container = styled.div`
     display: grid;
     grid-template-columns: 300px 62% 19%;
     place-items: center;
-    background: #EDEAE3;
+    opacity: 0.5;
     z-index: 999;
 `;
-
 
 const LogoWrapper = styled.div`
     margin: 33.3px 55px;

@@ -66,6 +66,7 @@ const CategoryItems = styled.div`
     border-radius: 50%;
     transition: 0.3s;
     cursor: pointer;
+    
     &:hover{
         background: black;
     }

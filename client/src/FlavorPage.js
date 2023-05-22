@@ -1,5 +1,4 @@
-import React, { useState, useEffect } from 'react';
-import styled from 'styled-components';
+import React from 'react';
 import Header from './components/Header/Header';
 import CategoryWrapper from './components/FlavorPage/CategoryWrapper';
 import ItemWrapper from './components/FlavorPage/ItemWrapper';
