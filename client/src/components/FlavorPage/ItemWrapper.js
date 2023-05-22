@@ -40,8 +40,8 @@ export default function Flavor() {
                             <span>DRY</span>
                         </ListWrapper>
                         <ListWrapper>
-                            <CategoryItems className='fruit' onClick={() => handleClick('fruit')} />
-                            <span>FRUIT</span>
+                            <CategoryItems className='sour' onClick={() => handleClick('sour')} />
+                            <span>SOUR</span>
                         </ListWrapper>
                         <ListWrapper>
                             <CategoryItems className='sweet' onClick={() => handleClick('sweet')} />
