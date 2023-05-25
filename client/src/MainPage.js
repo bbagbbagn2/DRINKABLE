@@ -57,6 +57,7 @@ const BackgroundWrapper = styled.img`
     background-repeat: no-repeat;
     z-index: 0;
 `;
+
 const Container = styled.div`
     position: absolute;
     top: 65px;
@@ -85,6 +86,7 @@ const TitleWrapper = styled.div`
     display: grid;
     place-items: center;
 `;
+
 const Title = styled.h1`
     margin: 0;
     text-align: center;
