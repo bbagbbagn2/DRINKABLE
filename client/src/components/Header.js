@@ -8,8 +8,8 @@ export default function Desktop() {
 
     const [scrollPosition, setScrollPosition] = useState(0);
 
-    const handleAbout = () => {
-        const targetHeight = 658;
+    const handleScroll = (height) => {
+        const targetHeight = height;
         window.scrollTo({
             top: targetHeight,
             behavior: 'smooth',
@@ -17,21 +17,16 @@ export default function Desktop() {
         setScrollPosition(targetHeight);
     };
 
-    const handleHome = () => {
-        const targetHeight = 0;
-        window.scrollTo({
-            top: targetHeight,
-            behavior: 'smooth',
-        });
-        setScrollPosition(targetHeight);
-    };
+    const handleHome = () => { handleScroll(0) };
+
+    const handleAbout = () => { handleScroll(658) };
 
     return (
         <Container>
             <Wrapper>
-                <LogoWrapper onClick={handleHome}>
+                <div onClick={handleHome}>
                     <Logo />
-                </LogoWrapper>
+                </div>
                 <ItemsWrapper>
                     <Items to="/" onClick={handleHome}>HOME</Items>
                     <Items to="/" onClick={handleAbout}>ABOUT</Items>
@@ -70,8 +65,6 @@ const Wrapper = styled.div`
     }
 `;
 
-const LogoWrapper = styled.div``;
-
 const ItemsWrapper = styled.div`
     display: grid;
     grid-template-columns: repeat(5,1fr);
@@ -92,11 +85,11 @@ const Items = styled(Link)`
     font-weight: medium;
     text-decoration: none;
     letter-spacing: 1.909091px;
+    transition: ease 0.3s;
     
     &:hover{
         color: #4E3C36;
     }
-    
 `;
 
 const MobileMenuWrapper = styled.div`

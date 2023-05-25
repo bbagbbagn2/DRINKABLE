@@ -26,7 +26,9 @@ export default function Main() {
                         <TitleWrapper>
                             <div>
                                 <Title>DRINKABLE's</Title>
-                                <Message>- Cocktail Classification -</Message>
+                                <Title marginTop="25px" fontSize="25px" lineHeight="0.5em">
+                                    - Cocktail Classification -
+                                </Title>
                             </div>
                         </TitleWrapper>
                         <AboutContainer>
@@ -34,9 +36,15 @@ export default function Main() {
                                 <AboutTitleWrapper>
                                     <AboutTitle>A special website for introductory cocktails</AboutTitle>
                                 </AboutTitleWrapper>
-                                <X margintop="55px">X</X>
+                                <SubTitle marginTop="55px">X</SubTitle>
                                 <IntroduceWrapper>
-                                    <Introduce>Our website is a space created to introduce cocktails and provide new cocktail experiences. We provide a variety of cocktail recipes and trendy drink trends to help users freely explore cocktails. Our goal is to share cocktail culture with cocktail lovers by making it more diverse and exciting. Our website also provides information on cocktail ingredients. Welcome to the ultimate destination for cocktail lovers and new discoveries.</Introduce>
+                                    <SubTitle marginTop="50px" lineHeight="1.7em">
+                                        Our website is a space created to introduce cocktails and provide new cocktail experiences.
+                                        We provide a variety of cocktail recipes and trendy drink trends to help users freely explore cocktails.
+                                        Our goal is to share cocktail culture with cocktail lovers by making it more diverse and exciting.
+                                        Our website also provides information on cocktail ingredients.
+                                        Welcome to the ultimate destination for cocktail lovers and new discoveries.
+                                    </SubTitle>
                                 </IntroduceWrapper>
                                 <AboutImageWrapper>
                                     <ItemWrapper>
@@ -44,16 +52,14 @@ export default function Main() {
                                             <AboutTitleWrapper>
                                                 <AboutTitle>The Cocktails</AboutTitle>
                                             </AboutTitleWrapper>
-                                            <X>X</X>
-                                            <ItmeLink></ItmeLink>
+                                            <SubTitle>X</SubTitle>
+                                            <ItmeLink>
+                                                MENU
+                                            </ItmeLink>
                                         </ItemLinkWrapper>
                                     </ItemWrapper>
-                                    <ItemWrapper>
-
-                                    </ItemWrapper>
-                                    <ItemWrapper>
-
-                                    </ItemWrapper>
+                                    <ItemWrapper backgroundImage="https://www.acouplecooks.com/wp-content/uploads/2021/08/Gin-Mojito-001.jpg" />
+                                    <ItemWrapper backgroundImage="https://www.acouplecooks.com/wp-content/uploads/2020/04/Tequila-Sunrise-003.jpg" />
                                 </AboutImageWrapper>
                             </AboutWrapper>
                         </AboutContainer>
@@ -112,17 +118,11 @@ const Title = styled.h1`
     margin: 0;
     text-align: center;
     color: #8E6C62;
-    font-size: 115px;
-    line-height: 0.9em;
-`;
 
-const Message = styled(Title)`
-    margin: 0;
-    margin-top: 25px;
-    line-height: 0.5em;
-    text-align: center;
-    font-size: 25px;
-`
+    margin-top: ${(props) => (props.marginTop || "0")};
+    font-size: ${(props) => (props.fontSize || "115px")};
+    line-height: ${(props) => (props.lineHeight || "0.9em")};
+`;
 
 const AboutContainer = styled.div`
     margin-top: 99px;
@@ -145,25 +145,18 @@ const AboutTitle = styled.h2`
     color: #8E6C62;
 `;
 
-const X = styled.p`
-    margin-bottom: 0;
-    line-height: 1.4em;
+const SubTitle = styled.p`
+    margin: 0;
+    text-align: center;
     font-size: 16px;
     color: #8E6C62;
     
-    margin-top: ${(props) => (props.margintop || "0")};
+    margin-top: ${(props) => (props.marginTop || "0")};
+    line-height: ${(props) => (props.lineHeight || "1.4em")};
 `;
 
 const IntroduceWrapper = styled.div`
     margin: 0 30%;
-`;
-
-const Introduce = styled.p`
-    margin-top: 50px;
-    text-align: center;
-    line-height: 1.7em;
-    font-size: 16px;
-    color: #8E6C62;
 `;
 
 const AboutImageWrapper = styled.div`
@@ -177,6 +170,12 @@ const AboutImageWrapper = styled.div`
 const ItemWrapper = styled.div`
     width: 307px;
     height: 454px;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    z-index: 0;
+
+    background-image: url(${(props) => props.backgroundImage});
 `;
 
 const ItemLinkWrapper = styled.div`
@@ -191,5 +190,15 @@ const ItemLinkWrapper = styled.div`
 const ItmeLink = styled.div`
     width: 110px;
     height: 38px;
+    display: grid;
+    place-items: center;
     background: #8E6C62;
+    color: #FFFFFF;
+    cursor: pointer;
+    transition: ease 0.3s;
+    
+    &:hover{
+        background: #4E3C36;
+    }
 `;
+
