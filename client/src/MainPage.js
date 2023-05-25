@@ -33,7 +33,9 @@ export default function Main() {
                             <AboutWrapper>
                                 <About>A special website for introductory cocktails</About>
                                 <X>X</X>
-                                <Introduce>Our website is a space created to introduce cocktails and provide new cocktail experiences. We provide a variety of cocktail recipes and trendy drink trends to help users freely explore cocktails. Our goal is to share cocktail culture with cocktail lovers by making it more diverse and exciting. Our website also provides information on cocktail ingredients. Welcome to the ultimate destination for cocktail lovers and new discoveries.</Introduce>
+                                <IntroduceWrapper>
+                                    <Introduce>Our website is a space created to introduce cocktails and provide new cocktail experiences. We provide a variety of cocktail recipes and trendy drink trends to help users freely explore cocktails. Our goal is to share cocktail culture with cocktail lovers by making it more diverse and exciting. Our website also provides information on cocktail ingredients. Welcome to the ultimate destination for cocktail lovers and new discoveries.</Introduce>
+                                </IntroduceWrapper>
                             </AboutWrapper>
                         </AboutContainer>
                     </Wrapper>
@@ -129,6 +131,10 @@ const X = styled.p`
     font-size: 16px;
     color: #8E6C62;
 `;
+
+const IntroduceWrapper = styled.div`
+    margin: 0 16%;
+`; 
 
 const Introduce = styled.p`
     margin-top: 49px;
