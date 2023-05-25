@@ -172,8 +172,6 @@ const ItemWrapper = styled.div`
     height: 454px;
     background-size: cover;
     background-position: center;
-    background-repeat: no-repeat;
-    z-index: 0;
 
     background-image: url(${(props) => props.backgroundImage});
 `;

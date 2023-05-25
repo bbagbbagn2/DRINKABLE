@@ -31,8 +31,15 @@ export default function Flavor() {
     };
 
     return (
-        <FlavorContainer>
-            <MenuWrapper>
+        <Container>
+            <div>
+                <Title>The Cocktails</Title>
+                <SubTitle>
+                    Looking for a cocktail? Welcome.
+                    From easy mixed drinks to classic cocktails, we have just about anything you've heard of.
+                    Try our full range of drinks including gin, rum, vodka, whiskey, tequila cocktails and specialty liqueurs.
+                </SubTitle>
+                {/*
                 <CategoryWrapper>
                     <CategoryList>
                         <ListWrapper>
@@ -53,41 +60,98 @@ export default function Flavor() {
                         </ListWrapper>
                     </CategoryList>
                 </CategoryWrapper>
-            </MenuWrapper>
+                */}
+            </div>
+            <SearchWrapper>
+                <SearchInput placeholder='Search Cocktails...' />
+                <SortByWrapper>
+                <SortBySelect>
+                    <SortByOption>Sort by</SortByOption>
+                    <SortByOption>Dry</SortByOption>
+                    <SortByOption>Sour</SortByOption>
+                    <SortByOption>Sweet</SortByOption>
+                </SortBySelect>
+                </SortByWrapper>
+            </SearchWrapper>
             <ItemListWrapper>
                 {cocktail.map((cocktail) => (
                     <div key={cocktail.id}>
                         <Link to="#">
                             <ItemWrapper>
                                 <ItemBox>
-                                    <TitleWrapper>
-                                        <Title>{cocktail.name}</Title>
-                                    </TitleWrapper>
+                                    <ItemTitleWrapper>
+                                        <ItemTitle>{cocktail.name}</ItemTitle>
+                                    </ItemTitleWrapper>
                                 </ItemBox>
                             </ItemWrapper>
                         </Link>
                     </div>
                 ))}
             </ItemListWrapper>
-        </FlavorContainer>
+        </Container>
     );
 };
 
-const FlavorContainer = styled.div`
-        width: 100%;
-        display: grid;
-        grid-template-rows: 200px 1fr;
-        align-items: center;
-        justify-items: center;
-    `
+const Container = styled.div`
+    width: 100%;
+    display: grid;
+    grid-template-rows: 20% 10% 1fr;
+    align-items: center;
+    justify-items: center;
+`;
 
-const MenuWrapper = styled.div`
-        padding: 5% 0;
-        width: 50vw;
-        height: 90px;
-        display: grid;
-        justify-items: center;
-    `
+const Title = styled.h1`
+    margin: 0;
+    text-align: center;
+    color: #8E6C62;
+    font-size: 46px;
+    line-height: 1.25em;
+`;
+
+const SubTitle = styled.p`
+    margin: 30px 20% 0;
+    text-align: center;
+    color: #8E6C62;
+    font-size: 16px;
+    line-height: 1.5em;
+`;
+
+const SearchWrapper = styled.div`
+    margin-bottom: 40px;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 65% 1fr;
+`;
+const SearchInput = styled.input`
+    margin: 0 32px 0 0;
+    padding: 14px 30px 14px 16px;
+    border: 1px solid #8E6C62;
+    font-size: 18px;
+    line-height: 24px;
+`;
+
+const SortByWrapper = styled.div`
+    display: grid;
+    justify-content: end;
+`;
+
+const SortBySelect = styled.select`
+    box-sizing: inherit;
+    appearance: none;
+    padding: 0 40px 0 16px;
+    width: fit-content;
+    height: 54px;
+    font-size: 18px;
+    line-height: 1.2;
+    color: #737373; 
+}
+`;
+
+const SortByOption = styled.option`
+    padding: 0 2px 1px;
+    min-height: 1.2em;
+    white-space: nowrap;
+`;
 
 const CategoryWrapper = styled.div`
         width: 100%;
@@ -130,6 +194,7 @@ const ItemListWrapper = styled.div`
         grid-template-columns: repeat(auto-fit,minmax(315px,1fr));
         row-gap: 35px;
         place-items: center;
+        background: black;
     `;
 
 const ItemWrapper = styled.div`
@@ -147,7 +212,7 @@ const ItemBox = styled.div`
         background: #FFFFFF;
     `;
 
-const TitleWrapper = styled.div`
+const ItemTitleWrapper = styled.div`
         position: relative;
         width: 282px;
         height: 282px;
@@ -161,7 +226,7 @@ const TitleWrapper = styled.div`
         }
     `;
 
-const Title = styled.div`
+const ItemTitle = styled.div`
         position: absolute;    
         top: 50%;
         left: 50%;

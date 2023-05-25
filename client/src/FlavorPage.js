@@ -31,7 +31,7 @@ export default function Flavor() {
     );
 }
 const Page = styled.div`
-    padding-top: 100px;
+    padding-top: 65px;
     width: 100%;
     height: calc(var(--vh, 1vh) * 100);
     display: grid;
@@ -40,7 +40,6 @@ const Page = styled.div`
 
 const Container = styled.div`
     display: grid;
-    background: #EDEAE3;
 `;
 
 const Wrapper = styled.div`
