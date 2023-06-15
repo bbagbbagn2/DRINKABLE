@@ -1,4 +1,4 @@
-export function setScreenSize() {
+export function setScreenSize(): void {
     let vh = window.innerHeight * 0.01;
     document.documentElement.style.setProperty('--vh', `${vh}px`);
   }
