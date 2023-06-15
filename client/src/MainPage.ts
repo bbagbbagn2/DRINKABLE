@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import Header from './components/Header';
 import { setScreenSize } from './utils';
 
-export default function Main() {
+export default function Main(): JSX.Element {
     useLayoutEffect(() => {
         setScreenSize();
     }, []);
@@ -66,7 +66,7 @@ export default function Main() {
                     </Wrapper>
                 </Container>
             </Page>
-        </>
+            </>
     );
 }
 const Page = styled.div`
@@ -119,9 +119,9 @@ const Title = styled.h1`
     text-align: center;
     color: #8E6C62;
 
-    margin-top: ${(props) => (props.marginTop || "0")};
-    font-size: ${(props) => (props.fontSize || "115px")};
-    line-height: ${(props) => (props.lineHeight || "0.9em")};
+    margin-top: ${(props: { marginTop?: string; }) => (props.marginTop || "0")};
+    font-size: ${(props: { fontSize?: string; }) => (props.fontSize || "115px")};
+    line-height: ${(props: { lineHeight?: string; }) => (props.lineHeight || "0.9em")};
 `;
 
 const AboutContainer = styled.div`
@@ -151,8 +151,8 @@ const SubTitle = styled.p`
     font-size: 16px;
     color: #8E6C62;
     
-    margin-top: ${(props) => (props.marginTop || "0")};
-    line-height: ${(props) => (props.lineHeight || "1.4em")};
+    margin-top: ${(props: { marginTop?: string; }) => (props.marginTop || "0")};
+    line-height: ${(props: { lineHeight?: string; }) => (props.lineHeight || "1.4em")};
 `;
 
 const IntroduceWrapper = styled.div`
@@ -173,7 +173,7 @@ const ItemWrapper = styled.div`
     background-size: cover;
     background-position: center;
 
-    background-image: url(${(props) => props.backgroundImage});
+    background-image: url(${(props: { backgroundImage?: string; }) => props.backgroundImage});
 `;
 
 const ItemLinkWrapper = styled.div`
