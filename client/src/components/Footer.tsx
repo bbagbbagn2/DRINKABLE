@@ -1,10 +1,7 @@
-import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import React from 'react';
 import styled from 'styled-components';
-import Logo from './Logo';
-import { AiOutlineMenu } from "react-icons/ai";
 
-export default function Footer() {
+export default function Footer(): JSX.Element {
 
     return (
             <Container>
@@ -49,42 +46,5 @@ const Wrapper = styled.div`
     color: #FFFFFF;
 
     @media (max-width: 1024px) {
-    }
-`;
-
-const ItemsWrapper = styled.div`
-    display: grid;
-    grid-template-columns: repeat(3,1fr);
-    place-items: center;
-
-    @media (max-width: 1024px) {
-        display: none;
-    }
-`;
-
-const Items = styled(Link)`
-    width: 190px;
-    height: 100%;
-    display: grid;
-    place-items: center;
-    color: #8E6C62;
-    font-size: 14px;
-    font-weight: medium;
-    text-decoration: none;
-    letter-spacing: 1.909091px;
-    transition: ease 0.3s;
-    
-    &:hover{
-        color: #4E3C36;
-    }
-`;
-
-const MobileMenuWrapper = styled.div`
-    display: none;
-
-    @media (max-width: 1024px) {
-        display: grid;
-        justify-content: end;
-        cursor: pointer;
     }
 `;
