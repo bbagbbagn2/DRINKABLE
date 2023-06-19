@@ -8,7 +8,7 @@ export default function Desktop() {
 
     const [scrollPosition, setScrollPosition] = useState(0);
 
-    const handleScroll = (height) => {
+    const handleScroll = (height: number) => {
         const targetHeight = height;
         window.scrollTo({
             top: targetHeight,

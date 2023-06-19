@@ -119,9 +119,9 @@ const Title = styled.h1`
     text-align: center;
     color: #8E6C62;
 
-    margin-top: ${(props: { marginTop?: string; }) => (props.marginTop || "0")};
-    font-size: ${(props: { fontSize?: string; }) => (props.fontSize || "115px")};
-    line-height: ${(props: { lineHeight?: string; }) => (props.lineHeight || "0.9em")};
+    margin-top: ${(props: { marginTop?: string; fontSize?: string; lineHeight?: string; }) => (props.marginTop || "0")};
+    font-size: ${(props: { marginTop?: string; fontSize?: string; lineHeight?: string; }) => (props.fontSize || "115px")};
+    line-height: ${(props: { marginTop?: string; fontSize?: string; lineHeight?: string; }) => (props.lineHeight || "0.9em")};
 `;
 
 const AboutContainer = styled.div`
@@ -151,8 +151,8 @@ const SubTitle = styled.p`
     font-size: 16px;
     color: #8E6C62;
     
-    margin-top: ${(props: { marginTop?: string; }) => (props.marginTop || "0")};
-    line-height: ${(props: { lineHeight?: string; }) => (props.lineHeight || "1.4em")};
+    margin-top: ${(props: { marginTop?: string; lineHeight?: string; }) => (props.marginTop || "0")};
+    line-height: ${(props: { marginTop?: string; lineHeight?: string; }) => (props.lineHeight || "1.4em")};
 `;
 
 const IntroduceWrapper = styled.div`
