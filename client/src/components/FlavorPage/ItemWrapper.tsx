@@ -3,9 +3,13 @@ import { Link } from "react-router-dom";
 import styled from 'styled-components';
 import axios from 'axios';
 
+interface Cocktail {
+    id: number;
+    name: string;
+}
 export default function Flavor() {
-    const [cocktail, setCocktail] = useState([]);
-    const [flavor, setFlavor] = useState('');
+    const [cocktail, setCocktail] = useState<Cocktail[]>([]);
+    const [flavor, setFlavor] = useState<string>('');
 
     useEffect(() => {
         fetchCocktails();
@@ -20,7 +24,7 @@ export default function Flavor() {
         }
     };
 
-    const handleClick = async (selectedFlavor) => {
+    const handleClick = async (selectedFlavor: string) => {
         try {
             const response = await axios.get('/flavor', { params: { flavor: selectedFlavor } });
             setCocktail(response.data);
@@ -116,7 +120,7 @@ const CategoryWrapper = styled.div`
     `;
 
 const CategoryList = styled.div`
-    display: grid;
+    display: grid;  
     grid-template-rows: repeat(5, 1fr);
     column-gap: 25%;
     `;
