@@ -38,29 +38,47 @@ export default function Flavor() {
         <Container>
             <div>
                 <CategoryWrapper>
-                    <CategoryList>
-                    <Title>FLAVOR</Title>
-                        <ListWrapper>
-                            <CategoryItems className='dry' onClick={() => handleClick('dry')}>
-                            <span>DRY</span>
-                            </CategoryItems>
-                        </ListWrapper>
-                        <ListWrapper>
-                            <CategoryItems className='sour' onClick={() => handleClick('sour')}>
-                            <span>SOUR</span>
-                            </CategoryItems>
-                        </ListWrapper>
-                        <ListWrapper>
-                            <CategoryItems className='sweet' onClick={() => handleClick('sweet')}>
-                            <span>SWEET</span>
-                            </CategoryItems>
-                        </ListWrapper>
-                        <ListWrapper>
-                            <CategoryItems className='hot' onClick={() => handleClick('hot')}>
-                            <span>HOT</span>
-                            </CategoryItems>
-                        </ListWrapper>
-                    </CategoryList>
+                    <CategoryTitle>CATEGORY</CategoryTitle>
+                    <CategoryUl>
+                        <CategoryLi>
+                            <ListButton>
+                                <ListSpan>Flavor</ListSpan>
+                            </ListButton>
+                            <ListItemWrapper>
+                                <ListItemUl>
+                                    <ListItemLi className='dry' onClick={() => handleClick('dry')}>
+                                        <ListItemLiLabel>Dry</ListItemLiLabel>
+                                    </ListItemLi>
+                                    <ListItemLi className='sour' onClick={() => handleClick('sour')}>
+                                        <ListItemLiLabel>Sour</ListItemLiLabel>
+                                    </ListItemLi>
+                                    <ListItemLi className='sweet' onClick={() => handleClick('sweet')}>
+                                        <ListItemLiLabel>Sweet</ListItemLiLabel>
+                                    </ListItemLi>
+                                    <ListItemLi className='hot' onClick={() => handleClick('hot')}>
+                                        <ListItemLiLabel>Hot</ListItemLiLabel>
+                                    </ListItemLi>
+                                </ListItemUl>
+                            </ListItemWrapper>
+                        </CategoryLi>
+                    </CategoryUl>
+                    <CategoryUl>
+                        <CategoryLi>
+                            <ListButton>
+                                <ListSpan>Amount</ListSpan>
+                            </ListButton>
+                            <ListItemWrapper>
+                                <ListItemUl>
+                                    <ListItemLi>
+                                        <ListItemLiLabel>Long</ListItemLiLabel>
+                                    </ListItemLi>
+                                    <ListItemLi>
+                                        <ListItemLiLabel>Short</ListItemLiLabel>
+                                    </ListItemLi>
+                                </ListItemUl>
+                            </ListItemWrapper>
+                        </CategoryLi>
+                    </CategoryUl>
                 </CategoryWrapper>
             </div>
             <div>
@@ -105,6 +123,16 @@ const Title = styled.h1`
     line-height: 1.25em;
 `;
 
+const CategoryTitle = styled.h2`
+    margin: 0;
+    padding-bottom: 20px;
+    text-align: center;
+    border-bottom: 1px solid gray; 
+    color: #8E6C62;
+    font-size: 26px;
+    line-height: 1.25em;
+`;
+
 const SubTitle = styled.p`
     margin: 30px 20% 0;
     text-align: center;
@@ -119,19 +147,48 @@ const CategoryWrapper = styled.div`
     background: #FFFFFF;
     `;
 
-const CategoryList = styled.div`
-    display: grid;  
-    grid-template-rows: repeat(5, 1fr);
-    column-gap: 25%;
+const CategoryUl = styled.ul`
+    padding: 0;
+    margin: 0;
+    list-style: none;
     `;
 
-const ListWrapper = styled.div`
+const CategoryLi = styled.li`
+    padding: 20px 0;
+    border-bottom: 1px solid #8E6C62;
+`;
+const ListButton = styled.button`
+    padding: 0;
+    width: 100%;
     display: grid;
-    align-items: center;
-    border-bottom: 1px solid #000000;
-    `;
+    justify-content: space-between;
+    font-family: inherit;
+    font-size: 16px;
+    line-height: 28px;
+    cursor: pointer;
+    background: none;
+    border: 0;
+    outline: 0;
+`;
 
-const CategoryItems = styled.div`
+const ListSpan = styled.span`
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: eclipsis;
+    margin-inline-end: 10px;
+`;
+
+const ListItemWrapper = styled.div`
+    margin-top: 15px;
+`;
+
+const ListItemUl = styled.ul`
+    padding: 0;
+    margin: 0;
+    list-style: none;
+`;
+
+const ListItemLi = styled.li`
     transition: 0.3s;
     cursor: pointer;
     
@@ -140,35 +197,43 @@ const CategoryItems = styled.div`
     }
     `;
 
+const ListItemLiLabel = styled.label`
+    display: block;
+    font-size: 14px;
+    line-height: 1.7;
+    cursor: pointer;
+    opacity: 0.8;
+`;
 const ItemListWrapper = styled.div`
+    margin-top: 20px;
     width: 100%;
     height: 100%;
     display: grid;
     grid-template-columns: repeat(auto-fit,minmax(315px,1fr));
     row-gap: 35px;
     place-items: center;
-    background: black;
+    background: #FFFFFF;
     `;
 
 const ItemWrapper = styled.div`
-    width: 282px;
-    height: 282px;    
+    width: 258px;
+    height: 326px;    
     display: grid;
     align-items: center;
-    background: #FFFFFF;
+    background: pink;
     background-blend-mode: normal;
     `;
 
 const ItemBox = styled.div`
-    width: 282px;
-    height: 282px;
-    background: #FFFFFF;
+    width: 258px;
+    height: 326px;
+    background: pink;
     `;
 
 const ItemTitleWrapper = styled.div`
     position: relative;
-    width: 282px;
-    height: 282px;
+    width: 258px;
+    height: 326px;
     background: #C1ABA2;
     color: #292929;
     opacity: 0;

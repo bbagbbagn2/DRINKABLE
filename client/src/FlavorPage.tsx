@@ -43,6 +43,6 @@ const Container = styled.div`
 `;
 
 const Wrapper = styled.div`
-    padding: 0 6%;
+    padding: 0 6.5%;
 `;
 
