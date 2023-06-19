@@ -4,7 +4,7 @@ import styled from 'styled-components';
 import Logo from './Logo';
 import { AiOutlineMenu } from "react-icons/ai";
 
-export default function Desktop() {
+export default function Header(): JSX.Element {
 
     const [scrollPosition, setScrollPosition] = useState(0);
 
@@ -30,9 +30,7 @@ export default function Desktop() {
                 <ItemsWrapper>
                     <Items to="/" onClick={handleHome}>HOME</Items>
                     <Items to="/" onClick={handleAbout}>ABOUT</Items>
-                    <Items to="/flavor">FLAVOR</Items>
-                    <Items to="/amount">AMOUNT</Items>
-                    <Items to="#">0%</Items>
+                    <Items to="/flavor">CLASSFICATION</Items>
                 </ItemsWrapper>
                 <MobileMenuWrapper>
                     <AiOutlineMenu size="27" fill='#8E6C62' />
@@ -42,7 +40,7 @@ export default function Desktop() {
     );
 }
 
-const Container = styled.div`
+const Container = styled.article`
     position: fixed;
     width: 100%;
     height: 65px;
@@ -67,7 +65,7 @@ const Wrapper = styled.div`
 
 const ItemsWrapper = styled.div`
     display: grid;
-    grid-template-columns: repeat(5,1fr);
+    grid-template-columns: repeat(3,1fr);
     place-items: center;
 
     @media (max-width: 1024px) {

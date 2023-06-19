@@ -1,6 +1,8 @@
 import React, { useLayoutEffect, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 import Header from './components/Header';
+import Footer from './components/Footer';
 import { setScreenSize } from './utils';
 
 export default function Main(): JSX.Element {
@@ -19,7 +21,6 @@ export default function Main(): JSX.Element {
     return (
         <>
             <Header />
-            <Page>
                 <Container>
                     <BackgroundWrapper />
                     <Wrapper>
@@ -53,8 +54,8 @@ export default function Main(): JSX.Element {
                                                 <AboutTitle>The Cocktails</AboutTitle>
                                             </AboutTitleWrapper>
                                             <SubTitle>X</SubTitle>
-                                            <ItmeLink>
-                                                MENU
+                                            <ItmeLink to ="/flavor">
+                                                CLASSFICATION
                                             </ItmeLink>
                                         </ItemLinkWrapper>
                                     </ItemWrapper>
@@ -65,14 +66,11 @@ export default function Main(): JSX.Element {
                         </AboutContainer>
                     </Wrapper>
                 </Container>
-            </Page>
+            <Footer />
             </>
     );
 }
-const Page = styled.div`
-    padding-top: 65px;
-    width: 100%;
-`
+
 const BackgroundWrapper = styled.img`
     position: absolute;
     width: 100%;
@@ -86,9 +84,9 @@ const BackgroundWrapper = styled.img`
 `;
 
 const Container = styled.div`
-    position: absolute;
-    top: 65px;
+    padding-top: 65px;
     width: 100%;
+    height: 100%;
     display: grid;
     background: #FFFFFF;
 `;
@@ -185,8 +183,9 @@ const ItemLinkWrapper = styled.div`
     border-bottom: 1px solid #8E6C62;
 `;
 
-const ItmeLink = styled.div`
-    width: 110px;
+const ItmeLink = styled(Link)`
+
+    width: 150px;
     height: 38px;
     display: grid;
     place-items: center;

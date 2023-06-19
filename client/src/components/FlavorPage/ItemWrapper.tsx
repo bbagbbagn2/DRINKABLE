@@ -79,6 +79,20 @@ export default function Flavor() {
                             </ListItemWrapper>
                         </CategoryLi>
                     </CategoryUl>
+                    <CategoryUl>
+                        <CategoryLi>
+                            <ListButton>
+                                <ListSpan>Non-Alchoholic</ListSpan>
+                            </ListButton>
+                            <ListItemWrapper>
+                                <ListItemUl>
+                                    <ListItemLi>
+                                        <ListItemLiLabel>Non-Alchoholic</ListItemLiLabel>
+                                    </ListItemLi>
+                                </ListItemUl>
+                            </ListItemWrapper>
+                        </CategoryLi>
+                    </CategoryUl>
                 </CategoryWrapper>
             </div>
             <div>

@@ -33,7 +33,6 @@ export default function Flavor() {
 const Page = styled.div`
     padding-top: 65px;
     width: 100%;
-    height: calc(var(--vh, 1vh) * 100);
     display: grid;
     grid-template-columns: 1fr;
 `
