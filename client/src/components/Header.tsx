@@ -22,25 +22,25 @@ export default function Header(): JSX.Element {
     const handleAbout = () => { handleScroll(658) };
 
     return (
-        <Container>
-            <Wrapper>
+        <HeaderLayout>
+            <HeaderCol>
                 <div onClick={handleHome}>
                     <Logo />
                 </div>
-                <ItemsWrapper>
-                    <Items to="/" onClick={handleHome}>HOME</Items>
-                    <Items to="/" onClick={handleAbout}>ABOUT</Items>
-                    <Items to="/flavor">CLASSFICATION</Items>
-                </ItemsWrapper>
-                <MobileMenuWrapper>
+                <HeaderList>
+                    <HeaderItem to="/" onClick={handleHome}>HOME</HeaderItem>
+                    <HeaderItem to="/" onClick={handleAbout}>ABOUT</HeaderItem>
+                    <HeaderItem to="/flavor">CLASSFICATION</HeaderItem>
+                </HeaderList>
+                <MobileHeaderMenuBox>
                     <AiOutlineMenu size="27" fill='#8E6C62' />
-                </MobileMenuWrapper>
-            </Wrapper>
-        </Container>
+                </MobileHeaderMenuBox>
+            </HeaderCol>
+        </HeaderLayout>
     );
 }
 
-const Container = styled.article`
+const HeaderLayout = styled.article`
     position: fixed;
     width: 100%;
     height: 65px;
@@ -51,7 +51,7 @@ const Container = styled.article`
     z-index: 999;
 `;
 
-const Wrapper = styled.div`
+const HeaderCol = styled.div`
     margin: 0 6.5%;
     display: grid;
     grid-template-columns: 250px 1fr 10%;
@@ -63,7 +63,7 @@ const Wrapper = styled.div`
     }
 `;
 
-const ItemsWrapper = styled.div`
+const HeaderList = styled.div`
     display: grid;
     grid-template-columns: repeat(3,1fr);
     place-items: center;
@@ -73,7 +73,7 @@ const ItemsWrapper = styled.div`
     }
 `;
 
-const Items = styled(Link)`
+const HeaderItem = styled(Link)`
     width: 190px;
     height: 100%;
     display: grid;
@@ -90,7 +90,7 @@ const Items = styled(Link)`
     }
 `;
 
-const MobileMenuWrapper = styled.div`
+const MobileHeaderMenuBox = styled.div`
     display: none;
 
     @media (max-width: 1024px) {

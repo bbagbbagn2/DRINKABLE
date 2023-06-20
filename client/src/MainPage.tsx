@@ -21,8 +21,8 @@ export default function Main(): JSX.Element {
     return (
         <>
             <Header />
-                <Container>
-                    <BackgroundWrapper />
+                <MainPageLayout>
+                    <BackgroundImage />
                     <Wrapper>
                         <TitleWrapper>
                             <div>
@@ -65,13 +65,13 @@ export default function Main(): JSX.Element {
                             </AboutWrapper>
                         </AboutContainer>
                     </Wrapper>
-                </Container>
+                </MainPageLayout>
             <Footer />
             </>
     );
 }
 
-const BackgroundWrapper = styled.img`
+const BackgroundImage = styled.img`
     position: absolute;
     width: 100%;
     height: 658px;
@@ -83,7 +83,7 @@ const BackgroundWrapper = styled.img`
     z-index: 0;
 `;
 
-const Container = styled.div`
+const MainPageLayout = styled.div`
     padding-top: 65px;
     width: 100%;
     height: 100%;
