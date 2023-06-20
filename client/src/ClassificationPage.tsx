@@ -4,7 +4,7 @@ import Header from './components/Header';
 import ItemWrapper from './components/FlavorPage/ItemWrapper';
 import { setScreenSize } from './utils';
 
-export default function Flavor() {
+export default function Classification() {
     useLayoutEffect(() => {
         setScreenSize();
     }, []);
@@ -20,28 +20,22 @@ export default function Flavor() {
     return (
         <>
             <Header />
-            <Page>
-            <Container>
-                <Wrapper>
+            <ClassificationPageLayout>
+                <ClassificationPageRow>
                     <ItemWrapper />
-                </Wrapper>
-            </Container>
-            </Page>
+                </ClassificationPageRow>
+            </ClassificationPageLayout>
         </>
     );
 }
-const Page = styled.div`
+const ClassificationPageLayout = styled.div`
     padding-top: 65px;
     width: 100%;
     display: grid;
     grid-template-columns: 1fr;
 `
 
-const Container = styled.div`
-    display: grid;
-`;
-
-const Wrapper = styled.div`
+const ClassificationPageRow = styled.div`
     padding: 0 6.5%;
 `;
 
