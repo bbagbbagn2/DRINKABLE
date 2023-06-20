@@ -32,15 +32,15 @@ export default function Header(): JSX.Element {
                     <HeaderItem to="/" onClick={handleAbout}>ABOUT</HeaderItem>
                     <HeaderItem to="/flavor">CLASSFICATION</HeaderItem>
                 </HeaderList>
-                <MobileHeaderMenuBox>
+                <MobileHeaderMenuButton>
                     <AiOutlineMenu size="27" fill='#8E6C62' />
-                </MobileHeaderMenuBox>
+                </MobileHeaderMenuButton>
             </HeaderCol>
         </HeaderLayout>
     );
 }
 
-const HeaderLayout = styled.article`
+const HeaderLayout = styled.header`
     position: fixed;
     width: 100%;
     height: 65px;
@@ -90,7 +90,7 @@ const HeaderItem = styled(Link)`
     }
 `;
 
-const MobileHeaderMenuBox = styled.div`
+const MobileHeaderMenuButton = styled.div`
     display: none;
 
     @media (max-width: 1024px) {
