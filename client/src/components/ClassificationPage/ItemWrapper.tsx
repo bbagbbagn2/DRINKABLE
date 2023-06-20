@@ -7,7 +7,8 @@ interface Cocktail {
     id: number;
     name: string;
 }
-export default function Flavor() {
+
+export default function Classification(): JSX.Element {
     const [cocktail, setCocktail] = useState<Cocktail[]>([]);
     const [flavor, setFlavor] = useState<string>('');
 
