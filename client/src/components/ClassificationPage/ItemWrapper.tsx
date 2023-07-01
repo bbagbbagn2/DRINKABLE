@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useMemo } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from "react-router-dom";
 import styled from 'styled-components';
 import axios from 'axios';
@@ -109,10 +109,10 @@ export default function Classification(): JSX.Element {
                         <div key={cocktail.id}>
                             <ItemLink to="#">
                                 <ItemWrapper />
-                                <div>
-                                <p>{cocktail.name}</p>
-                                <p>{cocktail.profile}</p>
-                                </div>
+                                <SummaryBox>
+                                    <SummaryParagraph marginTop= '10px'fontSize='16px'><b>{cocktail.name}</b></SummaryParagraph>
+                                    <SummaryParagraph marginTop= '7px' fontSize='14px'>{cocktail.profile}</SummaryParagraph>
+                                </SummaryBox>
                             </ItemLink>
                         </div>
                     ))}
@@ -231,48 +231,32 @@ const ItemListWrapper = styled.div`
 
 const ItemWrapper = styled.div`
     width: 300px;
-    height: 400px;    
+    height: 350px;    
     display: grid;
     align-items: center;
     background: pink;
     background-blend-mode: normal;
     border-bottom: 5px solid transparent;
     transition: ease 0.2s;
-    
+
     &:hover {
         border-bottom-color: #000000;
     }
     `;
 
-const ItemBox = styled.div`
-    width: 258px;
-    height: 326px;
-    background: pink;
+const SummaryBox = styled.div`
+    display: grid;
+    place-items: center;
+    width: 100%;
     `;
 
-const ItemTitleWrapper = styled.div`
-    position: relative;
-    width: 258px;
-    height: 326px;
-    background: #C1ABA2;
-    color: #292929;
-    opacity: 0;
-    transition: .5s ease;
+const SummaryParagraph = styled.p<{ marginTop?: string; fontSize?: string; lineHeight?: string; }>`
+    margin: 0;
 
-    &:hover { 
-        opacity: 0.8;
-    }
-    `;
+    margin-top: ${props => props.marginTop}; 
+    font-size: ${props => props.fontSize};
+`;
 
-const ItemTitle = styled.div`
-    position: absolute;    
-    top: 50%;
-    left: 50%;
-    width: fit-content;
-    font-size: 20px;
-    transform: translate(-50%, -50%);
-    text-align: center;
-    `;
 const ItemLink = styled(Link)`
     display: grid;
     place-items: center;

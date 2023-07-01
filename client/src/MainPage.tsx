@@ -127,13 +127,13 @@ const AboutClassificationList = styled.div`
     justify-items: center;
 `;
 
-const AboutClassificationItem = styled.div`
+const AboutClassificationItem = styled.div<{ backgroundImage?: string; }>`
     width: 307px;
     height: 454px;
     background-size: cover;
     background-position: center;
 
-    background-image: url(${(props: { backgroundImage?: string; }) => props.backgroundImage});
+    background-image: url(${props => props.backgroundImage});
 `;
 
 const ClassificationLinkBox = styled.div`
