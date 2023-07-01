@@ -24,14 +24,14 @@ export default function Main(): JSX.Element {
                         <div>
                             <h1>
                                 <TitleParagraph>DRINKABLE</TitleParagraph>
-                                <TitleParagraph marginTop="25px" fontSize="25px" lineHeight="0.5em">- Cocktail Classification -</TitleParagraph>
+                                <TitleParagraph marginTop="25px" fontSize="1.5vw" lineHeight="0.5em">- Cocktail Classification -</TitleParagraph>
                             </h1>
                         </div>
                     </Section>
                     <Section marginTop="99px">
                         <AboutTitleBox>
                             <h2>
-                                <TitleParagraph fontSize="46px" lineHeight="1.25em">칵테일 입문자를 위한 특별한 웹사이트</TitleParagraph>
+                                <TitleParagraph fontSize="46px" lineHeight="1.25em">The Cocktail</TitleParagraph>
                             </h2>
                             <TitleParagraph marginTop="55px" fontSize="16px" lineHeight="1.4em">X</TitleParagraph>
                             <TitleParagraph marginTop="50px" fontSize="16px" lineHeight="1.7em">
@@ -47,7 +47,7 @@ export default function Main(): JSX.Element {
                                 <ClassificationLinkBox>
                                     <AboutTitleBox>
                                         <h2>
-                                            <TitleParagraph fontSize="46px" lineHeight="1.25em">The Cocktails</TitleParagraph>
+                                            <TitleParagraph fontSize="46px" lineHeight="1.25em">DRINKABLE</TitleParagraph>
                                         </h2>
                                     </AboutTitleBox>
                                     <TitleParagraph fontSize="16px" lineHeight="1.4em">X</TitleParagraph>
@@ -68,7 +68,7 @@ export default function Main(): JSX.Element {
 const BackgroundImage = styled.img`
     position: absolute;
     width: 100%;
-    height: 680px;
+    height: 33vw;
     background: #FFFFFF;
     background-image: url(https://static.wixstatic.com/media/42dbaa_60e2f5a9fac14516a5a44e95c05cc330.jpg/v1/fill/w_1289,h_658,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/42dbaa_60e2f5a9fac14516a5a44e95c05cc330.jpg);
     background-size: cover;
@@ -86,11 +86,10 @@ const MainPageLayout = styled.div`
 const MainPageRow = styled.div`
     padding: 0 6.5%;
     display: grid;
-    grid-template-rows: 680px 1fr;
+    grid-template-rows: 33vw 1fr;
     z-index: 1;
 
     @media (max-width: 768px) {
-        padding-top: 8%;
         display: grid;
         justify-content: center;
     }
@@ -111,7 +110,7 @@ const TitleParagraph = styled.p<{ marginTop?: string; fontSize?: string; lineHei
     color: #8E6C62;
 
     margin-top: ${(props) => (props.marginTop || "0")};
-    font-size: ${(props) => (props.fontSize || "115px")};
+    font-size: ${(props) => (props.fontSize || "6vw")};
     line-height: ${(props) => (props.lineHeight || "0.9em")};
 `;
 
@@ -125,6 +124,13 @@ const AboutClassificationList = styled.div`
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     justify-items: center;
+
+    @media (max-width: 1024px) {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(3, 550px);
+        justify-content: center;
+    }
 `;
 
 const AboutClassificationItem = styled.div<{ backgroundImage?: string; }>`

@@ -124,6 +124,7 @@ export default function Classification(): JSX.Element {
 
 const Container = styled.div`
     width: 100%;
+    height: 100%;
     display: grid;
     grid-template-columns: 20% 1fr;
     margin-top: 60px;
@@ -221,12 +222,15 @@ const ListItemLiLabel = styled.label`
 const ItemListWrapper = styled.div`
     margin-top: 20px;
     width: 100%;
-    height: 100%;
     display: grid;
     grid-template-columns: repeat(auto-fit,minmax(350px,1fr));
     row-gap: 35px;
     place-items: center;
     background: #FFFFFF;
+
+    @media (max-width: 1024px) {
+        grid-template-columns: repeat(auto-fit,minmax(150px,1fr));
+    }
     `;
 
 const ItemWrapper = styled.div`
@@ -242,6 +246,13 @@ const ItemWrapper = styled.div`
     &:hover {
         border-bottom-color: #000000;
     }
+
+    @media (max-width: 1024px) {
+        width: 100px;
+        height: 150px;
+    }
+
+
     `;
 
 const SummaryBox = styled.div`

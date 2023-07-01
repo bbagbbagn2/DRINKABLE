@@ -24,7 +24,5 @@ const FooterLayout = styled.footer`
 const FooterParagraph = styled.div`
     margin: 0 6.5%;
     color: #FFFFFF;
-
-    @media (max-width: 1024px) {
-    }
+    text-align: center;
 `;
