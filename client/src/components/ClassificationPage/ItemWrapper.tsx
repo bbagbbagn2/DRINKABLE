@@ -12,6 +12,7 @@ interface Cocktail {
 export default function Classification(): JSX.Element {
     const [cocktail, setCocktail] = useState<Cocktail[]>([]);
     const [flavor, setFlavor] = useState<string>('');
+    const [amount, setAmount] = useState<string>('');
 
     useEffect(() => {
         fetchCocktails();
@@ -26,16 +27,27 @@ export default function Classification(): JSX.Element {
         }
     };
 
-    const handleClick = async (selectedFlavor: string) => {
+    const handleFlavor = async (selectedFlavor: string) => {
+    try {
+        const response = await axios.get('/flavor', { params: { flavor: selectedFlavor } });
+
+        setCocktail(response.data);
+        setFlavor(selectedFlavor);
+    } catch (err) {
+        console.log(err);
+    }
+};
+
+    const handleAmount = async (selectedAmount: string) => {
         try {
-            const response = await axios.get('/flavor', { params: { flavor: selectedFlavor } });
+            const response = await axios.get('/amount', { params: { amount: selectedAmount } });
+
             setCocktail(response.data);
-            setFlavor(selectedFlavor);
+            setAmount(selectedAmount);
         } catch (err) {
             console.log(err);
         }
     };
-
     return (
         <Container>
             <div>
@@ -48,17 +60,17 @@ export default function Classification(): JSX.Element {
                             </ListButton>
                             <ListItemWrapper>
                                 <ListItemUl>
-                                    <ListItemLi className='dry' onClick={() => handleClick('dry')}>
-                                        <ListItemLiLabel>Dry</ListItemLiLabel>
+                                    <ListItemLi className='dry' onClick={() => handleFlavor('dry')}>
+                                        <ListItemLiLabel>드라이 칵테일</ListItemLiLabel>
                                     </ListItemLi>
-                                    <ListItemLi className='sour' onClick={() => handleClick('sour')}>
-                                        <ListItemLiLabel>Sour</ListItemLiLabel>
+                                    <ListItemLi className='sour' onClick={() => handleFlavor('sour')}>
+                                        <ListItemLiLabel>사워 칵테일</ListItemLiLabel>
                                     </ListItemLi>
-                                    <ListItemLi className='sweet' onClick={() => handleClick('sweet')}>
-                                        <ListItemLiLabel>Sweet</ListItemLiLabel>
+                                    <ListItemLi className='sweet' onClick={() => handleFlavor('sweet')}>
+                                        <ListItemLiLabel>스위트 칵테일</ListItemLiLabel>
                                     </ListItemLi>
-                                    <ListItemLi className='hot' onClick={() => handleClick('hot')}>
-                                        <ListItemLiLabel>Hot</ListItemLiLabel>
+                                    <ListItemLi className='hot' onClick={() => handleFlavor('hot')}>
+                                        <ListItemLiLabel>핫 칵테일</ListItemLiLabel>
                                     </ListItemLi>
                                 </ListItemUl>
                             </ListItemWrapper>
@@ -71,11 +83,11 @@ export default function Classification(): JSX.Element {
                             </ListButton>
                             <ListItemWrapper>
                                 <ListItemUl>
-                                    <ListItemLi>
-                                        <ListItemLiLabel>Long</ListItemLiLabel>
+                                    <ListItemLi className='long' onClick={() => handleAmount('long')}>
+                                        <ListItemLiLabel>롱 칵테일</ListItemLiLabel>
                                     </ListItemLi>
-                                    <ListItemLi>
-                                        <ListItemLiLabel>Short</ListItemLiLabel>
+                                    <ListItemLi className='short' onClick={() => handleAmount('short')}>
+                                        <ListItemLiLabel>숏 칵테일</ListItemLiLabel>
                                     </ListItemLi>
                                 </ListItemUl>
                             </ListItemWrapper>
@@ -100,9 +112,7 @@ export default function Classification(): JSX.Element {
             <div>
                 <Title>The Cocktails</Title>
                 <SubTitle>
-                    Looking for a cocktail? Welcome.
-                    From easy mixed drinks to classic cocktails, we have just about anything you've heard of.
-                    Try our full range of drinks including gin, rum, vodka, whiskey, tequila cocktails and specialty liqueurs.
+                    진, 럼, 보드카, 위스키, 데킬라 칵테일, 스페셜티 리큐어 등 다양한 종류의 음료를 만나볼 수 있습니다.
                 </SubTitle>
                 <ItemListWrapper>
                     {cocktail.map((cocktail) => (
@@ -134,7 +144,7 @@ const Title = styled.h1`
     margin: 0;
     text-align: center;
     color: #8E6C62;
-    font-size: 46px;
+    font-size: 30px;
     line-height: 1.25em;
 `;
 
@@ -220,7 +230,7 @@ const ListItemLiLabel = styled.label`
     opacity: 0.8;
 `;
 const ItemListWrapper = styled.div`
-    margin-top: 20px;
+    margin-top: 100px;
     width: 100%;
     display: grid;
     grid-template-columns: repeat(auto-fit,minmax(350px,1fr));

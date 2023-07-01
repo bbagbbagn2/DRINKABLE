@@ -14,4 +14,16 @@ router.get('/flavor', (req, res) => {
     });
 });
 
+router.get('/amount', (req, res) => {
+    const amount = req.query.amount;
+    const sql_amount = 'SELECT * FROM cocktailtable WHERE amount = ?'; 
+
+    sql_pool.query(sql_amount,[amount], (err_amount, rows_amount, result_amount) => {
+        if(err_amount)
+            console.log(err_amount)
+        else
+            res.send(rows_amount)
+    });
+});
+
 module.exports = router;

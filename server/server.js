@@ -1,7 +1,7 @@
 const express = require('express');
 const session_stream = require('./config/session');
 const server_info = require('./server_info');
-const server_flavor = require('./server_flavor');
+const server_classfication = require('./server_classfication');
 
 const app = express();
 const HTTP_PORT = 5000;
@@ -15,7 +15,7 @@ app.use(express.urlencoded({ extended: false }));
 app.use(session_stream);
 
 app.use(server_info);
-app.use(server_flavor);
+app.use(server_classfication);
 
 
 

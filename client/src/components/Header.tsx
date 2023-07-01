@@ -30,7 +30,7 @@ export default function Header(): JSX.Element {
                 <HeaderList>
                     <HeaderItem to="/" onClick={handleHome}>HOME</HeaderItem>
                     <HeaderItem to="/" onClick={handleAbout}>ABOUT</HeaderItem>
-                    <HeaderItem to="/flavor">CLASSFICATION</HeaderItem>
+                    <HeaderItem to="/classfication">CLASSFICATION</HeaderItem>
                 </HeaderList>
                 <MobileHeaderMenuButton>
                     <AiOutlineMenu size="27" fill='#8E6C62' />
@@ -43,7 +43,6 @@ export default function Header(): JSX.Element {
 const HeaderLayout = styled.header`
     position: fixed;
     width: 100%;
-    height: 65px;
     display: grid;
     align-items: center;
     background: #FFFFFF;
@@ -53,6 +52,7 @@ const HeaderLayout = styled.header`
 
 const HeaderCol = styled.div`
     margin: 0 6.5%;
+    height: 65px;
     display: grid;
     grid-template-columns: 250px 1fr 10%;
     align-items: center;
