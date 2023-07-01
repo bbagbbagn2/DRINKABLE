@@ -6,7 +6,7 @@ export default function Footer(): JSX.Element {
     return (
             <FooterLayout>
                 <FooterParagraph>
-                    Copyright 2023. DRINKABLE. Powered and secured by Jihun
+                    Copyright 2023. DRINKABLE. Powered and secured by Park Jihun
                 </FooterParagraph>
             </FooterLayout>
     );

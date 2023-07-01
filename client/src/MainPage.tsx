@@ -51,7 +51,7 @@ export default function Main(): JSX.Element {
                                         </h2>
                                     </AboutTitleBox>
                                     <TitleParagraph fontSize="16px" lineHeight="1.4em">X</TitleParagraph>
-                                    <ClassificationLinkButton to="/flavor">자세히 보기</ClassificationLinkButton>
+                                    <ClassificationLinkButton to="/classfication">자세히 보기</ClassificationLinkButton>
                                 </ClassificationLinkBox>
                             </AboutClassificationItem>
                             <AboutClassificationItem backgroundImage="https://www.acouplecooks.com/wp-content/uploads/2021/08/Gin-Mojito-001.jpg" />
