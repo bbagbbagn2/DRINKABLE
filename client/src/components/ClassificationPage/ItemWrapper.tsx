@@ -6,6 +6,7 @@ import axios from 'axios';
 interface Cocktail {
     id: number;
     name: string;
+    profile: string;
 }
 
 export default function Classification(): JSX.Element {
@@ -106,15 +107,13 @@ export default function Classification(): JSX.Element {
                 <ItemListWrapper>
                     {cocktail.map((cocktail) => (
                         <div key={cocktail.id}>
-                            <Link to="#">
-                                <ItemWrapper>
-                                    <ItemBox>
-                                        <ItemTitleWrapper>
-                                            <ItemTitle>{cocktail.name}</ItemTitle>
-                                        </ItemTitleWrapper>
-                                    </ItemBox>
-                                </ItemWrapper>
-                            </Link>
+                            <ItemLink to="#">
+                                <ItemWrapper />
+                                <div>
+                                <p>{cocktail.name}</p>
+                                <p>{cocktail.profile}</p>
+                                </div>
+                            </ItemLink>
                         </div>
                     ))}
                 </ItemListWrapper>
@@ -224,19 +223,25 @@ const ItemListWrapper = styled.div`
     width: 100%;
     height: 100%;
     display: grid;
-    grid-template-columns: repeat(auto-fit,minmax(315px,1fr));
+    grid-template-columns: repeat(auto-fit,minmax(350px,1fr));
     row-gap: 35px;
     place-items: center;
     background: #FFFFFF;
     `;
 
 const ItemWrapper = styled.div`
-    width: 258px;
-    height: 326px;    
+    width: 300px;
+    height: 400px;    
     display: grid;
     align-items: center;
     background: pink;
     background-blend-mode: normal;
+    border-bottom: 5px solid transparent;
+    transition: ease 0.2s;
+    
+    &:hover {
+        border-bottom-color: #000000;
+    }
     `;
 
 const ItemBox = styled.div`
@@ -268,3 +273,9 @@ const ItemTitle = styled.div`
     transform: translate(-50%, -50%);
     text-align: center;
     `;
+const ItemLink = styled(Link)`
+    display: grid;
+    place-items: center;
+    place-content: center;
+    color: #000000;
+`

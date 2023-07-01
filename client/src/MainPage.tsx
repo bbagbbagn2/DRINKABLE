@@ -23,40 +23,40 @@ export default function Main(): JSX.Element {
                     <Section alignItems="center">
                         <div>
                             <h1>
-                                <TitleParagraph>DRINKABLE's</TitleParagraph>
+                                <TitleParagraph>DRINKABLE</TitleParagraph>
                                 <TitleParagraph marginTop="25px" fontSize="25px" lineHeight="0.5em">- Cocktail Classification -</TitleParagraph>
                             </h1>
                         </div>
                     </Section>
                     <Section marginTop="99px">
-                            <AboutTitleBox>
-                                <h2>
-                                    <TitleParagraph fontSize="46px" lineHeight="1.25em">A special website for introductory cocktails</TitleParagraph>
-                                </h2>
+                        <AboutTitleBox>
+                            <h2>
+                                <TitleParagraph fontSize="46px" lineHeight="1.25em">칵테일 입문자를 위한 특별한 웹사이트</TitleParagraph>
+                            </h2>
                             <TitleParagraph marginTop="55px" fontSize="16px" lineHeight="1.4em">X</TitleParagraph>
-                                <TitleParagraph marginTop="50px" fontSize="16px" lineHeight="1.7em">
-                                    Our website is a space created to introduce cocktails and provide new cocktail experiences.
-                                    We provide a variety of cocktail recipes and trendy drink trends to help users freely explore cocktails.
-                                    Our goal is to share cocktail culture with cocktail lovers by making it more diverse and exciting.
-                                    Our website also provides information on cocktail ingredients.
-                                    Welcome to the ultimate destination for cocktail lovers and new discoveries.
-                                </TitleParagraph>
-                                </AboutTitleBox>
-                            <AboutClassificationList>
-                                <AboutClassificationItem>
-                                    <ClassificationLinkBox>
-                                        <AboutTitleBox>
-                                            <h2>
-                                                <TitleParagraph fontSize="46px" lineHeight="1.25em">The Cocktails</TitleParagraph>
-                                            </h2>
-                                        </AboutTitleBox>
-                                        <TitleParagraph fontSize="16px" lineHeight="1.4em">X</TitleParagraph>
-                                        <ClassificationLinkButton to="/flavor">CLASSIFICATION</ClassificationLinkButton>
-                                    </ClassificationLinkBox>
-                                </AboutClassificationItem>
-                                <AboutClassificationItem backgroundImage="https://www.acouplecooks.com/wp-content/uploads/2021/08/Gin-Mojito-001.jpg" />
-                                <AboutClassificationItem backgroundImage="https://www.acouplecooks.com/wp-content/uploads/2020/04/Tequila-Sunrise-003.jpg" />
-                            </AboutClassificationList>
+                            <TitleParagraph marginTop="50px" fontSize="16px" lineHeight="1.7em">
+                                저희 웹사이트는 칵테일을 소개하고 새로운 칵테일 경험을 제공하기 위해 만든 공간입니다.
+                                사용자가 자유롭게 칵테일을 검색할 수 있도록 합니다.
+                                저희 목표는 칵테일 문화를 더욱 다양하고 흥미롭게 만들어 칵테일 애호가들과 공유하는 것입니다.
+                                저희 웹사이트에서는 칵테일 재료에 대한 정보도 제공하고 있습니다.
+                                새로운 발견을 위한 최고의 목적지에 오신 것을 환영합니다.
+                            </TitleParagraph>
+                        </AboutTitleBox>
+                        <AboutClassificationList>
+                            <AboutClassificationItem>
+                                <ClassificationLinkBox>
+                                    <AboutTitleBox>
+                                        <h2>
+                                            <TitleParagraph fontSize="46px" lineHeight="1.25em">The Cocktails</TitleParagraph>
+                                        </h2>
+                                    </AboutTitleBox>
+                                    <TitleParagraph fontSize="16px" lineHeight="1.4em">X</TitleParagraph>
+                                    <ClassificationLinkButton to="/flavor">자세히 보기</ClassificationLinkButton>
+                                </ClassificationLinkBox>
+                            </AboutClassificationItem>
+                            <AboutClassificationItem backgroundImage="https://www.acouplecooks.com/wp-content/uploads/2021/08/Gin-Mojito-001.jpg" />
+                            <AboutClassificationItem backgroundImage="https://www.acouplecooks.com/wp-content/uploads/2020/04/Tequila-Sunrise-003.jpg" />
+                        </AboutClassificationList>
                     </Section>
                 </MainPageRow>
             </MainPageLayout>
@@ -68,11 +68,10 @@ export default function Main(): JSX.Element {
 const BackgroundImage = styled.img`
     position: absolute;
     width: 100%;
-    height: 658px;
+    height: 680px;
     background: #FFFFFF;
     background-image: url(https://static.wixstatic.com/media/42dbaa_60e2f5a9fac14516a5a44e95c05cc330.jpg/v1/fill/w_1289,h_658,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/42dbaa_60e2f5a9fac14516a5a44e95c05cc330.jpg);
     background-size: cover;
-    background-position: center;
     background-repeat: no-repeat;
     z-index: 0;
 `;
@@ -87,7 +86,7 @@ const MainPageLayout = styled.div`
 const MainPageRow = styled.div`
     padding: 0 6.5%;
     display: grid;
-    grid-template-rows: 658px 1fr;
+    grid-template-rows: 680px 1fr;
     z-index: 1;
 
     @media (max-width: 768px) {
@@ -97,7 +96,7 @@ const MainPageRow = styled.div`
     }
 `;
 
-const Section = styled.section<{ marginTop?:string; alignItems?: string; }>`
+const Section = styled.section<{ marginTop?: string; alignItems?: string; }>`
     width: 100%;
     display: grid;
     justify-items: center;
@@ -148,16 +147,18 @@ const ClassificationLinkBox = styled.div`
 
 const ClassificationLinkButton = styled(Link)`
     width: 150px;
-    height: 38px;
+    height: 65px;
     display: grid;
     place-items: center;
-    background: #8E6C62;
-    color: #FFFFFF;
+    background: #FFFFFF;
+    color: #8E6C62;
+    border: 1.5px solid #8E6C62;
     cursor: pointer;
-    transition: ease 0.3s;
+    transition: ease 0.2s;
     
     &:hover{
-        background: #4E3C36;
+        background: #8E6C62;
+        color: #FFFFFF;
     }
 `;
 

@@ -19,7 +19,7 @@ export default function Header(): JSX.Element {
 
     const handleHome = () => { handleScroll(0) };
 
-    const handleAbout = () => { handleScroll(658) };
+    const handleAbout = () => { handleScroll(680) };
 
     return (
         <HeaderLayout>

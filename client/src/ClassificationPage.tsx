@@ -21,9 +21,9 @@ export default function Classification(): JSX.Element {
         <>
             <Header />
             <ClassificationPageLayout>
-                <ClassificationPageRow>
+                <ClassificationPageBox>
                     <ItemWrapper />
-                </ClassificationPageRow>
+                </ClassificationPageBox>
             </ClassificationPageLayout>
         </>
     );
@@ -35,7 +35,7 @@ const ClassificationPageLayout = styled.div`
     grid-template-columns: 1fr;
 `
 
-const ClassificationPageRow = styled.div`
+const ClassificationPageBox = styled.div`
     padding: 0 6.5%;
 `;
 
