@@ -8,7 +8,7 @@
 
 ## Introducing Our Project
 DRINKABLE은 다양한 칵테일을 소개하는 웹 프로젝트입니다. 사용자는 원하는 칵테일에 대한 정보와 필요한 재료를 쉽게 알 수 있습니다.
-DRINKABLE은 맛, 양, 논알콜 여부에 따라 칵테일을 분류할 수 있어, 사용자는 자신의 기분에 따라 알맞은 칵테일을 선택할 수 있습니다. 이는 프로젝트의 큰 장점으로 강조될 것입니다.
+뿐만 아니라  맛, 양, 논알콜 여부에 따라 칵테일을 분류할 수 있어, 사용자는 자신의 기분에 따라 알맞은 칵테일을 선택할 수 있습니다. 이는 프로젝트의 큰 장점으로 강조될 것입니다.
 
 <br><br>
 
@@ -28,8 +28,9 @@ DRINKABLE은 맛, 양, 논알콜 여부에 따라 칵테일을 분류할 수 있
 
 <br><br>
 
-### 📌 Frontend Skills
 <div align="center">
+  
+### 📌 Frontend Skills
   <img src="https://img.shields.io/badge/CSS-1572B6?style=flat-square&logo=CSS3&logoColor=white"/>
   <img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=flat-square&logo=JavaScript&logoColor=white"/>
   <img src="https://img.shields.io/badge/TypeScript-1976D2?style=flat-square&logo=TypeScript&logoColor=white"/>
@@ -37,14 +38,13 @@ DRINKABLE은 맛, 양, 논알콜 여부에 따라 칵테일을 분류할 수 있
   <br>
   <img src="https://img.shields.io/badge/styledcomponents-DB7093?style=flat-square&logo=styledcomponents&logoColor=white"/>
   <img src="https://img.shields.io/badge/VSCode-007ACC?style=flat-square&logo=visualstudiocode&logoColor=white"/>
-</div>
 
 <br><br>
 
 ### 📌 Backend Skills
-<div align="center">
   <img src="https://img.shields.io/badge/Node.js-3C873A?style=flat-square&logo=Node.js&logoColor=white"/>
   <img src="https://img.shields.io/badge/MySQL-00758F?style=flat-square&logo=MySQL&logoColor=white"/>
+  
 </div>
 
 <br><br>
@@ -70,7 +70,6 @@ DRINKABLE은 맛, 양, 논알콜 여부에 따라 칵테일을 분류할 수 있
 
 <p align="justify">
 
-### 긍정적 요소
 + React의 공통 컴포넌트를 사용함으로써 개발 효율성 증가
   
 + styled-components 네이밍 컨벤션 및 S-dot 사용법 학습으로 인한 컴포넌트 간의 혼돈 감소
