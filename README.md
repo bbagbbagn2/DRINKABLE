@@ -5,6 +5,11 @@
 </div>
 
 <br><br>
+## Preview
+
+![DRINKABLE](https://github.com/bbagbbagn2/DRINKABLE/assets/89950902/6fe12913-6f14-4ef0-b534-25e627c305fa)
+
+<br><br>
 
 ## Introducing Our Project
 DRINKABLE은 다양한 칵테일을 소개하는 웹 프로젝트입니다. 사용자는 원하는 칵테일에 대한 정보와 필요한 재료를 쉽게 알 수 있습니다.
