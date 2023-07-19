@@ -53,14 +53,14 @@ DRINKABLE은 다양한 칵테일을 소개하는 웹 프로젝트입니다. 사�
 
 ### MainPage
 --------
-1. Header HOME / ABOUT / CLASSIFICATION 으로 분류
+1. Header HOME / ABOUT / CLASSFICATION 으로 분류
     + 모바일 버전에 맞는 반응형 Header
 
 2. 해당 프로젝트의 소개 및 분류 페이지 이동 버튼 생성
 
 <br>
 
-### ClaasificationPage
+### ClaasficationPage
 ---------
 1. Flavor, Amount, Non-Alchoholic 에 따른 분류 기능
 
