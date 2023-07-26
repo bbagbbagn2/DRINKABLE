@@ -17,18 +17,6 @@ DRINKABLE은 다양한 칵테일을 소개하는 웹 프로젝트입니다. 사�
 
 <br><br>
 
-## Getting Started
-
-### 1. Client
-    cd client
-    npm i
-    npm run start
-    
-### 2. Server
-    cd server
-    npm i
-    nodemon server
-
 ## Skills
 
 <br><br>
