@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 import Logo from './Logo';
 import { AiOutlineMenu } from "react-icons/ai";
+import { CiSearch, CiShoppingCart, CiUser } from "react-icons/ci";
 
 export default function Header(): JSX.Element {
 
@@ -35,6 +36,11 @@ export default function Header(): JSX.Element {
                 <MobileHeaderMenuButton>
                     <AiOutlineMenu size="27" fill='#8E6C62' />
                 </MobileHeaderMenuButton>
+                <MyPageCol>
+                    <MyPageItem to ="/"><CiSearch size="20" fill='#8E6C62' /></MyPageItem>
+                    <MyPageItem to ="/"><CiUser size="20" fill='#8E6C62' /></MyPageItem>
+                    <MyPageItem to ="/"><CiShoppingCart size="20" fill='#8E6C62' /></MyPageItem>
+                </MyPageCol>
             </HeaderCol>
         </HeaderLayout>
     );
@@ -46,6 +52,7 @@ const HeaderLayout = styled.header`
     display: grid;
     align-items: center;
     background: #FFFFFF;
+    border-top: 7px solid #8E6C62;
     border-bottom: 2px solid #8E6C62; 
     z-index: 999;
 `;
@@ -97,5 +104,20 @@ const MobileHeaderMenuButton = styled.div`
         display: grid;
         justify-content: end;
         cursor: pointer;
+    }
+`;
+
+const MyPageCol = styled.div`
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    place-items: center;
+`;
+
+const MyPageItem = styled(Link)`
+    display: grid;
+    place-items: center;
+
+    @media (max-width: 1024px) {
+        display: none;
     }
 `;

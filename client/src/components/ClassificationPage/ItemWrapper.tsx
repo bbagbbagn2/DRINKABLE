@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Link } from "react-router-dom";
 import styled from 'styled-components';
 import axios from 'axios';
-
+import { setScreenSize } from '../../utils';
 interface Cocktail {
     id: number;
     name: string;
@@ -18,7 +18,7 @@ export default function Classification(): JSX.Element {
         fetchCocktails();
     }, []);
 
-    const fetchCocktails = async () => {
+    async function fetchCocktails() {
         try {
             const response = await axios.get('/info');
             setCocktail(response.data);
@@ -27,18 +27,18 @@ export default function Classification(): JSX.Element {
         }
     };
 
-    const handleFlavor = async (selectedFlavor: string) => {
-    try {
-        const response = await axios.get('/flavor', { params: { flavor: selectedFlavor } });
+    async function handleFlavor(selectedFlavor: string) {
+        try {
+            const response = await axios.get('/flavor', { params: { flavor: selectedFlavor } });
 
-        setCocktail(response.data);
-        setFlavor(selectedFlavor);
-    } catch (err) {
-        console.log(err);
-    }
-};
+            setCocktail(response.data);
+            setFlavor(selectedFlavor);
+        } catch (err) {
+            console.log(err);
+        }
+    };
 
-    const handleAmount = async (selectedAmount: string) => {
+    async function handleAmount(selectedAmount: string) {
         try {
             const response = await axios.get('/amount', { params: { amount: selectedAmount } });
 
@@ -48,8 +48,9 @@ export default function Classification(): JSX.Element {
             console.log(err);
         }
     };
+
     return (
-        <Container>
+        <ItemListLayout>
             <div>
                 <CategoryWrapper>
                     <CategoryTitle>CATEGORY</CategoryTitle>
@@ -101,7 +102,7 @@ export default function Classification(): JSX.Element {
                             <ListItemWrapper>
                                 <ListItemUl>
                                     <ListItemLi>
-                                        <ListItemLiLabel>Non-Alchoholic</ListItemLiLabel>
+                                        <ListItemLiLabel>논알콜 칵테일</ListItemLiLabel>
                                     </ListItemLi>
                                 </ListItemUl>
                             </ListItemWrapper>
@@ -110,29 +111,33 @@ export default function Classification(): JSX.Element {
                 </CategoryWrapper>
             </div>
             <div>
-                <Title>The Cocktails</Title>
-                <SubTitle>
+                <h1>
+                    <ClassficationParagraph fontSize='30px' lineHeight='1.25em'>
+                        The Cocktails
+                    </ClassficationParagraph>
+                </h1>
+                <ClassficationParagraph lineHeight='1.5em'>
                     진, 럼, 보드카, 위스키, 데킬라 칵테일, 스페셜티 리큐어 등 다양한 종류의 음료를 만나볼 수 있습니다.
-                </SubTitle>
-                <ItemListWrapper>
+                </ClassficationParagraph>
+                <ItemBox>
                     {cocktail.map((cocktail) => (
                         <div key={cocktail.id}>
                             <ItemLink to="#">
-                                <ItemWrapper />
+                                <ItemImageBox />
                                 <SummaryBox>
-                                    <SummaryParagraph marginTop= '10px'fontSize='16px'><b>{cocktail.name}</b></SummaryParagraph>
-                                    <SummaryParagraph marginTop= '7px' fontSize='14px'>{cocktail.profile}</SummaryParagraph>
+                                    <SummaryParagraph marginTop='10px' fontSize='16px'><b>{cocktail.name}</b></SummaryParagraph>
+                                    <SummaryParagraph marginTop='7px' fontSize='14px'>{cocktail.profile}</SummaryParagraph>
                                 </SummaryBox>
                             </ItemLink>
                         </div>
                     ))}
-                </ItemListWrapper>
+                </ItemBox>
             </div>
-        </Container>
+        </ItemListLayout>
     );
 };
 
-const Container = styled.div`
+const ItemListLayout = styled.div`
     width: 100%;
     height: 100%;
     display: grid;
@@ -140,12 +145,13 @@ const Container = styled.div`
     margin-top: 60px;
 `;
 
-const Title = styled.h1`
-    margin: 0;
+const ClassficationParagraph = styled.p<{ fontSize?: string; lineHeight?: string; }>`
+    margin: 30px 20% 0;
     text-align: center;
     color: #8E6C62;
-    font-size: 30px;
-    line-height: 1.25em;
+
+    font-size: ${props => props.fontSize};
+    line-height: ${props => props.lineHeight};
 `;
 
 const CategoryTitle = styled.h2`
@@ -158,13 +164,6 @@ const CategoryTitle = styled.h2`
     line-height: 1.25em;
 `;
 
-const SubTitle = styled.p`
-    margin: 30px 20% 0;
-    text-align: center;
-    color: #8E6C62;
-    font-size: 16px;
-    line-height: 1.5em;
-`;
 
 const CategoryWrapper = styled.div`
     position: fixed;
@@ -229,7 +228,7 @@ const ListItemLiLabel = styled.label`
     cursor: pointer;
     opacity: 0.8;
 `;
-const ItemListWrapper = styled.div`
+const ItemBox = styled.div`
     margin-top: 100px;
     width: 100%;
     display: grid;
@@ -243,7 +242,7 @@ const ItemListWrapper = styled.div`
     }
     `;
 
-const ItemWrapper = styled.div`
+const ItemImageBox = styled.div`
     width: 300px;
     height: 350px;    
     display: grid;
@@ -254,7 +253,7 @@ const ItemWrapper = styled.div`
     transition: ease 0.2s;
 
     &:hover {
-        border-bottom-color: #000000;
+        border-bottom-color: #8E6C62;
     }
 
     @media (max-width: 1024px) {

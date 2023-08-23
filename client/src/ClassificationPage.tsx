@@ -1,14 +1,10 @@
-import React, { useLayoutEffect, useEffect } from 'react';
+import React, { useEffect } from 'react';
 import styled from 'styled-components';
 import Header from './components/Header';
-import Footer from './components/Footer';
 import ItemWrapper from './components/ClassificationPage/ItemWrapper';
 import { setScreenSize } from './utils';
 
 export default function Classification(): JSX.Element {
-    useLayoutEffect(() => {
-        setScreenSize();
-    }, []);
 
     useEffect(() => {
         function handleResize() {
@@ -26,13 +22,13 @@ export default function Classification(): JSX.Element {
                     <ItemWrapper />
                 </ClassificationPageBox>
             </ClassificationPageLayout>
-            <Footer />
         </>
     );
 }
 const ClassificationPageLayout = styled.div`
     padding-top: 65px;
     width: 100%;
+    height: 100%;
     display: grid;
     grid-template-columns: 1fr;
 `
