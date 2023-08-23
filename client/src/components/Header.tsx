@@ -38,7 +38,7 @@ export default function Header(): JSX.Element {
                 </MobileHeaderMenuButton>
                 <MyPageCol>
                     <MyPageItem to ="/"><CiSearch size="20" fill='#8E6C62' /></MyPageItem>
-                    <MyPageItem to ="/"><CiUser size="20" fill='#8E6C62' /></MyPageItem>
+                    <MyPageItem to ="/login"><CiUser size="20" fill='#8E6C62' /></MyPageItem>
                     <MyPageItem to ="/"><CiShoppingCart size="20" fill='#8E6C62' /></MyPageItem>
                 </MyPageCol>
             </HeaderCol>
@@ -53,7 +53,7 @@ const HeaderLayout = styled.header`
     align-items: center;
     background: #FFFFFF;
     border-top: 7px solid #8E6C62;
-    border-bottom: 2px solid #8E6C62; 
+    border-bottom: 1px solid #DCDCDC; 
     z-index: 999;
 `;
 
