@@ -22,38 +22,45 @@ export default function Main(): JSX.Element {
                 <LoginPageCol>
                     <LoginPageBox>
                         <MyPageTitleBox>
-                            <h1>
+                            <TitleContextBox>
                                 <MypageTitleParagraph>마이 페이지</MypageTitleParagraph>
-                            </h1>
+                            </TitleContextBox>
                         </MyPageTitleBox>
-                        <LoginResisterNav>
-                            <LoginResisterCol>
-                                <LoginResisterLink to="#">로그인</LoginResisterLink>
-                                <LoginResisterLink to="#">등록하기</LoginResisterLink>
-                            </LoginResisterCol>
-                        </LoginResisterNav>
-                        <SubTitleBox>
-                            <SubTitlePharagraph fontSize='1rem' fontWeight="700" marginBottom='0.0625rem' letterSpacing='0.0625rem'>DRINKABLE을 찾아주셔서 감사합니다.</SubTitlePharagraph>
-                            <SubTitlePharagraph>이메일 혹은 휴대폰 번호와 비밀번호로 로그인</SubTitlePharagraph>
-                        </SubTitleBox>
-                        <LoginInputCol>
-                            <LoginInputBox>
-                            <LoginInput
-                                label="이메일/휴대폰 번호"
-                                variant="standard"
-                            />
-                            </LoginInputBox>
-                            <LoginInputBox>
-                             <LoginInput
-                                label="비밀번호"
-                                type="password"
-                                variant="standard"
-                            />
-                            </LoginInputBox>
-                        </LoginInputCol>
-                        <div>
-                            <LoginButton>로그인</LoginButton>
-                        </div>
+                        <LoginResisterBox>
+                            <LoginResisterNav>
+                                <LoginResisterList>
+                                    <LoginResisterItem>
+                                        <LoginResisterLink to="#">로그인</LoginResisterLink>
+                                    </LoginResisterItem>
+                                    <LoginResisterItem>
+                                        <LoginResisterLink to="#">등록하기</LoginResisterLink>
+                                    </LoginResisterItem>
+                                </LoginResisterList>
+                            </LoginResisterNav>
+                        </LoginResisterBox>
+                        <UserContentBox>
+                            <UserTextBox>
+                                <ContentBox>
+                                    <ContextForm>
+                                <SubTitlePharagraph fontSize='1rem' fontWeight="700" marginBottom='0.0625rem' letterSpacing='0.0625rem'>DRINKABLE을 찾아주셔서 감사합니다.</SubTitlePharagraph>
+                                <SubTitlePharagraph>이메일 혹은 휴대폰 번호와 비밀번호로 로그인</SubTitlePharagraph>
+                            <DataFormCol>
+                                <LoginInputBox>
+                                    <LoginInput variant="standard" label="이메일/휴대폰 번호" />
+                                </LoginInputBox>
+                                <LoginInputBox>
+                                    <LoginInput variant="standard" type="password" label="비밀번호" />
+                                </LoginInputBox>
+                            <LoginButtonBox>
+                                <LoginButtonItem>
+                                <LoginButton>로그인</LoginButton>
+                                </LoginButtonItem>
+                            </LoginButtonBox>
+                            </DataFormCol>
+                            </ContextForm>
+                            </ContentBox>
+                            </UserTextBox>
+                        </UserContentBox>
                     </LoginPageBox>
                 </LoginPageCol>
             </LoginPageLayout>
@@ -63,9 +70,10 @@ export default function Main(): JSX.Element {
 }
 
 const LoginPageLayout = styled.div`
-    padding-top: 65px;
-    height: 96vh;
-    display: grid;
+    padding-top: 73px;
+    min-height: calc(100vh - 8.75rem);
+    position: relative;
+    display: block;
     box-sizing: border-box;
     background: #FFFFFF;
     font-size: .875rem;
@@ -73,83 +81,157 @@ const LoginPageLayout = styled.div`
     line-height: 1.5;
     letter-spacing: .03rem;
 `;
+
 const LoginPageCol = styled.div`
     padding: 0 8%;
     margin: 0 auto;
     max-width: 83.875rem;
+    display: block;
     overflow: hidden;
 `;
 
 const LoginPageBox = styled.div`
     align-items: stretch;
+    display: flex;
+    flex-wrap: wrap;
+    box-sizing: border-box;
+    justify-content: space-between;
+    margin-left: -0.97vw;
+    margin-right: -0.97vw; 
 `;
 
 const MyPageTitleBox = styled.div`
     padding: 0 1%;    
     margin-top: 4.5rem;
     margin-bottom: 3rem;
-    margin-left: 8%;
-    margin-right: 8%;
-    width: 83%;
-    display: grid;
-    place-items: center;
+    margin-left: 8.3%;
+    margin-right: 8.3%;
+    width: 83.3%;
+    box-sizing: border-box;
+    display: block;
+    text-align: center;
     flex-basis: auto;
+
+    @media (max-width: 700px) {
+        margin-top: 14.4vw;
+        margin-bottom: 2.25rem;
+    }
 `;
 
-const MypageTitleParagraph = styled.p`
+const TitleContextBox = styled.div`
+    box-sizing: border-box;
+`;
+
+const MypageTitleParagraph = styled.h1`
+    box-sizing: border-box;
     color: #8E6C62;
     font-size: 2.5rem;
     letter-spacing: .125rem;
     line-height: 1.225;
+    text-transform: lowercase;
+
+    @media (max-width: 700px) {
+        font-size: 1.5625rem;
+        line-height: 1.24;
+        letter-spacing: normal;
+    }
 `;
 
+const LoginResisterBox = styled.div`
+    margin: 0 auto;
+    padding: 0;
+    min-width: 33.33%;
+    width: auto;
+    box-sizing: border-box;
+    flex-basis: auto;
+    
+`;
 const LoginResisterNav = styled.nav`
+    box-sizing: border-box;
     border-bottom: 1px solid #ECECEC;
 `;
-
-const LoginResisterCol = styled.div`
-    height: 3.75rem;
-    width: 100%;    
+const LoginResisterList = styled.ul`
+    margin: 0 auto;
+    box-sizing: border-box;
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-auto-columns: 1fr;
+    place-content: center;
+    list-style: none;
+    padding-inline-start: 0;
 `;
-
+const LoginResisterItem = styled.li`
+    margin: 0;
+    padding: 0;
+    width: auto;
+    box-sizing: border-box;
+    flex: 0 0 50%;
+    grid-row: 1;
+    justify-self: stretch;
+`;
 const LoginResisterLink = styled(Link)`
     padding: 0 1.6rem;
-    display: grid;
-    place-items: center;
+    width: 100%;
+    height: 3.125rem;
+    box-sizing: border-box;
+    position: relative;
+    display: inline-flex;
+    place-content: center;
+    align-items: center;
+    border-radius: 0;
     font-size: 1rem;
     font-weight: 700;
     letter-spacing: .05rem;
-`;
-
-const SubTitleBox = styled.div`
-    padding: 36px 1vw 0;
-    flex-basis: auto;
     text-align: center;
+    vertical-align: middle;
+    white-space: nowrap;
+
+    @media (max-width: 700px) {
+        font-size: .7rem;
+    }
 `;
 
+const UserContentBox = styled.div`
+    margin-left: 33.33%;
+    margin-right: 33.33%;
+    padding-left: 0.97vw;
+    padding-right: 0.97vw;
+    width: 33.33%;
+    box-sizing: border-box;
+    flex-basis: auto;
+`;
+const UserTextBox = styled.div`
+    padding: 2.25rem 0;
+    box-sizing: border-box;
+`;
+const ContentBox = styled.div`
+    box-sizing: border-box;
+`;
+const ContextForm = styled.form`
+    margin-bottom: 1.69rem;
+    box-sizing: border-box;
+`;
 const SubTitlePharagraph = styled.p<{ marginBottom?: string; fontSize?: string; letterSpacing?: string; fontWeight?: string; }>`
     margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-align: center;
     
     margin-bottom: ${(props) => (props.marginBottom || "1.125rem")};
     font-size: ${(props) => (props.fontSize || ".875rem")};
     font-weight: ${(props) => (props.fontWeight || "300")};
     letter-spacing: ${(props) => (props.letterSpacing || "0.03rem")};
 `;
-
-const LoginInputCol = styled.div`
+const DataFormCol = styled.div`
     padding-top: 1.25rem;
+    box-sizing: border-box;
     display: grid;
     grid-template-columns: 1fr;
 `;
-
 const LoginInputBox = styled.div`
     box-sizing: border-box;
     margin-bottom: 1.125rem;
 `;
-
-const LoginInput  = styled(TextField)`
+const LoginInput = styled(TextField)`
     width: 100%;
     height: 70px;
     background: white;
@@ -173,12 +255,25 @@ const LoginInput  = styled(TextField)`
         }
     }
 `;
-
+const LoginButtonBox = styled.div`
+    margin-top: 1.69rem;
+    margin-bottom: 0;
+    box-sizing: border-box;
+`;
+const LoginButtonItem = styled.div`
+    margin: 0 auto;
+    max-width: none;
+    box-sizing: border-box;
+`;
 const LoginButton = styled.button`
     margin: 0;
     padding: 0 1.6rem;
     width: 100%;
     height: 3.125rem;
+    position: relative; 
+    box-sizing: border-box;
+    align-content: center;
+    align-items: center;
     border: 1px solid #8E6C62;
     border-radius: 0;
     background: #8E6C62;
@@ -187,6 +282,8 @@ const LoginButton = styled.button`
     font-weight: 700;
     letter-spacing: .04rem;
     line-height: 1.5;
+    text-transform: lowercase;
+    vertical-align: middle;
     appearance: none;
     cursor: pointer;
 `;
