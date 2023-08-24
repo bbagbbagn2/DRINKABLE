@@ -53,7 +53,7 @@ const HeaderLayout = styled.header`
     align-items: center;
     background: #FFFFFF;
     border-top: 7px solid #8E6C62;
-    border-bottom: 1px solid #DCDCDC; 
+    border-bottom: 1px solid #ECECEC; 
     z-index: 999;
 `;
 
