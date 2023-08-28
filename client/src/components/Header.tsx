@@ -37,7 +37,7 @@ export default function Header(): JSX.Element {
                     <AiOutlineMenu size="27" fill='#8E6C62' />
                 </MobileHeaderMenuButton>
                 <MyPageCol>
-                    <MyPageItem to ="/"><CiSearch size="20" fill='#8E6C62' /></MyPageItem>
+                    <MyPageItem to ="/search"><CiSearch size="20" fill='#8E6C62' /></MyPageItem>
                     <MyPageItem to ="/login"><CiUser size="20" fill='#8E6C62' /></MyPageItem>
                     <MyPageItem to ="/"><CiShoppingCart size="20" fill='#8E6C62' /></MyPageItem>
                 </MyPageCol>

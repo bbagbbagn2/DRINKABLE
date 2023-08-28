@@ -3,17 +3,8 @@ import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 import Header from './components/Header';
 import Footer from './components/Footer';
-import { setScreenSize } from './utils';
 
 export default function Main(): JSX.Element {
-    useEffect(() => {
-        function handleResize() {
-            setScreenSize();
-        }
-        window.addEventListener('resize', handleResize);
-        return () => window.removeEventListener('resize', handleResize);
-    }, []);
-
     return (
         <>
             <Header />

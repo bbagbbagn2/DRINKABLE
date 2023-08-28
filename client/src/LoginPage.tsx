@@ -9,8 +9,8 @@ import axios from 'axios';
 
 export default function Main(): JSX.Element {
 
-    const [username, setUsername] = useState("");
-    const [password, setPassword] = useState("");
+    const [username, setUsername] = React.useState("");
+    const [password, setPassword] = React.useState("");
 
     const onUsernameHandler = (event: any) => {
         setUsername(event.currentTarget.value);
@@ -40,6 +40,14 @@ export default function Main(): JSX.Element {
                     alert("아이디 및 비밀번호를 확인해 주세요.");
                 }
             });
+    };
+
+    const [showPassword, setShowPassword] = React.useState(false);
+
+    const handleClickShowPassword = () => setShowPassword((show) => !show);
+  
+    const handleMouseDownPassword = (event: React.MouseEvent<HTMLButtonElement>) => {
+      event.preventDefault();
     };
 
     useEffect(() => {

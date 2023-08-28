@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Link } from "react-router-dom";
 import styled from 'styled-components';
 import axios from 'axios';
-import { setScreenSize } from '../../utils';
+
 interface Cocktail {
     id: number;
     name: string;
@@ -18,34 +18,23 @@ export default function Classification(): JSX.Element {
         fetchCocktails();
     }, []);
 
-    async function fetchCocktails() {
+    async function fetchCocktails(params?: {flavor?: string; amount?: string; }) {
         try {
-            const response = await axios.get('/info');
-            setCocktail(response.data);
-        } catch (err) {
-            console.log(err);
-        }
-    };
+            let endPoint = '/info';
 
-    async function handleFlavor(selectedFlavor: string) {
-        try {
-            const response = await axios.get('/flavor', { params: { flavor: selectedFlavor } });
+            if(params?.flavor) {
+                endPoint = '/flavor';
+                setFlavor(params.flavor);
+            } else if(params?.amount) {
+                endPoint = '/amount';
+                setAmount(params.amount);
+            }
 
-            setCocktail(response.data);
-            setFlavor(selectedFlavor);
-        } catch (err) {
-            console.log(err);
-        }
-    };
+            const res = await axios.get(endPoint, { params });
 
-    async function handleAmount(selectedAmount: string) {
-        try {
-            const response = await axios.get('/amount', { params: { amount: selectedAmount } });
-
-            setCocktail(response.data);
-            setAmount(selectedAmount);
-        } catch (err) {
-            console.log(err);
+            setCocktail(res.data);
+        } catch(error) {
+            console.log(error);
         }
     };
 
@@ -61,16 +50,16 @@ export default function Classification(): JSX.Element {
                             </ListButton>
                             <ListItemWrapper>
                                 <ListItemUl>
-                                    <ListItemLi className='dry' onClick={() => handleFlavor('dry')}>
+                                    <ListItemLi className='dry' onClick={() => fetchCocktails({ flavor: 'dry' })}>
                                         <ListItemLiLabel>드라이 칵테일</ListItemLiLabel>
                                     </ListItemLi>
-                                    <ListItemLi className='sour' onClick={() => handleFlavor('sour')}>
+                                    <ListItemLi className='sour' onClick={() => fetchCocktails({ flavor: 'sour' })}>
                                         <ListItemLiLabel>사워 칵테일</ListItemLiLabel>
                                     </ListItemLi>
-                                    <ListItemLi className='sweet' onClick={() => handleFlavor('sweet')}>
+                                    <ListItemLi className='sweet' onClick={() => fetchCocktails({ flavor: 'sweet' })}>
                                         <ListItemLiLabel>스위트 칵테일</ListItemLiLabel>
                                     </ListItemLi>
-                                    <ListItemLi className='hot' onClick={() => handleFlavor('hot')}>
+                                    <ListItemLi className='hot' onClick={() => fetchCocktails({ flavor: 'hot' })}>
                                         <ListItemLiLabel>핫 칵테일</ListItemLiLabel>
                                     </ListItemLi>
                                 </ListItemUl>
@@ -84,10 +73,10 @@ export default function Classification(): JSX.Element {
                             </ListButton>
                             <ListItemWrapper>
                                 <ListItemUl>
-                                    <ListItemLi className='long' onClick={() => handleAmount('long')}>
+                                    <ListItemLi className='long' onClick={() => fetchCocktails({ amount: 'long' })}>
                                         <ListItemLiLabel>롱 칵테일</ListItemLiLabel>
                                     </ListItemLi>
-                                    <ListItemLi className='short' onClick={() => handleAmount('short')}>
+                                    <ListItemLi className='short' onClick={() => fetchCocktails({ amount: 'short' })}>
                                         <ListItemLiLabel>숏 칵테일</ListItemLiLabel>
                                     </ListItemLi>
                                 </ListItemUl>
