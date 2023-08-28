@@ -46,7 +46,9 @@ export default function Main(): JSX.Element {
         function handleResize() {
             setScreenSize();
         }
+
         window.addEventListener('resize', handleResize);
+        
         return () => window.removeEventListener('resize', handleResize);
     }, []);
 
