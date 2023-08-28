@@ -1,12 +1,47 @@
-import React, { useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 import Header from './components/Header';
 import Footer from './components/Footer';
 import { setScreenSize } from './utils';
 import { TextField } from '@material-ui/core';
+import axios from 'axios';
 
 export default function Main(): JSX.Element {
+
+    const [username, setUsername] = useState("");
+    const [password, setPassword] = useState("");
+
+    const onUsernameHandler = (event: any) => {
+        setUsername(event.currentTarget.value);
+    };
+    const onPasswordHandler = (event: any) => {
+        setPassword(event.currentTarget.value);
+    }
+
+    const onKeyPress = (e: any) => {
+        if (e.key === 'Enter')
+            onSubmit();
+    }
+
+    const onSubmit = () => {
+        if (!username || !password) {
+            alert("아이디 및 비밀번호를 확인해 주세요.");
+        }
+
+        axios.post('/signin', {
+            username: username,
+            password: password
+        })
+            .then((res) => {
+                if (res.data === "success") {
+                    window.location.href = '/';
+                } else {
+                    alert("아이디 및 비밀번호를 확인해 주세요.");
+                }
+            });
+    };
+
     useEffect(() => {
         function handleResize() {
             setScreenSize();
@@ -42,23 +77,31 @@ export default function Main(): JSX.Element {
                             <UserTextBox>
                                 <ContentBox>
                                     <ContextForm>
-                                <SubTitlePharagraph fontSize='1rem' fontWeight="700" marginBottom='0.0625rem' letterSpacing='0.0625rem'>DRINKABLE을 찾아주셔서 감사합니다.</SubTitlePharagraph>
-                                <SubTitlePharagraph>이메일 혹은 휴대폰 번호와 비밀번호로 로그인</SubTitlePharagraph>
-                            <DataFormCol>
-                                <LoginInputBox>
-                                    <LoginInput variant="standard" label="이메일/휴대폰 번호" />
-                                </LoginInputBox>
-                                <LoginInputBox>
-                                    <LoginInput variant="standard" type="password" label="비밀번호" />
-                                </LoginInputBox>
-                            <LoginButtonBox>
-                                <LoginButtonItem>
-                                <LoginButton>로그인</LoginButton>
-                                </LoginButtonItem>
-                            </LoginButtonBox>
-                            </DataFormCol>
-                            </ContextForm>
-                            </ContentBox>
+                                        <SubTitlePharagraph fontSize='1rem' fontWeight="700" marginBottom='0.0625rem' letterSpacing='0.0625rem'>DRINKABLE을 찾아주셔서 감사합니다.</SubTitlePharagraph>
+                                        <SubTitlePharagraph>이메일 혹은 휴대폰 번호와 비밀번호로 로그인</SubTitlePharagraph>
+                                        <DataFormCol>
+                                            <LoginInputBox>
+                                                <LoginInput
+                                                    variant="standard"
+                                                    label="이메일/휴대폰 번호"
+                                                    onChange={onUsernameHandler} />
+                                            </LoginInputBox>
+                                            <LoginInputBox>
+                                                <LoginInput
+                                                    variant="standard"
+                                                    type="password"
+                                                    label="비밀번호"
+                                                    onChange={onPasswordHandler}
+                                                    onKeyPress={onKeyPress} />
+                                            </LoginInputBox>
+                                            <LoginButtonBox>
+                                                <LoginButtonItem>
+                                                    <LoginButton onClick={onSubmit}>로그인</LoginButton>
+                                                </LoginButtonItem>
+                                            </LoginButtonBox>
+                                        </DataFormCol>
+                                    </ContextForm>
+                                </ContentBox>
                             </UserTextBox>
                         </UserContentBox>
                     </LoginPageBox>
@@ -71,7 +114,7 @@ export default function Main(): JSX.Element {
 
 const LoginPageLayout = styled.div`
     padding-top: 73px;
-    min-height: calc(100vh - 8.75rem);
+    min-height: calc(var(--vh) * 100);
     position: relative;
     display: block;
     box-sizing: border-box;

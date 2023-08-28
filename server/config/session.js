@@ -1,6 +1,6 @@
-const sql_pool = require('./db.js')
-const session = require('express-session')
-const MySQLStore = require('express-mysql-session')(session)
+const sql_pool = require('./db.js');
+const session = require('express-session');
+const MySQLStore = require('express-mysql-session')(session);
 
 // session 옵션
 const sessionStore_options = {
@@ -21,6 +21,6 @@ const session_options = {
     saveUninitialized: false
 }
 
-const session_stream = session(session_options)
+const session_stream = session(session_options);
 
-module.exports = session_stream
+module.exports = session_stream;
