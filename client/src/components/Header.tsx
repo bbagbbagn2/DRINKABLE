@@ -10,7 +10,6 @@ export default function Header(): JSX.Element {
     const [sign, setSign] = useState(null);
 
     useEffect(() => {
-        console.log(sign);
         axios.post('/get_auth')
         .then((res) => {
             let data = res.data;
