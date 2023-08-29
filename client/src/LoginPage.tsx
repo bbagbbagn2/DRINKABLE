@@ -9,12 +9,12 @@ import axios from 'axios';
 
 export default function Main(): JSX.Element {
 
-    const [username, setUsername] = React.useState("");
-    const [password, setPassword] = React.useState("");
+    const [id, setId] = useState("");
+    const [password, setPassword] = useState("");
 
-    const onUsernameHandler = (event: any) => {
-        setUsername(event.currentTarget.value);
-    };
+    const onIdHandler = (event: any) => {
+        setId(event.currentTarget.value);
+    }
     const onPasswordHandler = (event: any) => {
         setPassword(event.currentTarget.value);
     }
@@ -25,13 +25,13 @@ export default function Main(): JSX.Element {
     }
 
     const onSubmit = () => {
-        if (!username || !password) {
+        if (!id || !password) {
             alert("아이디 및 비밀번호를 확인해 주세요.");
         }
 
-        axios.post('/signin', {
-            username: username,
-            password: password
+        axios.post('/login', {
+            id: id,
+            pwd: password
         })
             .then((res) => {
                 if (res.data === "success") {
@@ -40,15 +40,7 @@ export default function Main(): JSX.Element {
                     alert("아이디 및 비밀번호를 확인해 주세요.");
                 }
             });
-    };
-
-    const [showPassword, setShowPassword] = React.useState(false);
-
-    const handleClickShowPassword = () => setShowPassword((show) => !show);
-  
-    const handleMouseDownPassword = (event: React.MouseEvent<HTMLButtonElement>) => {
-      event.preventDefault();
-    };
+    }
 
     useEffect(() => {
         function handleResize() {
@@ -94,7 +86,7 @@ export default function Main(): JSX.Element {
                                                 <LoginInput
                                                     variant="standard"
                                                     label="이메일/휴대폰 번호"
-                                                    onChange={onUsernameHandler} />
+                                                    onChange={onIdHandler} />
                                             </LoginInputBox>
                                             <LoginInputBox>
                                                 <LoginInput

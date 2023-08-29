@@ -10,7 +10,7 @@ const sessionStore_options = {
     createDatabaseTable : true,         // 세션 데이터베이스 테이블 생성 여부, 존재하지 않는 경우
 }
 
-const sessionStore = new MySQLStore(sessionStore_options, sql_pool)
+const sessionStore = new MySQLStore(sessionStore_options, sql_pool);
 //sessionStore.close()  //서버 실행시 close() 할 일이 없음
 
 const session_options = {

@@ -2,23 +2,22 @@ const express = require('express');
 const router = express.Router();
 const sql_pool = require('./config/db');
 
-router.post('/signin', (req, res) => {
-    const username = req.body.username;
+router.post('/login', (req, res) => {
+    const id = req.body.id;
     const password = req.body.pwd;
 
-    if (!username || !password) {
-        return res.send("void");
+    if (!id || !password) {
+        res.send("void");
     }
 
-    const sql = 'SELECT * FROM user WHERE username = ? AND password = ?'
+    const sql = 'SELECT * FROM user WHERE id = ? AND password = ?';
 
-    sql_pool.query(sql, [username, password], (error, results, fields) => {
+    sql_pool.query(sql, [id, password], (error, results, fields) => {
         if (error) {
-            console.error("Error executing login query:", error);
-            return res.send("error");
+            throw error;
         }
         if (results.length > 0) {
-            req.session.sign = username;
+            req.session.sign = id;
             res.send("success");
         } else {
             res.send("fail");
@@ -29,12 +28,23 @@ router.post('/signin', (req, res) => {
 router.post('/logout', (req, res) => {
     req.session.destroy((error) => {
         if (error) {
-            console.error("Error destroying session:", error);
-            return res.send("error");
+            throw error;
         } else {
             res.send("success");
         }
     });
 });
+
+router.post('/get_auth', (req,res) => {
+    const sql = 'SELECT * FROM user where id = ?';
+
+    sql_pool.query(sql, [req.session.sign], (error, results) => {
+        if (error) {
+            throw error;
+        } else {
+            res.send(results);
+        }
+    })
+})
 
 module.exports = router;

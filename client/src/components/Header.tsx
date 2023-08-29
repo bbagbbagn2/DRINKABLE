@@ -1,11 +1,23 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 import Logo from './Logo';
 import { AiOutlineMenu } from "react-icons/ai";
 import { CiSearch, CiShoppingCart, CiUser } from "react-icons/ci";
+import axios from 'axios';
 
 export default function Header(): JSX.Element {
+    const [sign, setSign] = useState(null);
+
+    useEffect(() => {
+        console.log(sign);
+        axios.post('/get_auth')
+        .then((res) => {
+            let data = res.data;
+
+            setSign(data);
+        })
+    })
 
     const [scrollPosition, setScrollPosition] = useState(0);
 
