@@ -3,7 +3,6 @@ import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 import Header from './components/Header';
 import Footer from './components/Footer';
-import { setScreenSize } from './utils';
 import { TextField } from '@material-ui/core';
 import axios from 'axios';
 
@@ -11,51 +10,41 @@ export default function Main(): JSX.Element {
 
     const [id, setId] = useState("");
     const [password, setPassword] = useState("");
+    const LOGIN_URL = '/login';
 
-    const onIdHandler = (event: any) => {
-        setId(event.currentTarget.value);
-    }
-    const onPasswordHandler = (event: any) => {
-        setPassword(event.currentTarget.value);
-    }
+    const handleSubmit = async (e: any) => {
+        e.preventDefault();
 
-    const onKeyPress = (e: any) => {
-        if (e.key === 'Enter')
-            onSubmit();
-    }
-
-    const onSubmit = () => {
-        if (!id || !password) {
-            alert("아이디 및 비밀번호를 확인해 주세요.");
-        }
-
-        axios.post('/login', {
-            id: id,
-            pwd: password
-        })
-            .then((res) => {
-                if (res.data === "success") {
-                    window.location.href = '/';
-                } else {
-                    alert("아이디 및 비밀번호를 확인해 주세요.");
-                }
+        try {
+            const response = await axios.post(LOGIN_URL, {
+                id: id,
+                password: password
             });
-    }
 
-    useEffect(() => {
-        function handleResize() {
-            setScreenSize();
+            if (response.data === "success") {
+                window.location.href = '/';
+            } else {
+                alert("아이디 및 비밀번호를 확인해주세요.");
+            }
+        } catch (error) {
+            alert("아이디 및 비밀번호를 확인해주세요.");
         }
+    };
 
-        window.addEventListener('resize', handleResize);
-        
-        return () => window.removeEventListener('resize', handleResize);
-    }, []);
+    const [currentButton, setCurrentButton] = useState<boolean>(true);
+
+    const handleButtonClick = (isLogin: boolean) => {
+        setCurrentButton(isLogin);
+    }
+   
+    useEffect(() => {
+        console.log(currentButton); // 상태 변경 후 값 출력
+    }, [currentButton]);
 
     return (
         <>
             <Header />
-            <LoginPageLayout>
+            <LoginPageLayout onSubmit={handleSubmit}>
                 <LoginPageCol>
                     <LoginPageBox>
                         <MyPageTitleBox>
@@ -67,10 +56,22 @@ export default function Main(): JSX.Element {
                             <LoginResisterNav>
                                 <LoginResisterList>
                                     <LoginResisterItem>
-                                        <LoginResisterLink to="#">로그인</LoginResisterLink>
+                                        <LoginResisterLink
+                                            to="javascript:void(0)"
+                                            role="button"
+                                            aria-current={currentButton === true ? 'true' : 'false'}
+                                            onClick={() => handleButtonClick(true)}>
+                                            로그인
+                                        </LoginResisterLink>
                                     </LoginResisterItem>
                                     <LoginResisterItem>
-                                        <LoginResisterLink to="#">등록하기</LoginResisterLink>
+                                        <LoginResisterLink
+                                            to="javascript:void(0)"
+                                            role="button"
+                                            aria-current={currentButton === false ? 'true' : 'false'}
+                                            onClick={() => handleButtonClick(false)}>
+                                            등록하기
+                                        </LoginResisterLink>
                                     </LoginResisterItem>
                                 </LoginResisterList>
                             </LoginResisterNav>
@@ -86,19 +87,20 @@ export default function Main(): JSX.Element {
                                                 <LoginInput
                                                     variant="standard"
                                                     label="이메일/휴대폰 번호"
-                                                    onChange={onIdHandler} />
+                                                    value={id}
+                                                    onChange={(e) => setId(e.target.value)} />
                                             </LoginInputBox>
                                             <LoginInputBox>
                                                 <LoginInput
                                                     variant="standard"
                                                     type="password"
                                                     label="비밀번호"
-                                                    onChange={onPasswordHandler}
-                                                    onKeyPress={onKeyPress} />
+                                                    value={password}
+                                                    onChange={(e) => setPassword(e.target.value)} />
                                             </LoginInputBox>
                                             <LoginButtonBox>
                                                 <LoginButtonItem>
-                                                    <LoginButton onClick={onSubmit}>로그인</LoginButton>
+                                                    <LoginButton type="submit">로그인</LoginButton>
                                                 </LoginButtonItem>
                                             </LoginButtonBox>
                                         </DataFormCol>
@@ -116,7 +118,6 @@ export default function Main(): JSX.Element {
 
 const LoginPageLayout = styled.div`
     padding-top: 73px;
-    min-height: calc(var(--vh) * 100);
     position: relative;
     display: block;
     box-sizing: border-box;
@@ -124,7 +125,7 @@ const LoginPageLayout = styled.div`
     font-size: .875rem;
     font-weight: 300;
     line-height: 1.5;
-    letter-spacing: .03rem;
+    letter-spacing: .03rem; 
 `;
 
 const LoginPageCol = styled.div`
@@ -192,17 +193,19 @@ const LoginResisterBox = styled.div`
     
 `;
 const LoginResisterNav = styled.nav`
-    box-sizing: border-box;
     border-bottom: 1px solid #ECECEC;
 `;
 const LoginResisterList = styled.ul`
     margin: 0 auto;
-    box-sizing: border-box;
-    display: grid;
-    grid-auto-columns: 1fr;
-    place-content: center;
+    padding: 0;
+    display: flex;
+    justify-content: center;
     list-style: none;
-    padding-inline-start: 0;
+
+    @media screen and (min-width: 60.06rem) {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
 `;
 const LoginResisterItem = styled.li`
     margin: 0;
@@ -210,28 +213,34 @@ const LoginResisterItem = styled.li`
     width: auto;
     box-sizing: border-box;
     flex: 0 0 50%;
-    grid-row: 1;
-    justify-self: stretch;
+    s
+    @media screen and (min-width: 60.06rem) {
+        grid-row: 1;
+        justify-self: stretch;
+    }
 `;
 const LoginResisterLink = styled(Link)`
-    padding: 0 1.6rem;
+    position: relative;
+    padding: 0 1.56rem;
     width: 100%;
     height: 3.125rem;
-    box-sizing: border-box;
-    position: relative;
     display: inline-flex;
-    place-content: center;
     align-items: center;
+    place-content: center;
+    border-width: 0;
     border-radius: 0;
-    font-size: 1rem;
+    border-bottom: 3px solid ${(props) => (props['aria-current'] === 'true' ? "#1D1D1D" : "#FFF")};
     font-weight: 700;
     letter-spacing: .05rem;
     text-align: center;
     vertical-align: middle;
     white-space: nowrap;
 
-    @media (max-width: 700px) {
-        font-size: .7rem;
+    @media screen and (min-width: 60.06rem) {
+        font-size: .938rem;
+        letter-spacing: .05rem;
+        line-height: 1.5;
+        cursor: pointer;
     }
 `;
 

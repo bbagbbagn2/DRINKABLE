@@ -8,17 +8,30 @@ import axios from 'axios';
 
 export default function Header(): JSX.Element {
     const [sign, setSign] = useState(null);
+    const [profileData, setProfileData] = useState({ username: "admin_user" });
+    const GET_AUTH_URL = '/get_auth';
+    const GET_PROFILE_URL = '/get_profile';
+
+    const fetchData = async () => {
+        try {
+            const authResponse = await axios.post(GET_AUTH_URL);
+            const data = authResponse.data;
+            setSign(data);
+
+            const profileResponse = await axios.post(GET_PROFILE_URL, {
+                user: data
+            });
+            setProfileData(profileResponse.data[0]);
+
+            console.log(data);
+        } catch (error) {
+            console.error(error);
+        }
+    }
 
     useEffect(() => {
-        axios.post('/get_auth')
-        .then((res) => {
-            let data = res.data;
-
-            setSign(data);
-        })
-    })
-
-    const [scrollPosition, setScrollPosition] = useState(0);
+        fetchData();
+    }, []);
 
     const handleScroll = (height: number) => {
         const targetHeight = height;
@@ -26,31 +39,26 @@ export default function Header(): JSX.Element {
             top: targetHeight,
             behavior: 'smooth',
         });
-        setScrollPosition(targetHeight);
     };
-
-    const handleHome = () => { handleScroll(0) };
-
-    const handleAbout = () => { handleScroll(680) };
 
     return (
         <HeaderLayout>
             <HeaderCol>
-                <div onClick={handleHome}>
+                <div onClick={() => handleScroll(0)}>
                     <Logo />
                 </div>
                 <HeaderList>
-                    <HeaderItem to="/" onClick={handleHome}>HOME</HeaderItem>
-                    <HeaderItem to="/" onClick={handleAbout}>ABOUT</HeaderItem>
+                    <HeaderItem to="/" onClick={() => handleScroll(0)}>HOME</HeaderItem>
+                    <HeaderItem to="/" onClick={() => handleScroll(530)}>ABOUT</HeaderItem>
                     <HeaderItem to="/classfication">CLASSFICATION</HeaderItem>
                 </HeaderList>
                 <MobileHeaderMenuButton>
                     <AiOutlineMenu size="27" fill='#8E6C62' />
                 </MobileHeaderMenuButton>
                 <MyPageCol>
-                    <MyPageItem to ="/search"><CiSearch size="20" fill='#8E6C62' /></MyPageItem>
-                    <MyPageItem to ="/login"><CiUser size="20" fill='#8E6C62' /></MyPageItem>
-                    <MyPageItem to ="/"><CiShoppingCart size="20" fill='#8E6C62' /></MyPageItem>
+                    <MyPageItem to="/search"><CiSearch size="20" fill='#8E6C62' /></MyPageItem>
+                    <MyPageItem to="/login"><CiUser size="20" fill='#8E6C62' /></MyPageItem>
+                    <MyPageItem to="/"><CiShoppingCart size="20" fill='#8E6C62' /></MyPageItem>
                 </MyPageCol>
             </HeaderCol>
         </HeaderLayout>

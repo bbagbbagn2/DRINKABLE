@@ -2,9 +2,27 @@ const express = require('express');
 const router = express.Router();
 const sql_pool = require('./config/db');
 
+router.post('/resister', (req, res) => {
+    const { id, password, username } = req.body;
+
+    if (id && password && username) {
+        const sql = 'INSERT INTO user(id, password, username) VALUES(?, ?, ?)';
+
+        sql_pool.query(sql, [id, password, username], (error, results) => {
+            if (error) {
+                console.error(error);
+                res.send("fail");
+            } else {
+                res.send("success");
+            }
+        });
+    } else {
+        res.send("void");
+    }
+});
+
 router.post('/login', (req, res) => {
-    const id = req.body.id;
-    const password = req.body.pwd;
+    const { id, password } = req.body;
 
     if (!id || !password) {
         res.send("void");
@@ -14,13 +32,15 @@ router.post('/login', (req, res) => {
 
     sql_pool.query(sql, [id, password], (error, results, fields) => {
         if (error) {
-            throw error;
+            console.error(error);
+            res.status(500).send("Internal Server Error");
+            return;
         }
         if (results.length > 0) {
-            req.session.sign = id;
-            res.send("success");
+            req.session.user = results[0];
+            res.status(200).send("success");
         } else {
-            res.send("fail");
+            res.status(401).send("fail");
         }
     });
 });
@@ -44,7 +64,22 @@ router.post('/get_auth', (req,res) => {
         } else {
             res.send(results);
         }
-    })
-})
+    });
+});
+
+router.post('/get_profile', (req, res) => {
+    const user = req.body.user;
+
+    const sql = 'SELECT * FROM user where id = ?';
+
+    sql_pool.query(sql, [user], (error, results) => {
+        if (error) {
+            throw error;
+        } else {
+            res.send(results);
+        }
+    });
+});
+
 
 module.exports = router;
