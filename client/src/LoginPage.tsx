@@ -10,15 +10,16 @@ export default function Main(): JSX.Element {
 
     const [id, setId] = useState<string>("");
     const [password, setPassword] = useState<string>("");
+    const LOGIN_URL = '/login';
 
     const onIdHandler = (event: any) => { setId(event.currentTarget.value); }
     const onPasswordHandler = (event: any) => { setPassword(event.currentTarget.value); }
 
     const onSubmit = () => {
         if (id && password) {
-            axios.post('/login', {
+            axios.post(LOGIN_URL, {
                 id: id,
-                pw: password
+                pwd: password
             })
                 .then((res) => {
                     if (res.data === "success")
@@ -31,14 +32,15 @@ export default function Main(): JSX.Element {
         }
     }
 
+
     const [currentButton, setCurrentButton] = useState<boolean>(true);
 
-    const handleButtonClick = (isLogin: boolean) => {
-        setCurrentButton(isLogin);
+    const handleButtonClick = (isLoggedIn: boolean) => {
+        setCurrentButton(isLoggedIn);
     }
    
     useEffect(() => {
-        console.log(currentButton); 
+        console.log(currentButton); // 상태 변경 후 값 출력
     }, [currentButton]);
 
     return (
@@ -58,6 +60,7 @@ export default function Main(): JSX.Element {
                                     <LoginResisterItem>
                                         <LoginResisterLink
                                             to="/login"
+                                            role="button"
                                             aria-current={currentButton === true ? 'true' : 'false'}
                                             onClick={() => handleButtonClick(true)}>
                                             로그인
@@ -66,6 +69,7 @@ export default function Main(): JSX.Element {
                                     <LoginResisterItem>
                                         <LoginResisterLink
                                             to="/login"
+                                            role="button"
                                             aria-current={currentButton === false ? 'true' : 'false'}
                                             onClick={() => handleButtonClick(false)}>
                                             등록하기
@@ -209,7 +213,7 @@ const LoginResisterItem = styled.li`
     width: auto;
     box-sizing: border-box;
     flex: 0 0 50%;
-
+    s
     @media screen and (min-width: 60.06rem) {
         grid-row: 1;
         justify-self: stretch;
