@@ -9,17 +9,15 @@ const GlobalStyle = createGlobalStyle`
   }
   
   body {
+    position: relative;
     padding: 0;
     margin: 0;
+    overflow-y: scroll;
     color: #333;
     font-size: .875rem;
     font-weight: 300;
-    letter-spacing: .00625rem;
+    letter-spacing: .031rem;
     line-height: 1.5;
-    -ms-user-select: none;
-    -moz-user-select: -moz-none;
-    -webkit-user-select: none;
-    -khtml-user-select: none;
     user-select: none;
 
     @media screen and (max-width: 37.5rem) {
@@ -30,6 +28,10 @@ const GlobalStyle = createGlobalStyle`
   a {
     text-decoration: none;
     color: #000000;
+  }
+
+  ul {
+    list-style: none;
   }
 `;
 

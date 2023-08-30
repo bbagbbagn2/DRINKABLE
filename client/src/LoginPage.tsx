@@ -8,28 +8,28 @@ import axios from 'axios';
 
 export default function Main(): JSX.Element {
 
-    const [id, setId] = useState("");
-    const [password, setPassword] = useState("");
-    const LOGIN_URL = '/login';
+    const [id, setId] = useState<string>("");
+    const [password, setPassword] = useState<string>("");
 
-    const handleSubmit = async (e: React.FormEvent) => {
-        e.preventDefault();
+    const onIdHandler = (event: any) => { setId(event.currentTarget.value); }
+    const onPasswordHandler = (event: any) => { setPassword(event.currentTarget.value); }
 
-        try {
-            const response = await axios.post(LOGIN_URL, {
+    const onSubmit = () => {
+        if (id && password) {
+            axios.post('/login', {
                 id: id,
-                password: password
-            });
-
-            if (response.data === "success") {
-                window.location.href = '/';
-            } else {
-                alert("아이디 및 비밀번호를 확인해주세요.");
-            }
-        } catch (error) {
-            alert("아이디 및 비밀번호를 확인해주세요.");
+                pw: password
+            })
+                .then((res) => {
+                    if (res.data === "success")
+                        window.location.href = '/';
+                    else //로그인 실패할 시 Error
+                        alert("아이디와 비밀번호를 확인해 주십시오.");
+                })
+        } else {
+            alert("아이디와 비밀번호를 확인해 주십시오.");
         }
-    };
+    }
 
     const [currentButton, setCurrentButton] = useState<boolean>(true);
 
@@ -38,13 +38,13 @@ export default function Main(): JSX.Element {
     }
    
     useEffect(() => {
-        console.log(currentButton); // 상태 변경 후 값 출력
+        console.log(currentButton); 
     }, [currentButton]);
 
     return (
         <>
             <Header />
-            <LoginPageLayout onSubmit={handleSubmit}>
+            <LoginPageLayout>
                 <LoginPageCol>
                     <LoginPageBox>
                         <MyPageTitleBox>
@@ -58,7 +58,6 @@ export default function Main(): JSX.Element {
                                     <LoginResisterItem>
                                         <LoginResisterLink
                                             to="/login"
-                                            role="button"
                                             aria-current={currentButton === true ? 'true' : 'false'}
                                             onClick={() => handleButtonClick(true)}>
                                             로그인
@@ -67,7 +66,6 @@ export default function Main(): JSX.Element {
                                     <LoginResisterItem>
                                         <LoginResisterLink
                                             to="/login"
-                                            role="button"
                                             aria-current={currentButton === false ? 'true' : 'false'}
                                             onClick={() => handleButtonClick(false)}>
                                             등록하기
@@ -81,26 +79,24 @@ export default function Main(): JSX.Element {
                                 <ContentBox>
                                     <ContextForm>
                                         <SubTitlePharagraph fontSize='1rem' fontWeight="700" marginBottom='0.0625rem' letterSpacing='0.0625rem'>DRINKABLE을 찾아주셔서 감사합니다.</SubTitlePharagraph>
-                                        <SubTitlePharagraph>아이디와 비밀번호로 로그인</SubTitlePharagraph>
+                                        <SubTitlePharagraph>이메일과 비밀번호로 로그인</SubTitlePharagraph>
                                         <DataFormCol>
                                             <LoginInputBox>
                                                 <LoginInput
                                                     variant="standard"
                                                     label="아이디"
-                                                    value={id}
-                                                    onChange={(e) => setId(e.target.value)} />
+                                                    onChange={onIdHandler} />
                                             </LoginInputBox>
                                             <LoginInputBox>
                                                 <LoginInput
                                                     variant="standard"
                                                     type="password"
                                                     label="비밀번호"
-                                                    value={password}
-                                                    onChange={(e) => setPassword(e.target.value)} />
+                                                    onChange={onPasswordHandler} />
                                             </LoginInputBox>
                                             <LoginButtonBox>
                                                 <LoginButtonItem>
-                                                    <LoginButton type="submit">로그인</LoginButton>
+                                                    <LoginButton type="submit" onClick={onSubmit}>로그인</LoginButton>
                                                 </LoginButtonItem>
                                             </LoginButtonBox>
                                         </DataFormCol>
@@ -119,97 +115,54 @@ export default function Main(): JSX.Element {
 const LoginPageLayout = styled.div`
     padding-top: 73px;
     position: relative;
-    width: 100%;
     display: block;
+    box-sizing: border-box;
     background: #FFFFFF;
     font-size: .875rem;
     font-weight: 300;
     line-height: 1.5;
-    letter-spacing: .03rem;
+    letter-spacing: .03rem; 
 `;
 
 const LoginPageCol = styled.div`
-    padding-left: 5.333%;
-    padding-right: 5.333%; 
+    padding: 0 8%;
     margin: 0 auto;
     max-width: 83.875rem;
-    box-sizing: initial;
+    display: block;
     overflow: hidden;
-
-    @media screen and (min-width: 37.563rem) {
-        padding-top: 0; 
-        padding-left: 8.056%;
-        padding-right: 8.056%; 
-        margin: 0 auto;
-        max-width: 8.875rem;
-        overflow: hidden;
-    }
-
-    @media screen and (min-width: 37.563rem) and (min-width: 60.06rem) {
-        padding-left: 8.056%;
-        padding-right: 8.056%; 
-        margin: 0 auto;
-        max-width: 83.875rem;
-        overflow: hidden;
-    }
-
-    @media screen and (min-width: 37.563rem) and (min-width: 37.563rem) {
-        padding-left: 8.056%;
-        padding-right: 8.056%; 
-        margin: 0 auto;
-        max-width: 83.875rem;
-        overflow: hidden;
-    }
 `;
 
 const LoginPageBox = styled.div`
-    margin-left: -2.533vw;
-    margin-right: -2.533vw;
+    align-items: stretch;
     display: flex;
     flex-wrap: wrap;
-    align-items: stretch;
-
-    @media screen and (min-width: 37.563rem) {
-        margin-left: -0.972vw;
-        margin-right: -0.972vw;
-        display: flex;
-        flex-wrap: wrap;
-        align-items: stretch;
-        justify-content: space-between;
-    }
-
-    @media screen and (min-width: 37.563rem) and (min-width: 37.563rem) {
-        margin-left: -0.972vw;
-        margin-right: -0.972vw;
-        display: flex;
-        flex-wrap: wrap;
-        align-items: stretch;
-    }
-
-    @media screen and (min-width: 37.563rem) and (min-width: 60.06rem) {
-        margin-left: -0.972vw;
-        margin-right: -0.972vw;
-        display: flex;
-        flex-wrap: wrap;
-        align-items: stretch;
-        justify-content: space-between;
-    }
+    box-sizing: border-box;
+    justify-content: space-between;
+    margin-left: -0.97vw;
+    margin-right: -0.97vw; 
 `;
 
 const MyPageTitleBox = styled.div`
-    padding: 0 2.533vw;    
-    margin: 4.5rem 8.3% 2.8125rem 8.3%;
-    width: 100%;
+    padding: 0 1%;    
+    margin-top: 4.5rem;
+    margin-bottom: 3rem;
+    margin-left: 8.3%;
+    margin-right: 8.3%;
+    width: 83.3%;
+    box-sizing: border-box;
     display: block;
     text-align: center;
     flex-basis: auto;
 
-    @media screen and (max-width: 37.5rem) {
-        margin: 14.4vw 0 2.25rem 0; 
+    @media (max-width: 700px) {
+        margin-top: 14.4vw;
+        margin-bottom: 2.25rem;
     }
 `;
 
-const TitleContextBox = styled.div``;
+const TitleContextBox = styled.div`
+    box-sizing: border-box;
+`;
 
 const MypageTitleParagraph = styled.h1`
     box-sizing: border-box;
@@ -219,9 +172,7 @@ const MypageTitleParagraph = styled.h1`
     line-height: 1.225;
     text-transform: lowercase;
 
-    @media screen and (max-width: 37.5rem) {
-        margin: 0;
-        padding: 0;
+    @media (max-width: 700px) {
         font-size: 1.5625rem;
         line-height: 1.24;
         letter-spacing: normal;
@@ -235,13 +186,7 @@ const LoginResisterBox = styled.div`
     width: auto;
     box-sizing: border-box;
     flex-basis: auto;
-
-    @media screen and (max-width: 37.5rem) {
-        margin: 0;
-        padding: 0 2.533vw;
-        width: 100%;
-        letter-spacing: .0313rem;
-    }
+    
 `;
 const LoginResisterNav = styled.nav`
     border-bottom: 1px solid #ECECEC;
@@ -264,7 +209,7 @@ const LoginResisterItem = styled.li`
     width: auto;
     box-sizing: border-box;
     flex: 0 0 50%;
-    s
+
     @media screen and (min-width: 60.06rem) {
         grid-row: 1;
         justify-self: stretch;
@@ -303,32 +248,22 @@ const UserContentBox = styled.div`
     width: 33.33%;
     box-sizing: border-box;
     flex-basis: auto;
-
-    @media screen and (max-width: 37.5rem) {
-        margin: 0;
-        padding: 0 2.533vw;
-        width: 100%;
-    }
 `;
 const UserTextBox = styled.div`
     padding: 2.25rem 0;
-
-    @media screen and (max-width: 37.5rem) {
-        padding: 1.125rem 0;
-    }
+    box-sizing: border-box;
 `;
-const ContentBox = styled.div``;
-
+const ContentBox = styled.div`
+    box-sizing: border-box;
+`;
 const ContextForm = styled.form`
     margin-bottom: 1.69rem;
-
-    @media screen and (max-width: 37.5rem) {
-        margin: 1.125rem 0 1.689rem 0;
-    }
+    box-sizing: border-box;
 `;
 const SubTitlePharagraph = styled.p<{ marginBottom?: string; fontSize?: string; letterSpacing?: string; fontWeight?: string; }>`
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
     text-align: center;
     
     margin-bottom: ${(props) => (props.marginBottom || "1.125rem")};
@@ -336,16 +271,11 @@ const SubTitlePharagraph = styled.p<{ marginBottom?: string; fontSize?: string; 
     font-weight: ${(props) => (props.fontWeight || "300")};
     letter-spacing: ${(props) => (props.letterSpacing || "0.03rem")};
 `;
-
 const DataFormCol = styled.div`
     padding-top: 1.25rem;
+    box-sizing: border-box;
     display: grid;
     grid-template-columns: 1fr;
-
-    
-    @media screen and (max-width: 37.5rem) {
-        padding: 0;
-    }
 `;
 const LoginInputBox = styled.div`
     box-sizing: border-box;

@@ -14,6 +14,7 @@ export default function Footer(): JSX.Element {
 
 
 const FooterLayout = styled.footer`
+    padding: 0;
     display: grid;
     place-items: center;    
     margin-top: 200px;

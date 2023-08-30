@@ -1,23 +1,29 @@
 import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 import Header from './components/Header';
 import Footer from './components/Footer';
 import axios from 'axios';
 
 export default function Main(): JSX.Element {
-    const [sign,setSign] = useState(null);
-    const [profileData, setProfileData] = useState<{username: string}>({username: ""});
+    const [sign, setSign] = useState(null);
+    const [profileData, setProfileData] = useState({ username: ""});
+    const GET_AUTH_URL = '/get_auth';
+    const GET_USER_URL = '/get_user';
+    const LOGOUT_URL = '/logout';
 
     useEffect(() => {
         const fetchData = async () => {
             try {
                 const [authResponse, userResponse] = await Promise.all([
-                    axios.post('/get_auth'),
-                    axios.post('/get_user')
+                    axios.post(GET_AUTH_URL),
+                    axios.post(GET_USER_URL)
                 ]);
 
                 setSign(authResponse.data);
-                setProfileData(userResponse.data[0]);
+                if (userResponse.data && userResponse.data.length > 0) {
+                    setProfileData(userResponse.data[0]);
+                }
 
                 console.log(authResponse.data);
                 console.log(userResponse.data[0]);
@@ -29,18 +35,48 @@ export default function Main(): JSX.Element {
         fetchData();
     }, []);
 
+    const logoutUser = async () => {
+        try {
+            const response = await axios.post(LOGOUT_URL);
+
+            if (response.status === 200) {
+                const responseData = response.data;
+                console.log(responseData);
+
+            } else {
+                console.error('Logout failed.');
+            }
+        } catch (error) {
+            console.error('An error occurred during logout:', error);
+        }
+    };
+
     return (
         <>
             <Header />
             <MyAccountLayout>
-                    <MyAccountHomeBox>
-                        <WelcomeSection>
-                            <WelcomSectionH1>
-                                <WelcomeSectionSpan>환영합니다,</WelcomeSectionSpan>
-                                {profileData.username}님
-                            </WelcomSectionH1>
-                        </WelcomeSection>
-                    </MyAccountHomeBox>
+                <MyAccountHomeBox>
+                    <WelcomeSection>
+                        <WelcomSectionH1>
+                            <WelcomeSectionSpan>환영합니다,</WelcomeSectionSpan>
+                            {profileData.username}님
+                        </WelcomSectionH1>
+                    </WelcomeSection>
+                    <MyAccBox>
+                        <MyAccDetailsSection>
+                            <MyAccDetailsH2>나의 정보</MyAccDetailsH2>
+                            <MyAccDetailsList>
+                                <MyAccDetailsItem>
+                                    <LogOutLinkBox>
+                                        <LogOutLink to="/" onClick={logoutUser}>
+                                            <LogOutSpan>로그아웃</LogOutSpan>
+                                        </LogOutLink>
+                                    </LogOutLinkBox>
+                                </MyAccDetailsItem>
+                            </MyAccDetailsList>
+                        </MyAccDetailsSection>
+                    </MyAccBox>
+                </MyAccountHomeBox>
             </MyAccountLayout>
             <Footer />
         </>
@@ -101,4 +137,51 @@ const WelcomeSectionSpan = styled.span`
         letter-spacing: .044rem;
         line-height: 1.5;
     }
+`;
+
+const MyAccBox = styled.div`
+    margin: 3.9375rem auto 0;
+    padding: 0 2.063rem;
+`;
+const MyAccDetailsSection = styled.section`
+    padding: 0 0.938rem;
+    width: 100%;
+    flex-basis: 100%;
+    flex-grow: 1;
+    flex-shrink: 0;
+    line-height: 1.125rem;
+`;
+const MyAccDetailsH2 = styled.h2`
+    margin: 0 0 1.125rem 0;
+    padding: 0 0 1.125rem 0;
+    border-bottom: 1px solid #ECECEC;
+    font-size: .938rem;
+    font-weight: 700;
+    letter-spacing: .05rem;
+    line-height: 1.5;
+`;
+const MyAccDetailsList = styled.ul`
+    margin: 0;
+    paddin: 0;
+    display: flex;
+    flex-wrap: wrap;
+`
+const MyAccDetailsItem = styled.li`
+    margin-bottom: 1.4375rem;
+    padding: 0 0.938rem;
+    flex-basis: 33.333%;
+    flex-shrink: 0;
+`;
+const LogOutLinkBox = styled.div`
+    display: flex;
+`;
+const LogOutLink = styled(Link)`
+    display: flex;
+    flex-grow: 1;
+    curcor: pointer;
+`
+const LogOutSpan = styled.span`
+    position: relative;
+    margin-right: auto;
+    color: #767676;
 `;

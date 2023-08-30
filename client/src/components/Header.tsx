@@ -6,33 +6,35 @@ import { AiOutlineMenu } from "react-icons/ai";
 import { CiSearch, CiShoppingCart, CiUser } from "react-icons/ci";
 import axios from 'axios';
 
+interface profileData {
+    username: string;
+}
+
 export default function Header(): JSX.Element {
-    const [sign, setSign] = useState(null);
-    const [profileData, setProfileData] = useState({ username: "admin_user" });
+    const [sign, setSign] = useState<string | null>(null);
+    const [profileData, setProfileData] = useState<profileData>({ username: "admin_user" });
     const GET_AUTH_URL = '/get_auth';
     const GET_PROFILE_URL = '/get_profile';
 
     const fetchData = async () => {
         try {
-            const authResponse = await axios.post(GET_AUTH_URL);
-            const data = authResponse.data;
-            setSign(data);
+            const authResponse = await axios.post<string>(GET_AUTH_URL);
+            const userData = authResponse.data;
+            setSign(userData);
 
-            const profileResponse = await axios.post(GET_PROFILE_URL, {
-                user: data
+            const profileResponse = await axios.post<profileData[]>(GET_PROFILE_URL, {
+                user: userData
             });
             setProfileData(profileResponse.data[0]);
-
-            console.log(data);
         } catch (error) {
-            console.error(error);
+            console.error("Error fetching data:", error);
         }
-    }
+    };
 
     useEffect(() => {
         fetchData();
     }, []);
-
+    
     const handleScroll = (height: number) => {
         const targetHeight = height;
         window.scrollTo({
@@ -44,12 +46,12 @@ export default function Header(): JSX.Element {
     return (
         <HeaderLayout>
             <HeaderCol>
-                <div onClick={() => handleScroll(0)}>
+                <LogoBox onClick={() => handleScroll(0)}>
                     <Logo />
-                </div>
+                </LogoBox>
                 <HeaderList>
                     <HeaderItem to="/" onClick={() => handleScroll(0)}>HOME</HeaderItem>
-                    <HeaderItem to="/" onClick={() => handleScroll(530)}>ABOUT</HeaderItem>
+                    <HeaderItem to="/" onClick={() => handleScroll(680)}>ABOUT</HeaderItem>
                     <HeaderItem to="/classfication">CLASSFICATION</HeaderItem>
                 </HeaderList>
                 <MobileHeaderMenuButton>
@@ -57,7 +59,7 @@ export default function Header(): JSX.Element {
                 </MobileHeaderMenuButton>
                 <MyPageCol>
                     <MyPageItem to="/search"><CiSearch size="20" fill='#8E6C62' /></MyPageItem>
-                    <MyPageItem to={sign ? '/account' : '/login'}><CiUser size="20" fill='#8E6C62' /></MyPageItem>
+                    <MyPageItem to={sign ? "/account" : "/login"}><CiUser size="20" fill='#8E6C62' /></MyPageItem>
                     <MyPageItem to="/"><CiShoppingCart size="20" fill='#8E6C62' /></MyPageItem>
                 </MyPageCol>
             </HeaderCol>
@@ -65,28 +67,37 @@ export default function Header(): JSX.Element {
     );
 }
 
-const HeaderLayout = styled.header`
+const HeaderLayout = styled.div`
     position: fixed;
     width: 100%;
-    display: grid;
-    align-items: center;
+    height: auto;
+    display: block;
     background: #FFFFFF;
-    border-top: 7px solid #8E6C62;
+    border-top: 8px solid #8E6C62;
     border-bottom: 1px solid #ECECEC; 
-    z-index: 999;
+    z-index: 90;
 `;
 
 const HeaderCol = styled.div`
-    margin: 0 6.5%;
-    height: 65px;
+    margin: 0 auto;
+    padding: 0 8%;
+    max-width: 83.875rem;
+    min-height: 65px;
+    box-sizing: content-box;
+    overflow: hidden;
     display: grid;
     grid-template-columns: 250px 1fr 10%;
-    align-items: center;
-    justify-items: stretch;
+    align-items: stretch;
 
     @media (max-width: 1024px) {
-        grid-template-columns: 250px 1fr;
+        grid-template-columns: 10% 1fr 10%;
+        grid-template-rows: 1fr;
     }
+`;
+
+const LogoBox = styled.div`
+    display: grid;
+    align-items: center;
 `;
 
 const HeaderList = styled.div`
