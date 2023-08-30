@@ -12,8 +12,12 @@ export default function Main(): JSX.Element {
     const [password, setPassword] = useState<string>("");
     const LOGIN_URL = '/login';
 
-    const onIdHandler = (event: any) => { setId(event.currentTarget.value); }
-    const onPasswordHandler = (event: any) => { setPassword(event.currentTarget.value); }
+    const onIdHandler = (event: any) => {
+        setId(event.currentTarget.value);
+    }
+    const onPasswordHandler = (event: any) => {
+        setPassword(event.currentTarget.value);
+    }
 
     const onSubmit = () => {
         if (id && password) {
@@ -22,11 +26,12 @@ export default function Main(): JSX.Element {
                 pwd: password
             })
                 .then((res) => {
-                    if (res.data === "success")
+                    if (res.data === "success") {
                         window.location.href = '/';
-                    else //로그인 실패할 시 Error
+                    } else {
                         alert("아이디와 비밀번호를 확인해 주십시오.");
-                })
+                    }
+                });
         } else {
             alert("아이디와 비밀번호를 확인해 주십시오.");
         }
