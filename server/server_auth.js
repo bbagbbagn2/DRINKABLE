@@ -67,6 +67,20 @@ router.post('/get_auth', (req,res) => {
     });
 });
 
+router.post('/get_user', (req, res) => {
+    const sql = 'SELECT * FROM user where id = ?'
+    const userId = req.session.sign;
+
+    sql_pool.query(sql, [userId], (error, results) => {
+        if (error) {
+            console.error(error);
+            res.status(500).send("An error occurred while fetching user data.");
+        } else {
+            res.send(results);
+        }
+    });
+});
+
 router.post('/get_profile', (req, res) => {
     const user = req.body.user;
 
@@ -80,6 +94,5 @@ router.post('/get_profile', (req, res) => {
         }
     });
 });
-
 
 module.exports = router;

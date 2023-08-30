@@ -57,7 +57,7 @@ export default function Header(): JSX.Element {
                 </MobileHeaderMenuButton>
                 <MyPageCol>
                     <MyPageItem to="/search"><CiSearch size="20" fill='#8E6C62' /></MyPageItem>
-                    <MyPageItem to="/login"><CiUser size="20" fill='#8E6C62' /></MyPageItem>
+                    <MyPageItem to={sign ? '/account' : '/login'}><CiUser size="20" fill='#8E6C62' /></MyPageItem>
                     <MyPageItem to="/"><CiShoppingCart size="20" fill='#8E6C62' /></MyPageItem>
                 </MyPageCol>
             </HeaderCol>
