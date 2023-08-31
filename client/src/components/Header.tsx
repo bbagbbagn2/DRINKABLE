@@ -129,7 +129,7 @@ const HeaderNav = styled.div`
     min-height: 4.6875rem;
     box-sizing: initial;
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: 234px 1fr 150px;
     align-items: stretch;
     overflow: hidden;
 

@@ -67,8 +67,15 @@ export default function Main(): JSX.Element {
                             <MyAccDetailsH2>나의 정보</MyAccDetailsH2>
                             <MyAccDetailsList>
                                 <MyAccDetailsItem>
+                                    <MyAccInformationBox>
+                                        <MyAccInformationLink to="#">
+                                            <MyAccInformationSpan>나의 정보</MyAccInformationSpan>
+                                        </MyAccInformationLink>
+                                    </MyAccInformationBox>
+                                </MyAccDetailsItem>
+                                <MyAccDetailsItem>
                                     <LogOutLinkBox>
-                                        <LogOutLink to="/" onClick={logoutUser}>
+                                        <LogOutLink to="/sign-out" onClick={logoutUser}>
                                             <LogOutSpan>로그아웃</LogOutSpan>
                                         </LogOutLink>
                                     </LogOutLinkBox>
@@ -84,7 +91,6 @@ export default function Main(): JSX.Element {
 }
 
 const MyAccountLayout = styled.div`
-    padding-top: 73px;
     letter-spacing: .03125rem;
 `;
 
@@ -152,7 +158,7 @@ const MyAccDetailsSection = styled.section`
     line-height: 1.125rem;
 `;
 const MyAccDetailsH2 = styled.h2`
-    margin: 0 0 1.125rem 0;
+    margin: 0 0 1.438rem 0;
     padding: 0 0 1.125rem 0;
     border-bottom: 1px solid #ECECEC;
     font-size: .938rem;
@@ -160,18 +166,41 @@ const MyAccDetailsH2 = styled.h2`
     letter-spacing: .05rem;
     line-height: 1.5;
 `;
+
 const MyAccDetailsList = styled.ul`
-    margin: 0;
-    paddin: 0;
+    margin: 0 -0.938rem;
+    padding: 0;
     display: flex;
     flex-wrap: wrap;
-`
+`;
 const MyAccDetailsItem = styled.li`
     margin-bottom: 1.4375rem;
     padding: 0 0.938rem;
     flex-basis: 33.333%;
     flex-shrink: 0;
 `;
+
+const MyAccInformationBox = styled.div`
+    padding-bottom: 1.125rem;
+    display: flex;
+    border-bottom: 1px solid #ECECEC;
+`;
+
+const MyAccInformationLink = styled(Link)`
+    display: flex;
+    flex-grow: 1;
+`;
+const MyAccInformationSpan = styled.span`
+    position: relative;
+    margin-right: auto;
+    border-bottom: 0px solid transparent;
+
+    &:hover {
+        border-bottom : 1px solid #1D1D1D;
+        transition: all 0.5s ease-out;
+    }
+`;
+
 const LogOutLinkBox = styled.div`
     display: flex;
 `;
@@ -184,4 +213,10 @@ const LogOutSpan = styled.span`
     position: relative;
     margin-right: auto;
     color: #767676;
+    border-bottom: 0px solid transparent;
+
+    &:hover {
+        border-bottom : 1px solid #1D1D1D;
+        transition: all 0.5s ease-out;
+    }
 `;

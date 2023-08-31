@@ -38,5 +38,6 @@ const Svg = styled(SvgLogo)`
 
     @media screen and (max-width: 37.563rem) {
         margin-bottom: 0.125rem;
+        height: 1.063rem;
     }
 `;

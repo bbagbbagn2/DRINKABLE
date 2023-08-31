@@ -6,6 +6,8 @@ import SearchPage from "./SearchPage";
 import LoginPage from "./LoginPage";
 import ResisterPage from "./ResisterPage";
 import MyAccountPage from "./MyAccountPage";
+import LogOutPage from "./LogOutPage";
+
 function App(): JSX.Element {
   return (
     <Router>
@@ -16,6 +18,7 @@ function App(): JSX.Element {
         <Route path="/login" element={<LoginPage />} />
         <Route path="/register" element={<ResisterPage />} />
         <Route path="/account" element={<MyAccountPage />} />
+        <Route path="/sign-out" element={<LogOutPage />} />
       </Routes>
     </Router>
   );

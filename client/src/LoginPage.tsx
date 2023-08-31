@@ -134,15 +134,22 @@ const LoginPageCol = styled.div`
     max-width: 83.875rem;
     display: block;
     overflow: hidden;
+
+    @media screen and (max-width: 37.563rem) {
+        padding: 0 5.333vw;
+    }
 `;
 
 const LoginPageBox = styled.div`
-    align-items: stretch;
+    margin: 0 -0.97vw; 
     display: flex;
     flex-wrap: wrap;
+    align-items: stretch;
     justify-content: space-between;
-    margin-left: -0.97vw;
-    margin-right: -0.97vw; 
+
+    @media screen and (max-width: 37.563rem) {
+        margin: 0 -2.533vw;
+    }
 `;
 
 const MyPageTitleBox = styled.div`
@@ -158,11 +165,14 @@ const MyPageTitleBox = styled.div`
         padding: 0 0.972vw;
         width: 100%;
     }
+    
+    @media screen and (max-width: 37.563rem) {
+        margin: 14.4vw 0 2.25rem 0;
+        padding: 0 2.533vw;
+    }
 `;
 
-const TitleContextBox = styled.div`
-    box-sizing: border-box;
-`;
+const TitleContextBox = styled.div``;
 
 const MypageTitleParagraph = styled.h1`
     color: #8E6C62;
@@ -177,6 +187,13 @@ const MypageTitleParagraph = styled.h1`
         letter-spacing: normal;
         line-height: 1.2;
     }
+
+    
+    @media screen and (max-width: 37.563rem) {
+        font-size: 1.563rem;
+        letter-spacing: normal;
+        line-height: 1.24;
+    }
 `;
 
 const LoginResisterBox = styled.div`
@@ -189,6 +206,10 @@ const LoginResisterBox = styled.div`
     @media screen and (max-width: 60.063rem) {
         padding: 0 0.972vw;
         width: 100%;
+    }
+
+    @media screen and (max-width: 37.563rem) {
+        padding: 0 2.533vw;
     }
     
 `;
@@ -213,7 +234,7 @@ const LoginResisterItem = styled.li`
     width: auto;
     box-sizing: border-box;
     flex: 0 0 50%;
-    s
+
     @media screen and (min-width: 60.06rem) {
         grid-row: 1;
         justify-self: stretch;
@@ -245,29 +266,43 @@ const LoginResisterLink = styled(Link)`
 `;
 
 const UserContentBox = styled.div`
-    margin-left: 33.33%;
-    margin-right: 33.33%;
-    padding-left: 0.97vw;
-    padding-right: 0.97vw;
+    margin: 0 33.33%;
+    padding: 0 0.97vw;
     width: 33.33%;
-    box-sizing: border-box;
     flex-basis: auto;
+
+    @media screen and (max-width: 60.063rem) {
+        margin: 0;
+        width: 100%;
+    }
+    
+    @media screen and (max-width: 37.563rem) {
+        padding: 0 2.533vw;
+    }
 `;
 const UserTextBox = styled.div`
     padding: 2.25rem 0;
-    box-sizing: border-box;
+
+    @media screen and (max-width: 60.063rem) {
+        padding: 1.688rem 0;
+    }
+
+    @media screen and (max-width: 37.563rem) {
+        padding: 1.125rem 0;
+    }
 `;
-const ContentBox = styled.div`
-    box-sizing: border-box;
-`;
+const ContentBox = styled.div``;
+
 const ContextForm = styled.form`
     margin-bottom: 1.69rem;
-    box-sizing: border-box;
+
+    @media screen and (max-width: 60.063rem) {
+        margin-top: 1.125rem;
+    }
 `;
 const SubTitlePharagraph = styled.p<{ marginBottom?: string; fontSize?: string; letterSpacing?: string; fontWeight?: string; }>`
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
     text-align: center;
     
     margin-bottom: ${(props) => (props.marginBottom || "1.125rem")};
@@ -277,18 +312,16 @@ const SubTitlePharagraph = styled.p<{ marginBottom?: string; fontSize?: string; 
 `;
 const DataFormCol = styled.div`
     padding-top: 1.25rem;
-    box-sizing: border-box;
     display: grid;
     grid-template-columns: 1fr;
 `;
 const LoginInputBox = styled.div`
-    box-sizing: border-box;
     margin-bottom: 1.125rem;
 `;
 const LoginInput = styled(TextField)`
     width: 100%;
     height: 70px;
-    background: white;
+    background: #FFF;
     color: #333;
 
     & label.Mui-focused {
@@ -312,33 +345,26 @@ const LoginInput = styled(TextField)`
 const LoginButtonBox = styled.div`
     margin-top: 1.69rem;
     margin-bottom: 0;
-    box-sizing: border-box;
 `;
 const LoginButtonItem = styled.div`
     margin: 0 auto;
     max-width: none;
-    box-sizing: border-box;
 `;
 const LoginButton = styled.button`
+    position: relative; 
     margin: 0;
-    padding: 0 1.6rem;
+    padding: 0 1.563rem;
     width: 100%;
     height: 3.125rem;
-    position: relative; 
-    box-sizing: border-box;
     align-content: center;
     align-items: center;
     border: 1px solid #8E6C62;
     border-radius: 0;
-    background: #8E6C62;
+    background-color: #8E6C62;
     color: #FFF;
-    font-size: .8rem;
+    font-size: .813rem;
     font-weight: 700;
-    letter-spacing: .04rem;
-    line-height: 1.5;
-    text-transform: lowercase;
-    vertical-align: middle;
-    appearance: none;
+    letter-spacing: .044rem;
     cursor: pointer;
 `;
 
