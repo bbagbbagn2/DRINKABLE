@@ -19,19 +19,17 @@ export default function Main(): JSX.Element {
                     axios.post(GET_AUTH_URL),
                     axios.post(GET_USER_URL)
                 ]);
-
                 setSign(authResponse.data);
+
                 if (userResponse.data && userResponse.data.length > 0) {
                     setProfileData(userResponse.data[0]);
                 }
-
                 console.log(authResponse.data);
                 console.log(userResponse.data[0]);
             } catch (error) {
                 console.error(error);
             }
         };
-
         fetchData();
     }, []);
 
@@ -148,7 +146,14 @@ const WelcomeSectionSpan = styled.span`
 const MyAccBox = styled.div`
     margin: 3.9375rem auto 0;
     padding: 0 2.063rem;
+
+    @media screen and (max-width: 60.0625rem) {
+        margin: 3.9375rem auto 0;
+        padding: 0 1.25rem;
+        max-width: 375px;
+    }
 `;
+
 const MyAccDetailsSection = styled.section`
     padding: 0 0.938rem;
     width: 100%;
@@ -156,15 +161,26 @@ const MyAccDetailsSection = styled.section`
     flex-grow: 1;
     flex-shrink: 0;
     line-height: 1.125rem;
+
+    @media screen and (max-width: 60.0625rem) {
+        margin-bottom: 1.6875rem;
+        padding: 0;    
+    }
 `;
 const MyAccDetailsH2 = styled.h2`
-    margin: 0 0 1.438rem 0;
+    margin: 0 0 1.4375rem 0;
     padding: 0 0 1.125rem 0;
     border-bottom: 1px solid #ECECEC;
-    font-size: .938rem;
+    font-size: .9375rem;
     font-weight: 700;
     letter-spacing: .05rem;
     line-height: 1.5;
+
+    @media screen and (max-width: 60.0625rem) {
+        padding-bottom: 0.5625rem; 
+        letter-spacing: .0625rem;
+        line-height: 1.4;    
+    }
 `;
 
 const MyAccDetailsList = styled.ul`
@@ -172,12 +188,21 @@ const MyAccDetailsList = styled.ul`
     padding: 0;
     display: flex;
     flex-wrap: wrap;
+
+    @media screen and (max-width: 60.0625rem) {
+        margin: 0;
+        display: block;
+    }
 `;
 const MyAccDetailsItem = styled.li`
     margin-bottom: 1.4375rem;
     padding: 0 0.938rem;
     flex-basis: 33.333%;
     flex-shrink: 0;
+
+    @media screen and (max-width: 60.0625rem) {
+        padding: 0;    
+    }
 `;
 
 const MyAccInformationBox = styled.div`
@@ -194,16 +219,17 @@ const MyAccInformationSpan = styled.span`
     position: relative;
     margin-right: auto;
     border-bottom: 0px solid transparent;
+    transition: all 0.5s ease-out;
 
     &:hover {
         border-bottom : 1px solid #1D1D1D;
-        transition: all 0.5s ease-out;
     }
 `;
 
 const LogOutLinkBox = styled.div`
     display: flex;
 `;
+
 const LogOutLink = styled(Link)`
     display: flex;
     flex-grow: 1;
