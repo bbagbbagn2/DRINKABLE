@@ -129,7 +129,7 @@ const LoginPageLayout = styled.div`
 `;
 
 const LoginPageCol = styled.div`
-    padding: 0 8%;
+    padding: 0 8.055%;
     margin: 0 auto;
     max-width: 83.875rem;
     display: block;
@@ -140,7 +140,6 @@ const LoginPageBox = styled.div`
     align-items: stretch;
     display: flex;
     flex-wrap: wrap;
-    box-sizing: border-box;
     justify-content: space-between;
     margin-left: -0.97vw;
     margin-right: -0.97vw; 
@@ -148,19 +147,16 @@ const LoginPageBox = styled.div`
 
 const MyPageTitleBox = styled.div`
     padding: 0 1%;    
-    margin-top: 4.5rem;
-    margin-bottom: 3rem;
-    margin-left: 8.3%;
-    margin-right: 8.3%;
+    margin: 4.5rem 8.3% 3rem;
     width: 83.3%;
-    box-sizing: border-box;
     display: block;
     text-align: center;
     flex-basis: auto;
 
-    @media (max-width: 700px) {
-        margin-top: 14.4vw;
-        margin-bottom: 2.25rem;
+    @media screen and (max-width: 60.063rem) {
+        margin: 5vw 0 2.25rem 0;
+        padding: 0 0.972vw;
+        width: 100%;
     }
 `;
 
@@ -169,17 +165,17 @@ const TitleContextBox = styled.div`
 `;
 
 const MypageTitleParagraph = styled.h1`
-    box-sizing: border-box;
     color: #8E6C62;
     font-size: 2.5rem;
     letter-spacing: .125rem;
     line-height: 1.225;
-    text-transform: lowercase;
 
-    @media (max-width: 700px) {
-        font-size: 1.5625rem;
-        line-height: 1.24;
+    @media screen and (max-width: 60.063rem) {
+        margin: 0;
+        padding: 0;
+        font-size: 1.875rem;
         letter-spacing: normal;
+        line-height: 1.2;
     }
 `;
 
@@ -188,8 +184,12 @@ const LoginResisterBox = styled.div`
     padding: 0;
     min-width: 33.33%;
     width: auto;
-    box-sizing: border-box;
     flex-basis: auto;
+
+    @media screen and (max-width: 60.063rem) {
+        padding: 0 0.972vw;
+        width: 100%;
+    }
     
 `;
 const LoginResisterNav = styled.nav`

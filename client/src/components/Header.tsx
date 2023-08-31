@@ -110,7 +110,7 @@ const HeaderContainer = styled.div`
 
 const HeaderBox = styled.div`
     position: relative;
-    border-top: 0.5rem solid #000;
+    border-top: 0.5rem solid #8E6C62;
     z-index: 90;
 
     @media screen and (max-width: 60.063rem) {
@@ -155,7 +155,7 @@ const HeaderList = styled.div`
     grid-template-columns: repeat(3,1fr);
     place-items: center;
 
-    @media (max-width: 1024px) {
+    @media (max-width: 60.063rem) {
         display: none;
     }
 `;
