@@ -64,7 +64,6 @@ const BackgroundImage = styled.img`
 `;
 
 const MainPageLayout = styled.div`
-    padding-top: 65px;
     display: grid;
     background: #FFFFFF;
 `;

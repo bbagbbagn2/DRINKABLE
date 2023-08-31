@@ -11,34 +11,40 @@ export default function Main(): JSX.Element {
     const [id, setId] = useState("");
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
+    const LOGIN_URL = '/login';
     const REGISTER_URL = '/register';
 
-    const handleSubmit = async (e: React.FormEvent) => {
-        e.preventDefault();
+    const onUsernameHandler = (e: any) => {
+        setUsername(e.currentTarget.value)
+    }
+    const onIdHandler = (e: any) => {
+        setId(e.currentTarget.value)
+    }
+    const onPasswordHandler = (e: any) => {
+        setPassword(e.currentTarget.value)
+    }
 
-        if (!id || !username || !password) {
-            alert("입력 칸을 알맞게 입력해주세요.");
-            return;
-        }
-
-        try {
-            const response = await axios.post(REGISTER_URL, {
-                id: id,
+    const onSubmit = () => {
+        if (id && password && username) {
+            axios.post(REGISTER_URL, {
                 username: username,
-                password: password
-            });
+                id: id,
+                pwd: password
+            })
+            .then((res) => {
+                console.log(res.data);
 
-            const result = response.data;
-
-            if (result === "success") {
-                window.location.href = '/login';
-            } else if (result === "fail") {
-                alert("아이디가 이미 있습니다. 다른 아이디를 입력해주세요.");
-            }
-        } catch (error) {
-            console.error(error);
+                if (res.data === 'success') {
+                    window.location.href = LOGIN_URL;
+                } else if (res.data === 'fail') {
+                    alert("다른 아이디를 입력해주세요!");
+                }
+            })
+        } else {
+            alert("입력 칸을 알맞게 입력해주십시오.");
         }
     };
+
 
     const [currentButton, setCurrentButton] = useState<boolean>(true);
 
@@ -49,7 +55,7 @@ export default function Main(): JSX.Element {
     return (
         <>
             <Header />
-            <LoginPageLayout onSubmit={handleSubmit}>
+            <LoginPageLayout>
                 <LoginPageCol>
                     <LoginPageBox>
                         <MyPageTitleBox>
@@ -92,27 +98,24 @@ export default function Main(): JSX.Element {
                                                 <LoginInput
                                                     variant="standard"
                                                     label="아이디"
-                                                    value={id}
-                                                    onChange={(e) => setId(e.target.value)} />
+                                                    onChange={onIdHandler} />
                                             </LoginInputBox>
                                             <LoginInputBox>
                                                 <LoginInput
                                                     variant="standard"
                                                     label="이름"
-                                                    value={username}
-                                                    onChange={(e) => setUsername(e.target.value)} />
+                                                    onChange={onUsernameHandler} />
                                             </LoginInputBox>
                                             <LoginInputBox>
                                                 <LoginInput
                                                     variant="standard"
                                                     type="password"
                                                     label="비밀번호"
-                                                    value={password}
-                                                    onChange={(e) => setPassword(e.target.value)} />
+                                                    onChange={onPasswordHandler} />
                                             </LoginInputBox>
                                             <LoginButtonBox>
                                                 <LoginButtonItem>
-                                                    <LoginButton type="submit">등록하기</LoginButton>
+                                                    <LoginButton type="submit" onClick={onSubmit}>등록하기</LoginButton>
                                                 </LoginButtonItem>
                                             </LoginButtonBox>
                                         </DataFormCol>

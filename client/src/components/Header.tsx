@@ -34,7 +34,7 @@ export default function Header(): JSX.Element {
     useEffect(() => {
         fetchData();
     }, []);
-    
+
     const handleScroll = (height: number) => {
         const targetHeight = height;
         window.scrollTo({
@@ -46,58 +46,108 @@ export default function Header(): JSX.Element {
     return (
         <HeaderLayout>
             <HeaderCol>
-                <LogoBox onClick={() => handleScroll(0)}>
-                    <Logo />
-                </LogoBox>
-                <HeaderList>
-                    <HeaderItem to="/" onClick={() => handleScroll(0)}>HOME</HeaderItem>
-                    <HeaderItem to="/" onClick={() => handleScroll(680)}>ABOUT</HeaderItem>
-                    <HeaderItem to="/classfication">CLASSFICATION</HeaderItem>
-                </HeaderList>
-                <MobileHeaderMenuButton>
-                    <AiOutlineMenu size="27" fill='#8E6C62' />
-                </MobileHeaderMenuButton>
-                <MyPageCol>
-                    <MyPageItem to="/search"><CiSearch size="20" fill='#8E6C62' /></MyPageItem>
-                    <MyPageItem to={sign ? "/account" : "/login"}><CiUser size="20" fill='#8E6C62' /></MyPageItem>
-                    <MyPageItem to="/"><CiShoppingCart size="20" fill='#8E6C62' /></MyPageItem>
-                </MyPageCol>
+                <HeaderContainer>
+                    <HeaderBox>
+                        <HeaderNav>
+                            <LogoBox onClick={() => handleScroll(0)}>
+                                <Logo />
+                            </LogoBox>
+                            <HeaderList>
+                                <HeaderItem to="/" onClick={() => handleScroll(0)}>HOME</HeaderItem>
+                                <HeaderItem to="/" onClick={() => handleScroll(680)}>ABOUT</HeaderItem>
+                                <HeaderItem to="/classfication">CLASSFICATION</HeaderItem>
+                            </HeaderList>
+                            <MyPageCol>
+                                <MobileHeaderMenuButton to="#">
+                                    <AiOutlineMenu size="17" fill='#8E6C62' />
+                                </MobileHeaderMenuButton>
+                                <MyPageItem to="/search"><CiSearch size="17" fill='#8E6C62' /></MyPageItem>
+                                <MyPageItem to={sign ? "/account" : "/login"}><CiUser size="17" fill='#8E6C62' /></MyPageItem>
+                                <MyPageItem to="/"><CiShoppingCart size="17" fill='#8E6C62' /></MyPageItem>
+                            </MyPageCol>
+                        </HeaderNav>
+                    </HeaderBox>
+                </HeaderContainer>
             </HeaderCol>
         </HeaderLayout>
     );
 }
 
-const HeaderLayout = styled.div`
-    position: fixed;
-    width: 100%;
-    height: auto;
+const HeaderLayout = styled.header`
+    position: relative;
+    background: #FFF;
+    height: 84px;
     display: block;
-    background: #FFFFFF;
-    border-top: 8px solid #8E6C62;
-    border-bottom: 1px solid #ECECEC; 
     z-index: 90;
-`;
 
-const HeaderCol = styled.div`
-    margin: 0 auto;
-    padding: 0 8%;
-    max-width: 83.875rem;
-    min-height: 65px;
-    box-sizing: content-box;
-    overflow: hidden;
-    display: grid;
-    grid-template-columns: 250px 1fr 10%;
-    align-items: stretch;
 
-    @media (max-width: 1024px) {
-        grid-template-columns: 10% 1fr 10%;
-        grid-template-rows: 1fr;
+    @media screen and (max-width: 60.063rem) {
+        height: 4.375rem;
+    }
+    
+    @media screen and (max-width: 37.563rem) {
+        height: 3.75rem;
     }
 `;
 
+const HeaderCol = styled.div`
+    position: fixed;
+    width: 100%;
+    height: auto;
+    background-color: #FFF;
+    border-bottom: 1px solid #ECECEC;
+    z-index: 80;
+
+    @media screen and (max-width: 60.063rem) {
+        position: static;
+        height: 100%;
+    }
+`;
+
+const HeaderContainer = styled.div`
+    position: relative;    
+`;
+
+const HeaderBox = styled.div`
+    position: relative;
+    border-top: 0.5rem solid #000;
+    z-index: 90;
+
+    @media screen and (max-width: 60.063rem) {
+        position: fixed;
+        width: 100%;
+        background-color: #FFF;
+        border-bottom: 1px solid #ECECEC;
+        z-index: 10;
+    }
+`;
+
+const HeaderNav = styled.div`
+    margin: 0 auto;
+    padding: 0 8%;
+    max-width: 83.875rem;
+    min-height: 4.6875rem;
+    box-sizing: initial;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    align-items: stretch;
+    overflow: hidden;
+
+    @media screen and (max-width: 60.063rem) {
+        padding: 0 1.25rem;
+        min-height: 3.1875rem;
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        justify-content: center;
+    }       
+`;
+
 const LogoBox = styled.div`
+    margin-left: auto;
+    margin-right: auto;
     display: grid;
     align-items: center;
+    justify-content: center;
 `;
 
 const HeaderList = styled.div`
@@ -127,27 +177,63 @@ const HeaderItem = styled(Link)`
     }
 `;
 
-const MobileHeaderMenuButton = styled.div`
+const MobileHeaderMenuButton = styled(Link)`
     display: none;
 
-    @media (max-width: 1024px) {
+    @media screen and (max-width: 60.063rem) {
+        position: relative;
+        padding: 0.75rem 0.5rem 1rem;
+        padding-top: 1.375rem;
+        padding-bottom: 1.375rem;
+        width: auto;
+        min-width: 2.25rem;
+        height: auto;
         display: grid;
-        justify-content: end;
+        place-items: center;
+        place-content: center;
+        border-width: 0;
+        border-radius: 0;
+        font-size: .6875rem;    
         cursor: pointer;
+    }
+
+    @media screen and (max-width: 37.563rem) {
+        padding-top: 0.75rem;
+        padding-bottom: 1rem;
     }
 `;
 
 const MyPageCol = styled.div`
+    margin: 0;
+    padding: 0;
+    min-width: 9.375rem;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
-    place-items: center;
+    align-items: center;
+    justify-content: flex-end;
+
+    @media screen and (max-width: 60.063rem) {
+        overflow: hidden;
+    }       
+
 `;
 
 const MyPageItem = styled(Link)`
+    padding: 0.75rem 0.5rem 1rem;
+    padding-top: 1.875rem;
+    padding-bottom: 1.25rem;
+    width: auto;
+    min-width: 2.25rem;
+    height: auto;
     display: grid;
-    place-items: center;
+    align-items: center;
+    place-content: center;
+    border-radius: 0;
+    border-width: 0;
+    letter-spacing: normal;
+    line-height: 1.272;
 
-    @media (max-width: 1024px) {
+    @media (max-width: 60.063rem) {
         display: none;
     }
 `;

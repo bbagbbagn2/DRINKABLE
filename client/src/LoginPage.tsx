@@ -122,15 +122,10 @@ export default function Main(): JSX.Element {
 }
 
 const LoginPageLayout = styled.div`
-    padding-top: 73px;
+    min-height: calc(100vh - 8.75rem);
     position: relative;
-    display: block;
-    box-sizing: border-box;
-    background: #FFFFFF;
-    font-size: .875rem;
-    font-weight: 300;
-    line-height: 1.5;
-    letter-spacing: .03rem; 
+    background-color: #FFFFFF;
+    z-index: 1;
 `;
 
 const LoginPageCol = styled.div`
