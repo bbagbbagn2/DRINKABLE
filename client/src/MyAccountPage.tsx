@@ -66,7 +66,7 @@ export default function Main(): JSX.Element {
                             <MyAccDetailsList>
                                 <MyAccDetailsItem>
                                     <MyAccInformationBox>
-                                        <MyAccInformationLink to="#">
+                                        <MyAccInformationLink to="/account/personal-details">
                                             <MyAccInformationSpan>나의 정보</MyAccInformationSpan>
                                         </MyAccInformationLink>
                                     </MyAccInformationBox>
