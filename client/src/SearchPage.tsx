@@ -36,25 +36,8 @@ export default function Search(): JSX.Element {
 }
 
 const NewSeachPageOverlay = styled.div`
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    min-height: 100%;
-    overflow-x: hidden;
-    overflow-y: scroll;
-    background: #FFF;
     animation: fadeIn .5s;
-    z-index: 85;
-
-    @keyframes fadeIn {
-        0% {
-            opacity: 0;
-        }
-        100% {
-            opacity: 1;
-        }
-    }
+    background-color: #FFF;
 `;
 
 const SeachOverlay = styled.div`

@@ -19,11 +19,9 @@ export default function Main(): JSX.Element {
             try {
                 const authResponse = await axios.post(GET_AUTH_URL);
                 setSign(authResponse.data);
-                console.log(authResponse.data);
 
                 const userResponse = await axios.post(GET_USER_URL);
                 setProfileData(userResponse.data[0]);
-                console.log(userResponse.data[0]);
             } catch (error) {
                 console.error('데이터 가져오기 오류:', error);
             }
@@ -48,7 +46,6 @@ export default function Main(): JSX.Element {
 
             if (response.data.username) {
                 setProfileData({ username: response.data.username });
-                console.log(response.data.username);
                 setNewUsername("");
             }
         } catch (error) {
@@ -123,6 +120,10 @@ const MainLayout = styled.main`
     min-height: calc(100vh - 84px);
     background-color: #FFF;
     z-index: 1;
+
+    @media screen and (max-width: 60.063rem) {
+        min-height: auto;
+    }
 `;
 
 const MainContainer = styled.div`
@@ -152,6 +153,18 @@ const ToMyPageNavogationContainer = styled.nav`
     translate: none;
     transform: translate(0, 84px); 
     z-index: 60;
+
+    @media screen and (max-width: 60.063rem) {
+        padding-left: 1.5625rem;
+        transform: translate(0, 70px); 
+    }
+
+    @media screen and (max-width: 37.563rem) {
+        padding: 0 1.25rem;
+        height: 2.8125rem;
+        transform: translate(0, 60px); 
+        line-height: .75;
+    }
 `;
 
 const ToMyPageOrderedListView = styled.ol`
@@ -164,6 +177,11 @@ const ToMyPageOrderedListView = styled.ol`
     align-items: stretch;
     justify-content: flex-start;
     overflow-x: hidden;
+
+    @media screen and (max-width: 37.563rem) {
+        margin: 0 -2.5333vw;
+        padding: 0 2.5333vw;
+    }
 `;
 
 const ToMyPageOrderedListItem = styled.li`
@@ -195,11 +213,29 @@ const PageTitleSection = styled.div`
     margin: 4.5rem 0 1.125rem 0;
     width: 100%;
     text-align: center;
+
+    @media screen and (max-width: 60.063rem) {
+        margin-top: 5vw;
+    }
+
+    @media screen and (max-width: 37.563rem) {
+        margin-top: 14.4vw;
+    }
 `;
 const PageTitleHeading = styled.h1`
     font-size: 2.5rem;
     letter-spacing: .125rem;
     line-height: 1.225;
+
+    @media screen and (max-width: 60.063rem) {
+        font-size: 1.875rem;
+        line-height: 1.2;
+    }
+
+    @media screen and (max-width: 37.563rem) {
+        font-size: 1.5625rem;
+        line-height: 1.24;
+    }
 `;
 
 const UserContainer = styled.div`
@@ -208,6 +244,10 @@ const UserContainer = styled.div`
     max-width: 83.875rem;
     box-sizing: initial;
     overflow: hidden;
+
+    @media screen and (max-width: 37.563rem) {
+        padding: 0 5.3333%;
+    }
 `;
 
 const UserBox = styled.div`
@@ -216,6 +256,10 @@ const UserBox = styled.div`
     flex-wrap: wrap;
     align-items: stretch;
     justify-content: space-between;
+    
+    @media screen and (max-width: 37.563rem) {
+        margin: 0 -2.5333vw;
+    }
 `;
 
 const ProfileUpadateSetion = styled.section`
@@ -223,6 +267,15 @@ const ProfileUpadateSetion = styled.section`
     padding: 2.25rem 0.9722vw;
     width: 33.3333%;
     flex-basis: auto;
+
+    @media screen and (max-width: 60.063rem) {
+        margin: auto;
+        width: 100%;
+    }   
+
+    @media screen and (max-width: 37.563rem) {
+        padding: 1.125rem 2.5333vw 1.6875rem 2.5333vw;
+    }
 `;
 
 const ProfileUpdateHeadingBox = styled.div`
@@ -331,6 +384,10 @@ const ProfileUpadateSpanBox = styled.span`
 `;
 const ProfileUpadateSpan = styled.span`
     position: relative;
+
+    @media screen and (max-width: 60.063rem) {
+        letter-spacing: .04375rem;
+    }
 `;
 
 const MyAccountHomeBox = styled.div`

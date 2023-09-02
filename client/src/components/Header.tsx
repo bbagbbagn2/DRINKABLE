@@ -61,7 +61,7 @@ export default function Header(): JSX.Element {
                                 <MobileHeaderMenuButton to="#">
                                     <AiOutlineMenu size="17" fill='#8E6C62' />
                                 </MobileHeaderMenuButton>
-                                <MyPageItem to="/search"><CiSearch size="17" fill='#8E6C62' /></MyPageItem>
+                                <HeaderItemButton><CiSearch size="17" fill='#8E6C62' /></HeaderItemButton>
                                 <MyPageItem to={sign ? "/account" : "/login"}><CiUser size="17" fill='#8E6C62' /></MyPageItem>
                                 <MyPageItem to="/"><CiShoppingCart size="17" fill='#8E6C62' /></MyPageItem>
                             </MyPageCol>
@@ -218,10 +218,26 @@ const MyPageCol = styled.div`
 
 `;
 
+const HeaderItemButton = styled.button`
+    margin: 0;
+    padding: 1.875rem 0.5rem 1.25rem;
+    position: relative;
+    width: auto;
+    min-width: 2.25rem;
+    height: auto;
+    display: flex;
+    flex-grow: 0;
+    flex-shrink: 0;
+    align-items: center;
+    place-content: center;
+    appearance: none;
+    background-color: initial;
+    border-width: 0;
+    cursor: pointer;
+`
 const MyPageItem = styled(Link)`
-    padding: 0.75rem 0.5rem 1rem;
-    padding-top: 1.875rem;
-    padding-bottom: 1.25rem;
+    margin: 0;
+    padding: 1.875rem 0.5rem 1.25rem;
     width: auto;
     min-width: 2.25rem;
     height: auto;

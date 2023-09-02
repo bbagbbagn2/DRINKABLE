@@ -115,11 +115,11 @@ const WelcomeSection = styled.section`
 
 const WelcomSectionH1 = styled.h1`
     margin: 0;
-    padding: 0 0.563rem;
+    padding: 0 0.5625rem;
     color: #FFF;
-    font-size: 1.563rem;
+    font-size: 1.25rem;
     font-weight: 600;
-    line-height: 1.938rem;
+    line-height: 1.3;
 
     @media screen and (min-width: 37.5625rem) {
         font-size: 1.344rem;
