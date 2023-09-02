@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 import Header from './components/Header';
 import Footer from './components/Footer';
+import { MdOutlineKeyboardArrowRight } from 'react-icons/md';
 import axios from 'axios';
 
 export default function Main(): JSX.Element {
@@ -69,6 +70,7 @@ export default function Main(): JSX.Element {
                                         <MyAccInformationLink to="/account/personal-details">
                                             <MyAccInformationSpan>나의 정보</MyAccInformationSpan>
                                         </MyAccInformationLink>
+                                        <MdOutlineKeyboardArrowRight size="18" fill="1D1D1D" />
                                     </MyAccInformationBox>
                                 </MyAccDetailsItem>
                                 <MyAccDetailsItem>
@@ -76,6 +78,7 @@ export default function Main(): JSX.Element {
                                         <LogOutLink to="/sign-out" onClick={logoutUser}>
                                             <LogOutSpan>로그아웃</LogOutSpan>
                                         </LogOutLink>
+                                        <MdOutlineKeyboardArrowRight size="18" fill="1D1D1D" />
                                     </LogOutLinkBox>
                                 </MyAccDetailsItem>
                             </MyAccDetailsList>
@@ -214,15 +217,26 @@ const MyAccInformationBox = styled.div`
 const MyAccInformationLink = styled(Link)`
     display: flex;
     flex-grow: 1;
+
+    &:hover span::before {
+        opacity: 1;
+    } 
 `;
 const MyAccInformationSpan = styled.span`
     position: relative;
     margin-right: auto;
-    border-bottom: 0px solid transparent;
     transition: all 0.5s ease-out;
 
-    &:hover {
-        border-bottom : 1px solid #1D1D1D;
+    &::before {
+        position: absolute;
+        top: calc(100% + 1px);
+        left: 0;
+        content: "";
+        width: 100%;
+        height: 0;
+        border-bottom: 1px solid #1D1D1D;
+        transition: all .5s ease-out;
+        opacity: 0;
     }
 `;
 
@@ -233,16 +247,25 @@ const LogOutLinkBox = styled.div`
 const LogOutLink = styled(Link)`
     display: flex;
     flex-grow: 1;
-    curcor: pointer;
+
+    &:hover span::before {
+        opacity: 1;
+    } 
 `
 const LogOutSpan = styled.span`
     position: relative;
     margin-right: auto;
     color: #767676;
-    border-bottom: 0px solid transparent;
 
-    &:hover {
-        border-bottom : 1px solid #1D1D1D;
-        transition: all 0.5s ease-out;
+    &::before {
+        position: absolute;
+        top: calc(100% + 1px);
+        left: 0;
+        content: "";
+        width: 100%;
+        height: 0;
+        border-bottom: 1px solid #1D1D1D;
+        transition: all .5s ease-out;
+        opacity: 0;
     }
 `;

@@ -90,4 +90,19 @@ router.post('/get_profile', (req, res) => {
     });
 });
 
+router.post('/update_username', (req,res) => {
+    const newUsername = req.body.newUsername;
+    const id = req.session.sign;
+
+    const sql = 'UPDATE user SET username = ? WHERE id = ?';
+
+    sql_pool.query(sql, [newUsername, id], (error, results) => {
+        if(error) {
+            throw error;
+        } else {
+            res.json({ username: newUsername });
+        }
+    });
+});
+
 module.exports = router;

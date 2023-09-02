@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, ChangeEvent } from 'react';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 import Header from './components/Header';
@@ -12,82 +12,107 @@ export default function Main(): JSX.Element {
     const [profileData, setProfileData] = useState({ username: "" });
     const GET_AUTH_URL = '/get_auth';
     const GET_USER_URL = '/get_user';
-    const LOGOUT_URL = '/logout';
+    const UPDATE_USERNAME_URL = '/update_username';
 
     useEffect(() => {
         const fetchData = async () => {
             try {
-                const [authResponse, userResponse] = await Promise.all([
-                    axios.post(GET_AUTH_URL),
-                    axios.post(GET_USER_URL)
-                ]);
+                const authResponse = await axios.post(GET_AUTH_URL);
                 setSign(authResponse.data);
-
-                if (userResponse.data && userResponse.data.length > 0) {
-                    setProfileData(userResponse.data[0]);
-                }
                 console.log(authResponse.data);
+
+                const userResponse = await axios.post(GET_USER_URL);
+                setProfileData(userResponse.data[0]);
                 console.log(userResponse.data[0]);
             } catch (error) {
-                console.error(error);
+                console.error('데이터 가져오기 오류:', error);
             }
         };
+
         fetchData();
     }, []);
+
+    const [newUsername, setNewUsername] = useState("");
+
+    const handleUsernameChange = (event: any) => {
+        setNewUsername(event.target.value);
+    };
+
+    const handleSubmit = async (event: any) => {
+        event.preventDefault();
+
+        try {
+            const response = await axios.post(UPDATE_USERNAME_URL, {
+                newUsername: newUsername
+            });
+
+            if (response.data.username) {
+                setProfileData({ username: response.data.username });
+                console.log(response.data.username);
+                setNewUsername("");
+            }
+        } catch (error) {
+            console.error(error);
+        }
+    };
 
     return (
         <>
             <Header />
-            <MainLayout>
-                <MainContainer>
-                    <ToMyPageSection>
-                        <ToMyPageNavogationContainer>
-                            <ToMyPageOrderedListView>
-                                <ToMyPageOrderedListItem>
-                                    <MdOutlineKeyboardArrowLeft size="1rem" />
-                                    <ToMyPageParagraph>
-                                        <ToMyPageLink to="/account">
-                                            <ToMyPageSpan> 마이 페이지</ToMyPageSpan>
-                                        </ToMyPageLink>
-                                    </ToMyPageParagraph>
-                                </ToMyPageOrderedListItem>
-                            </ToMyPageOrderedListView>
-                        </ToMyPageNavogationContainer>
-                    </ToMyPageSection>
-                    <PageTitleSection>
-                        <div>
-                            <PageTitleHeading>나의 정보</PageTitleHeading>
-                        </div>
-                    </PageTitleSection>
-                    <UserContainer>
-                        <UserBox>
-                            <ProfileUpadateSetion>
-                                <ProfileUpdateHeadingBox className='has-thin-seperator'>
-                                    <ProfileUpdateHeading>프로필</ProfileUpdateHeading>
-                                </ProfileUpdateHeadingBox>
-                                <UpdateProfileForm>
-                                    <div>
-                                        <UsernameInputBox>
-                                            <UsernameInput
-                                                variant="standard"
-                                                label={profileData.username}/>
-                                        </UsernameInputBox>
-                                        <ProfileUpadateButtonContainer>
-                                            <ProfileUpadateButtonBox>
-                                                <ProfileUpadateButton>
-                                                    <ProfileUpadateSpanBox>
-                                                        <ProfileUpadateSpan>프로필 업데이트</ProfileUpadateSpan>
-                                                    </ProfileUpadateSpanBox>
-                                                </ProfileUpadateButton>
-                                            </ProfileUpadateButtonBox>
-                                        </ProfileUpadateButtonContainer>
-                                    </div>
-                                </UpdateProfileForm>
-                            </ProfileUpadateSetion>
-                        </UserBox>
-                    </UserContainer>
-                </MainContainer>
-            </MainLayout>
+            {profileData && (
+                <MainLayout>
+                    <MainContainer>
+                        <ToMyPageSection>
+                            <ToMyPageNavogationContainer>
+                                <ToMyPageOrderedListView>
+                                    <ToMyPageOrderedListItem>
+                                        <MdOutlineKeyboardArrowLeft size="21" />
+                                        <ToMyPageParagraph>
+                                            <ToMyPageLink to="/account">
+                                                <ToMyPageSpan> 마이 페이지</ToMyPageSpan>
+                                            </ToMyPageLink>
+                                        </ToMyPageParagraph>
+                                    </ToMyPageOrderedListItem>
+                                </ToMyPageOrderedListView>
+                            </ToMyPageNavogationContainer>
+                        </ToMyPageSection>
+                        <PageTitleSection>
+                            <div>
+                                <PageTitleHeading>나의 정보</PageTitleHeading>
+                            </div>
+                        </PageTitleSection>
+                        <UserContainer>
+                            <UserBox>
+                                <ProfileUpadateSetion>
+                                    <ProfileUpdateHeadingBox className='has-thin-seperator'>
+                                        <ProfileUpdateHeading>프로필</ProfileUpdateHeading>
+                                    </ProfileUpdateHeadingBox>
+                                    <UpdateProfileForm onSubmit={handleSubmit}>
+                                        <div>
+                                            <UsernameInputBox>
+                                                <UsernameInput
+                                                    variant="standard"
+                                                    label= {profileData.username}
+                                                    value={newUsername}
+                                                    onChange={handleUsernameChange} />
+                                            </UsernameInputBox>
+                                            <ProfileUpadateButtonContainer>
+                                                <ProfileUpadateButtonBox>
+                                                    <ProfileUpadateButton type="submit">
+                                                        <ProfileUpadateSpanBox>
+                                                            <ProfileUpadateSpan>프로필 업데이트</ProfileUpadateSpan>
+                                                        </ProfileUpadateSpanBox>
+                                                    </ProfileUpadateButton>
+                                                </ProfileUpadateButtonBox>
+                                            </ProfileUpadateButtonContainer>
+                                        </div>
+                                    </UpdateProfileForm>
+                                </ProfileUpadateSetion>
+                            </UserBox>
+                        </UserContainer>
+                    </MainContainer>
+                </MainLayout>
+            )}
             <Footer />
         </>
     );
@@ -102,10 +127,10 @@ const MainLayout = styled.main`
 
 const MainContainer = styled.div`
     position: relative;
-    min-height: calc(100vh - 8.5rem);
+    min-height: calc(100vh - 84px);
 `;
 
-const ToMyPageSection = styled.section`
+const ToMyPageSection = styled.div`
     position: relative;
     padding: 1rem 0;
     height: 54px;
@@ -166,7 +191,7 @@ const ToMyPageSpan = styled.span`
     line-height: 1.5;
 `;
 
-const PageTitleSection = styled.section`
+const PageTitleSection = styled.div`
     margin: 4.5rem 0 1.125rem 0;
     width: 100%;
     text-align: center;
@@ -178,7 +203,7 @@ const PageTitleHeading = styled.h1`
 `;
 
 const UserContainer = styled.div`
-    margin: 0;
+    margin: 0 auto;
     padding: 0 8.0556%;
     max-width: 83.875rem;
     box-sizing: initial;
@@ -212,7 +237,7 @@ const ProfileUpdateHeadingBox = styled.div`
         height: 0.25rem;
         display: block;
         content:"";
-        background-color: #000;
+        background-color: #8E6C62;
     }
 `
 const ProfileUpdateHeading = styled.h2`
@@ -256,18 +281,22 @@ const ProfileUpadateButtonContainer = styled.div`
 `;
 
 const ProfileUpadateButtonBox = styled.div`
+    margin: 0 auto;
     width: auto;
     max-width: none;
 `;
 
 const ProfileUpadateButton = styled.button`
+    margin: 0;
+    padding: 0 1.5625rem;
     width: 100%;
     height: 3.125rem;
     align-items: center;
     place-content: center;
     appearance: none;
-    background-color: #000;
-    border: 1px solid #000;
+    background-color: #8E6C62;
+    border: 1px solid #8E6C62;
+    border-radius: 0;
     color: #FFF;
     font-size: .8125rem!important;
     font-weight: 700;
