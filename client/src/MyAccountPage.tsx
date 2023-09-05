@@ -9,6 +9,7 @@ import axios from 'axios';
 export default function Main(): JSX.Element {
     const [sign, setSign] = useState(null);
     const [profileData, setProfileData] = useState({ username: ""});
+    
     const GET_AUTH_URL = '/get_auth';
     const GET_USER_URL = '/get_user';
     const LOGOUT_URL = '/logout';

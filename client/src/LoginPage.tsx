@@ -10,6 +10,7 @@ export default function Main(): JSX.Element {
 
     const [id, setId] = useState<string>("");
     const [password, setPassword] = useState<string>("");
+    
     const LOGIN_URL = '/login';
 
     const onIdHandler = (event: any) => {
@@ -27,7 +28,7 @@ export default function Main(): JSX.Element {
             })
                 .then((res) => {
                     if (res.data === "success") {
-                        window.location.href = '/';
+                        window.location.href = '/account';
                     } else {
                         alert("아이디와 비밀번호를 확인해 주십시오.");
                     }

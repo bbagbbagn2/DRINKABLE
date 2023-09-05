@@ -18,15 +18,18 @@ export default function Search(): JSX.Element {
                     </SearchCloseBox>
                     <SearchContainer>
                         <SearchContentContainer>
-                        <SearchInput 
-                        id="standard"
-                        label="검색" />
-                            <div>
-
-                            </div>
-                            <div>
-
-                            </div>
+                            <SearchBarBox>
+                                <SearchBarHeading>검색</SearchBarHeading>
+                                <SearchForm>
+                                    <SearchDescriptedByParagraph>제안 링크는 입력한 내용을 기반으로 표시됩니다.</SearchDescriptedByParagraph>
+                                    <SearchLabelInputBox>
+                                        <SearchInputLabel>
+                                            <SearchInputSpan>검색</SearchInputSpan>
+                                        </SearchInputLabel>
+                                        <SearchInput />
+                                    </SearchLabelInputBox>
+                                </SearchForm>
+                            </SearchBarBox>
                         </SearchContentContainer>
                     </SearchContainer>
                 </SearchBox>
@@ -36,8 +39,25 @@ export default function Search(): JSX.Element {
 }
 
 const NewSeachPageOverlay = styled.div`
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    min-height: 100%;
     animation: fadeIn .5s;
     background-color: #FFF;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    z-index: 85;
+
+    @keyframes fadeIn {
+        0% {
+            opacity: 0;
+        }
+        100% {
+            opacity: 1;
+        }
+    }
 `;
 
 const SeachOverlay = styled.div`
@@ -131,7 +151,7 @@ const SearchCloseSpan = styled.span`
 
 const SearchContainer = styled.div`
     margin: 0 auto;
-    paddinf: 0 5.33%;
+    padding: 0 5.3333%;
     max-width: 83.875rem;
     min-height: 100vh;
     overflow: hidden;
@@ -139,45 +159,124 @@ const SearchContainer = styled.div`
 const SearchContentContainer = styled.div`
     position: relative;
     margin-left: 0;
-    margin-right: -2.53vw;
+    margin-right: -2.5333vw;
+    padding: 1.375rem 0;
     display: flex;
+    flex-wrap: wrap;
     align-items: stretch;
     justify-content: space-between;
+`;
 
-    @media screen and (min-width: 37.563rem) {
-        padding: 1.375rem 0;  
+const SearchBarBox = styled.div`
+    margin: 0 auto;
+    padding: 0 0.9722vw;
+    position: relative;
+    width: 66.6667%;
+    display: flex;
+    flex-basis: auto;
+`;
+
+const SearchBarHeading = styled.div`
+    padding: 0!important;
+    position: absolute!important;
+    width: 1px!important;
+    height: 1px!important;
+    border: 0!important;
+    clip: rect(1px,1px,1px,1px)!important;
+    clip-path: inset(50%)!important;
+    overflow: hidden!important;
+    white-space: nowrap!important;
+    outline: none;
+`;
+
+const SearchForm = styled.div`
+    position: relative;
+    padding-bottom: 0.25rem;
+    padding-left: 5.5rem;
+    width: 100%;
+    max-width: calc(100% - 28px);
+    display: flex;
+    flex-grow: 1;
+    align-items: center;
+    background-color: initaial;
+
+    &::before {
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: -3px;
+        height: 0.25rem;
+        content: "";
+        background-color: CURRENTCOLOR;
+        opacity: 0;
+        transition: all .6s ease-out 0s;
+    }
+
+    &::after {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 1px;
+        content: "";
+        background-color: CURRENTCOLOR;
     }
 `;
-const SearchInput = styled(TextField)`
-    width: 80%;
-    height: 100px;
-    background: #FFF;
-    color: #707070;
 
-    & label.Mui-focused {
-        color: #333;
-    }
-        
-    & .MuiInput-underline:after {
-        border: 2px solid #000;
+const SearchDescriptedByParagraph = styled.p`
+    margin: 0;
+    padding: 0;
+    display: none!important;
+`;
+
+const SearchLabelInputBox =styled.div`
+    padding-top: 0;
+    position: relative;
+    min-height: 0;
+    flex-grow: 1;
+    align-items: center;
+    backface-visibility: hidden;
+`;
+const SearchInputLabel = styled.label`
+    position: absolute;
+    left: 0;
+    padding: 0 0 0 0.3125rem;
+    width: 100%;
+    max-width: 100%;
+    height: 3.3125rem;
+    font-size: 2.25rem;
+    font-weight: 600;
+    line-height; 3.3125rem;
+    cursor: text;
+    text-align: center;
+    text-overflow: ellipsis;
+    transform: none;
+    transform-origin: left;
+    transition: opacity .3s; 
+    white-space: nowrap;
+    z-index: 0;
+
+    span::after {
+        position: absolute;
+        top: 2px;
+        left: 0;
+        content: "";
+        border-left: 1px solid #1D1D1D;
+        animation: blink-caret 1s step-end infinite;
+        opacity: 0;
     }
 
-    & .MuiInputBase-root {
-        color: #000;
-        font-size: 2.6rem;
-        
+    &:hover span::after {
+        opacty: 1;
     }
-    & .MuiOutlinedInput-root {
-        
-        & fieldset {
-            border-color: #000; 
-        }
+`;
+const SearchInputSpan = styled.span`
+    position: relative;
+    color: #1D1D1D80;
+`;
 
-        &:hover fieldset {
-            border-color: #000;
-        }
-    
-        &.Mui-focused fieldset {
-        }
-    }
+const SearchInput = styled.input`
+    background: none;
+    border: none;
+    box-shadow: none;
 `;

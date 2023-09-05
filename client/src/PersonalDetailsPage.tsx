@@ -1,4 +1,4 @@
-import React, { useState, useEffect, ChangeEvent } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 import Header from './components/Header';
@@ -10,9 +10,14 @@ import axios from 'axios';
 export default function Main(): JSX.Element {
     const [sign, setSign] = useState(null);
     const [profileData, setProfileData] = useState({ username: "" });
+    const [newUsername, setNewUsername] = useState("");
+    const [currentPassword, setCurrentPassword] = useState("");
+    const [newPassword, setNewPassword] = useState("");
+
     const GET_AUTH_URL = '/get_auth';
     const GET_USER_URL = '/get_user';
     const UPDATE_USERNAME_URL = '/update_username';
+    const UPDATE_PASSWORD_URL = '/update_password';
 
     useEffect(() => {
         const fetchData = async () => {
@@ -30,13 +35,20 @@ export default function Main(): JSX.Element {
         fetchData();
     }, []);
 
-    const [newUsername, setNewUsername] = useState("");
 
-    const handleUsernameChange = (event: any) => {
+    const handleUsernameChange = (event: React.ChangeEvent<HTMLInputElement>) => {
         setNewUsername(event.target.value);
     };
 
-    const handleSubmit = async (event: any) => {
+    const handleCurrentPasswordChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+        setCurrentPassword(event.target.value);
+    };
+
+    const handleNewPasswordChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+        setNewPassword(event.target.value);
+    };
+
+    const handleSubmitUsername = async (event: React.FormEvent) => {
         event.preventDefault();
 
         try {
@@ -47,6 +59,31 @@ export default function Main(): JSX.Element {
             if (response.data.username) {
                 setProfileData({ username: response.data.username });
                 setNewUsername("");
+            }
+        } catch (error) {
+            console.error(error);
+        }
+    };
+
+
+
+    const handleSubmitPassword = async (event: React.FormEvent) => {
+        event.preventDefault();
+
+        try {
+            const response = await axios.post(UPDATE_PASSWORD_URL, {
+                currentPassword: currentPassword,
+                newPassword: newPassword
+            });
+
+            if (response.data === "success") {
+                console.log("비밀번호 변경 성공");
+                setCurrentPassword("");
+                setNewPassword("");
+            } else if (response.data === "incorrect_password") {
+                console.error("현재 비밀번호가 일치하지 않습니다.")
+            } else {
+                console.error("비밀번호 변경 실패", response.data);
             }
         } catch (error) {
             console.error(error);
@@ -84,20 +121,54 @@ export default function Main(): JSX.Element {
                                     <ProfileUpdateHeadingBox className='has-thin-seperator'>
                                         <ProfileUpdateHeading>프로필</ProfileUpdateHeading>
                                     </ProfileUpdateHeadingBox>
-                                    <UpdateProfileForm onSubmit={handleSubmit}>
+                                    <UpdateProfileForm onSubmit={handleSubmitUsername}>
                                         <div>
-                                            <UsernameInputBox>
-                                                <UsernameInput
+                                            <StyledInputBox>
+                                                <StyledInput
                                                     variant="standard"
-                                                    label= {profileData.username}
+                                                    label={profileData.username}
                                                     value={newUsername}
                                                     onChange={handleUsernameChange} />
-                                            </UsernameInputBox>
+                                            </StyledInputBox>
                                             <ProfileUpadateButtonContainer>
                                                 <ProfileUpadateButtonBox>
                                                     <ProfileUpadateButton type="submit">
                                                         <ProfileUpadateSpanBox>
                                                             <ProfileUpadateSpan>프로필 업데이트</ProfileUpadateSpan>
+                                                        </ProfileUpadateSpanBox>
+                                                    </ProfileUpadateButton>
+                                                </ProfileUpadateButtonBox>
+                                            </ProfileUpadateButtonContainer>
+                                        </div>
+                                    </UpdateProfileForm>
+                                </ProfileUpadateSetion>
+                                <ProfileUpadateSetion>
+                                    <ProfileUpdateHeadingBox className='has-thin-seperator'>
+                                        <ProfileUpdateHeading>비밀번호</ProfileUpdateHeading>
+                                    </ProfileUpdateHeadingBox>
+                                    <UpdateProfileForm onSubmit={handleSubmitPassword}>
+                                        <div>
+                                            <StyledInputBox>
+                                                <StyledInput
+                                                    variant="standard"
+                                                    label="현재 비밀번호"
+                                                    type="password"
+                                                    value={currentPassword}
+                                                    onChange={handleCurrentPasswordChange} />
+                                            </StyledInputBox>
+                                            <StyledInputBox>
+                                                <StyledInput
+                                                    variant="standard"
+                                                    label="새로운 비밀번호"
+                                                    type="password"
+                                                    value={newPassword}
+                                                    onChange={handleNewPasswordChange} />
+                                            </StyledInputBox>
+                                            <ProfileUpadateButtonContainer>
+                                                <ProfileUpadateButtonBox>
+                                                    <ProfileUpadateButton type="submit">
+                                                        <ProfileUpadateSpanBox>
+                                                            <ProfileUpadateSpan>비밀번호 변경</ProfileUpadateSpan>
                                                         </ProfileUpadateSpanBox>
                                                     </ProfileUpadateButton>
                                                 </ProfileUpadateButtonBox>
@@ -300,11 +371,11 @@ const ProfileUpdateHeading = styled.h2`
 
 const UpdateProfileForm = styled.form``;
 
-const UsernameInputBox = styled.div`
+const StyledInputBox = styled.div`
     margin-bottom: 1.125rem;
 `;
 
-const UsernameInput = styled(TextField)`
+const StyledInput = styled(TextField)`
     width: 100%;
     height: 70px;
     background: #FFF;
@@ -387,160 +458,5 @@ const ProfileUpadateSpan = styled.span`
 
     @media screen and (max-width: 60.063rem) {
         letter-spacing: .04375rem;
-    }
-`;
-
-const MyAccountHomeBox = styled.div`
-    min-height: 55.625rem;
-
-    @media screen and (min-width: 52.5rem) {
-        min-height: 52.5rem;
-    }
-`;
-
-const WelcomeSection = styled.section`
-    position: relative;
-    min-height: 16.188rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: #8E6C62;
-    text-align: center;
-`;
-
-const WelcomSectionH1 = styled.h1`
-    margin: 0;
-    padding: 0 0.563rem;
-    color: #FFF;
-    font-size: 1.563rem;
-    font-weight: 600;
-    line-height: 1.938rem;
-
-    @media screen and (min-width: 37.5625rem) {
-        font-size: 1.344rem;
-        letter-spacing: .075rem;
-        line-height: 1.375;
-    }
-
-    @media screen and (min-width: 60.0625rem) {
-        font-size: 1.563rem;
-        letter-spacing: .0875rem;
-        line-height: 1.32;
-    }
-`;
-const WelcomeSectionSpan = styled.span`
-    display: block;
-    font-size: .875rem;
-    letter-spacing: .044rem;
-    line-height: 1.5;
-
-    @media screen and (min-width: 60.0625rem) {
-        font-size: .875rem;
-        letter-spacing: .044rem;
-        line-height: 1.5;
-    }
-`;
-
-const MyAccBox = styled.div`
-    margin: 3.9375rem auto 0;
-    padding: 0 2.063rem;
-
-    @media screen and (max-width: 60.0625rem) {
-        margin: 3.9375rem auto 0;
-        padding: 0 1.25rem;
-        max-width: 375px;
-    }
-`;
-
-const MyAccDetailsSection = styled.section`
-    padding: 0 0.938rem;
-    width: 100%;
-    flex-basis: 100%;
-    flex-grow: 1;
-    flex-shrink: 0;
-    line-height: 1.125rem;
-
-    @media screen and (max-width: 60.0625rem) {
-        margin-bottom: 1.6875rem;
-        padding: 0;    
-    }
-`;
-const MyAccDetailsH2 = styled.h2`
-    margin: 0 0 1.4375rem 0;
-    padding: 0 0 1.125rem 0;
-    border-bottom: 1px solid #ECECEC;
-    font-size: .9375rem;
-    font-weight: 700;
-    letter-spacing: .05rem;
-    line-height: 1.5;
-
-    @media screen and (max-width: 60.0625rem) {
-        padding-bottom: 0.5625rem; 
-        letter-spacing: .0625rem;
-        line-height: 1.4;    
-    }
-`;
-
-const MyAccDetailsList = styled.ul`
-    margin: 0 -0.938rem;
-    padding: 0;
-    display: flex;
-    flex-wrap: wrap;
-
-    @media screen and (max-width: 60.0625rem) {
-        margin: 0;
-        display: block;
-    }
-`;
-const MyAccDetailsItem = styled.li`
-    margin-bottom: 1.4375rem;
-    padding: 0 0.938rem;
-    flex-basis: 33.333%;
-    flex-shrink: 0;
-
-    @media screen and (max-width: 60.0625rem) {
-        padding: 0;    
-    }
-`;
-
-const MyAccInformationBox = styled.div`
-    padding-bottom: 1.125rem;
-    display: flex;
-    border-bottom: 1px solid #ECECEC;
-`;
-
-const MyAccInformationLink = styled(Link)`
-    display: flex;
-    flex-grow: 1;
-`;
-const MyAccInformationSpan = styled.span`
-    position: relative;
-    margin-right: auto;
-    border-bottom: 0px solid transparent;
-    transition: all 0.5s ease-out;
-
-    &:hover {
-        border-bottom : 1px solid #1D1D1D;
-    }
-`;
-
-const LogOutLinkBox = styled.div`
-    display: flex;
-`;
-
-const LogOutLink = styled(Link)`
-    display: flex;
-    flex-grow: 1;
-    curcor: pointer;
-`
-const LogOutSpan = styled.span`
-    position: relative;
-    margin-right: auto;
-    color: #767676;
-    border-bottom: 0px solid transparent;
-
-    &:hover {
-        border-bottom : 1px solid #1D1D1D;
-        transition: all 0.5s ease-out;
     }
 `;

@@ -105,4 +105,34 @@ router.post('/update_username', (req,res) => {
     });
 });
 
+router.post('/update_password', (req, res) => {
+    const userId = req.session.sign;
+    const currentPassword = req.body.currentPassword;
+    const newPassword = req.body.newPassword;
+
+    if (userId && currentPassword && newPassword) {
+        const checkPasswordSql = 'SELECT * FROM user WHERE id = ? AND password = ?';
+        sql_pool.query(checkPasswordSql, [userId, currentPassword], (error, results) => {
+            if (error) {
+                throw error;
+            }
+
+            if (results.length > 0) {
+                const updatePasswordSql = 'UPDATE user SET password = ? WHERE id = ?';
+                sql_pool.query(updatePasswordSql, [newPassword, userId], (error, results) => {
+                    if(error) {
+                        throw error;
+                    }
+
+                    res.send("success");
+                });
+            } else {
+                res.send("incorrect_password");
+            }
+        });
+    } else {
+        res.send("void");
+    }
+});
+
 module.exports = router;
