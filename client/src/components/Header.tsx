@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 import Logo from './Logo';
 import { AiOutlineMenu } from "react-icons/ai";
-import { CiSearch, CiShoppingCart, CiUser } from "react-icons/ci";
+import { CiSearch, CiStar, CiUser } from "react-icons/ci";
 import axios from 'axios';
 
 interface profileData {
@@ -63,7 +63,7 @@ export default function Header(): JSX.Element {
                                 </MobileHeaderMenuButton>
                                 <HeaderItemButton><CiSearch size="17" fill='#8E6C62' /></HeaderItemButton>
                                 <MyPageItem to={sign ? "/account" : "/login"}><CiUser size="17" fill='#8E6C62' /></MyPageItem>
-                                <MyPageItem to="/"><CiShoppingCart size="17" fill='#8E6C62' /></MyPageItem>
+                                <MyPageItem to="/wishlists"><CiStar size="17" fill='#8E6C62' /></MyPageItem>
                             </MyPageCol>
                         </HeaderNav>
                     </HeaderBox>

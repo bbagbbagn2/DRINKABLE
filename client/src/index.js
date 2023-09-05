@@ -16,7 +16,7 @@ const GlobalStyle = createGlobalStyle`
     color: #333;
     font-size: .875rem;
     font-weight: 300;
-    letter-spacing: .031rem;
+    letter-spacing: .03125rem;
     line-height: 1.5;
     user-select: none;
 
@@ -30,7 +30,13 @@ const GlobalStyle = createGlobalStyle`
     color: #000000;
   }
 
-  ul {
+  button {
+    margin: 0;
+  }
+
+  ul, li {
+    margin: 0;
+    padding: 0;
     list-style: none;
   }
 

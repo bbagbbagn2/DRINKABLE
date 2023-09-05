@@ -77,13 +77,13 @@ export default function Main(): JSX.Element {
             });
 
             if (response.data === "success") {
-                console.log("비밀번호 변경 성공");
+                alert("비밀번호가 변경되었습니다.");
                 setCurrentPassword("");
                 setNewPassword("");
             } else if (response.data === "incorrect_password") {
-                console.error("현재 비밀번호가 일치하지 않습니다.")
+                alert("현재 비밀번호가 일치하지 않습니다.")
             } else {
-                console.error("비밀번호 변경 실패");
+                alert("비밀번호를 변경할 수 없습니다.");
             }
         } catch (error) {
             console.error(error);

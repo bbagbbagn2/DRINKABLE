@@ -8,6 +8,7 @@ import ResisterPage from "./ResisterPage";
 import MyAccountPage from "./MyAccountPage";
 import PersonalDetailsPage from "./PersonalDetailsPage";
 import LogOutPage from "./LogOutPage";
+import WidhlistsPage from "./WishlistsPage"
 
 function App(): JSX.Element {
   return (
@@ -21,6 +22,7 @@ function App(): JSX.Element {
         <Route path="/account/*" element={<MyAccountPage />} />
         <Route path="/account/personal-details" element={<PersonalDetailsPage />} />
         <Route path="/sign-out" element={<LogOutPage />} />
+        <Route path="/wishlists" element={<WidhlistsPage />} />
       </Routes>
     </Router>
   );
