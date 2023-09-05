@@ -83,7 +83,7 @@ export default function Main(): JSX.Element {
             } else if (response.data === "incorrect_password") {
                 console.error("현재 비밀번호가 일치하지 않습니다.")
             } else {
-                console.error("비밀번호 변경 실패", response.data);
+                console.error("비밀번호 변경 실패");
             }
         } catch (error) {
             console.error(error);
