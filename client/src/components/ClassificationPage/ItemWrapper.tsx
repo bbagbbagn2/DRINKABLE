@@ -14,27 +14,31 @@ export default function Classification(): JSX.Element {
     const [flavor, setFlavor] = useState<string>('');
     const [amount, setAmount] = useState<string>('');
 
+    const INFO_URL = '/info';
+    const FLAVOR_URL = '/flavor';
+    const AMOUNT_URL = '/amount';
+
     useEffect(() => {
         fetchCocktails();
     }, []);
 
     async function fetchCocktails(params?: {flavor?: string; amount?: string; }) {
         try {
-            let endPoint = '/info';
+            let endPoint = INFO_URL;
 
-            if(params?.flavor) {
-                endPoint = '/flavor';
-                setFlavor(params.flavor);
-            } else if(params?.amount) {
-                endPoint = '/amount';
+            if (params?.flavor) {
+                endPoint = FLAVOR_URL;
+                setFlavor (params.flavor);
+            } else if (params?.amount) {
+                endPoint = AMOUNT_URL;
                 setAmount(params.amount);
             }
 
             const res = await axios.get(endPoint, { params });
 
             setCocktail(res.data);
-        } catch(error) {
-            console.log(error);
+        } catch (error) {
+            console.error(error);
         }
     };
 

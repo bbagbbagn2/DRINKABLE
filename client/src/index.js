@@ -18,7 +18,6 @@ const GlobalStyle = createGlobalStyle`
     font-weight: 300;
     letter-spacing: .03125rem;
     line-height: 1.5;
-    user-select: none;
 
     @media screen and (max-width: 37.5rem) {
       width: 100%;
@@ -34,13 +33,14 @@ const GlobalStyle = createGlobalStyle`
     margin: 0;
   }
 
-  ul, li {
+  p, ul, li {
     margin: 0;
     padding: 0;
     list-style: none;
   }
 
   h1, h2, h3 {
+    font-size: inherit;
     margin: 0;
     padding: 0;
   }
