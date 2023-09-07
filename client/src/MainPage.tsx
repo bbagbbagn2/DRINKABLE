@@ -1,11 +1,23 @@
-import React, { useEffect } from 'react';
+import React, { useState, useEffect} from 'react';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 import Header from './components/Header';
 import Footer from './components/Footer';
-import Classification from './ClassificationPage';
 
 export default function Main(): JSX.Element {
+    const [windowWidth, setWindowWidth] = useState(window.innerWidth);
+
+    useEffect(() => {
+        const handleResize = () => {
+            setWindowWidth(window.innerWidth);
+        };
+
+        window.addEventListener('resize', handleResize);
+        return () => {
+          window.removeEventListener('resize', handleResize);
+        };
+    }, []);
+
     return (
         <>
             <Header />
@@ -46,8 +58,12 @@ export default function Main(): JSX.Element {
                                             <BackgroundContainer>
                                                 <BackgroundBox>
                                                     <picture>
-                                                        <BackgroundImage src="https://static.wixstatic.com/media/42dbaa_60e2f5a9fac14516a5a44e95c05cc330.jpg/v1/fill/w_1289,h_658,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/42dbaa_60e2f5a9fac14516a5a44e95c05cc330.jpg" />
-                                                    </picture>
+                                                        {windowWidth <= 60.063 * 14 ? (
+                                                            <BackgroundImage src="https://ifh.cc/g/2HcjXD.jpg" />
+                                                        ) : (
+                                                            <BackgroundImage src="https://static.wixstatic.com/media/42dbaa_60e2f5a9fac14516a5a44e95c05cc330.jpg/v1/fill/w_1289,h_658,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/42dbaa_60e2f5a9fac14516a5a44e95c05cc330.jpg" />
+                                                        )}
+                                                        </picture>
                                                 </BackgroundBox>
                                             </BackgroundContainer>
                                         </TitleBox>
@@ -163,25 +179,25 @@ export default function Main(): JSX.Element {
                                     </DescriptionBox>
                                 </DescriptionContainer>
                             </DescriptionSection>
-                            <SweetFlavorSection>
-                                <SweetFlavorContainer>
-                                    <SweetFlavorBox>
-                                        <SweetFlavorBoxLayout>
-                                            <SweetFlavorBoxLayoutLeftContainer>
-                                                <SweetFlavorBoxLayoutLeftBox>
-                                                    <LeftBoxLayout>
-                                                        <LeftBoxLayoutHeadingContainer>
-                                                            <LeftBoxLayoutHeadingBox>
+                            <CategorySection>
+                                <CategoryContainer>
+                                    <CategoryEntry>
+                                        <CategoryBoxLayout>
+                                            <ContentContainer>
+                                                <ContentEntry>
+                                                    <ContentEntryLayout>
+                                                        <ContentHeadingContainer>
+                                                            <ContentHeadingEntry>
                                                                 <bdi>
-                                                                    <LeftBoxLayoutHeading>
-                                                                        <LeftBoxLayoutHeadingLink to="#">
-                                                                            <LeftBoxLayoutHeadingSpan>Flavor<br /><br /></LeftBoxLayoutHeadingSpan>
-                                                                            <LeftBoxLayoutSpan>스위트 칵테일</LeftBoxLayoutSpan>
-                                                                        </LeftBoxLayoutHeadingLink>
-                                                                    </LeftBoxLayoutHeading>
+                                                                    <ContentHeadingBox>
+                                                                        <ContentHeadingLink to="#">
+                                                                            <ContentHeading>Flavor<br /><br /></ContentHeading>
+                                                                            <ContentSubtitle>스위트 칵테일</ContentSubtitle>
+                                                                        </ContentHeadingLink>
+                                                                    </ContentHeadingBox>
                                                                 </bdi>
-                                                            </LeftBoxLayoutHeadingBox>
-                                                        </LeftBoxLayoutHeadingContainer>
+                                                            </ContentHeadingEntry>
+                                                        </ContentHeadingContainer>
                                                         <LeftBoxLinkContiner>
                                                             <LeftBoxLinkBox>
                                                                 <LeftLinkParagraph>
@@ -193,9 +209,9 @@ export default function Main(): JSX.Element {
                                                                 </LeftLinkParagraph>
                                                             </LeftBoxLinkBox>
                                                         </LeftBoxLinkContiner>
-                                                    </LeftBoxLayout>
-                                                </SweetFlavorBoxLayoutLeftBox>
-                                            </SweetFlavorBoxLayoutLeftContainer>
+                                                    </ContentEntryLayout>
+                                                </ContentEntry>
+                                            </ContentContainer>
                                             <SweetFlavorBoxLayoutRightContainer>
                                                 <SweetFlavorBoxLayoutRightBox>
                                                     <div>
@@ -209,29 +225,29 @@ export default function Main(): JSX.Element {
                                                     </div>
                                                 </SweetFlavorBoxLayoutRightBox>
                                             </SweetFlavorBoxLayoutRightContainer>
-                                        </SweetFlavorBoxLayout>
-                                    </SweetFlavorBox>
-                                </SweetFlavorContainer>
-                            </SweetFlavorSection>
+                                        </CategoryBoxLayout>
+                                    </CategoryEntry>
+                                </CategoryContainer>
+                            </CategorySection>
                             <LongFlavorSection>
                                 <LongFlavorContainer>
                                     <LongFlavorBox>
                                         <LongFlavorBoxLayout>
                                             <LongFlavorBoxLayoutLeftContainer>
-                                            <SweetFlavorBoxLayoutLeftBox>
-                                                    <LeftBoxLayout>
-                                                        <LeftBoxLayoutHeadingContainer>
-                                                            <LeftBoxLayoutHeadingBox>
+                                            <ContentEntry>
+                                                    <ContentEntryLayout>
+                                                        <ContentHeadingContainer>
+                                                            <ContentHeadingEntry>
                                                                 <bdi>
-                                                                    <LeftBoxLayoutHeading>
-                                                                        <LeftBoxLayoutHeadingLink to="#">
-                                                                            <LeftBoxLayoutHeadingSpan>Amount<br /><br /></LeftBoxLayoutHeadingSpan>
-                                                                            <LeftBoxLayoutSpan>롱 칵테일</LeftBoxLayoutSpan>
-                                                                        </LeftBoxLayoutHeadingLink>
-                                                                    </LeftBoxLayoutHeading>
+                                                                    <ContentHeadingBox>
+                                                                        <ContentHeadingLink to="#">
+                                                                            <ContentHeading>Amount<br /><br /></ContentHeading>
+                                                                            <ContentSubtitle>롱 칵테일</ContentSubtitle>
+                                                                        </ContentHeadingLink>
+                                                                    </ContentHeadingBox>
                                                                 </bdi>
-                                                            </LeftBoxLayoutHeadingBox>
-                                                        </LeftBoxLayoutHeadingContainer>
+                                                            </ContentHeadingEntry>
+                                                        </ContentHeadingContainer>
                                                         <LeftBoxLinkContiner>
                                                             <LeftBoxLinkBox>
                                                                 <LeftLinkParagraph>
@@ -243,8 +259,8 @@ export default function Main(): JSX.Element {
                                                                 </LeftLinkParagraph>
                                                             </LeftBoxLinkBox>
                                                         </LeftBoxLinkContiner>
-                                                    </LeftBoxLayout>
-                                                </SweetFlavorBoxLayoutLeftBox>
+                                                    </ContentEntryLayout>
+                                                </ContentEntry>
                                             </LongFlavorBoxLayoutLeftContainer>
                                             <SweetFlavorBoxLayoutRightContainer>
                                                 <SweetFlavorBoxLayoutRightBox>
@@ -263,25 +279,25 @@ export default function Main(): JSX.Element {
                                     </LongFlavorBox>
                                 </LongFlavorContainer>
                             </LongFlavorSection>
-                            <SweetFlavorSection>
-                                <SweetFlavorContainer>
-                                    <SweetFlavorBox>
-                                        <SweetFlavorBoxLayout>
-                                            <SweetFlavorBoxLayoutLeftContainer>
-                                                <SweetFlavorBoxLayoutLeftBox>
-                                                    <LeftBoxLayout>
-                                                        <LeftBoxLayoutHeadingContainer>
-                                                            <LeftBoxLayoutHeadingBox>
+                            <CategorySection>
+                                <CategoryContainer>
+                                    <CategoryEntry>
+                                        <CategoryBoxLayout>
+                                            <ContentContainer>
+                                                <ContentEntry>
+                                                    <ContentEntryLayout>
+                                                        <ContentHeadingContainer>
+                                                            <ContentHeadingEntry>
                                                                 <bdi>
-                                                                    <LeftBoxLayoutHeading>
-                                                                        <LeftBoxLayoutHeadingLink to="#">
-                                                                            <LeftBoxLayoutHeadingSpan>Non-Alchholic<br /><br /></LeftBoxLayoutHeadingSpan>
-                                                                            <LeftBoxLayoutSpan>논알콜 칵테일</LeftBoxLayoutSpan>
-                                                                        </LeftBoxLayoutHeadingLink>
-                                                                    </LeftBoxLayoutHeading>
+                                                                    <ContentHeadingBox>
+                                                                        <ContentHeadingLink to="#">
+                                                                            <ContentHeading>Non-Alchholic<br /><br /></ContentHeading>
+                                                                            <ContentSubtitle>논알콜 칵테일</ContentSubtitle>
+                                                                        </ContentHeadingLink>
+                                                                    </ContentHeadingBox>
                                                                 </bdi>
-                                                            </LeftBoxLayoutHeadingBox>
-                                                        </LeftBoxLayoutHeadingContainer>
+                                                            </ContentHeadingEntry>
+                                                        </ContentHeadingContainer>
                                                         <LeftBoxLinkContiner>
                                                             <LeftBoxLinkBox>
                                                                 <LeftLinkParagraph>
@@ -293,9 +309,9 @@ export default function Main(): JSX.Element {
                                                                 </LeftLinkParagraph>
                                                             </LeftBoxLinkBox>
                                                         </LeftBoxLinkContiner>
-                                                    </LeftBoxLayout>
-                                                </SweetFlavorBoxLayoutLeftBox>
-                                            </SweetFlavorBoxLayoutLeftContainer>
+                                                    </ContentEntryLayout>
+                                                </ContentEntry>
+                                            </ContentContainer>
                                             <SweetFlavorBoxLayoutRightContainer>
                                                 <SweetFlavorBoxLayoutRightBox>
                                                     <div>
@@ -309,10 +325,10 @@ export default function Main(): JSX.Element {
                                                     </div>
                                                 </SweetFlavorBoxLayoutRightBox>
                                             </SweetFlavorBoxLayoutRightContainer>
-                                        </SweetFlavorBoxLayout>
-                                    </SweetFlavorBox>
-                                </SweetFlavorContainer>
-                            </SweetFlavorSection>
+                                        </CategoryBoxLayout>
+                                    </CategoryEntry>
+                                </CategoryContainer>
+                            </CategorySection>
                         </MainPageRow>
                     </PreviewBoard>
                 </div>
@@ -329,12 +345,22 @@ const BackgroundImage = styled.img`
     height: auto;
     display: block;
     aspect-ratio: 3.2;
+
+    @media screen and (max-width: 60.063rem) {
+        aspect-ratio: 0.9375;
+        max-width: 1500px;
+    }
 `;
 
 const MainPageLayout = styled.main`
     position: relative;
     min-height: calc(100vh - 8.75rem);
     background-color: #FFF;
+    z-index: 1;
+
+    @media screen and (max-width: 60.063rem) {
+        min-height: auto;
+    }
 `;
 
 const PreviewBoard = styled.div`
@@ -353,11 +379,6 @@ const MainPageRow = styled.div`
     flex: 1 0;
     flex-direction: column;
     pointer-events: none;
-
-    @media (max-width: 768px) {
-        display: grid;
-        justify-content: center;
-    }
 `;
 
 const TitleSection = styled.section`
@@ -373,6 +394,14 @@ const TitleLayout = styled.div`
     height: fit-content;
     pointer-events: all;
     scroll-margin-top: 84px;
+
+    @media screen and (max-width: 60.063rem) {
+        scroll-margin-top: 70px;
+    }
+
+    @media screen and (max-width: 37.563rem) {
+        scroll-margin-top: 60px;
+    }
 `;
 
 const TileContainer = styled.div`
@@ -388,6 +417,10 @@ const TitleBox = styled.div`
     flex-direction: column-reverse;
     gap: 0;
     pointer-events: none;
+
+    @media screen and (max-width: 60.063rem) {
+        gap: 18px;
+    }
 `;
 
 const PositionerContainer = styled.div`
@@ -399,6 +432,14 @@ const PositionerContainer = styled.div`
     align-items: center;
     justify-content: flex-end;
     z-index: 1;
+
+    @media screen and (max-width: 60.063rem) {
+        position: static;
+        width: auto;
+        height: auto;
+        justify-content: center;
+        z-index: auto;
+    }
 `;
 
 const PositionerBox = styled.div`
@@ -410,6 +451,19 @@ const PositionerBox = styled.div`
     height: fit-content;
     scroll-margin-top: 84px;
     pointer-events: all;
+
+    @media screen and (max-width: 60.063rem) {
+        margin: 0;
+        max-width: 55.3125%;
+        min-width: 55.3125%;
+        scroll-margin-top: 70px;
+    }
+
+    @media screen and (max-width: 37.563rem) {
+        max-width: 89.3333%;
+        min-width: auto;
+        scroll-margin-top: 60px;
+    }
 `;
 
 const DrinkableLayout = styled.div`
@@ -420,6 +474,10 @@ const DrinkableLayout = styled.div`
     flex: 1 0;
     flex-direction: column;
     pointer-events: none;
+
+    @media screen and (max-width: 60.063rem) {
+        flex: 1 1;    
+    }
 `;
 
 const DrinkableDescriptionContainer = styled.div`
@@ -436,6 +494,10 @@ const DrinkableDescriptionHeading = styled.h2`
 `;
 const DrinkableDescriptionHeadingTitleSpan = styled.span`
     color: #8E6C62;
+
+    @media screen and (max-width: 60.063rem) {
+        color: #1D1D1D;
+    }
 `;
 const DrinkableDescriptionHeadingSpan = styled.span`
     color: #8E6C62;
@@ -443,6 +505,19 @@ const DrinkableDescriptionHeadingSpan = styled.span`
     letter-spacing: 1.6px;
     line-height: 2.4375rem;
     vertical-align: top;
+
+    @media screen and (max-width: 60.063rem) {
+        color: #1D1D1D;
+        font-size: 1.5625rem;
+        letter-spacing: 1.4px;
+        line-height: 2.0625rem;
+    }
+
+    @media screen and (max-width: 37.563rem) {
+        font-size: 1.25rem;
+        letter-spacing: 1px;
+        line-height: 1.75rem;
+    }
 `;
 
 const DrinkableButtonLayout = styled.div`
@@ -459,6 +534,10 @@ const DrinkableButtonContainer = styled.div`
     height: fit-content;
     pointer-events: all;
     scroll-margin-top: 84px;
+
+    @media screen and (max-width: 60.063rem) {
+        scroll-margin-top: 70px;
+    }
 `;
 
 const DrinkableButtonLink = styled(Link)`
@@ -478,6 +557,10 @@ const DrinkableButtonLink = styled(Link)`
     letter-spacing: .7px;
     line-height: 1.21875rem;
     transition: color .2s, background-color .2s, border-color .2s;
+
+    @media screen and (max-width: 60.063rem) {
+        background-color: #1D1D1D;
+    }
 `;
 
 const DrinkableButtonSpan = styled.span`
@@ -506,6 +589,11 @@ const DescriptionSection = styled.section`
     flex: 1 1;
     align-items: center;
     justify-content: center;
+
+    @media screen and (max-width: 37.563rem) {
+        margin-top: 20vw;
+        padding: 0 2.5333vw;
+    }
 `;
 
 const DescriptionContainer = styled.div`
@@ -516,6 +604,12 @@ const DescriptionContainer = styled.div`
     height: fit-content;
     pointer-events: all;
     scroll-margin-top: 84px;
+    
+    @media screen and (max-width: 37.563rem) {
+        margin: 0;
+        max-width: 89.3333%;
+        scroll-margin-top: 60px;
+    }
 `;
 
 const DescriptionBox = styled.div`
@@ -525,6 +619,10 @@ const DescriptionBox = styled.div`
     flex: 1 0;
     flex-direction: column;
     pointer-events: none;
+
+    @media screen and (max-width: 37.563rem) {
+        top: 0;
+    }
 `;
 
 const AboutTitleBox = styled.div`
@@ -535,6 +633,12 @@ const AboutTitleBox = styled.div`
     flex: 0 0 auto;
     align-items: center;
     justify-content: center;
+
+    @media screen and (max-width: 37.563rem) {
+        margin: 0;
+        width: auto;
+        flex: 1 1;
+    }
 `;
 
 const AboutTitleHeadingBox = styled.div`
@@ -544,6 +648,10 @@ const AboutTitleHeadingBox = styled.div`
     height: fit-content;
     pointer-events: all;
     scroll-margin-top: 84px;
+
+    @media screen and (max-width: 37.563rem) {
+        scroll-margin-top: 60px;    
+    }
 `;
 const AboutTitleHeading = styled.h2`
     font-size: .875rem;
@@ -558,6 +666,12 @@ const AboutTitleHeadingSpan = styled.span`
     line-height: 2.4375rem;
     text-transform: uppercase;
     vertical-align: top;
+
+    @media screen and (max-width: 37.563rem) {
+        font-size: 1.25rem;
+        letter-spacing: 1px;
+        line-height: 1.75rem;
+    }
 `;
 
 const AboutClassificationContainer = styled.div`
@@ -573,12 +687,21 @@ const AboutClassificationBox = styled.div`
     height: fit-content;
     pointer-events: all;
     scroll-margin-top: 84px;
+
+    @media screen and (max-width: 37.563rem) {
+        scroll-margin-top: 60px;
+    }
 `;
 
 const ClassificationContainer = styled.div`
     margin: auto;
     position: relative;
     width: 82.9470%;
+
+    @media screen and (max-width: 37.563rem) {
+        margin: 0;
+        width: auto;
+    }
 `;
 
 const ClassificationBox = styled.div`
@@ -587,6 +710,10 @@ const ClassificationBox = styled.div`
     position: relative;
     height: 100%;
     overflow: hidden;
+
+    @media screen and (max-width: 37.563rem) {
+        padding: 0;
+    }
 `;
 
 const ClassificationList = styled.ul`
@@ -694,7 +821,7 @@ const CocktailFlavorSpan = styled.span`
     overflow: hidden;
 `;
 
-const SweetFlavorSection = styled.section`
+const CategorySection = styled.section`
     margin-top: 10.625vw;
     display: flex;
     flex: 1 1;
@@ -702,7 +829,7 @@ const SweetFlavorSection = styled.section`
     justify-content: center;
 `;
 
-const SweetFlavorContainer = styled.div`
+const CategoryContainer = styled.div`
     margin: 0 8.0555%;
     position: relative;
     width: 100%;
@@ -710,13 +837,19 @@ const SweetFlavorContainer = styled.div`
     height: fit-content;
     pointer-events: all;
     scroll-margin-top: 84px;
+
+    @media screen and (max-width: 37.563rem) {
+        margin: 0;
+        max-width: 89.3333%;
+        scroll-margin-top: 60px;
+    }
 `;
 
-const SweetFlavorBox = styled.div`
+const CategoryEntry = styled.div`
     cursor: pointer;
 `;
 
-const SweetFlavorBoxLayout = styled.div`
+const CategoryBoxLayout = styled.div`
     margin: 0 -0.9722vw;
     position: relative;
     top: 0;
@@ -728,26 +861,41 @@ const SweetFlavorBoxLayout = styled.div`
     align-items: unset;
     gap: unset;
     pointer-events: none;
+
+    @media screen and (max-width: 37.563rem) {
+        margin: 0;
+        flex-direction: column-reverse;
+        gap: 18px;
+    }
 `;
 
-const SweetFlavorBoxLayoutLeftContainer = styled.div`
+const ContentContainer = styled.div`
     margin-left: 8.3333333%;
     width: 41.6666%;
     display: flex;
     flex: 0 0 auto;
     align-items: center;
     justify-content: center;
+
+    @media screen and (max-width: 37.563rem) {
+        margin: 0;
+        width: 100%;
+    }
 `;
 
-const SweetFlavorBoxLayoutLeftBox = styled.div`
+const ContentEntry = styled.div`
     position: relative;
     width: 100%;
     min-width: 74.5631%;
     height: fit-content;
     pointer-events: all;
+
+    @media screen and (max-width: 37.563rem) {
+        min-width: auto;
+    }
 `;
 
-const LeftBoxLayout = styled.div`
+const ContentEntryLayout = styled.div`
     position: relative;
     top: 0;
     height: 100%;
@@ -756,7 +904,7 @@ const LeftBoxLayout = styled.div`
     pointer-events: none;
 `;
 
-const LeftBoxLayoutHeadingContainer = styled.div`
+const ContentHeadingContainer = styled.div`
     display: grid;
     display-template-columns: 1fr;
     display-template-rows: 1fr;
@@ -764,28 +912,34 @@ const LeftBoxLayoutHeadingContainer = styled.div`
     justify-content: center;
 `;
 
-const LeftBoxLayoutHeadingBox = styled.div`
+const ContentHeadingEntry = styled.div`
     position: relative;
     width: 100%;
     height: fit-content;
     pointer-events: all;
 `;
 
-const LeftBoxLayoutHeading = styled.h2`
+const ContentHeadingBox = styled.h2`
     font-size: .875rem;
     letter-spacing: .8px;
     line-height: 1.3125rem;
 `;
 
-const LeftBoxLayoutHeadingLink = styled(Link)``;
+const ContentHeadingLink = styled(Link)``;
 
-const LeftBoxLayoutHeadingSpan = styled.span``;
+const ContentHeading = styled.span``;
 
-const LeftBoxLayoutSpan = styled.span`
+const ContentSubtitle = styled.span`
     font-size: 1.875rem;
     letter-spacing: 1.6px;
     line-height: 2.4375rem;
     vertical-align: top;
+
+    @media screen and (max-width: 37.563rem) {
+        font-size: 1.25rem;
+        letter-spacing: 1px;
+        line-height: 1.75rem;
+    }
 `;
 
 const LeftBoxLinkContiner = styled.div`
@@ -829,6 +983,11 @@ const SweetFlavorBoxLayoutRightContainer = styled.div`
     flex: 0 0 auto;
     align-items: center;
     justify-content: center;
+
+    @media screen and (max-width: 37.563rem) {
+        padding: 0;
+        width: 100%;
+    }
 `;
 
 const SweetFlavorBoxLayoutRightBox = styled.div`
@@ -862,17 +1021,21 @@ const FlavorCocktailMainImage = styled.img`
     aspect-ratio: 0.93913;
 `;
 
-const LongFlavorSection = styled(SweetFlavorSection)``;
+const LongFlavorSection = styled(CategorySection)``;
 
-const LongFlavorContainer = styled(SweetFlavorContainer)``;
+const LongFlavorContainer = styled(CategoryContainer)``;
 
-const LongFlavorBox = styled(SweetFlavorBox)``;
+const LongFlavorBox = styled(CategoryEntry)``;
 
-const LongFlavorBoxLayout = styled(SweetFlavorBoxLayout)`
+const LongFlavorBoxLayout = styled(CategoryBoxLayout)`
     flex-direction: row-reverse;
+
+    @media screen and (max-width: 37.563rem) {
+        flex-direction: column-reverse;
+    }
 `;
 
-const LongFlavorBoxLayoutLeftContainer = styled(SweetFlavorBoxLayoutLeftContainer)`
+const LongFlavorBoxLayoutLeftContainer = styled(ContentContainer)`
     margin-left: 0;
     margin-right: 8.3333%;
 `;

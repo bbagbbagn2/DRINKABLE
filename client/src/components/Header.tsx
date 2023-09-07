@@ -49,6 +49,9 @@ export default function Header(): JSX.Element {
                 <HeaderContainer>
                     <HeaderBox>
                         <HeaderNav>
+                            <MobileHeaderMenuButton to="#">
+                                <AiOutlineMenu size="17" fill='#8E6C62' />
+                            </MobileHeaderMenuButton>
                             <LogoBox onClick={() => handleScroll(0)}>
                                 <Logo />
                             </LogoBox>
@@ -58,9 +61,6 @@ export default function Header(): JSX.Element {
                                 <HeaderItem to="/classfication">CLASSFICATION</HeaderItem>
                             </HeaderList>
                             <MyPageCol>
-                                <MobileHeaderMenuButton to="#">
-                                    <AiOutlineMenu size="17" fill='#8E6C62' />
-                                </MobileHeaderMenuButton>
                                 <HeaderItemButton><CiSearch size="17" fill='#8E6C62' /></HeaderItemButton>
                                 <MyPageItem to={sign ? "/account" : "/login"}><CiUser size="17" fill='#8E6C62' /></MyPageItem>
                                 <MyPageItem to="/wishlists"><CiStar size="17" fill='#8E6C62' /></MyPageItem>
@@ -75,7 +75,7 @@ export default function Header(): JSX.Element {
 
 const HeaderLayout = styled.header`
     position: relative;
-    background: #FFF;
+    background-color: #FFF;
     height: 84px;
     display: block;
     z-index: 90;
@@ -99,8 +99,13 @@ const HeaderCol = styled.div`
     z-index: 80;
 
     @media screen and (max-width: 60.063rem) {
+        width: auto;
         position: static;
         height: 100%;
+        translate: none;
+        rotate:none;
+        scale:none;
+        z-index: auto;
     }
 `;
 
@@ -137,7 +142,7 @@ const HeaderNav = styled.div`
         padding: 0 1.25rem;
         min-height: 3.1875rem;
         display: grid;
-        grid-template-columns: repeat(4, 1fr);
+        grid-template-columns: 11% 1fr 10%;
         justify-content: center;
     }       
 `;
@@ -234,6 +239,16 @@ const HeaderItemButton = styled.button`
     background-color: initial;
     border-width: 0;
     cursor: pointer;
+
+    @media screen and (max-width: 60.063rem) {
+        padding-top: 1.375rem;
+        padding-bottom: 1.375rem;
+    }
+
+    @media screen and (max-width: 37.563rem) {
+        padding-top: 0.75rem;
+        padding-bottom: 0.75rem;
+    }
 `
 const MyPageItem = styled(Link)`
     margin: 0;
