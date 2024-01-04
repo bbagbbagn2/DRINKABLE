@@ -1,21 +1,22 @@
-<div align="center">
-  
-  ![header](https://capsule-render.vercel.app/api?type=soft&color=auto&height=300&section=header&text=DRINKABLE&fontSize=90)
+# DRINKABLE
 
-</div>
-
-<br><br>
-## Preview
-
+## Information of project
 ![DRINKABLE](https://github.com/bbagbbagn2/DRINKABLE/assets/89950902/6fe12913-6f14-4ef0-b534-25e627c305fa)
 
-<br><br>
+<br/><br/>
 
-## Introducing Our Project
-DRINKABLE은 다양한 칵테일을 소개하는 웹 프로젝트입니다. 사용자는 원하는 칵테일에 대한 정보와 필요한 재료를 쉽게 알 수 있습니다.<br>
-뿐만 아니라  맛, 양, 논알콜 여부에 따라 칵테일을 분류할 수 있어, 사용자는 자신의 기분에 따라 알맞은 칵테일을 선택할 수 있습니다.<br>이는 프로젝트의 큰 장점으로 강조될 것입니다.
+### 개발 기간
+<p>
+  2023.04 ~ 2023.08 약 4개월동안 진행<br/><br/>
+</p>
 
-<br><br>
+## Introducing Project
+<p>
+  DRINKABLE은 다양한 칵테일을 소개하는 웹 프로젝트입니다. 사용자는 원하는 칵테일 정보와 필요한 재료를 쉽게 확인할 수 있습니다.<br/>
+  더불어, 맛, 양, 논알콜 여부에 따라 칵테일을 효과적으로 분류할 수 있어, 사용자는 자신의 기분에 맞는 칵테일을 쉽게 선택할 수 있습니다.<br/>
+  이는 프로젝트의 주요 강점 중 하나로 강조될 것입니다.<br/><br/>
+</p>
+
 
 ## Skills
 
