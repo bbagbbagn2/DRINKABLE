@@ -38,7 +38,8 @@
   <img src="https://img.shields.io/badge/TypeScript-1976D2?style=flat-square&logo=TypeScript&logoColor=white"/>
   <img src="https://img.shields.io/badge/React-61DAFB?style=flat-square&logo=React&logoColor=black"/>
   <img src="https://img.shields.io/badge/styledcomponents-DB7093?style=flat-square&logo=styledcomponents&logoColor=white"/><br/>
-  <img src="https://img.shields.io/badge/Node.js-3C873A?style=flat-square&logo=Node.js&logoColor=white"/><br/><br/>
+  <img src="https://img.shields.io/badge/Node.js-3C873A?style=flat-square&logo=Node.js&logoColor=white"/>
+  <img src="https://img.shields.io/badge/Express-000000?style=flat-square&logo=Express&logoColor=white"/><br/><br/>
 </p>
 
 ## 구현 기능
