@@ -16,6 +16,27 @@
   이는 프로젝트의 주요 강점 중 하나로 강조될 것입니다.<br/><br/>
 </p>
 
+## 시작 가이드
+
+### Installation
+``` bash
+  $ git clone
+```
+
+### Frontend
+```
+cd client
+npm install
+npm run start
+```
+
+### Backend
+```
+cd server
+npm install
+npm run dev
+```
+<br/><br/>
 
 ## Stacks
 
