@@ -2,14 +2,14 @@
 
 ![DRINKABLE](https://github.com/bbagbbagn2/DRINKABLE/assets/89950902/6fe12913-6f14-4ef0-b534-25e627c305fa)
 
-## Information of project
+## 프로젝트 정보
 
 ### 개발 기간
 <p>
   2023.04 ~ 2023.08 약 4개월동안 진행<br/><br/>
 </p>
 
-## Introducing Project
+## 프로젝트 소개
 <p>
   DRINKABLE은 다양한 칵테일을 소개하는 웹 프로젝트입니다. 사용자는 원하는 칵테일 정보와 필요한 재료를 쉽게 확인할 수 있습니다.<br/>
   더불어, 맛, 양, 논알콜 여부에 따라 칵테일을 효과적으로 분류할 수 있어, 사용자는 자신의 기분에 맞는 칵테일을 쉽게 선택할 수 있습니다.<br/>
@@ -42,34 +42,19 @@
   <img src="https://img.shields.io/badge/Express-000000?style=flat-square&logo=Express&logoColor=white"/><br/><br/>
 </p>
 
-## 구현 기능
+## 중요 기능
 
-### MainPage
---------
-1. Header HOME / ABOUT / CLASSFICATION 으로 분류
-    + 모바일 버전에 맞는 반응형 Header
-
-2. 해당 프로젝트의 소개 및 분류 페이지 이동 버튼 생성
-
-<br>
-
-### ClaasficationPage
----------
-1. Flavor, Amount, Non-Alchoholic 에 따른 분류 기능
-
-<br><br>
-
-## 긍정적 요소
-
-<p align="justify">
-
-+ React의 공통 컴포넌트를 사용함으로써 개발 효율성 증가
-  
-+ styled-components 네이밍 컨벤션 및 S-dot 사용법 학습으로 인한 컴포넌트 간의 혼돈 감소
-
-+ TypeScript 사용
-
-+ 직접 서버를 개발함으로써 백엔드의 기초 학습
-
-+ 프로젝트의 목적에 맞는 디자인
+### 위시리스트
+<p>
+  이용자가 선호하는 칵테일을 위시리스트에 담아 나중에도 해당 칵테일의 정보를 쉽게 찾을 수 있습니다.
 </p>
+
+### 카테고리
+<p>
+  맛(Flavor), 양(Amount), 비알코올성(Non-Alcoholic)에 따라 칵테일을 분류하여 이용자가 원하는 정보를 편리하게 찾을 수 있도록 제공합니다.<br/><br/>
+</p>
+
+## 아키텍처
+
+### 디렉터리 구조
+
