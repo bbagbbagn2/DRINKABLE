@@ -1,7 +1,8 @@
 # DRINKABLE
 
-## Information of project
 ![DRINKABLE](https://github.com/bbagbbagn2/DRINKABLE/assets/89950902/6fe12913-6f14-4ef0-b534-25e627c305fa)
+
+## Information of project
 
 <br/><br/>
 
