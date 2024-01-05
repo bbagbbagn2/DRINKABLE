@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import styled from 'styled-components';
-import Header from './components/Header';
+import Header from './pages/Header/Header';
 import ItemWrapper from './components/ClassificationPage/ItemWrapper';
 import { setScreenSize } from './utils';
 

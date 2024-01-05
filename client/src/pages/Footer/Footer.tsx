@@ -1,8 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 
-export default function Footer(): JSX.Element {
-
+export default function Footer() {
     return (
             <FooterLayout>
                 <FooterParagraph>
@@ -12,11 +11,10 @@ export default function Footer(): JSX.Element {
     );
 }
 
-
 const FooterLayout = styled.footer`
     padding: 0;
     display: grid;
-    place-items: center;    
+    place-items: center;
     margin-top: 200px;
     height: 80px;
     background: #8E6C62;

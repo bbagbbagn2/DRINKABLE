@@ -1,17 +1,17 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 import styled from 'styled-components';
-import { ReactComponent as SvgLogo } from '../assets/image/logo.svg'    ;
+
+import { ReactComponent as SvgLogo } from '../logos/logo.svg';
 
 export default function Logo() {
     return (
-        <SvgLink to="/">
-            <Svg src={SvgLogo} alt="logo" />
-        </SvgLink>
+        <a href="/">
+            <Svg />
+        </a>
     );
 }
 
-const SvgLink = styled(Link)`
+const SvgLink = styled.a`
     display: flex;
     flex-grow: 1;
     flex-shrink: 0;
@@ -25,19 +25,23 @@ const SvgLink = styled(Link)`
 `;
 
 const Svg = styled(SvgLogo)`
-    margin: 0 auto;
-    width: auto;
-    height: 1.75rem;
-    display: inline-block;
-    font-size: .938rem;
+    width: 120px;
+    max-width: 100%;
+    fill: currentColor;
+    vertical-align: middle !important;
 
-    @media screen and (min-width: 37.563rem) and (max-width: 60rem) {
-        margin-bottom: 0.063rem;
-        height: 1.063rem;
+    :not(:root) {
+        overflow: hidden;
     }
 
     @media screen and (max-width: 37.563rem) {
         margin-bottom: 0.125rem;
         height: 1.063rem;
     }
+
+    @media screen and (min-width: 37.563rem) and (max-width: 60rem) {
+        margin-bottom: 0.063rem;
+        height: 1.063rem;
+    }
+
 `;

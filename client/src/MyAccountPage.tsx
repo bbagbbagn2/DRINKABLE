@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
-import Header from './components/Header';
-import Footer from './components/Footer';
+import Header from './pages/Header/Header';
+import Footer from './pages/Footer/Footer';
 import { MdOutlineKeyboardArrowRight } from 'react-icons/md';
 import axios from 'axios';
 

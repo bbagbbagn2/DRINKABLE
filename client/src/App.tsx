@@ -1,5 +1,6 @@
 import React from "react";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
+
 import MainPage from "./MainPage";
 import ClassificationPage from "./ClassificationPage";
 import SearchPage from "./SearchPage";
@@ -10,9 +11,8 @@ import PersonalDetailsPage from "./PersonalDetailsPage";
 import LogOutPage from "./LogOutPage";
 import WidhlistsPage from "./WishlistsPage"
 
-function App(): JSX.Element {
+export default function App() {
   return (
-    <Router>
       <Routes>
         <Route path="/" element={<MainPage />} />
         <Route path="/classfication" element={<ClassificationPage />} />
@@ -24,8 +24,5 @@ function App(): JSX.Element {
         <Route path="/sign-out" element={<LogOutPage />} />
         <Route path="/wishlists" element={<WidhlistsPage />} />
       </Routes>
-    </Router>
   );
-}
-
-export default App;
+};
