@@ -20,7 +20,7 @@
 
 ### Installation
 ``` bash
-  $ git clone
+  $ git clone https://github.com/bbagbbagn2/DRINKABLE.git
 ```
 
 ### Frontend
