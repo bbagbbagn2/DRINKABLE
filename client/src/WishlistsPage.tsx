@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
-import Header from './pages/Header/Header';
-import Footer from './pages/Footer/Footer';
+import Header from './layouts/Header';
+import Footer from './layouts/Footer';
 
 export default function Main(): JSX.Element {
     return (

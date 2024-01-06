@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import styled from 'styled-components';
 
-import Logo from '../../components/Logo';
-import { theme } from '../../styles/theme';
+import Logo from '../components/Logo';
+import { theme } from '../styles/theme';
 
 import { AiOutlineMenu } from "react-icons/ai";
 import { CiSearch, CiStar, CiUser } from "react-icons/ci";

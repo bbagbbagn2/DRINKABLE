@@ -8,6 +8,7 @@ import App from './App';
 const GlobalStyle = createGlobalStyle`
   *, &:before, &:after {
     box-sizing: border-box;
+
   }
 
   :root {
@@ -43,6 +44,7 @@ const GlobalStyle = createGlobalStyle`
     width: 100%;
     height: 100%;
     min-height: 100%;
+    -webkit-font-smoothing: antialiased;
   }
 
   body {
@@ -53,7 +55,9 @@ const GlobalStyle = createGlobalStyle`
     height: auto !important;
     min-height: 100%;
     background: #fff;
+    color: #000;
     line-height: 1.2em;
+    -webkit-text-size-adjust: none;
     
     > #root {
       margin: 0 auto; 
@@ -71,6 +75,7 @@ const GlobalStyle = createGlobalStyle`
   html, body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, input, button, p {
     margin: 0;
     padding: 0;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
   }
 
 
@@ -94,6 +99,20 @@ const GlobalStyle = createGlobalStyle`
     margin: 0;
     padding: 0;
   }
+
+  img {
+    -webkit-perspective: 1;
+    border: none;
+  }
+
+  img, svg {
+    max-width: 100%;
+    height: auto;
+    box-sizing: border-box;
+    vertical-align: middle;
+  }
+
+
 `;
 
 const root = ReactDOM.createRoot(document.getElementById('root')!);

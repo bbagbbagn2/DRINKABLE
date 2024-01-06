@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
-import Header from './pages/Header/Header';
-import Footer from './pages/Footer/Footer';
+import Header from './layouts/Header';
+import Footer from './layouts/Footer';
 import { TextField } from '@material-ui/core';
 import axios from 'axios';
 

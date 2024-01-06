@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 
-import { ReactComponent as SvgLogo } from '../logos/logo.svg';
+import { ReactComponent as SvgLogo } from '../assets/brand/logo.svg';
 
 export default function Logo() {
     return (
