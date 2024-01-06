@@ -1,13 +1,17 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import App from './App.tsx';
 import { createGlobalStyle } from 'styled-components';
+
+import App from './App';
 
 const GlobalStyle = createGlobalStyle`
   *, &:before, &:after {
     box-sizing: border-box;
   }
-  
+
+  html {
+    font-family: "Noto Sans KR", "Open Sans", sans-serif;
+  }
   body {
     position: relative;
     padding: 0;
@@ -15,7 +19,6 @@ const GlobalStyle = createGlobalStyle`
     overflow-y: scroll;
     color: #333;
     font-size: .875rem;
-    font-weight: 300;
     letter-spacing: .03125rem;
     line-height: 1.5;
 
