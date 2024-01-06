@@ -246,7 +246,7 @@ const SearchInputLabel = styled.label`
     height: 3.3125rem;
     font-size: 2.25rem;
     font-weight: 600;
-    line-height; 3.3125rem;
+    line-height: 3.3125rem;
     cursor: text;
     text-align: center;
     text-overflow: ellipsis;

@@ -1,8 +1,11 @@
-import React, { useState, useEffect} from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
-import Header from './components/Header';
-import Footer from './components/Footer';
+
+import Header from './layouts/Header';
+import Footer from './layouts/Footer';
+import BannerSection from './pages/Main/BannerSection/BannerSection';
+import FlavorSection from './pages/Main/FlavorSection/FlavorSection';
 
 export default function Main(): JSX.Element {
     const [windowWidth, setWindowWidth] = useState(window.innerWidth);
@@ -14,62 +17,18 @@ export default function Main(): JSX.Element {
 
         window.addEventListener('resize', handleResize);
         return () => {
-          window.removeEventListener('resize', handleResize);
+            window.removeEventListener('resize', handleResize);
         };
     }, []);
 
     return (
-        <>
+        <div id="container">
             <Header />
-            <MainPageLayout role="main">
+            <BannerSection />
+            <FlavorSection />
                 <div>
                     <PreviewBoard>
                         <MainPageRow>
-                            <TitleSection>
-                                <TitleLayout>
-                                    <TileContainer>
-                                        <TitleBox>
-                                            <PositionerContainer>
-                                                <PositionerBox>
-                                                    <DrinkableLayout>
-                                                        <DrinkableDescriptionContainer>
-                                                            <bdi>
-                                                                <DrinkableDescriptionHeading>
-                                                                    <DrinkableDescriptionHeadingTitleSpan>DRINKABLE</DrinkableDescriptionHeadingTitleSpan>
-                                                                    <br />
-                                                                    <DrinkableDescriptionHeadingSpan>나의 완벽한 칵테일을 찾아보세요.</DrinkableDescriptionHeadingSpan>
-                                                                </DrinkableDescriptionHeading>
-                                                            </bdi>
-                                                        </DrinkableDescriptionContainer>
-                                                    </DrinkableLayout>
-                                                    <DrinkableButtonLayout>
-                                                        <DrinkableButtonContainer>
-                                                            <DrinkableButtonLink to="/classfication">
-                                                                <bdi>
-                                                                    <DrinkableButtonSpan>
-                                                                        <p>자세히 보기</p>
-                                                                    </DrinkableButtonSpan>
-                                                                </bdi>
-                                                            </DrinkableButtonLink>
-                                                        </DrinkableButtonContainer>
-                                                    </DrinkableButtonLayout>
-                                                </PositionerBox>
-                                            </PositionerContainer>
-                                            <BackgroundContainer>
-                                                <BackgroundBox>
-                                                    <picture>
-                                                        {windowWidth <= 60.063 * 14 ? (
-                                                            <BackgroundImage src="https://ifh.cc/g/2HcjXD.jpg" />
-                                                        ) : (
-                                                            <BackgroundImage src="https://static.wixstatic.com/media/42dbaa_60e2f5a9fac14516a5a44e95c05cc330.jpg/v1/fill/w_1289,h_658,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/42dbaa_60e2f5a9fac14516a5a44e95c05cc330.jpg" />
-                                                        )}
-                                                        </picture>
-                                                </BackgroundBox>
-                                            </BackgroundContainer>
-                                        </TitleBox>
-                                    </TileContainer>
-                                </TitleLayout>
-                            </TitleSection>
                             <DescriptionSection>
                                 <DescriptionContainer>
                                     <DescriptionBox>
@@ -234,7 +193,7 @@ export default function Main(): JSX.Element {
                                     <LongFlavorBox>
                                         <LongFlavorBoxLayout>
                                             <LongFlavorBoxLayoutLeftContainer>
-                                            <ContentEntry>
+                                                <ContentEntry>
                                                     <ContentEntryLayout>
                                                         <ContentHeadingContainer>
                                                             <ContentHeadingEntry>
@@ -332,12 +291,10 @@ export default function Main(): JSX.Element {
                         </MainPageRow>
                     </PreviewBoard>
                 </div>
-            </MainPageLayout>
             <Footer />
-        </>
+        </div>
     );
 }
-
 const BackgroundImage = styled.img`
     margin: 0 auto;
     width: 100%;
@@ -352,6 +309,21 @@ const BackgroundImage = styled.img`
     }
 `;
 
+const SessionBox = styled.div`
+    position: relative;
+    margin: 0 auto 50px;
+    max-width: 1440px;
+
+    ::before {
+        content: '';
+        padding-bottom: 62.5%;
+        width: 100%;
+        display: block;
+    }
+    @media (min-width: 769px) {
+        display: block;
+    }
+`;
 const MainPageLayout = styled.main`
     position: relative;
     min-height: calc(100vh - 8.75rem);
@@ -802,7 +774,7 @@ const CocktailLinkSpan = styled.span`
     &:hover {
         border-color: #8E6C62;
     }
-`;  
+`;
 
 const CocktailTitleSpan = styled.span`
     font-size: .875rem;
