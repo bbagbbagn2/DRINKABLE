@@ -28,7 +28,6 @@ export default function BannerSection() {
                         <BackgroundImageBox>
                             <img src={banner} />
                         </BackgroundImageBox>
-
                         <TextBox>
                             <HeadingBox>
                                 <DrinkableDescriptionContainer>
