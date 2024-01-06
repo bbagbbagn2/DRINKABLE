@@ -5,6 +5,7 @@ import styled from 'styled-components';
 import Header from './layouts/Header';
 import Footer from './layouts/Footer';
 import BannerSection from './pages/Main/BannerSection/BannerSection';
+import FlavorSection from './pages/Main/FlavorSection/FlavorSection';
 
 export default function Main(): JSX.Element {
     const [windowWidth, setWindowWidth] = useState(window.innerWidth);
@@ -24,6 +25,7 @@ export default function Main(): JSX.Element {
         <div id="container">
             <Header />
             <BannerSection />
+            <FlavorSection />
                 <div>
                     <PreviewBoard>
                         <MainPageRow>

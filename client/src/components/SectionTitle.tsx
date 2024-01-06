@@ -2,10 +2,11 @@ import React from 'react';
 import styled from 'styled-components';
 
 import { theme } from '../styles/theme';
+import { BsArrowRight } from "react-icons/bs";
 
 type SectionTitleProps = {
     title?: string;
-    desc?: string; 
+    desc?: string;
 }
 
 export default function SectionTitle({ title, desc }: SectionTitleProps) {
@@ -17,6 +18,7 @@ export default function SectionTitle({ title, desc }: SectionTitleProps) {
                 </Title>
                 <LinkTitle>
                     <a href='/'>
+                        <BsArrowRight />
                         {desc && <p>{desc}</p>}
                     </a>
                 </LinkTitle>
@@ -47,6 +49,14 @@ const TitleBox = styled.div`
         display: flex;
         align-items: center;
         font-weight: 600;
+
+        :hover {
+            text-decoration: underline;
+            opacity: 0.7;
+        }
+        svg {
+            margin-right: 5px;
+        }
     }
 `;
 
