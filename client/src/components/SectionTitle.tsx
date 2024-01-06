@@ -3,15 +3,21 @@ import styled from 'styled-components';
 
 import { theme } from '../styles/theme';
 
-export default function SectionTitle() {
+type SectionTitleProps = {
+    title?: string;
+    desc?: string; 
+}
+
+export default function SectionTitle({ title, desc }: SectionTitleProps) {
     return (
         <SessionBox>
             <TitleBox>
                 <Title>
-
+                    {title && <p>{title}</p>}
                 </Title>
                 <LinkTitle>
                     <a href='/'>
+                        {desc && <p>{desc}</p>}
                     </a>
                 </LinkTitle>
             </TitleBox>
