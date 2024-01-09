@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
 
 import { theme } from '../../../styles/theme';
-
+import Button from '../../../components/Button';
 import banner from '../../../assets/images/background.jpg';
 
 export default function BannerSection() {
@@ -35,11 +35,9 @@ export default function BannerSection() {
                                     <Description>당신의 완벽한 칵테일을 찾아보세요.</Description>
                                 </DrinkableDescriptionContainer>
                             </HeadingBox>
-                            <ButtonBox>
-                                <ButtonLink href="/classfication">
-                                    자세히 보기
-                                </ButtonLink>
-                            </ButtonBox>
+                            <Button href='/classification' bgColor='#fff'>
+                                자세히 보기
+                            </Button>
                         </TextBox>
                     </CornerBox>
                 </CornerFull>

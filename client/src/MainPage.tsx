@@ -6,8 +6,9 @@ import Header from './layouts/Header';
 import Footer from './layouts/Footer';
 import BannerSection from './pages/Main/BannerSection/BannerSection';
 import FlavorSection from './pages/Main/FlavorSection/FlavorSection';
+import BlueSection from './pages/Main/BlueSection/BlueSection';
 
-export default function Main(): JSX.Element {
+export default function Main() {
     const [windowWidth, setWindowWidth] = useState(window.innerWidth);
 
     useEffect(() => {
@@ -26,6 +27,7 @@ export default function Main(): JSX.Element {
             <Header />
             <BannerSection />
             <FlavorSection />
+            <BlueSection />
                 <div>
                     <PreviewBoard>
                         <MainPageRow>
