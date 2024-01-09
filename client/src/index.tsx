@@ -40,6 +40,16 @@ const GlobalStyle = createGlobalStyle`
     background: #fff !important;
   }
 
+  #footer {
+    margin: 50px auto 0;
+    margin-top: 0 !important;
+    padding: 0;
+    width: 100%;
+    border: 0;
+    border-top: 1px solid #e5e5e5;
+    background-color: #000;
+  }
+
   html {
     width: 100%;
     height: 100%;
