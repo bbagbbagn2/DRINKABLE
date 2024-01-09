@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 
-import { theme } from '../../../styles/theme';
+import Button from '../../../components/Button';
 
 
 export default function BannerSection() {
@@ -20,6 +20,7 @@ export default function BannerSection() {
                     <TextBox>
                         <HeadingBox>BLUE HAWAII</HeadingBox>
                         <DescBox>블루 하와이를 만나보세요</DescBox>
+                        <Button href='/' bgColor='#000'>자세히 보기</Button>
                     </TextBox>
                 </LeftBox>
             </SessionBoxInner>
@@ -68,7 +69,6 @@ const LeftBox = styled.div`
 const CornerBox = styled.div`
     position: relative;
     width: 100%;
-    height: 100%;
     display: block;
     min-height: 60px;
     overflow: hidden;
@@ -82,7 +82,6 @@ const CornerBox = styled.div`
 const TextBox = styled.div`
     padding: 4%;
     width: 100%;
-    height: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
