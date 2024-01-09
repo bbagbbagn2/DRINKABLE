@@ -4,11 +4,11 @@ import { Routes, Route } from "react-router-dom";
 import MainPage from "./MainPage";
 import ClassificationPage from "./ClassificationPage";
 import SearchPage from "./SearchPage";
-import LoginPage from "./LoginPage";
+import LoginPage from "./pages/sign-in/LoginPage";
 import ResisterPage from "./ResisterPage";
 import MyAccountPage from "./MyAccountPage";
 import PersonalDetailsPage from "./PersonalDetailsPage";
-import LogOutPage from "./LogOutPage";
+import LogoutPage from "./pages/sign-out/LogoutPage";
 import WidhlistsPage from "./WishlistsPage"
 
 export default function App() {
@@ -21,7 +21,7 @@ export default function App() {
         <Route path="/register" element={<ResisterPage />} />
         <Route path="/account/*" element={<MyAccountPage />} />
         <Route path="/account/personal-details" element={<PersonalDetailsPage />} />
-        <Route path="/sign-out" element={<LogOutPage />} />
+        <Route path="/sign-out" element={<LogoutPage />} />
         <Route path="/wishlists" element={<WidhlistsPage />} />
       </Routes>
   );

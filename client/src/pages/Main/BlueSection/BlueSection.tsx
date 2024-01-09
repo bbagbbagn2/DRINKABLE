@@ -9,6 +9,13 @@ export default function BannerSection() {
     return (
         <SessionBox>
             <SessionBoxInner>
+            <LeftBox>
+                    <CornerBox>
+                        <div>
+                            <img src='https://mariebrizard.com/wp-content/uploads/2023/10/page-cocktails-blue-hawai.png' />
+                        </div>
+                    </CornerBox>
+                </LeftBox>
                 <LeftBox>
                     <CornerBox>
                         <div>
@@ -49,26 +56,40 @@ const SessionBox = styled.div`
 const SessionBoxInner = styled.div`
     position: static;
     width: 100%;
-    height: auto;
+    height: 600px;
     display: flex;
     align-items: stretch;
     justify-content: center;
     flex-direction: row;
+
+    @media screen and (max-width: 1440px) {
+        height: calc(41.106vw); 
+    }
 `;
 
 const LeftBox = styled.div`
     position: relative;
     width: 50%;
-    height: 100%;
+    height: auto;
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
+
+    :not(:first-child) {
+        border-top: 1px solid #000;
+
+        :not(:last-child){
+            border-right: 1px solid #000;
+        }
+    }
 `;
 
 const CornerBox = styled.div`
     position: relative;
     width: 100%;
+    height: 100%;
+    min-height: 60px;
     display: block;
     min-height: 60px;
     overflow: hidden;
@@ -82,12 +103,15 @@ const CornerBox = styled.div`
 const TextBox = styled.div`
     padding: 4%;
     width: 100%;
+    height: 600px;
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
     text-align: center;
     z-index: 2;
+
+    
 `;
 
 const HeadingBox = styled.div`
@@ -98,6 +122,10 @@ const HeadingBox = styled.div`
     font-size: 50px;
     line-height: 1.25;
     letter-spacing: -0.01em;
+
+    @media screen and (max-width: 1440px) {
+        font-size: calc(30px + 1.25 * (100vw - 767px) / 42.0625);   
+    }
 `;
 
 const DescBox = styled.div`
@@ -108,4 +136,8 @@ const DescBox = styled.div`
     font-weight: 400;
     line-height: 1.4;
     letter-spacing: -0.02em;
-`
+
+    @media screen and (max-width: 1440px) {
+        font-size: calc(12px + 0.25 * (100vw - 767px) / 42.0625);   
+    }
+`;

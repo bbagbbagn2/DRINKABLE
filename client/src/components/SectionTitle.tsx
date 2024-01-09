@@ -7,21 +7,24 @@ import { BsArrowRight } from "react-icons/bs";
 type SectionTitleProps = {
     title?: string;
     desc?: string;
+    useLinkTitle?: boolean;
 }
 
-export default function SectionTitle({ title, desc }: SectionTitleProps) {
+export default function SectionTitle({ title, desc, useLinkTitle }: SectionTitleProps) {
     return (
         <SessionBox>
             <TitleBox>
                 <Title>
                     {title && <p>{title}</p>}
                 </Title>
-                <LinkTitle>
-                    <a href='/'>
-                        <BsArrowRight />
-                        {desc && <p>{desc}</p>}
-                    </a>
-                </LinkTitle>
+                {useLinkTitle && (
+                    <LinkTitle>
+                        <a href='/'>
+                            <BsArrowRight />
+                            {desc && <p>{desc}</p>}
+                        </a>
+                    </LinkTitle>
+                )}
             </TitleBox>
         </SessionBox>
     );

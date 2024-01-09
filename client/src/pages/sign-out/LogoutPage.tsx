@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
-import Header from './layouts/Header';
-import Footer from './layouts/Footer';
+import Header from '../../layouts/Header';
+import Footer from '../../layouts/Footer';
 
 export default function Main(): JSX.Element {
     return (
@@ -50,7 +50,6 @@ const ContextBox = styled.div`
     text-align: center;
 `;
 const ContextH1 = styled.h1`
-    margin: 0;
     font-size: 2.5rem;
     letter-spacing: .125rem;
     line-height: 1.225;
@@ -67,8 +66,6 @@ const ContextH1 = styled.h1`
     }
 `;
 const ContextParagraph = styled.p`
-    margin: 0;
-    padding: 0;
     margin-top: .875rem;
     letter-spacing: .006rem;
     line-height: 1.75;

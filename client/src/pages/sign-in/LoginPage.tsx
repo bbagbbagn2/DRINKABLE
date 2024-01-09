@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
-import Header from './layouts/Header';
-import Footer from './layouts/Footer';
+import Header from '../../layouts/Header';
+import Footer from '../../layouts/Footer';
 import { TextField } from '@material-ui/core';
 import axios from 'axios';
 
@@ -176,7 +176,7 @@ const MyPageTitleBox = styled.div`
 const TitleContextBox = styled.div``;
 
 const MypageTitleParagraph = styled.h1`
-    color: #8E6C62;
+    color: #000;
     font-size: 2.5rem;
     letter-spacing: .125rem;
     line-height: 1.225;
@@ -359,9 +359,9 @@ const LoginButton = styled.button`
     height: 3.125rem;
     align-content: center;
     align-items: center;
-    border: 1px solid #8E6C62;
+    border: 1px solid #000;
     border-radius: 0;
-    background-color: #8E6C62;
+    background-color: #000;
     color: #FFF;
     font-size: .813rem;
     font-weight: 700;

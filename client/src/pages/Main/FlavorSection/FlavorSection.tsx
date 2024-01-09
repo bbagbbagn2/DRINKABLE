@@ -33,6 +33,7 @@ export default function FlavorSection() {
             <SectionTitle
                 title="Drinks By Flavor"
                 desc="칵테일 보러가기"
+                useLinkTitle={true}
             />
             <SessionBox>
                 <div className='main_best_box'>
