@@ -3,7 +3,6 @@ import styled from 'styled-components';
 
 export default function Footer() {
     return (
-<<<<<<< HEAD
         <FooterSection id="footer">
             <FooterBox>
                 <FooeterCol>
@@ -45,21 +44,3 @@ const FooterParagraph = styled.div`
     color: #FFFFFF;
     text-align: center;
 `;
-=======
-        <FooterLayout>
-            Copyright 2023. DRINKABLE. Powered and secured by Park Jihun
-        </FooterLayout>
-    );
-}
-
-const FooterLayout = styled.footer`
-    padding: 40px;
-    display: grid;
-    align-items: center;
-    justify-content: center;
-    margin-top: 200px;
-    height: 100px;
-    background: #000;
-    color: #fff;
-`;
->>>>>>> 56431d0937f5869105ea173e3550fa423a7fe3a6
