@@ -1,12 +1,15 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
+
 import Header from '../../layouts/Header';
 import Footer from '../../layouts/Footer';
+
 import { TextField } from '@material-ui/core';
+
 import axios from 'axios';
 
-export default function Main(): JSX.Element {
+export default function Login() {
 
     const [id, setId] = useState<string>("");
     const [password, setPassword] = useState<string>("");

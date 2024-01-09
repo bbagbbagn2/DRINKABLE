@@ -1,9 +1,10 @@
 import React from 'react';
 import styled from 'styled-components';
+
 import Header from '../../layouts/Header';
 import Footer from '../../layouts/Footer';
 
-export default function Main(): JSX.Element {
+export default function Logout() {
     return (
         <>
             <Header />
@@ -65,6 +66,7 @@ const ContextH1 = styled.h1`
         line-height: 1.24;
     }
 `;
+
 const ContextParagraph = styled.p`
     margin-top: .875rem;
     letter-spacing: .006rem;

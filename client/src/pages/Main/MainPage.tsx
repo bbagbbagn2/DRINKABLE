@@ -1,13 +1,11 @@
 import React, { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
-import styled from 'styled-components';
 
-import Header from './layouts/Header';
-import Footer from './layouts/Footer';
-import BannerSection from './pages/Main/BannerSection/BannerSection';
-import FlavorSection from './pages/Main/FlavorSection/FlavorSection';
-import BlueSection from './pages/Main/BlueSection/BlueSection';
-import ExploreSection from './pages/Main/ExploreSection/ExploreSection';
+import Header from '../../layouts/Header';
+import Footer from '../../layouts/Footer';
+import BannerSection from './BannerSection/BannerSection';
+import FlavorSection from './FlavorSection/FlavorSection';
+import BlueSection from './BlueSection/BlueSection';
+import ExploreSection from './ExploreSection/ExploreSection';
 
 export default function Main() {
     const [windowWidth, setWindowWidth] = useState(window.innerWidth);
