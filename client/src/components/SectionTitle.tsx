@@ -37,7 +37,12 @@ const SessionBox = styled.div`
     position: relative;
     max-width: 1440px;
 
-    @media (min-width: 767px) {
+    @media screen and (max-width: 767.98px) {
+        margin-bottom: 6px;
+        padding: 20px 2% 0;
+    }
+
+    @media screen and (min-width: 768px) {
         display: block;
     }
 `;
@@ -61,6 +66,10 @@ const TitleBox = styled.div`
             margin-right: 5px;
         }
     }
+
+    @media screen and (max-width: 767.98px) {
+        margin-top: 13px;
+    }
 `;
 
 const Title = styled.div`
@@ -69,6 +78,12 @@ const Title = styled.div`
     font-size: 36px;
     font-weight: 700;
     line-height: 1.25;
+
+    @media screen and (max-width: 767.98px) {
+        margin-top: 4px;
+        font-size: 24px;
+        line-height: 28px;
+    }
 `;
 
 const LinkTitle = styled(Title)`
@@ -76,4 +91,12 @@ const LinkTitle = styled(Title)`
     font-weight: 400;
     line-height: 1.4;
     letter-spacing: -0.02em;
+    
+    @media screen and (max-width: 767.98px) {
+        margin: 0;
+        margin-bottom: 20px;
+        font-size: 12px;
+        font-weight: 800;
+        line-height: 21px;
+    }
 `;

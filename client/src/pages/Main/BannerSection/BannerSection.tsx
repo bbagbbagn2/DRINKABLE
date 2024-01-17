@@ -82,14 +82,6 @@ const CornerFull = styled.div`
     align-items: center;
     justify-content: center;
     flex-direction: row;
-
-    @media screen and (max-width: 60.063rem) {
-        scroll-margin-top: 70px;
-    }
-
-    @media screen and (max-width: 37.563rem) {
-        scroll-margin-top: 60px;
-    }
 `;
 
 const CornerBox = styled.div`
@@ -105,23 +97,11 @@ const CornerBox = styled.div`
         width: 100%;
         display: block;
     }
-
-    @media screen and (max-width: 60.063rem) {
-        gap: 18px;
-    }
 `;
 
 const BackgroundImageBox = styled.div`
     position: absolute !important;
     inset: 0;
-
-    @media screen and (max-width: 60.063rem) {
-        position: static;
-        width: auto;
-        height: auto;
-        justify-content: center;
-        z-index: auto;
-    }
 `;
 
 const TextBox = styled.div`
@@ -136,17 +116,8 @@ const TextBox = styled.div`
     text-align: right;
     z-index: 2;
 
-    @media screen and (max-width: 60.063rem) {
-        margin: 0;
-        max-width: 55.3125%;
-        min-width: 55.3125%;
-        scroll-margin-top: 70px;
-    }
-
-    @media screen and (max-width: 37.563rem) {
-        max-width: 89.3333%;
-        min-width: auto;
-        scroll-margin-top: 60px;
+    @media screen and (max-width: 767.98px) {
+        display: none;
     }
 `;
 
@@ -156,10 +127,6 @@ const HeadingBox = styled.div`
     position: relative;
     display: flex;
     align-items: center;
-
-    @media screen and (max-width: 60.063rem) {
-        flex: 1 1;    
-    }
 `;
 
 const DrinkableDescriptionContainer = styled.div`
@@ -174,58 +141,4 @@ const Description = styled.span`
     font-size: 1.875rem;
     letter-spacing: 1.6px;
     line-height: 2.4375rem;
-
-    @media screen and (max-width: 60.063rem) {
-        font-size: 1.5625rem;
-        letter-spacing: 1.4px;
-        line-height: 2.0625rem;
-    }
-
-    @media screen and (max-width: 37.563rem) {
-        font-size: 1.25rem;
-        letter-spacing: 1px;
-        line-height: 1.75rem;
-    }
-`;
-
-const ButtonBox = styled.div`
-    border: 1px solid transparent;
-    text-align: right;
-    color: ${theme.colors.white};
-`;
-
-const ButtonLink = styled.a`
-    padding: 15px 20px;
-    min-width: 180px;
-    display: block;
-    border: 1px solid ${theme.colors.black};
-    background-color: ${theme.colors.white};
-    color: ${theme.colors.black};
-    font-size: 14px;
-    font-weight: 600;
-    text-align: center;
-    transition: all 0.3s;
-
-    :hover {
-        opacity: 0.6;
-    }
-`;
-
-const DrinkableButtonSpan = styled.span`
-    position: relative;
-`;
-
-const BackgroundContainer = styled.div`
-    display: flex;
-    flex: 1 1;
-    align-items: center;
-    justify-content: center;
-`;
-
-const BackgroundBox = styled.div`
-    position: relative;
-    width: 100%;
-    height: fit-content;
-    pointer-events: all;
-    scroll-margin-top: 84px;
 `;

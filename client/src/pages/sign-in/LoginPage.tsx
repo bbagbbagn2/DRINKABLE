@@ -126,26 +126,20 @@ export default function Login() {
 }
 
 const LoginPageLayout = styled.div`
-    min-height: calc(100vh - 8.75rem);
+    margin: 80px auto;
+    padding: 60px 40px;
     position: relative;
-    background-color: #FFFFFF;
-    z-index: 1;
+    max-width: 540px;
+    border: 1px solid #e5e5e5;
 `;
 
 const LoginPageCol = styled.div`
-    padding: 0 8.055%;
     margin: 0 auto;
-    max-width: 83.875rem;
     display: block;
     overflow: hidden;
-
-    @media screen and (max-width: 37.563rem) {
-        padding: 0 5.333vw;
-    }
 `;
 
 const LoginPageBox = styled.div`
-    margin: 0 -0.97vw; 
     display: flex;
     flex-wrap: wrap;
     align-items: stretch;
@@ -157,23 +151,11 @@ const LoginPageBox = styled.div`
 `;
 
 const MyPageTitleBox = styled.div`
-    padding: 0 1%;    
-    margin: 4.5rem 8.3% 3rem;
-    width: 83.3%;
+    margin-bottom: 40px;
+    width: 100%;
     display: block;
     text-align: center;
     flex-basis: auto;
-
-    @media screen and (max-width: 60.063rem) {
-        margin: 5vw 0 2.25rem 0;
-        padding: 0 0.972vw;
-        width: 100%;
-    }
-    
-    @media screen and (max-width: 37.563rem) {
-        margin: 14.4vw 0 2.25rem 0;
-        padding: 0 2.533vw;
-    }
 `;
 
 const TitleContextBox = styled.div``;
@@ -204,7 +186,7 @@ const LoginResisterBox = styled.div`
     margin: 0 auto;
     padding: 0;
     min-width: 33.33%;
-    width: auto;
+    width: 100%;
     flex-basis: auto;
 
     @media screen and (max-width: 60.063rem) {
@@ -270,9 +252,7 @@ const LoginResisterLink = styled(Link)`
 `;
 
 const UserContentBox = styled.div`
-    margin: 0 33.33%;
-    padding: 0 0.97vw;
-    width: 33.33%;
+    width: 100%;
     flex-basis: auto;
 
     @media screen and (max-width: 60.063rem) {

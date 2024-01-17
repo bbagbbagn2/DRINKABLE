@@ -22,6 +22,12 @@ const ButtonBox = styled.div`
     border: 1px solid transparent;
     text-align: right;
     color: #fff;
+
+    @media screen and (max-width: 767.98px){
+        padding: 0 87px;
+        width: 100%;
+        font-size: 15px;
+    }
 `;
 
 const ButtonLink = styled.a<{ bgColor: string}>`
@@ -38,5 +44,14 @@ const ButtonLink = styled.a<{ bgColor: string}>`
 
     :hover {
         opacity: 0.6;
+    }
+
+    @media screen and (max-width: 767.98px){
+        padding: 12px 0;
+        width: 100%;
+        min-width: 20px;
+        border-radius: 20px;
+        font-size: 16px;
+        font-weight: 800;
     }
 `;

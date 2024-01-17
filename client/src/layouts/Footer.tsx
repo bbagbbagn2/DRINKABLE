@@ -7,7 +7,7 @@ export default function Footer() {
             <FooterBox>
                 <FooeterCol>
                     <FooterParagraph>
-                        Copyright 2023. DRINKABLE. Powered and secured by Park Jihun
+                        Copyright 2023. DRINKABLE. Powered and secured by Jihun Park
                     </FooterParagraph>
                 </FooeterCol>
             </FooterBox>

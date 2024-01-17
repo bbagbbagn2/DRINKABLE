@@ -5,6 +5,7 @@ import Logo from '../components/Logo';
 import { theme } from '../styles/theme';
 
 import { AiOutlineMenu } from "react-icons/ai";
+import { MdMenu, MdClose, MdSearch } from "react-icons/md";
 import { CiSearch, CiStar, CiUser } from "react-icons/ci";
 import axios from 'axios';
 
@@ -46,10 +47,15 @@ export default function Header(): JSX.Element {
     };
 
     return (
-        <header>
+        <header id='header'>
             <HeaderContainer>
                 <HeaderBox>
                     <HeaderNav className='nav'>
+                        <HambergerBox>
+                            <HambererLink href="/">
+                                <MdMenu size='28'/>
+                            </HambererLink>
+                        </HambergerBox>
                         <div className='left' onClick={() => handleScroll(0)}>
                             <div className='logo'>
                                 <Logo />
@@ -80,7 +86,8 @@ export default function Header(): JSX.Element {
                             </ul>
                             <SearchBox>
                                 <span>검색</span>
-                                <CiSearch size="20" />
+                                <MdSearch size="28" />
+
                             </SearchBox>
                         </div>
                     </HeaderNav>
@@ -95,6 +102,10 @@ const HeaderContainer = styled.div`
     height: 60px;
     background: ${theme.colors.white};
     z-index: 13;
+
+    @media screen and (max-width: 767.98px){
+      height: 50px;
+    }
 `;
 
 const HeaderBox = styled.div`
@@ -144,13 +155,43 @@ const HeaderBox = styled.div`
         }
     }
 
-    @media screen and (max-width: 60.063rem) {
-        position: fixed;
-        width: 100%;
-        background-color: #FFF;
-        border-bottom: 1px solid #ECECEC;
-        z-index: 10;
+    @media screen and (max-width: 767.98px) {
+        border-bottom: 1px solid #e5e5e5;
+
+        .left {
+            padding: 0;
+        }
+
+        .right {
+            margin-right: 16px;
+
+            li {
+                display: none;
+            }
+        }
     }
+`;
+
+const HambergerBox = styled.div`
+    display: none;
+    
+    @media screen and (max-width: 767.98px){
+        margin-left: 16px;
+        display: flex;
+        font-size: 0;
+    }
+
+    svg {
+        padding: 2px;
+        fill: currentColor;
+    }
+`;
+
+const HambererLink = styled.a`
+    font-size: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 `;
 
 const HeaderNav = styled.div`
@@ -158,14 +199,6 @@ const HeaderNav = styled.div`
     padding: 0;
     max-width: 1440px;
     display: flex;
-
-    @media screen and (max-width: 60.063rem) {
-        padding: 0 1.25rem;
-        min-height: 3.1875rem;
-        display: grid;
-        grid-template-columns: 11% 1fr 10%;
-        justify-content: center;
-    }       
 `;
 
 const MenuBox = styled.div`
@@ -223,13 +256,20 @@ const SearchBox = styled.div`
     font-size: 14px;
     cursor: pointer;
 
-    @media screen and (max-width: 60.063rem) {
-        padding-top: 1.375rem;
-        padding-bottom: 1.375rem;
+    @media screen and (max-width: 767.98px) {
+        padding: 0;
+        width: auto;
+        height: 50px;
+        background-color: ${theme.colors.white};
+
+        svg {
+            color: ${theme.colors.black};
+        }
     }
 
-    @media screen and (max-width: 37.563rem) {
-        padding-top: 0.75rem;
-        padding-bottom: 0.75rem;
+    @media screen and (max-width: 1025.98px){
+        span {
+            display: none;
+        }
     }
 `;

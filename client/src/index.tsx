@@ -37,16 +37,25 @@ const GlobalStyle = createGlobalStyle`
     border: 0;
     border-bottom: 1px solid #e5e5e5;
     background: #fff !important;
+
+    @media screen and (max-width: 767.98px){
+      border-bottom: 0;
+    }
   }
 
   #footer {
     margin: 50px auto 0;
-    margin-top: 0 !important;
+    margin-top: 0;
     padding: 0;
     width: 100%;
     border: 0;
     border-top: 1px solid #e5e5e5;
     background-color: #000;
+
+    @media screen and (max-width: 767.98px){
+      margin: 0;
+      margin-top: 20px;
+    }
   }
 
   html {

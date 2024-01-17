@@ -8,10 +8,10 @@
         "forceConsistentCasingInFileNames": true,
         "moduleResolution": "node",
         "jsx": "react",
+        "baseUrl": "./src",
         "paths": {
-            "@/*": ["src/*"],
+            "@/*": ["*"],
         },
-        "baseUrl": "./",
         "allowJs": true,
     },
     "include": ["src/**/*.tsx", "src/**/*.ts"],
