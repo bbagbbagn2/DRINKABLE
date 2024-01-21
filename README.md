@@ -63,9 +63,7 @@ npm run dev
 ## 페이지 구성
 
 ### 메인 페이지
-![main](https://github.com/bbagbbagn2/DRINKABLE/assets/89950902/bd4bcb0e-2c47-43e6-8c4f-5cd089912f39)
-![FlavorSection](https://github.com/bbagbbagn2/DRINKABLE/assets/89950902/a8cdfbd5-b962-472a-8d8b-bbd2ab1afc2a)
-![exploreSection](https://github.com/bbagbbagn2/DRINKABLE/assets/89950902/447ae2bd-f9d8-4411-8c99-ddee530cae1e)
+![main](https://github.com/bbagbbagn2/DRINKABLE/assets/89950902/666a193a-e543-44a3-852d-0136d5ff5570)
 
 ### 로그인 및 회원가입 페이지
 ![sign](https://github.com/bbagbbagn2/DRINKABLE/assets/89950902/0868d0cb-7297-4b32-96de-b1ad7fd86602)
