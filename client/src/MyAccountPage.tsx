@@ -8,8 +8,8 @@ import axios from 'axios';
 
 export default function Main(): JSX.Element {
     const [sign, setSign] = useState(null);
-    const [profileData, setProfileData] = useState({ username: ""});
-    
+    const [profileData, setProfileData] = useState({ username: "" });
+
     const GET_AUTH_URL = '/get_auth';
     const GET_USER_URL = '/get_user';
     const LOGOUT_URL = '/logout';
@@ -17,19 +17,16 @@ export default function Main(): JSX.Element {
     useEffect(() => {
         const fetchData = async () => {
             try {
-                const [authResponse, userResponse] = await Promise.all([
-                    axios.post(GET_AUTH_URL),
-                    axios.post(GET_USER_URL)
-                ]);
+                const authResponse = await axios.post(GET_AUTH_URL);
                 setSign(authResponse.data);
 
-                if (userResponse.data && userResponse.data.length > 0) {
-                    setProfileData(userResponse.data[0]);
+                if (authResponse.data) {
+                    // 사용자가 로그인한 경우에만 사용자 정보를 가져옴
+                    const userResponse = await axios.post(GET_USER_URL);
+                    setProfileData(userResponse.data);
                 }
-                console.log(authResponse.data);
-                console.log(userResponse.data[0]);
             } catch (error) {
-                console.error(error);
+                console.error("Error fetching data: ", error);
             }
         };
         fetchData();
