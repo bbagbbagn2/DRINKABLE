@@ -1,4 +1,4 @@
-# DRINKABLE
+1# DRINKABLE
 
 ## 프로젝트 정보
 
@@ -62,11 +62,11 @@ npm run dev
 
 ## 페이지 구성
 
-|![main](https://github.com/bbagbbagn2/DRINKABLE/assets/89950902/666a193a-e543-44a3-852d-0136d5ff5570)
+|![main](https://github.com/bbagbbagn2/DRINKABLE/assets/89950902/666a193a-e543-44a3-852d-0136d5ff5570)|
 |:---:|
 |메인 화면|
 
-|![sign](https://github.com/bbagbbagn2/DRINKABLE/assets/89950902/0868d0cb-7297-4b32-96de-b1ad7fd86602)
+|![sign](https://github.com/bbagbbagn2/DRINKABLE/assets/89950902/0868d0cb-7297-4b32-96de-b1ad7fd86602)|
 |:---:|
 |로그인 및 화원가입 화면|
 
