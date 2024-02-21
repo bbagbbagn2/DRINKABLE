@@ -35,9 +35,6 @@ export default function BannerSection() {
                                     <Description>당신의 완벽한 칵테일을 찾아보세요.</Description>
                                 </DrinkableDescriptionContainer>
                             </HeadingBox>
-                            <Button href='/classification' bgColor='#fff'>
-                                자세히 보기
-                            </Button>
                         </TextBox>
                     </CornerBox>
                 </CornerFull>

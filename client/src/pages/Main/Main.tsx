@@ -2,32 +2,22 @@ import React, { useState, useEffect } from 'react';
 
 import Header from '../../layouts/Header';
 import Footer from '../../layouts/Footer';
+import BrandSection from './component/BrandSection';
 import BannerSection from './BannerSection/BannerSection';
+import CampaingnSection from './component/CampaignSection';
 import FlavorSection from './FlavorSection/FlavorSection';
 import BlueSection from './BlueSection/BlueSection';
 import ExploreSection from './ExploreSection/ExploreSection';
 
 export default function Main() {
-    const [windowWidth, setWindowWidth] = useState(window.innerWidth);
-
-    useEffect(() => {
-        const handleResize = () => {
-            setWindowWidth(window.innerWidth);
-        };
-
-        window.addEventListener('resize', handleResize);
-        return () => {
-            window.removeEventListener('resize', handleResize);
-        };
-    }, []);
-
     return (
         <div id="container">
             <Header />
             <BannerSection />
+            <CampaingnSection />
             <FlavorSection />
             <BlueSection />
-            <ExploreSection />
+            <BrandSection />
             <Footer />
         </div>
     );

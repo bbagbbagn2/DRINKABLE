@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 
-import Button from "../../../components/Button";
+import Button from "../../../components/ui/Button";
 
 export default function BannerSection() {
   return (
@@ -18,9 +18,6 @@ export default function BannerSection() {
           <TextBox>
             <HeadingBox>BLUE HAWAII</HeadingBox>
             <DescBox>꾸준히 사랑받는 블루 하와이를 만나보세요</DescBox>
-            <Button href="/" bgColor="#000">
-              자세히 보기
-            </Button>
           </TextBox>
         </LeftBox>
         <LeftBox>

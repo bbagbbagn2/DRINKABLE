@@ -1,33 +1,21 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import { BrowserRouter } from 'react-router-dom';
-import { createGlobalStyle } from 'styled-components';
+import React from "react";
+import ReactDOM from "react-dom/client";
+import { BrowserRouter } from "react-router-dom";
+import { createGlobalStyle } from "styled-components";
 
-import App from './App';
+import App from "./App";
 
 const GlobalStyle = createGlobalStyle`
   *, &:before, &:after {
     box-sizing: border-box;
   }
 
-  :root {
-    --swiper-navigation-size: 44px;
-    view-transition-name: root;
-  }
-
-  #root {
-    position: relative;
-    width: 100%;
-    min-height: 550px;
-  }
-
   #container {
-    position: relative;
-    margin: 0 auto;
-    margin-left: 0 !important;
-    padding: 0;
-    width: 100%;
-    zoom: 1;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
   }
 
   #header {
@@ -59,81 +47,116 @@ const GlobalStyle = createGlobalStyle`
   }
 
   html {
-    width: 100%;
-    height: 100%;
-    min-height: 100%;
-    -webkit-font-smoothing: antialiased;
+    -webkit-text-size-adjust: 100%;
+    line-height: 1.15;
   }
 
   body {
-    margin: 0;
-    padding: 0;
-    min-width: 100%;
-    max-width: 1440px;
-    height: auto !important;
-    min-height: 100%;
-    background: #fff;
-    color: #000;
-    line-height: 1.2em;
-    -webkit-text-size-adjust: none;
-    
-    > #root {
-      margin: 0 auto; 
-    }
-
-    @media screen and (max-width: 37.5rem) {
-      width: 100%;
-    }
+    background: #f1f1f1;
+    direction: 1tr;
+    -webkit-font-smoothing: antialiased;
   }
 
   html, body {
-    font-size: 12px !important;
-  }
-
-  html, body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, input, button, p {
     margin: 0;
-    padding: 0;
-    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    margin-block: 0 12px;
+    color: #000;
+    font: 400 14px/24px 'Noto Sans KR', 'Montserrat', sans-serif;
+    letter-spacing: 0;
   }
 
+  main {
+    display: block;
+  }
 
   a {
+    word-wrap: break-word;
     color: #000;
-    text-decoration: none;
+    letter-spacing: 0;
+    text-decoration: underline;
+    background-color: transparent;
   }
 
-  button {
-    margin: 0;
+  ul {
+    margin-block: 0 12px;
+    color: #000;
+    letter-spacing: 0;
   }
 
-  ul, ol, li {
-    margin: 0;
-    padding: 0;
-    list-style-type: none;
+  h1 {
+    margin: 0.67em 0;
+    margin-top: 0;
+    font-size: 28px;
+    line-height: 36px;
+    font-weight: 700;
+    letter-spacing: 0;
   }
 
-  h1, h2, h3 {
-    font-size: inherit;
-    margin: 0;
-    padding: 0;
+  h3 {
+    margin-top: 0;
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 28px;
+    letter-spacing: 0;
+  }
+
+  p {
+    margin-block: 0 12px;
+    letter-spacing: 0;
+  }
+
+  b, strong {
+    font-weight: bolder;
+  }
+
+  hr {
+    box-sizing: content-box;
+    height: 0;
+    overflow: visible;
   }
 
   img {
-    -webkit-perspective: 1;
-    border: none;
-  }
-
-  img, svg {
-    max-width: 100%;
+    width: 100%;
     height: auto;
-    box-sizing: border-box;
-    vertical-align: middle;
+    border-style: none;
   }
 
+  @media only screen and (min-width: 1200px) {
+    html, body {
+      margin: 0;
+      font-size: 16px;
+      line-height: 26px;
+    }
 
+      ul {
+        font-size: 16px;
+        line-height: 26px;
+      }
+      
+      a {
+        font-size: 16px;
+        line-height: 26px;
+      }
+
+      h1 {
+        font-size: 38px;
+        line-height: 48px;
+      }
+
+      h3 {
+        font-size: 24px;
+        line-height: 32px;
+      }
+
+      p {
+        margin-bottom: 14px;
+        font-size: 16px;
+        line-height: 26px;
+      }
+  }
 `;
 
-const root = ReactDOM.createRoot(document.getElementById('root')!);
+const root = ReactDOM.createRoot(document.getElementById("root")!);
 
 root.render(
   <React.StrictMode>
@@ -143,4 +166,3 @@ root.render(
     <GlobalStyle />
   </React.StrictMode>
 );
-
