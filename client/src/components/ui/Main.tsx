@@ -6,7 +6,7 @@ type MainProps = {
 };
 
 export default function Main({ children }: MainProps) {
-  return <MainContainer>{children}</MainContainer>;
+  return <MainContainer className='container responsivegrid'>{children}</MainContainer>;
 }
 
 const MainContainer = styled.main`

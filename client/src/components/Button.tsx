@@ -9,40 +9,38 @@ type ButtonProps = {
 export default function Button({ href, buttonText }: ButtonProps) {
   return (
     <ButtonBox href={href}>
-      <span>{buttonText}</span>
+      {buttonText}
     </ButtonBox>
   );
 }
 
 const ButtonBox = styled.a`
-  margin: 24px 0 0;
-  padding: 0;
-  width: 100%;
-  height: 40px;
-  display: flex;
   align-items: center;
-  justify-content: center;
+  background-color: transparent;
   border: 2px solid #000;
   border-radius: 48px;
-  background-color: transparent;
-  color: #000;
+  display: flex;
   font-size: 14px;
   font-weight: 600;
   line-height: 14px;
+  height: 40px;
+  justify-content: center;
+  margin-bottom: 0;
+  padding: 0;
   text-decoration: none;
+  width: 100%;
+  cursor: pointer;
 
-  span {
-    margin-top: 1px;
+  &:hover {
+    background-color: rgba(0,0,0,.12);
+    color: #000;
   }
 
   @media only screen and (min-width: 1200px) {
-    margin-top: 32px;
     width: 327px;
 
     &:hover {
-      background-color: transparent;
-      border-color: #6e6e6e;
-      color: #6e6e6e;
+      background-color: rgba(0,0,0,.12);
     }
   }
 `;

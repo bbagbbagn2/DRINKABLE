@@ -8,7 +8,7 @@ import Title from '../../../components/ui/Title';
 
 export default function AllergySection() {
   return (
-    <Main>
+    <main className='container responsivegrid'>
       <div>
         <Title titleProps="식품알레르기 살펴보기" marginTop='64px' />
         <LocationContainer>
@@ -19,7 +19,7 @@ export default function AllergySection() {
           <Button href="/brands" buttonText="모두 보기" />
         </ButtonContainer>
       </div>
-    </Main>
+    </main>
   );
 }
 

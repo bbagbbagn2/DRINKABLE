@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
 import styled from "styled-components";
 
-import logo from '../assets/brand/logo.svg';
+import logo from "../assets/brand/logo-black.svg";
 import { theme } from "../styles/theme";
 
 import { AiOutlineMenu } from "react-icons/ai";
@@ -54,16 +54,17 @@ export default function Header() {
 
   return (
     <header>
-      <HeaderContainer>
+      <HeaderWrapper className="header-wrapper">
         <div className="cmp-container">
-          <LogoBox>
-            <LogoLink href="/">
-                <picture>
-                <img  src={logo} alt="drinkable Logo" />
-                </picture>
-            </LogoLink>
-          </LogoBox>
-          <NavBox>
+          <div className="adaptiveImage image">
+            <ImageLink href="/" className="cmp-image__link">
+              <picture>
+                <source media="(min-width: 1200px)" />
+                <Image src={logo} loading="lazy" alt="QRLLERGY Logo" itemProp="contentUrl"/>
+              </picture>
+            </ImageLink>
+          </div>
+          <HeaderNavigation>
             <div className="cmp-container">
               <TextList>
                 <li>
@@ -73,56 +74,69 @@ export default function Header() {
                       role="button"
                       className={isBrandsPage ? "active-element" : ""}
                     >
-                      Brands
+                      Allergies
                     </a>
                   </b>
                 </li>
               </TextList>
             </div>
-          </NavBox>
+          </HeaderNavigation>
         </div>
-      </HeaderContainer>
+      </HeaderWrapper>
     </header>
   );
 }
 
-const HeaderContainer = styled.div`
+const HeaderWrapper = styled.div`
   width: 100%;
   height: 72px;
   display: flex;
   align-items: center;
   background-color: #fff;
 
+  > .cmp-container {
+    align-items: center;
+    display: flex;
+    height: 72px;
+    justify-content: center;
+    margin-inline: 24px;
+    max-width: none;
+    width: 100%;
+    -webkit-box-pack: center;
+    -webkit-box-align: center;
+  }
+
+  .image {
+    margin: 0;
+
+    img {
+      height: auto;
+      max-width: 125px;
+    }
+  }
+
   @media only screen and (min-width: 1200px) {
     height: 80px;
 
     > .cmp-container {
       margin-inline: auto;
-      width: 100%;
       max-width: 1280px;
       height: 80px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      -webkit-box-pack: center;
-      -webkit-box-align: center;
     }
   }
 `;
 
-const LogoBox = styled.div`
-  margin: 0;
-  margin-top: 24px;
-
-  @media only screen and (min-width: 1200px) {
-    margin-top: 0;
-  }
-`;
-
-const LogoLink = styled.a`
+const ImageLink = styled.a`
   display: flex;
   align-items: center;
   -webkit-box-pack: center;
+
+  @media only screen and (min-width: 1200px) {
+    width: 149px;
+    height: 43px;
+    justify-content: center;
+    -webkit-box-pack: center;
+  }
 
   picture {
     height: 100%;
@@ -133,18 +147,13 @@ const LogoLink = styled.a`
     -webkit-box-align: center;
 
     img {
-        width: 100%;
-        max-width: 125px;
-        height: auto;
+      display: block;
     }
   }
+`;
 
-  @media only screen and (min-width: 1200px) {
-    width: 149px;
-    height: 43px;
-    justify-content: center;
-    -webkit-box-pack: center;
-  }
+const Image = styled.img`
+  width: 100%;
 `;
 
 const HambergerBox = styled.div`
@@ -169,7 +178,7 @@ const HambererLink = styled.a`
   justify-content: center;
 `;
 
-const NavBox = styled.div`
+const HeaderNavigation = styled.div`
   margin: 0;
   width: 100%;
   height: 100%;
@@ -198,7 +207,6 @@ const NavBox = styled.div`
 `;
 
 const TextList = styled.ul`
-
   @media only screen and (min-width: 1200px) {
     margin: 0;
     padding: 0;
@@ -214,7 +222,7 @@ const TextList = styled.ul`
       display: flex;
       align-items: center;
       color: #000;
-      font: 600 14px/17px "Noto-Sans", 'Montserrat'; 
+      font: 600 14px/17px "Noto-Sans", "Montserrat";
       letter-spacing: 0;
       text-decoration: none;
 
@@ -224,7 +232,7 @@ const TextList = styled.ul`
         display: flex;
         align-items: center;
         color: #000;
-        font: 600 14px/17px "Noto-Sans", 'Montserrat'; 
+        font: 600 14px/17px "Noto-Sans", "Montserrat";
         letter-spacing: 0;
         text-decoration: none;
         cursor: pointer;

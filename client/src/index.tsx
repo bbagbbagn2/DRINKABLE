@@ -16,6 +16,17 @@ const GlobalStyle = createGlobalStyle`
     min-height: 100vh;
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
+
+    main {
+      &.container {
+        width: auto;
+        flex-grow: 1;
+
+        @media only screen and (min-width: 1200px) {
+          width: 100%;
+        }
+      }
+    }
   }
 
   #header {
@@ -67,6 +78,16 @@ const GlobalStyle = createGlobalStyle`
 
   main {
     display: block;
+
+    &.container {
+      margin-inline: 24px;
+      max-width: none;
+      
+      @media only screen and (min-width: 1200px) {
+        margin-inline: auto;
+        max-width: 1120px;
+      }
+    }
   }
 
   a {
@@ -94,15 +115,19 @@ const GlobalStyle = createGlobalStyle`
 
   h3 {
     margin-top: 0;
-    font-size: 20px;
-    font-weight: 600;
-    line-height: 28px;
+    font: 600 20px/28px 'Noto Sans KR', 'Montserrat', sans-serif;
     letter-spacing: 0;
   }
 
   p {
-    margin-block: 0 12px;
+    font: 400 14px/24px 'Noto Sans KR', 'Montserrat', sans-serif;
     letter-spacing: 0;
+
+    @media only screen and (min-width: 1200px) {
+      font-size: 16px 0 0;
+      line-height: 26px;
+      margin-bottom: 14px;
+    }
   }
 
   b, strong {
