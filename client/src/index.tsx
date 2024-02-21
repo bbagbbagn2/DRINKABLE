@@ -10,7 +10,7 @@ const GlobalStyle = createGlobalStyle`
     box-sizing: border-box;
   }
 
-  #container {
+  .root >.cmp-container {
     display: flex;
     flex-direction: column;
     min-height: 100vh;

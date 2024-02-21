@@ -2,31 +2,52 @@ import React from "react";
 import styled from "styled-components";
 
 import SeperatorProps from "../components/ui/Seperator";
-import Logo from '../assets/brand/logo.svg';
+import Logo from "../assets/brand/logo-white.svg";
 
 export default function Footer() {
   return (
     <footer>
-      <FooterContainer>
+      <FooterContainer className="container responsivegrid footer-wrapper">
         <div className="cmp-container">
-          <CmpContainer>
-            <ImageBox className="image">
-              <div className="cmp-adaptive-image cmp-image">
-                <picture>
-                    <img src={Logo} loading='lazy' alt='The DRINKABLE Logo' className="cmp-image__image"/>
-                </picture>
+          <FooterContent className="container responsivegrid footer__content">
+            <CmpContainer>
+              <ImageBox className="image">
+                <div className="cmp-adaptive-image cmp-image">
+                  <picture>
+                    <img
+                      src={Logo}
+                      loading="lazy"
+                      alt="The DRINKABLE Logo"
+                      className="cmp-image__image"
+                    />
+                  </picture>
+                </div>
+              </ImageBox>
+              <SeperatorProps />
+              <div className="container responsivegrid footer__navigation">
+                <div className="cmp-container">
+                  <div className="text footer__mobile-accordion">
+                    <div className="cmp-text">
+                      <h2>소 개</h2>
+                    </div>
+                  </div>
+                  <div className="text footer__mobile-accordion">
+                    <div className="cmp-text">
+                      <h2>도움이 필요하세요?</h2>
+                    </div>
+                  </div>
+                </div>
               </div>
-            </ImageBox>
-            <SeperatorProps />
-            <SeperatorProps />
-            <PrivacyBox>
-              <CmpTextBox>
-                <p>
-                  <b>© 2024 Jihun Park.</b>
-                </p>
-              </CmpTextBox>
-            </PrivacyBox>
-          </CmpContainer>
+              <SeperatorProps />
+              <PrivacyBox>
+                <CmpTextBox>
+                  <p>
+                    <b>© 2023 QRLLERGY by Jihun Park.</b>
+                  </p>
+                </CmpTextBox>
+              </PrivacyBox>
+            </CmpContainer>
+          </FooterContent>
         </div>
       </FooterContainer>
     </footer>
@@ -79,6 +100,90 @@ const CmpContainer = styled.div`
   }
 `;
 
+const FooterContent = styled.div`
+  .footer__navigation {
+    margin-top: 8px;
+    flex: 0 0 100%;
+    min-width: 100%;
+    padding-inline: 12px;
+
+    > .cmp-container {
+      display: flex;
+      flex-wrap: wrap;
+      margin-inline: -8px;
+    }
+
+    @media only screen and (min-width: 600px) {
+      margin-top: 0;
+      flex: 0 0 100%;
+      min-width: 100%;
+      padding-inline: 12px;
+
+      > .cmp-container {
+        margin-inline: -12px;
+      }
+    }
+
+    @media only screen and (min-width: 1200px) {
+      flex: 0 0 66.6666667%;
+      min-width: 66.6666667%;
+      padding-inline: 16px;
+
+      > .cmp-container {
+        margin-inline: -16px;
+      }
+    }
+  }
+
+  .footer__mobile-accordion {
+    margin-top: 24px;
+    flex: 0 0 100%;
+    min-width: 100%;
+    padding-inline: 8px;
+
+    .cmp-text {
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+
+      h2 {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        font: 600 20px/28px "Noto Sans KR", Montserrat, sans-serif;
+        letter-spacing: 0;
+        margin-top: 0;
+
+        @media only screen and (min-width: 600px) {
+          color: #8b8b8b;
+          cursor: auto;
+          display: block;
+          font-size: 12px;
+          font-weight: 600;
+          line-height: 18px;
+          margin: 0 0 24px;
+          text-decoration: none;
+          text-transform: uppercase;
+        }
+      }
+    }
+
+    @media only screen and (min-width: 600px) {
+      margin-top: 56px;
+      flex: 0 0 100%;
+      min-width: 100%;
+      padding-inline: 12px;
+    }
+
+    @media only screen and (min-width: 1200px) {
+      margin-top: 48px;
+      flex: 0 0 25%;
+      min-width: 25%;
+      padding-inline: 16px;
+    }
+  }
+`;
+
 const ImageBox = styled.div`
   margin-top: 0;
   flex: 0 0 100%;
@@ -95,7 +200,7 @@ const ImageBox = styled.div`
     justify-content: center;
 
     img {
-        display: block;
+      display: block;
     }
   }
 

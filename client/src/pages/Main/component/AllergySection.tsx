@@ -6,11 +6,11 @@ import BrandsItemComponents from '../../../components/ui/BrandsItemComponent';
 import Button from '../../../components/ui/Button';
 import Title from '../../../components/ui/Title';
 
-export default function BrandSection() {
+export default function AllergySection() {
   return (
     <Main>
       <div>
-        <Title titleProps="브랜드 살펴보기" marginTop='64px' />
+        <Title titleProps="식품알레르기 살펴보기" marginTop='64px' />
         <LocationContainer>
           <LocationBox>
           </LocationBox>
