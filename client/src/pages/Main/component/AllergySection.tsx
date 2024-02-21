@@ -83,24 +83,6 @@ const BrandsList = styled.div`
   }
 `;
 
-const LocationBox = styled.div`
-  margin-inline: auto;
-  padding: 0;
-  width: auto;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-wrap: wrap;
-  list-style: none;
-  -webkit-box-align: center;
-  -webkit-box-pack: center;
-
-  @media only screen and (min-width: 1200px) {
-    margin-inline: auto;
-    width: 75%;
-  }
-`;
-
 const ButtonContainer = styled.div`
   display: flex;
   justify-content: center;
