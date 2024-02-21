@@ -22,11 +22,21 @@ const GlobalStyle = createGlobalStyle`
         width: auto;
         flex-grow: 1;
 
+        > .cmp-container > .title:first-of-type .cmp-title__text {
+          margin-top: 56px;
+        }
+
         @media only screen and (min-width: 1200px) {
           width: 100%;
+
+          > .cmp-container > .title:first-of-type .cmp-title__text {
+            margin-top: 64px;
+          }
         }
       }
     }
+
+
   }
 
   #header {
@@ -82,7 +92,7 @@ const GlobalStyle = createGlobalStyle`
     &.container {
       margin-inline: 24px;
       max-width: none;
-      
+
       @media only screen and (min-width: 1200px) {
         margin-inline: auto;
         max-width: 1120px;

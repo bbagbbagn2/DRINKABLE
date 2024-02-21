@@ -3,12 +3,13 @@ import styled from 'styled-components';
 
 export default function LocationItemComponent() {
   return (
-    <LocationItem>
-      <AdapativeImage>
-        <ImageLink href="/">
+    <LocationItem className='adaptiveImage image'>
+      <AdapativeImage className='cmp-adaptive-image cmp-image'>
+        <a href="/" className='cmp-image__link'>
           <picture>
+            <img loading='lazy' className='cmp-image__image' itemProp='contentUrl' alt='' src='' />
           </picture>
-        </ImageLink>
+        </a>
       </AdapativeImage>
     </LocationItem>
   );
@@ -26,53 +27,21 @@ const LocationItem = styled.div`
 `;
 
 const AdapativeImage = styled.div`
-  padding-bottom: 100%;
-  position: relative;
-  width: 100%;
-  height: 0;
-
-  &::before {
-    background-color: #fafafa;
-    border-radius: 16px;
-    box-shadow: 0 14px 24px rgba(0, 0, 0, 0.06);
-    content: '';
-    display: block;
-    inset: 0;
-    position: absolute;
-    transition: all 0.2s ease-out;
-  }
-
-  @media only screen and (min-width: 1200px) {
-    &:hover::before {
-      inset: -8px;
-      box-shadow: 0 14px 24px 0 rgba(0, 0, 0, 0.1);
-    }
-  }
-`;
-
-const ImageLink = styled.a`
-  padding: 24px;
-  position: absolute;
-  inset: 0;
-
-  @media only screen and (min-width: 1200px) {
-    padding: 32px;
-  }
-
-  picture {
-    height: 100%;
-    display: flex;
+  &.cmp-adaptive-image picture {
     align-items: center;
+    display: flex;
+    height: 100%;
     justify-content: center;
     background: none;
 
     img {
-      width: 100%;
-      height: auto;
       display: block;
-      border-style: none;
-      transition: none;
       opacity: 1;
+      transition: none;
+
+      &.cmp-image__image {
+        width: 100%;
+      }
     }
   }
 `;
