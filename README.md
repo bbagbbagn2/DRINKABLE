@@ -1,5 +1,7 @@
-1# DRINKABLE
-
+# DRINKABLE
+<br/><br/>
+![logo](https://github.com/bbagbbagn2/DRINKABLE/assets/89950902/0607f718-d1d0-44b1-b1af-1cfc10e62b28)
+<br/><br/>
 ## 프로젝트 정보
 
 ### 개발 기간
