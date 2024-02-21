@@ -1,19 +1,12 @@
 import React from 'react';
 import styled from 'styled-components';
 
-type Brand = {
-  name: string;
-  siteName: string | null;
-  image: string | null;
-};
-
-export default function LocationItemComponent({ brand }: { brand: Brand }) {
+export default function LocationItemComponent() {
   return (
     <LocationItem>
       <AdapativeImage>
         <ImageLink href="/">
           <picture>
-            {brand.image && <img src={brand.image} alt={brand.name} />}
           </picture>
         </ImageLink>
       </AdapativeImage>

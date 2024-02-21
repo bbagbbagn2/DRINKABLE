@@ -10,9 +10,10 @@ export default function AllergySection() {
   return (
     <main className='container responsivegrid'>
       <div>
-        <Title titleProps="식품알레르기 살펴보기" marginTop='64px' />
+        <Title titleProps="식품알레르기 보기" marginTop='64px' />
         <LocationContainer>
           <LocationBox>
+            <BrandsItemComponents />
           </LocationBox>
         </LocationContainer>
         <ButtonContainer>

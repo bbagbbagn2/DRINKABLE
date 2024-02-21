@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 
 interface IntersectionObserverOptions {
   root?: Element | null;
@@ -15,8 +15,7 @@ function useIntersectionObserver(options: IntersectionObserverOptions) {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
           setIsVisible(true);
-        } else {
-          setIsVisible(false);
+          observer.unobserve(entry.target); // 한 번 관찰 후에는 Intersection Observer 중지
         }
       });
     }, options);
@@ -30,7 +29,7 @@ function useIntersectionObserver(options: IntersectionObserverOptions) {
         observer.unobserve(targetRef.current);
       }
     };
-  }, [options]);
+  }, []); // 빈 배열을 전달하여 처음 한 번만 실행되도록 함
 
   return [targetRef, isVisible] as const;
 }
