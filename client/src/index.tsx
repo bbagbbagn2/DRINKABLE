@@ -103,6 +103,7 @@ const GlobalStyle = createGlobalStyle`
   a {
     word-wrap: break-word;
     color: #000;
+    font: 600 14px/24px 'Noto Sans KR', 'Montserrat', sans-serif;
     letter-spacing: 0;
     text-decoration: underline;
     background-color: transparent;
@@ -123,6 +124,12 @@ const GlobalStyle = createGlobalStyle`
     letter-spacing: 0;
   }
 
+  h2 {
+    font: 600 24px/32px 'Noto Sans KR', 'Montserrat', sans-serif;
+    letter-spacing: 0;
+    margin-top: 0;
+  }
+
   h3 {
     margin-top: 0;
     font: 600 20px/28px 'Noto Sans KR', 'Montserrat', sans-serif;
@@ -131,13 +138,6 @@ const GlobalStyle = createGlobalStyle`
 
   p {
     font: 400 14px/24px 'Noto Sans KR', 'Montserrat', sans-serif;
-    letter-spacing: 0;
-
-    @media only screen and (min-width: 1200px) {
-      font-size: 16px 0 0;
-      line-height: 26px;
-      margin-bottom: 14px;
-    }
   }
 
   b, strong {
@@ -154,6 +154,16 @@ const GlobalStyle = createGlobalStyle`
     width: 100%;
     height: auto;
     border-style: none;
+  }
+
+  .text {
+    & :is(h1,h2,h3,h4,h5,h6) {
+      margin: 56px 0 0;
+    }
+
+    P {
+      margin: 16px 0 0;
+    }
   }
 
   @media only screen and (min-width: 1200px) {
@@ -178,6 +188,11 @@ const GlobalStyle = createGlobalStyle`
         line-height: 48px;
       }
 
+      h2 {
+        font-size: 32px;
+        line-height: 40px;
+      }
+
       h3 {
         font-size: 24px;
         line-height: 32px;
@@ -187,6 +202,16 @@ const GlobalStyle = createGlobalStyle`
         margin-bottom: 14px;
         font-size: 16px;
         line-height: 26px;
+      }
+
+      .text {
+        & :is(h1,h2,h3,h4,h5,h6) {
+          margin-top: 64px;
+        }
+
+        p {
+          margin-top: 24px;
+        }
       }
   }
 `;

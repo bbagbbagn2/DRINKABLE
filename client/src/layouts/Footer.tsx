@@ -34,6 +34,11 @@ export default function Footer() {
                   <div className="text footer__mobile-accordion">
                     <div className="cmp-text">
                       <h2>도움이 필요하세요?</h2>
+                      <ul>
+                        <li>
+                          <a href="/sitemap">사이트 맵</a>
+                        </li>
+                      </ul>
                     </div>
                   </div>
                 </div>
@@ -168,6 +173,28 @@ const FooterContent = styled.div`
       }
     }
 
+    & :is(p, li) {
+      color: #fff;
+      font-size: 14px;
+      font-weight: 400;
+      line-height: 18px;
+      margin: 16px 0 0;
+      text-decoration: none;
+
+      :first-of-type {
+        margin-top: 0;
+      }
+
+      a {
+        color: #fff;
+        font-size: 14px;
+        font-weight: 400;
+        line-height: 18px;
+        margin: 16px 0 0;
+        text-decoration: none;
+      }
+    }
+
     @media only screen and (min-width: 600px) {
       margin-top: 56px;
       flex: 0 0 100%;
@@ -180,6 +207,13 @@ const FooterContent = styled.div`
       flex: 0 0 25%;
       min-width: 25%;
       padding-inline: 16px;
+
+      ul {
+        display: block;
+        margin: 0;
+        padding: 0;
+        list-style: none;
+      }
     }
   }
 `;

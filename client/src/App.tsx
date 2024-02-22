@@ -10,12 +10,14 @@ import MyAccountPage from "./MyAccountPage";
 import PersonalDetailsPage from "./PersonalDetailsPage";
 import LogoutPage from "./pages/sign-out/LogoutPage";
 import WidhlistsPage from "./WishlistsPage"
+import Sitemap from "./pages/sitemap/Sitemap";
 
 export default function App() {
   return (
       <Routes>
         <Route path="/" element={<MainPage />} />
         <Route path="/allergies" element={<ClassificationPage />} />
+        <Route path="/sitemap" element={<Sitemap />} />
         <Route path="/search" element={<SearchPage />} />
         <Route path="/login" element={<LoginPage />} />
         <Route path="/register" element={<ResisterPage />} />

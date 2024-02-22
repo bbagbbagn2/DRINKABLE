@@ -1,13 +1,15 @@
-import React from 'react';
-import styled from 'styled-components';
+import React from "react";
+import styled from "styled-components";
 
 export default function SeperatorProps() {
   return (
-    <Seperator>
-      <CmpSeperator className="cmp-seperator">
-        <hr className="cmp-seperator_horizontal-rule" />
-      </CmpSeperator>
-    </Seperator>
+    <div className="seperator">
+      <Seperator>
+        <CmpSeperator className="cmp-seperator">
+          <hr className="cmp-seperator_horizontal-rule" />
+        </CmpSeperator>
+      </Seperator>
+    </div>
   );
 }
 
