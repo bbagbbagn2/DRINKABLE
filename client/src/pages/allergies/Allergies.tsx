@@ -1,6 +1,9 @@
 import React, { useEffect } from "react";
 import styled from "styled-components";
+
 import Header from "../../layouts/Header";
+import Footer from '../../layouts/Footer';
+import Title from "../../components/ui/Title";
 import ItemWrapper from "../../components/ClassificationPage/ItemWrapper";
 
 export default function Classification() {
@@ -11,7 +14,7 @@ export default function Classification() {
         <div className="cmp-container">
           <div className="container responsivegrid">
             <div className="cmp-container">
-                <
+                <Title titleProps="Allergies" marginTop="120px" mobileMarginTop="56px" />
             </div>
           </div>
           <div className="container responsivegrid">
@@ -19,6 +22,7 @@ export default function Classification() {
           </div>
         </div>
       </main>
+      <Footer />
     </div>
   );
 }

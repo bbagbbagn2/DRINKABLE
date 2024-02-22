@@ -78,6 +78,16 @@ export default function Header() {
                           </a>
                         </b>
                       </li>
+                      <li className="has-submenu">
+                          <a
+                            href="/#"
+                            role="button"
+                            data-text="Our Company"
+                            aria-expanded="false"
+                          >
+                            Our Company
+                          </a>
+                      </li>
                     </TextList>
                   </div>
                 </HeaderNavigation>
@@ -160,28 +170,6 @@ const Image = styled.img`
   width: 100%;
 `;
 
-const HambergerBox = styled.div`
-  display: none;
-
-  @media screen and (max-width: 767.98px) {
-    margin-left: 16px;
-    display: flex;
-    font-size: 0;
-  }
-
-  svg {
-    padding: 2px;
-    fill: currentColor;
-  }
-`;
-
-const HambererLink = styled.a`
-  font-size: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-`;
-
 const HeaderNavigation = styled.div`
   margin: 0;
   width: 100%;
@@ -230,16 +218,55 @@ const TextList = styled.ul`
       letter-spacing: 0;
       text-decoration: none;
 
+      :hover {
+        font-weight: 700;
+
+        > a {
+          font-weight: 700;
+
+          ::before {
+            display: block;
+          }
+        }
+
+        a::before {
+          background-color: #000;
+          content: "";
+          display: none;
+          height: 4px;
+          left: 50%;
+          position: absolute;
+          top: calc(100% - 4px);
+          translate: -50% 0;
+          width: 100%;
+        }
+      }
+
+      > a {
+        flex-direction: column;
+        justify-content: center;
+
+        ::after {
+          content: attr(data-text);
+          display: block;
+          font: inherit;
+          font-weight: 700;
+          height: 0;
+          overflow: hidden;
+          visibility: hidden;
+        }
+      }
+
       a {
-        position: relative;
-        height: 100%;
-        display: flex;
         align-items: center;
         color: #000;
-        font: 600 14px/17px "Noto-Sans", "Montserrat";
-        letter-spacing: 0;
-        text-decoration: none;
         cursor: pointer;
+        display: flex;
+        font: 600 14px/17px "Noto-Sans", "Montserrat";
+        height: 100%;
+        letter-spacing: 0;
+        position: relative;
+        text-decoration: none;
 
         ::before {
           background-color: #000;
@@ -261,79 +288,6 @@ const TextList = styled.ul`
           }
         }
       }
-    }
-  }
-`;
-
-const MenuBox = styled.div`
-  margin-left: 11px;
-
-  ul {
-    height: 60px;
-    display: flex;
-    align-items: center;
-    line-height: 60px;
-
-    :hover {
-      li a {
-        opacity: 0.5;
-
-        :hover {
-          opacity: 1;
-        }
-      }
-    }
-  }
-
-  @media (max-width: 60.063rem) {
-    display: none;
-  }
-`;
-
-const MenuItem = styled.a`
-  padding: 0 11px;
-  position: relative;
-  display: block;
-  color: ${theme.colors.black};
-  font-size: 14px;
-  font-weight: 600;
-  transition: opacity 0.4s cubic-bezier(0.4, 0.9, 0.3, 1);
-
-  &:hover {
-    text-decoration: none;
-    outline: none;
-  }
-`;
-
-const SearchBox = styled.div`
-  margin: 0 auto;
-  padding: 0 20px;
-  position: relative;
-  width: 250px;
-  min-width: 2.25rem;
-  height: 60px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  background-color: ${theme.colors.black};
-  color: ${theme.colors.white};
-  font-size: 14px;
-  cursor: pointer;
-
-  @media screen and (max-width: 767.98px) {
-    padding: 0;
-    width: auto;
-    height: 50px;
-    background-color: ${theme.colors.white};
-
-    svg {
-      color: ${theme.colors.black};
-    }
-  }
-
-  @media screen and (max-width: 1025.98px) {
-    span {
-      display: none;
     }
   }
 `;
