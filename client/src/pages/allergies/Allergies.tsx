@@ -1,22 +1,28 @@
-import React, { useEffect } from 'react';
-import styled from 'styled-components';
-import Header from '../../layouts/Header';
-import ItemWrapper from '../../components/ClassificationPage/ItemWrapper';
+import React, { useEffect } from "react";
+import styled from "styled-components";
+import Header from "../../layouts/Header";
+import ItemWrapper from "../../components/ClassificationPage/ItemWrapper";
 
 export default function Classification() {
-    return (
-        <div className='cmp-container'>
-            <Header />
-            <main className='container responsivegrid'>
-                <ClassificationPageBox>
-                    <ItemWrapper />
-                </ClassificationPageBox>
-            </main>
+  return (
+    <div className="cmp-container">
+      <Header />
+      <main className="container responsivegrid">
+        <div className="cmp-container">
+          <div className="container responsivegrid">
+            <div className="cmp-container">
+                <
+            </div>
+          </div>
+          <div className="container responsivegrid">
+            <div className="cmp-container" />
+          </div>
         </div>
-    );
+      </main>
+    </div>
+  );
 }
 
 const ClassificationPageBox = styled.div`
-    padding: 0 6.5%;
+  padding: 0 6.5%;
 `;
-
