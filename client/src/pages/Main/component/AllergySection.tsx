@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 
 import BrandsItemComponents from '../../../components/ui/BrandsItemComponent';
-import Button from '../../../components/ui/Button';
+import Button from '../../../components/Button';
 import Title from '../../../components/ui/Title';
 
 export default function AllergySection() {
@@ -15,7 +15,7 @@ export default function AllergySection() {
             <BrandsItemComponents />
           </div>
         </BrandsList>
-        <ButtonContainer>
+        <ButtonContainer className='button button--secondary'>
           <Button href="/brands" buttonText="모두 보기" />
         </ButtonContainer>
       </div>
@@ -86,4 +86,14 @@ const BrandsList = styled.div`
 const ButtonContainer = styled.div`
   display: flex;
   justify-content: center;
+
+  .cmp-button {
+    margin: 24px 0 0;
+  }
+
+  @media only screen and (min-width: 1200px) {    
+    .cmp-button {
+      margin-top: 32px;
+    }
+  }
 `;

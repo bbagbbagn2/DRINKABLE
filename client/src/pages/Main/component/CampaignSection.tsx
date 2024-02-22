@@ -2,7 +2,6 @@ import React from "react";
 import styled from "styled-components";
 
 import Button from "../../../components/Button";
-
 import useIntersectionObserver from "../../../hooks/useIntersectionObserver";
 import main1 from "../../../assets/images/background.jpg";
 
@@ -26,11 +25,11 @@ export default function CampaingnSection() {
           <div className="cmp-teaser">
             <TeaserContent className="cmp-teaser__content">
               <h3 className="cmp-teaser__title">
-                Title
+                더 나은 식문화를 위한 노력
               </h3>
               <div className="cmp-teaser__description">
                 <p>
-                  Description
+                  QRLLERGY는 더 안전하고, 건강한 식문화를 추구합니다. 식품 알레르기로 불편함을 겪는 사람들에 긍정적인 변화를 만들기 위해 노력하고 있습니다. 
                 </p>
               </div>
               <div className="cmp-teaser__action-container">
@@ -51,11 +50,11 @@ export default function CampaingnSection() {
           <div className="cmp-teaser">
             <TeaserContent className="cmp-teaser__content">
               <h3 className="cmp-teaser__title">
-                Title
+                QR코드로 편하게 확인
               </h3>
               <div className="cmp-teaser__description">
                 <p>
-                  Description
+                QR코드를 스캔하여 알 수 있는 사용자의 식품 알레르기 여부
                 </p>
               </div>
               <div className="cmp-teaser__action-container">

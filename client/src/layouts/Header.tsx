@@ -45,36 +45,48 @@ export default function Header() {
   const isAllergiesPage = location.pathname === "/allergies";
 
   return (
-    <header>
-      <HeaderWrapper className="header-wrapper">
+    <header className="experincefragment">
+      <div className="cmp-experincefragment">
         <div className="cmp-container">
-          <div className="adaptiveImage image">
-            <ImageLink href="/" className="cmp-image__link">
-              <picture>
-                <source media="(min-width: 1200px)" />
-                <Image src={logo} loading="lazy" alt="QRLLERGY Logo" itemProp="contentUrl"/>
-              </picture>
-            </ImageLink>
+          <div className="header">
+            <HeaderWrapper className="header-wrapper">
+              <div className="cmp-container">
+                <div className="adaptiveImage image">
+                  <ImageLink href="/" className="cmp-image__link">
+                    <picture>
+                      <source media="(min-width: 1200px)" />
+                      <Image
+                        src={logo}
+                        loading="lazy"
+                        alt="QRLLERGY Logo"
+                        itemProp="contentUrl"
+                      />
+                    </picture>
+                  </ImageLink>
+                </div>
+                <HeaderNavigation>
+                  <div className="cmp-container">
+                    <TextList>
+                      <li>
+                        <b>
+                          <a
+                            href="/allergies"
+                            role="button"
+                            className={isAllergiesPage ? "active-element" : ""}
+                          >
+                            Allergies
+                          </a>
+                        </b>
+                      </li>
+                    </TextList>
+                  </div>
+                </HeaderNavigation>
+              </div>
+            </HeaderWrapper>
+            <div id='maincontent' />
           </div>
-          <HeaderNavigation>
-            <div className="cmp-container">
-              <TextList>
-                <li>
-                  <b>
-                    <a
-                      href="/allergies"
-                      role="button"
-                      className={isAllergiesPage ? "active-element" : ""}
-                    >
-                      Allergies
-                    </a>
-                  </b>
-                </li>
-              </TextList>
-            </div>
-          </HeaderNavigation>
         </div>
-      </HeaderWrapper>
+      </div>
     </header>
   );
 }
@@ -229,22 +241,26 @@ const TextList = styled.ul`
         text-decoration: none;
         cursor: pointer;
 
-        &.active-element::before {
-          display: block;
+        ::before {
+          background-color: #000;
+          content: "";
+          display: none;
+          height: 4px;
+          left: 50%;
+          position: absolute;
+          top: calc(100% - 4px);
+          translate: -50% 0;
+          width: 100%;
+        }
+
+        &.active-element {
+          font-weight: 700;
+
+          ::before{
+            display: block;
+          }
         }
       }
-    }
-
-    > li a::before {
-      content: "";
-      position: absolute;
-      top: calc(100% - 7px);
-      left: 50%;
-      width: 100%;
-      height: 4px;
-      display: none;
-      background-color: #000;
-      translate: -50% 0;
     }
   }
 `;
