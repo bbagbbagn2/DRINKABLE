@@ -41,16 +41,8 @@ export default function Header() {
     fetchData();
   }, []);
 
-  const handleScroll = (height: number) => {
-    const targetHeight = height;
-    window.scrollTo({
-      top: targetHeight,
-      behavior: "smooth",
-    });
-  };
-
   const location = useLocation();
-  const isBrandsPage = location.pathname === "/brands";
+  const isAllergiesPage = location.pathname === "/allergies";
 
   return (
     <header>
@@ -70,9 +62,9 @@ export default function Header() {
                 <li>
                   <b>
                     <a
-                      href="/brands"
+                      href="/allergies"
                       role="button"
-                      className={isBrandsPage ? "active-element" : ""}
+                      className={isAllergiesPage ? "active-element" : ""}
                     >
                       Allergies
                     </a>

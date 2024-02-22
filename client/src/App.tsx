@@ -15,7 +15,7 @@ export default function App() {
   return (
       <Routes>
         <Route path="/" element={<MainPage />} />
-        <Route path="/classfication" element={<ClassificationPage />} />
+        <Route path="/allergies" element={<ClassificationPage />} />
         <Route path="/search" element={<SearchPage />} />
         <Route path="/login" element={<LoginPage />} />
         <Route path="/register" element={<ResisterPage />} />
