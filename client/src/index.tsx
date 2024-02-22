@@ -22,8 +22,16 @@ const GlobalStyle = createGlobalStyle`
         width: auto;
         flex-grow: 1;
 
-        > .cmp-container > .title:first-of-type .cmp-title__text {
-          margin-top: 56px;
+        > .cmp-container {
+          > .title:first-of-type .cmp-title__text {
+            margin-top: 56px;
+          }
+
+          > .image {
+            &:first-of-type {
+              margin-top: 0;
+            }
+          }
         }
 
         @media only screen and (min-width: 1200px) {
@@ -166,6 +174,22 @@ const GlobalStyle = createGlobalStyle`
     }
   }
 
+  .cmp-adaptive-image {
+    picture {
+      align-items: center;
+      display: flex;
+      height: 100%;
+      justify-content: center;
+
+      img {
+        display: block;
+      }
+    }
+  }
+
+  .cmp-image__image {
+    width: 100%;
+  }
   @media only screen and (min-width: 1200px) {
     html, body {
       margin: 0;

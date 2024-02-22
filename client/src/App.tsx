@@ -3,6 +3,7 @@ import { Routes, Route } from "react-router-dom";
 
 import MainPage from "./pages/Main/Main";
 import ClassificationPage from "./pages/allergies/Allergies";
+import Qrllergy from "./pages/qrllergy/qrllergy";
 import SearchPage from "./SearchPage";
 import LoginPage from "./pages/sign-in/LoginPage";
 import ResisterPage from "./ResisterPage";
@@ -17,6 +18,7 @@ export default function App() {
       <Routes>
         <Route path="/" element={<MainPage />} />
         <Route path="/allergies" element={<ClassificationPage />} />
+        <Route path="/qrllergy" element={<Qrllergy />} />
         <Route path="/sitemap" element={<Sitemap />} />
         <Route path="/search" element={<SearchPage />} />
         <Route path="/login" element={<LoginPage />} />
