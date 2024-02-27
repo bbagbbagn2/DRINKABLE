@@ -1,8 +1,9 @@
 import React from "react";
 import { Routes, Route } from "react-router-dom";
 
-import MainPage from "./pages/Main/Main";
-import ClassificationPage from "./pages/allergies/Allergies";
+import Main from "./pages/Main/Main";
+import AboutMe from './pages/about-me/AboutMe';
+import Projects from "./pages/allergies/Allergies";
 import Qrllergy from "./pages/qrllergy/qrllergy";
 import SearchPage from "./SearchPage";
 import LoginPage from "./pages/sign-in/LoginPage";
@@ -16,8 +17,9 @@ import Sitemap from "./pages/sitemap/Sitemap";
 export default function App() {
   return (
       <Routes>
-        <Route path="/" element={<MainPage />} />
-        <Route path="/allergies" element={<ClassificationPage />} />
+        <Route path="/" element={<Main />} />
+        <Route path="/about-me" element={<AboutMe />} />
+        <Route path="/projects" element={<Projects />} />
         <Route path="/qrllergy" element={<Qrllergy />} />
         <Route path="/sitemap" element={<Sitemap />} />
         <Route path="/search" element={<SearchPage />} />

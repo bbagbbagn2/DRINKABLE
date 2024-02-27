@@ -25,15 +25,15 @@ export default function CampaingnSection() {
           <div className="cmp-teaser">
             <TeaserContent className="cmp-teaser__content">
               <h3 className="cmp-teaser__title">
-                더 나은 식문화를 위한 노력
+              Possibility
               </h3>
               <div className="cmp-teaser__description">
                 <p>
-                  QRLLERGY는 더 안전하고, 건강한 식문화를 추구합니다. 식품 알레르기로 불편함을 겪는 사람들에 긍정적인 변화를 만들기 위해 노력하고 있습니다. 
+                저는 빠르게 변화하는 프론트엔드 기술 환경에 흥미가 있습니다. 개인 프로젝트 및 팀 프로젝트를 통해 적용 가능한 기술과 노력을 통해 기여할 가능성을 높이고 있는 것에 최선을 다 하고 있습니다.
                 </p>
               </div>
               <div className="cmp-teaser__action-container">
-                <Button buttonText="자세히 보기"/>
+                <Button buttonText="프로젝트 보기"/>
               </div>
             </TeaserContent>
             <TeaserImage className="cmp-teaser__image">
@@ -50,15 +50,15 @@ export default function CampaingnSection() {
           <div className="cmp-teaser">
             <TeaserContent className="cmp-teaser__content">
               <h3 className="cmp-teaser__title">
-                QR코드로 편하게 확인
+              Refactoring
               </h3>
               <div className="cmp-teaser__description">
                 <p>
-                QR코드를 스캔하여 알 수 있는 사용자의 식품 알레르기 여부
+                코드의 가독성과 유지보수를 높이기 위한 리팩토링을 꾸준히 하고 있습니다. 조금씩이라도 코드를 효율적으로 수정하고, 리팩토링을 꾸준히 함으로써 실력이 발전하는 것을 느낍니다.
                 </p>
               </div>
               <div className="cmp-teaser__action-container">
-                <Button buttonText="자세히 보기"/>
+                <Button buttonText="이력서 보기"/>
               </div>
             </TeaserContent>
             <TeaserImage className="cmp-teaser__image">

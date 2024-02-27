@@ -2,12 +2,8 @@ import React, { useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
 import styled from "styled-components";
 
-import logo from "../assets/brand/logo-black.svg";
-import { theme } from "../styles/theme";
+import logo from "../assets/brand/icons/jihun-logo-black.svg";
 
-import { AiOutlineMenu } from "react-icons/ai";
-import { MdMenu, MdClose, MdSearch } from "react-icons/md";
-import { CiSearch, CiStar, CiUser } from "react-icons/ci";
 import axios from "axios";
 
 interface profileData {
@@ -42,7 +38,7 @@ export default function Header() {
   }, []);
 
   const location = useLocation();
-  const isAllergiesPage = location.pathname === "/allergies";
+  const isProjectssPage = location.pathname === "/projects";
 
   return (
     <header className="experincefragment">
@@ -70,22 +66,22 @@ export default function Header() {
                       <li>
                         <b>
                           <a
-                            href="/allergies"
+                            href="/projects"
                             role="button"
-                            className={isAllergiesPage ? "active-element" : ""}
+                            className={isProjectssPage ? "active-element" : ""}
                           >
-                            Allergies
+                            Projects
                           </a>
                         </b>
                       </li>
                       <li className="has-submenu">
                           <a
-                            href="/#"
+                            href="/about-me"
                             role="button"
                             data-text="Our Company"
                             aria-expanded="false"
                           >
-                            Our Company
+                            About me
                           </a>
                       </li>
                     </TextList>

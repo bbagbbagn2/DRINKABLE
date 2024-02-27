@@ -1,30 +1,32 @@
-import React from 'react';
-import styled from 'styled-components';
+import React from "react";
+import styled from "styled-components";
 
-import BrandsItemComponents from '../../../components/ui/BrandsItemComponent';
-import Button from '../../../components/Button';
-import Title from '../../../components/ui/Title';
+import ProjectsListComponent from "../../../components/ui/BrandsItemComponent";
+import Button from "../../../components/Button";
+import Title from "../../../components/ui/Title";
+
+import icondb from "../../../assets/images/projects/icondb logo.png";
 
 export default function AllergySection() {
   return (
-    <main className='container responsivegrid'>
-      <div className='cmp-container'>
-        <Title titleProps="식품알레르기 보기" marginTop='64px' />
-        <BrandsList className='container responsivegrid brands-list'>
-          <div className='cmp-container'>
-            <BrandsItemComponents />
+    <main className="container responsivegrid">
+      <div className="cmp-container">
+        <Title titleProps="프로젝트" marginTop="64px" />
+        <ProjectsList className="container responsivegrid projects-list">
+          <div className="cmp-container">
+            <ProjectsListComponent alt="ICONDB" src={icondb} />
           </div>
-        </BrandsList>
-        <ButtonContainer className='button button--secondary'>
-          <Button href="/brands" buttonText="모두 보기" />
+        </ProjectsList>
+        <ButtonContainer className="button button--secondary">
+          <Button href="/projects" buttonText="모두 보기" />
         </ButtonContainer>
       </div>
     </main>
   );
 }
 
-const BrandsList = styled.div`
-  margin-inline: -8px;
+const ProjectsList = styled.div`
+  margin-inline: -16px;
 
   .cmp-container {
     align-items: center;
@@ -33,31 +35,28 @@ const BrandsList = styled.div`
     justify-content: center;
     list-style: none;
     margin-inline: auto;
-    padding: 0;
-    width: auto;
-    
+
+    > .adaptiveImage {
+      margin-top: 32px;
+      padding-inline: 8px;
+      width: 50%;
+    }
+
     .cmp-image {
+      height: 0;
       padding-bottom: 100%;
       position: relative;
       width: 100%;
-      height: 0;
 
-      &::before {
-        background-color: #fafafa;
+      ::before {
+        background-color: #fff;
         border-radius: 16px;
         box-shadow: 0 14px 24px rgba(0, 0, 0, 0.06);
-        content: '';
+        content: "";
         display: block;
         inset: 0;
         position: absolute;
         transition: all 0.2s ease-out;
-      }
-
-      @media only screen and (min-width: 1200px) {
-        &:hover::before {
-          inset: -8px;
-          box-shadow: 0 14px 24px 0 rgba(0, 0, 0, 0.1);
-        }
       }
     }
 
@@ -66,19 +65,28 @@ const BrandsList = styled.div`
       padding: 24px;
       position: absolute;
     }
-
   }
 
   @media only screen and (min-width: 1200px) {
-    margin-inline: -16px;
+    margin-inline: -8px;
 
     .cmp-container {
       margin-inline: auto;
       width: 75%;
 
-      .cmp-image__link {
-        padding: 32px;
+      > .adaptiveImage {
+        padding-inline: 16px;
+        width: 33.3333333333%;
       }
+
+      .cmp-image:hover::before {
+        box-shadow: 0 14px 24px 0 rgba(0, 0, 0, 0.1);
+        inset: -8px;
+      }
+    }
+
+    .cmp-image__link {
+      padding: 32px;
     }
   }
 `;
@@ -91,7 +99,7 @@ const ButtonContainer = styled.div`
     margin: 24px 0 0;
   }
 
-  @media only screen and (min-width: 1200px) {    
+  @media only screen and (min-width: 1200px) {
     .cmp-button {
       margin-top: 32px;
     }

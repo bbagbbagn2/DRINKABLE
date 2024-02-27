@@ -22,10 +22,10 @@ export default function Sitemap() {
           </div>
           <div className="text">
             <div className="cmp-text">
-              <h2>Allergies</h2>
+              <h2>Projects</h2>
               <p>
-                <a href="/allergies" target="_self" rel="noopener noreferrer">
-                  식품&nbsp;알레르기&nbsp;보기
+                <a href="/projects" target="_self" rel="noopener noreferrer">
+                  프로젝트&nbsp;보기
                 </a>
               </p>
             </div>

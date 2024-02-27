@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 
 import SeperatorProps from "../components/ui/Seperator";
-import Logo from "../assets/brand/logo-white.svg";
+import Logo from "../assets/brand/icons/jihun-logo-white.svg";
 
 export default function Footer() {
   return (
@@ -47,7 +47,7 @@ export default function Footer() {
               <PrivacyBox>
                 <CmpTextBox>
                   <p>
-                    <b>© 2023 QRLLERGY by Jihun Park.</b>
+                    <b>© 2023 JIHUN by Jihun Park.</b>
                   </p>
                 </CmpTextBox>
               </PrivacyBox>

@@ -9,6 +9,10 @@ const GlobalStyle = createGlobalStyle`
   *, &:before, &:after {
     box-sizing: border-box;
   }
+  
+  :root {
+    --scrollWidth: 17px;
+  }
 
   .root >.cmp-container {
     display: flex;
@@ -101,6 +105,29 @@ const GlobalStyle = createGlobalStyle`
       margin-inline: 24px;
       max-width: none;
 
+      .cmp-container {
+        & :is(.projects-list) picture {
+          background: none;
+
+          img {
+            opacity: 1;
+            transition: none;
+          }
+        }
+      }
+
+      & :is(.adaptiveImage, .teaser) picture {
+        background-color: var(--surface-brand-primary-regular,transparent);
+        
+        &.loaded.visible img {
+          opacity: 1;
+        }
+
+        img {
+          opacity: 0;
+          transition: opacity .4s ease;
+        }
+      }
       @media only screen and (min-width: 1200px) {
         margin-inline: auto;
         max-width: 1120px;
@@ -169,9 +196,13 @@ const GlobalStyle = createGlobalStyle`
       margin: 56px 0 0;
     }
 
-    P {
+    p {
       margin: 16px 0 0;
     }
+  }
+
+  .image {
+    margin-top: 24px;
   }
 
   .cmp-adaptive-image {
@@ -190,6 +221,7 @@ const GlobalStyle = createGlobalStyle`
   .cmp-image__image {
     width: 100%;
   }
+
   @media only screen and (min-width: 1200px) {
     html, body {
       margin: 0;
@@ -197,46 +229,50 @@ const GlobalStyle = createGlobalStyle`
       line-height: 26px;
     }
 
-      ul {
-        font-size: 16px;
-        line-height: 26px;
-      }
-      
-      a {
-        font-size: 16px;
-        line-height: 26px;
-      }
+    ul {
+      font-size: 16px;
+      line-height: 26px;
+    }
+    
+    a {
+      font-size: 16px;
+      line-height: 26px;
+    }
 
-      h1 {
-        font-size: 38px;
-        line-height: 48px;
-      }
+    h1 {
+      font-size: 38px;
+      line-height: 48px;
+    }
 
-      h2 {
-        font-size: 32px;
-        line-height: 40px;
-      }
+    h2 {
+      font-size: 32px;
+      line-height: 40px;
+    }
 
-      h3 {
-        font-size: 24px;
-        line-height: 32px;
+    h3 {
+      font-size: 24px;
+      line-height: 32px;
+    }
+
+    p {
+      margin-bottom: 14px;
+      font-size: 16px;
+      line-height: 26px;
+    }
+
+    .text {
+      & :is(h1,h2,h3,h4,h5,h6) {
+        margin-top: 64px;
       }
 
       p {
-        margin-bottom: 14px;
-        font-size: 16px;
-        line-height: 26px;
+        margin-top: 24px;
       }
+    }
 
-      .text {
-        & :is(h1,h2,h3,h4,h5,h6) {
-          margin-top: 64px;
-        }
-
-        p {
-          margin-top: 24px;
-        }
-      }
+    .image {
+      margin-top: 32px;
+    }
   }
 `;
 
