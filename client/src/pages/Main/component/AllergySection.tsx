@@ -14,7 +14,7 @@ export default function AllergySection() {
         <Title titleProps="프로젝트" marginTop="64px" />
         <ProjectsList className="container responsivegrid projects-list">
           <div className="cmp-container">
-            <ProjectsListComponent alt="ICONDB" src={icondb} />
+            <ProjectsListComponent href='/projects/icondb' alt="ICONDB" src={icondb} />
           </div>
         </ProjectsList>
         <ButtonContainer className="button button--secondary">

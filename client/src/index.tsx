@@ -106,7 +106,7 @@ const GlobalStyle = createGlobalStyle`
       max-width: none;
 
       .cmp-container {
-        & :is(.projects-list) picture {
+        & :is(.projects-list, .secondary-header-logo) picture {
           background: none;
 
           img {

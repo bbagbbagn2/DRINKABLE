@@ -4,6 +4,7 @@ import { Routes, Route } from "react-router-dom";
 import Main from "./pages/Main/Main";
 import AboutMe from './pages/about-me/AboutMe';
 import Projects from "./pages/allergies/Allergies";
+import Icondb from './pages/projects/icondb';
 import Qrllergy from "./pages/qrllergy/qrllergy";
 import SearchPage from "./SearchPage";
 import LoginPage from "./pages/sign-in/LoginPage";
@@ -20,6 +21,7 @@ export default function App() {
         <Route path="/" element={<Main />} />
         <Route path="/about-me" element={<AboutMe />} />
         <Route path="/projects" element={<Projects />} />
+        <Route path="/projects/icondb" element={<Icondb />} />
         <Route path="/qrllergy" element={<Qrllergy />} />
         <Route path="/sitemap" element={<Sitemap />} />
         <Route path="/search" element={<SearchPage />} />
