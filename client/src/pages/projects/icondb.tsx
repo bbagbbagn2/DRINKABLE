@@ -30,6 +30,18 @@ export default function Icondb() {
               </div>
             </div>
           </SeconraryHeader>
+          <div className="container responsivegrid">
+            <div className="cmp-container" />
+          </div>
+          <div className="container responsivegrid">
+            <div className="cmp-container">
+              <TeaserHero className="teaser hero hero--normal">
+                <div className="cmp-teaser">
+
+                </div>
+              </TeaserHero>
+            </div>
+          </div>
         </div>
       </main>
       <Footer />
@@ -76,6 +88,33 @@ const SeconraryHeader = styled.div`
 
     .cmp-image__image {
       max-height: 64px;
+    }
+  }
+`;
+
+const TeaserHero = styled.div`
+  margin-left: 24px;
+  margin-top: 24px;
+  padding: 0 24px;
+  width: min(100vw - var(--scrollWidth), 1440px);
+
+  .cmp-teaser {
+    border-radius: 16px;
+    display: flex;
+    justify-content: center;
+    margin: 0 auto;
+    max-width: 599px;
+    overflow: hidden;
+    }
+
+  @media only screen and (min-width: 1200px) {
+    margin-left: calc((1120px - min(100vw - var(--scrollWidth), 1440px)) / 2);
+    margin-top: 32px;
+
+    .cmp-teaser {
+        margin: 0 auto;
+        max-width: 1280px;
+        width: 100%;
     }
   }
 `;

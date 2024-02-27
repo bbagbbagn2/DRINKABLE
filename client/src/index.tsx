@@ -205,6 +205,17 @@ const GlobalStyle = createGlobalStyle`
     margin-top: 24px;
   }
 
+  .hero {
+    position: relative;
+
+    .cmp-teaser {
+      height: 100%;
+      margin: 0 auto;
+      max-width: 551px;
+      position: relative;
+    }
+  }
+
   .cmp-adaptive-image {
     picture {
       align-items: center;
