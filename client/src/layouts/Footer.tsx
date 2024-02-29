@@ -64,7 +64,7 @@ const FooterContainer = styled.div`
   background-color: #000;
   color: #fff;
 
-  > .cmp-container {
+  & > .cmp-container {
     margin-inline: 24px;
     max-width: none;
   }
@@ -74,7 +74,7 @@ const FooterContainer = styled.div`
   }
 
   @media only screen and (min-width: 600px) {
-    > .cmp-container {
+    & > .cmp-container {
       margin-inline: 64px;
     }
   }
@@ -82,7 +82,7 @@ const FooterContainer = styled.div`
   @media only screen and (min-width: 1200px) {
     margin-top: 120px;
 
-    > .cmp-container {
+    & > .cmp-container {
       margin-inline: auto;
       max-width: 1120px;
     }
@@ -106,13 +106,13 @@ const CmpContainer = styled.div`
 `;
 
 const FooterContent = styled.div`
-  .footer__navigation {
+  & .footer__navigation {
     margin-top: 8px;
     flex: 0 0 100%;
     min-width: 100%;
     padding-inline: 12px;
 
-    > .cmp-container {
+    & > .cmp-container {
       display: flex;
       flex-wrap: wrap;
       margin-inline: -8px;
@@ -124,7 +124,7 @@ const FooterContent = styled.div`
       min-width: 100%;
       padding-inline: 12px;
 
-      > .cmp-container {
+      & > .cmp-container {
         margin-inline: -12px;
       }
     }
@@ -134,19 +134,19 @@ const FooterContent = styled.div`
       min-width: 66.6666667%;
       padding-inline: 16px;
 
-      > .cmp-container {
+      & > .cmp-container {
         margin-inline: -16px;
       }
     }
   }
 
-  .footer__mobile-accordion {
+  & .footer__mobile-accordion {
     margin-top: 24px;
     flex: 0 0 100%;
     min-width: 100%;
     padding-inline: 8px;
 
-    .cmp-text {
+    & .cmp-text {
       display: flex;
       flex-direction: column;
       height: 100%;
@@ -181,7 +181,7 @@ const FooterContent = styled.div`
       margin: 16px 0 0;
       text-decoration: none;
 
-      :first-of-type {
+      &:first-of-type {
         margin-top: 0;
       }
 
@@ -227,7 +227,7 @@ const ImageBox = styled.div`
   order: -2;
   padding-inline: 8px;
 
-  .cmp-adaptive-image picture {
+  & .cmp-adaptive-image picture {
     height: 100%;
     display: flex;
     align-items: center;
@@ -238,7 +238,7 @@ const ImageBox = styled.div`
     }
   }
 
-  .cmp-image {
+  & .cmp-image {
     width: fit-content;
     height: 100%;
   }

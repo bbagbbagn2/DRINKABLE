@@ -2,6 +2,7 @@ import React from "react";
 import styled from "styled-components";
 
 import Button from "../../../components/Button";
+import Main from '../../../components/ui/Main';
 import useIntersectionObserver from "../../../hooks/useIntersectionObserver";
 import main1 from "../../../assets/images/background.jpg";
 
@@ -13,7 +14,7 @@ export default function BannerSection() {
   });
 
   return (
-    <main className="container responsivegrid">
+    <Main>
       <div className="cmp-container">
         <TeaserHero className="teaser hero">
           <div className="cmp-teaser">
@@ -30,7 +31,7 @@ export default function BannerSection() {
           </div>
         </TeaserHero>
       </div>
-    </main>
+    </Main>
   );
 }
 

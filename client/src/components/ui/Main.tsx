@@ -1,16 +1,20 @@
-import React, { ReactNode } from 'react';
-import styled from 'styled-components';
+import React, { ReactNode } from "react";
+import styled from "styled-components";
 
 type MainProps = {
   children: ReactNode;
 };
 
 export default function Main({ children }: MainProps) {
-  return <MainContainer className='container responsivegrid'>{children}</MainContainer>;
+  return (
+    <MainContainer className="container responsivegrid">
+      <div className="cmp-container">{children}</div>
+    </MainContainer>
+  );
 }
 
 const MainContainer = styled.main`
-  &.container {  
+  &.container {
     margin-inline: 24px;
     max-width: none;
   }

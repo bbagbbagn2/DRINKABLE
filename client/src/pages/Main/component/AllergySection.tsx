@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 
-import Main from '../../../components/ui/Main';
+import Main from "../../../components/ui/Main";
 import ProjectsListComponent from "../../../components/ui/BrandsItemComponent";
 import Button from "../../../components/Button";
 import Title from "../../../components/ui/Title";
@@ -11,17 +11,19 @@ import icondb from "../../../assets/images/projects/icondb logo.png";
 export default function AllergySection() {
   return (
     <Main>
-      <div className="cmp-container">
-        <Title titleProps="프로젝트" marginTop="64px" />
-        <ProjectsList className="container responsivegrid projects-list">
-          <div className="cmp-container">
-            <ProjectsListComponent href='/projects/icondb' alt="ICONDB" src={icondb} />
-          </div>
-        </ProjectsList>
-        <ButtonContainer className="button button--secondary">
-          <Button href="/projects" buttonText="모두 보기" />
-        </ButtonContainer>
-      </div>
+      <Title titleProps="프로젝트" marginTop="64px" />
+      <ProjectsList className="container responsivegrid projects-list">
+        <div className="cmp-container">
+          <ProjectsListComponent
+            href="/projects/icondb"
+            alt="ICONDB"
+            src={icondb}
+          />
+        </div>
+      </ProjectsList>
+      <ButtonContainer className="button button--secondary">
+        <Button href="/projects" buttonText="모두 보기" />
+      </ButtonContainer>
     </Main>
   );
 }
@@ -29,7 +31,7 @@ export default function AllergySection() {
 const ProjectsList = styled.div`
   margin-inline: -16px;
 
-  .cmp-container {
+  & .cmp-container {
     align-items: center;
     display: flex;
     flex-wrap: wrap;
@@ -37,19 +39,19 @@ const ProjectsList = styled.div`
     list-style: none;
     margin-inline: auto;
 
-    > .adaptiveImage {
+    & > .adaptiveImage {
       margin-top: 32px;
       padding-inline: 8px;
       width: 50%;
     }
 
-    .cmp-image {
+    & .cmp-image {
       height: 0;
       padding-bottom: 100%;
       position: relative;
       width: 100%;
 
-      ::before {
+      &::before {
         background-color: #fff;
         border-radius: 16px;
         box-shadow: 0 14px 24px rgba(0, 0, 0, 0.06);
@@ -71,22 +73,22 @@ const ProjectsList = styled.div`
   @media only screen and (min-width: 1200px) {
     margin-inline: -8px;
 
-    .cmp-container {
+    & .cmp-container {
       margin-inline: auto;
       width: 75%;
 
-      > .adaptiveImage {
+      & > .adaptiveImage {
         padding-inline: 16px;
         width: 33.3333333333%;
       }
 
-      .cmp-image:hover::before {
+      & .cmp-image:hover::before {
         box-shadow: 0 14px 24px 0 rgba(0, 0, 0, 0.1);
         inset: -8px;
       }
     }
 
-    .cmp-image__link {
+    & .cmp-image__link {
       padding: 32px;
     }
   }
@@ -96,12 +98,12 @@ const ButtonContainer = styled.div`
   display: flex;
   justify-content: center;
 
-  .cmp-button {
+  & .cmp-button {
     margin: 24px 0 0;
   }
 
   @media only screen and (min-width: 1200px) {
-    .cmp-button {
+    & .cmp-button {
       margin-top: 32px;
     }
   }

@@ -15,10 +15,8 @@ const GlobalStyle = createGlobalStyle`
   }
 
   .root >.cmp-container {
-
     main {
       &.container {
-
         > .cmp-container {
           > .title:first-of-type .cmp-title__text {
             margin-top: 56px;

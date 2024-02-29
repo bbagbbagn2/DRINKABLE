@@ -104,7 +104,7 @@ const HeaderWrapper = styled.div`
   align-items: center;
   background-color: #fff;
 
-  > .cmp-container {
+  & > .cmp-container {
     align-items: center;
     display: flex;
     height: 72px;
@@ -116,7 +116,7 @@ const HeaderWrapper = styled.div`
     -webkit-box-align: center;
   }
 
-  .image {
+  & .image {
     margin: 0;
 
     img {
@@ -128,7 +128,7 @@ const HeaderWrapper = styled.div`
   @media only screen and (min-width: 1200px) {
     height: 80px;
 
-    > .cmp-container {
+    & > .cmp-container {
       margin-inline: auto;
       max-width: 1280px;
       height: 80px;
@@ -173,7 +173,7 @@ const HeaderNavigation = styled.div`
   display: flex;
   align-items: center;
 
-  > .cmp-container {
+  & > .cmp-container {
     width: 100%;
     height: 100%;
     padding-inline: 24px;
@@ -182,7 +182,7 @@ const HeaderNavigation = styled.div`
   }
 
   @media only screen and (min-width: 600px) {
-    > .cmp-container {
+    & > .cmp-container {
       padding: 0;
       width: calc(100% - 350px);
       min-width: 418px;
@@ -203,7 +203,7 @@ const TextList = styled.ul`
     align-items: center;
     list-style-type: none;
 
-    > li {
+    & > li {
       margin: 0 20px;
       position: relative;
       height: 100%;
@@ -214,13 +214,13 @@ const TextList = styled.ul`
       letter-spacing: 0;
       text-decoration: none;
 
-      :hover {
+      &:hover {
         font-weight: 700;
 
-        > a {
+        & > a {
           font-weight: 700;
 
-          ::before {
+          &::before {
             display: block;
           }
         }
@@ -242,7 +242,7 @@ const TextList = styled.ul`
         flex-direction: column;
         justify-content: center;
 
-        ::after {
+        &::after {
           content: attr(data-text);
           display: block;
           font: inherit;
@@ -264,7 +264,7 @@ const TextList = styled.ul`
         position: relative;
         text-decoration: none;
 
-        ::before {
+        &::before {
           background-color: #000;
           content: "";
           display: none;
@@ -279,7 +279,7 @@ const TextList = styled.ul`
         &.active-element {
           font-weight: 700;
 
-          ::before{
+          &::before{
             display: block;
           }
         }
