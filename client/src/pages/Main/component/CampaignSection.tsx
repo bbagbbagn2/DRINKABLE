@@ -21,10 +21,9 @@ export default function CampaingnSection() {
 
   return (
     <Main>
-      <div className="cmp-container">
-        <CampaignCard className="teaser campaign-card content-on-left">
+        <div className="teaser campaign-card content-on-left">
           <div className="cmp-teaser">
-            <TeaserContent className="cmp-teaser__content">
+            <div className="cmp-teaser__content">
               <h3 className="cmp-teaser__title">
               Possibility
               </h3>
@@ -36,7 +35,7 @@ export default function CampaingnSection() {
               <div className="cmp-teaser__action-container">
                 <Button buttonText="프로젝트 보기"/>
               </div>
-            </TeaserContent>
+            </div>
             <TeaserImage className="cmp-teaser__image">
               <div className="cmp-adaptive-image cmp-image">
                 <picture ref={targetRefFirst} className={`loaded ${isVisibleFirst && 'visible'}`}>
@@ -46,10 +45,10 @@ export default function CampaingnSection() {
               </div>
             </TeaserImage>
           </div>
-        </CampaignCard>
-        <CampaignCard className="teaser campaign-card content-on-right">
+        </div>
+        <div className="teaser campaign-card content-on-right">
           <div className="cmp-teaser">
-            <TeaserContent className="cmp-teaser__content">
+            <div className="cmp-teaser__content">
               <h3 className="cmp-teaser__title">
               Refactoring
               </h3>
@@ -61,18 +60,17 @@ export default function CampaingnSection() {
               <div className="cmp-teaser__action-container">
                 <Button buttonText="이력서 보기"/>
               </div>
-            </TeaserContent>
-            <TeaserImage className="cmp-teaser__image">
+            </div>
+            <div className="cmp-teaser__image">
               <div className="cmp-adaptive-image cmp-image">
                 <picture ref={targetRefSecond} className={`loaded ${isVisibleSecond && 'visible'}`}>
                   <source srcSet={main1} media="(min-width: 1200px)" width="1280" height="1024" />
                   <Image src={main1} loading="lazy" className="cmp-image__image" itemProp="contentUrl" alt="클라우드 보기" />
                 </picture>
               </div>
-            </TeaserImage>
+            </div>
           </div>
-        </CampaignCard>
-      </div>
+        </div>
     </Main>
   );
 }

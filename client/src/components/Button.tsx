@@ -8,9 +8,9 @@ type ButtonProps = {
 
 export default function Button({ href, buttonText }: ButtonProps) {
   return (
-    <ButtonBox href={href} className='cmp-button'>
+    <a href={href} className='cmp-teaser__action-link'>
       {buttonText}
-    </ButtonBox>
+    </a>
   );
 }
 
