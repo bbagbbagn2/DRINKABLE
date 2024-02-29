@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 
+import Main from '../../../components/ui/Main';
 import Button from "../../../components/Button";
 import useIntersectionObserver from "../../../hooks/useIntersectionObserver";
 import main1 from "../../../assets/images/background.jpg";
@@ -19,7 +20,7 @@ export default function CampaingnSection() {
   });
 
   return (
-    <main className="container responsivegrid">
+    <Main>
       <div className="cmp-container">
         <CampaignCard className="teaser campaign-card content-on-left">
           <div className="cmp-teaser">
@@ -72,7 +73,7 @@ export default function CampaingnSection() {
           </div>
         </CampaignCard>
       </div>
-    </main>
+    </Main>
   );
 }
 

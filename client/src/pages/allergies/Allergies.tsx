@@ -4,6 +4,7 @@ import styled from "styled-components";
 import Header from "../../layouts/Header";
 import Footer from '../../layouts/Footer';
 import Container from "../../components/ui/Container";
+import Main from "../../components/ui/Main";
 import Title from "../../components/ui/Title";
 
 import ProjectsListComponent from '../../components/ui/BrandsItemComponent';
@@ -14,7 +15,7 @@ export default function Projects() {
   return (
     <Container>
       <Header />
-      <main className="container responsivegrid">
+      <Main>
         <div className="cmp-container">
           <div className="container responsivegrid">
             <div className="cmp-container">
@@ -30,7 +31,7 @@ export default function Projects() {
             <div className="cmp-container" />
           </div>
         </div>
-      </main>
+      </Main>
       <Footer />
     </Container>
   );

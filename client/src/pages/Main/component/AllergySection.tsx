@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 
+import Main from '../../../components/ui/Main';
 import ProjectsListComponent from "../../../components/ui/BrandsItemComponent";
 import Button from "../../../components/Button";
 import Title from "../../../components/ui/Title";
@@ -9,7 +10,7 @@ import icondb from "../../../assets/images/projects/icondb logo.png";
 
 export default function AllergySection() {
   return (
-    <main className="container responsivegrid">
+    <Main>
       <div className="cmp-container">
         <Title titleProps="프로젝트" marginTop="64px" />
         <ProjectsList className="container responsivegrid projects-list">
@@ -21,7 +22,7 @@ export default function AllergySection() {
           <Button href="/projects" buttonText="모두 보기" />
         </ButtonContainer>
       </div>
-    </main>
+    </Main>
   );
 }
 

@@ -18,8 +18,6 @@ const GlobalStyle = createGlobalStyle`
 
     main {
       &.container {
-        width: auto;
-        flex-grow: 1;
 
         > .cmp-container {
           > .title:first-of-type .cmp-title__text {
@@ -34,8 +32,6 @@ const GlobalStyle = createGlobalStyle`
         }
 
         @media only screen and (min-width: 1200px) {
-          width: 100%;
-
           > .cmp-container > .title:first-of-type .cmp-title__text {
             margin-top: 64px;
           }
@@ -122,10 +118,6 @@ const GlobalStyle = createGlobalStyle`
           opacity: 0;
           transition: opacity .4s ease;
         }
-      }
-      @media only screen and (min-width: 1200px) {
-        margin-inline: auto;
-        max-width: 1120px;
       }
     }
   }
