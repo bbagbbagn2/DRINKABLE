@@ -3,6 +3,7 @@ import styled from "styled-components";
 
 import Header from "../../layouts/Header";
 import Footer from '../../layouts/Footer';
+import Container from "../../components/ui/Container";
 import Title from "../../components/ui/Title";
 
 import ProjectsListComponent from '../../components/ui/BrandsItemComponent';
@@ -11,7 +12,7 @@ import icondb from '../../assets/images/projects/icondb logo.png'
 
 export default function Projects() {
   return (
-    <div className="cmp-container">
+    <Container>
       <Header />
       <main className="container responsivegrid">
         <div className="cmp-container">
@@ -31,7 +32,7 @@ export default function Projects() {
         </div>
       </main>
       <Footer />
-    </div>
+    </Container>
   );
 }
 
