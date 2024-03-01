@@ -8,6 +8,7 @@ import axios from "axios";
 
 import "../styles/Header.css";
 
+import { MdMenu } from "react-icons/md";
 interface profileData {
   username: string;
 }
@@ -110,7 +111,9 @@ export default function Header() {
                   <div className="cmp-container">
                     <div className="button header__menu-button header__button--separator-hidden">
                       <div className="cmp-container">
-                        <button className="cmp-button" aria-label="Menu"></button>
+                        <button className="cmp-button" aria-label="Menu">
+                        <MdMenu size="24"/>
+                        </button>
                       </div>
                     </div>
                   </div>
