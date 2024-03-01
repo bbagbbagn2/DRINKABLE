@@ -6,7 +6,9 @@ import { createGlobalStyle } from "styled-components";
 import App from "./App";
 
 const GlobalStyle = createGlobalStyle`
-  *, &:before, &:after {
+  *, 
+  *::before,
+  *::after {
     box-sizing: border-box;
   }
   
@@ -140,19 +142,6 @@ const GlobalStyle = createGlobalStyle`
     }
   }
 
-  #header {
-    margin: 0 auto;
-    width: 100%;
-    height: auto !important;
-    border: 0;
-    border-bottom: 1px solid #e5e5e5;
-    background: #fff !important;
-
-    @media screen and (max-width: 767.98px){
-      border-bottom: 0;
-    }
-  }
-
   #footer {
     margin: 50px auto 0;
     margin-top: 0;
@@ -283,16 +272,60 @@ const GlobalStyle = createGlobalStyle`
     }
   }
 
-  .button {
+  .button,
+  .button .cmp-button {
     display: flex;
     justify-content: center;
 
-    &.button--icon {
+    .button--icon {
       .cmp-button, .button--white.cmp-button {
         height: 40px;
         width: 40px;
       }
     }
+  }
+
+  .projects-list+.button {
+    .cmp-button {
+      margin: 24px 0 0;
+    }
+  }
+
+  .button .cmp-button {
+    align-items: center;
+    background-color: #000;
+    border: none;
+    border-radius: 48px;
+    color: #fff;
+    height: 40px;
+    margin-top: 56px;
+    padding: 0;
+    text-decoration: none;
+    width: 100%;
+  }
+
+  .button .cmp-button .cmp-button__text {
+    margin-top: 1px;
+  }
+
+  .button.button--secondary .cmp-button {
+    align-items: center;
+    background-color: var(--surface-action-alpha-main-default,transparent);
+    border: none;
+    border: 2px solid var(--stroke-neutral-main-regular-default,#000);
+    border-radius: 48px;
+    color: var(--text-neutral-main-regular-default,#000);
+    display: flex;
+    font: 600 14px / 14px 'Noto Sans KR', 'Montserrat', sans-serif;
+    height: 40px;
+    justify-content: center;
+    padding: 0;
+    text-decoration: none;
+    width: 100%
+  }
+
+  .button.button--secondary .cmp-button .cmp-button__text {
+    margin-top: 1px;
   }
 
   .cmp-button {
@@ -341,17 +374,15 @@ const GlobalStyle = createGlobalStyle`
     }
   }
 
-  .cmp-adaptive-image {
-    picture {
-      align-items: center;
-      display: flex;
-      height: 100%;
-      justify-content: center;
+  .cmp-adaptive-image picture {
+    align-items: center;
+    display: flex;
+    height: 100%;
+    justify-content: center;
+  }
 
-      img {
-        display: block;
-      }
-    }
+  .cmp-adaptive-image picture img {
+    display: block;
   }
 
   .cmp-image__image {
@@ -468,6 +499,25 @@ const GlobalStyle = createGlobalStyle`
       margin-inline: auto;
       max-width: 1120px;
     }
+
+    .projects-list+.button {
+      .cmp-button {
+        margin-top: 32px;
+      }
+    }
+
+    .button .cmp-button {
+      margin-top: 64px;
+      width: 327px;
+    }
+
+    .button.button--secondary .cmp-button {
+      width: 327px;
+    }
+
+    .button.button--secondary .cmp-button:hover {
+      background-color: var(--surface-action-alpha-main-hover,rgba(0,0,0,.12));
+    } 
 
     .campaign-card {
       margin-top: 120px;

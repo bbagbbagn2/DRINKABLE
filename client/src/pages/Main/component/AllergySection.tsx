@@ -21,9 +21,11 @@ export default function AllergySection() {
           />
         </div>
       </ProjectsList>
-      <ButtonContainer className="button button--secondary">
-        <Button href="/projects" buttonText="모두 보기" />
-      </ButtonContainer>
+      <div className="button button--secondary">
+        <a href="/projects" className="cmp-button">
+          <span className="cmp-button__text">모두 보기</span>
+        </a>
+      </div>
     </Main>
   );
 }
