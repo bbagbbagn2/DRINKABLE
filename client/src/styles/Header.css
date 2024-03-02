@@ -193,6 +193,7 @@
         align-items: flex-start;
         box-shadow: 0 14px 24px rgba(0,0,0,.06);
         display: none;
+        flex-direction: column;
         height: auto;
         left: -20px;
         list-style: none;

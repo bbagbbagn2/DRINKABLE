@@ -101,7 +101,10 @@ export default function Header() {
                               </a>
                               <ul className="submenu">
                                 <li>
-                                  <a href="/projects/icondb" data-text='ICONDB'>ICONDB</a>
+                                  <a href="/projects/icondb" data-text='ICONDB Project'>ICONDB Project</a>
+                                </li>
+                                <li>
+                                  <a href="/projects/pjh-portfolio" data-text='PJH-Portfolio Project'>PJH-Portfolio Project</a>
                                 </li>
                               </ul>
                             </li>

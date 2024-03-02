@@ -27,21 +27,21 @@ export default function Icondb() {
           <div className="container responsivegrid">
             <div className="cmp-container">
               <Title>
-                <h2 className="cmp-title__text">ICONDB 프로젝트</h2>
+                <h2 className="cmp-title__text">프로젝트 정보</h2>
               </Title>
               <div className="text">
                 <div className="cmp-text">
                   <p style={{textAlign: "center"}}>
-                    무료로 아이콘을 다운받을 수 있는 웹 사이트입니다.
+                    무료로 아이콘을 다운받을 수 있는 웹 서비스로, 해시태그 및 소셜 로그인 등 사용자의 편의성을 고려하여 제작했습니다.
                   </p>
                 </div>
               </div>
             </div>
           </div>
-          <CampaingnCard className="content-on-left" title="자세한 ICONDB 정보" description="팀원과 함께 개발한 ICONDB 기록">
+          <CampaingnCard className="content-on-left" title="자세한 ICONDB 정보" description="팀원과 함께 개발한 ICONDB 개발 과정을 기록하였습니다.">
             <Button buttonText="개발 과정 보기" />
           </CampaingnCard>
-          <CampaingnCard className="content-on-right" title="ICONDB 회고록" description="프로젝트 시 발생한 문제점 및 해결 과정을 자세히 나타낸 회고록">
+          <CampaingnCard className="content-on-right" title="개발 회고록" description="프로젝트 개발 시 발생한 문제점 및 해결 과정, 리패토링을 자세히 나타낸 회고록">
             <Button buttonText="회고록 보기" />
           </CampaingnCard>
           <div className="container responsivegrid">
