@@ -1,5 +1,4 @@
-import React, { useEffect } from "react";
-import styled from "styled-components";
+import React from "react";
 
 import Header from "../../layouts/Header";
 import Footer from "../../layouts/Footer";
@@ -10,8 +9,9 @@ import SecondaryHeader from "../../components/ui/SecondaryHeader";
 import DesktopBanner from "../../components/ui/DesktopBanner";
 import GitHubCard from "../../components/ui/GitHubCard";
 import CampaingnCard from "../../components/ui/CampaignCard";
+import SkillCard from "../../components/ui/SkillCard";
 
-import main from '../../assets/images/background.jpg';
+import main from "../../assets/images/background.jpg";
 
 export default function Icondb() {
   return (
@@ -31,17 +31,26 @@ export default function Icondb() {
               </Title>
               <div className="text">
                 <div className="cmp-text">
-                  <p style={{textAlign: "center"}}>
-                    무료로 아이콘을 다운받을 수 있는 웹 서비스로, 해시태그 및 소셜 로그인 등 사용자의 편의성을 고려하여 제작했습니다.
+                  <p style={{ textAlign: "center" }}>
+                    무료로 아이콘을 다운받을 수 있는 웹 서비스로, 해시태그 및
+                    소셜 로그인 등 사용자의 편의성을 고려하여 제작했습니다.
                   </p>
                 </div>
               </div>
             </div>
           </div>
-          <CampaingnCard className="content-on-left" title="자세한 ICONDB 정보" description="팀원과 함께 개발한 ICONDB 개발 과정을 기록하였습니다.">
+          <CampaingnCard
+            className="content-on-left"
+            title="자세한 ICONDB 정보"
+            description="팀원과 함께 개발한 ICONDB 개발 과정을 기록하였습니다."
+          >
             <Button buttonText="개발 과정 보기" />
           </CampaingnCard>
-          <CampaingnCard className="content-on-right" title="개발 회고록" description="프로젝트 개발 시 발생한 문제점 및 해결 과정, 리패토링을 자세히 나타낸 회고록">
+          <CampaingnCard
+            className="content-on-right"
+            title="개발 회고록"
+            description="프로젝트 개발 시 발생한 문제점 및 해결 과정, 리패토링을 자세히 나타낸 회고록"
+          >
             <Button buttonText="회고록 보기" />
           </CampaingnCard>
           <div className="container responsivegrid">
@@ -51,85 +60,34 @@ export default function Icondb() {
               </Title>
               <div className="container responsivegrid grid three-columns">
                 <div className="cmp-container">
-                  <div className="teaser content-card">
-                    <div className="cmp-teaser">
-                      <div className="cmp-teaser__content">
-                        <h3 className="cmp-teaser__title">Front-End</h3>
-                        <div className="cmp-teaser__description">
-                          <p>
-                            <b>
-                              HTML, CSS, JavaScript
-                              <hr />
-                              React, styled-components
-                              <hr />
-                              Axios
-                              <hr />
-                            </b>
-                          </p>
-                        </div>
-                      </div>
-                      <div className="cmp-teaser__image">
-                        <div className="cmp-adaptive-image cmp-image">
-                          <picture className="loaded visible">
-                            <img src={main} loading="lazy" alt="Front-End"/>
-                          </picture>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="teaser content-card">
-                    <div className="cmp-teaser">
-                      <div className="cmp-teaser__content">
-                        <h3 className="cmp-teaser__title">Back-End</h3>
-                        <div className="cmp-teaser__description">
-                          <p>
-                            <b>
-                              Node.js, Express.js
-                              <hr />
-                              MySQL
-                              <hr />
-                            </b>
-                          </p>
-                        </div>
-                      </div>
-                      <div className="cmp-teaser__image">
-                        <div className="cmp-adaptive-image cmp-image">
-                          <picture className="loaded visible">
-                            <img src={main} loading="lazy" alt="Front-End"/>
-                          </picture>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="teaser content-card">
-                    <div className="cmp-teaser">
-                      <div className="cmp-teaser__content">
-                        <h3 className="cmp-teaser__title">Communication</h3>
-                        <div className="cmp-teaser__description">
-                          <p>
-                            <b>
-                              Git & GitHub
-                              <hr />
-                              Notion
-                              <hr />
-                            </b>
-                          </p>
-                        </div>
-                      </div>
-                      <div className="cmp-teaser__image">
-                        <div className="cmp-adaptive-image cmp-image">
-                          <picture className="loaded visible">
-                            <img src={main} loading="lazy" alt="Front-End"/>
-                          </picture>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
+                  <SkillCard title="Fron-End" src={main}>
+                    HTML, CSS, JavaScript
+                    <hr />
+                    React, styled-components
+                    <hr />
+                    Axios
+                    <hr />
+                  </SkillCard>
+                  <SkillCard title="Back-End" src={main}>
+                    Node.js, Express.js
+                    <hr />
+                    MySQL
+                    <hr />
+                  </SkillCard>
+                  <SkillCard title="Communication" src={main}>
+                    Git & GitHub
+                    <hr />
+                    Notion
+                    <hr />
+                  </SkillCard>
                 </div>
               </div>
             </div>
           </div>
-          <GitHubCard text="ICONDB" href="https://github.com/stack0801/Icon_DB" />
+          <GitHubCard
+            text="ICONDB"
+            href="https://github.com/stack0801/Icon_DB"
+          />
         </div>
       </main>
       <Footer />

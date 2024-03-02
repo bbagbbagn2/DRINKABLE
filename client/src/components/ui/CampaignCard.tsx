@@ -1,11 +1,9 @@
 import React from "react";
-import styled from "styled-components";
-
-import Button from "../../components/Button";
 import useIntersectionObserver from "../../hooks/useIntersectionObserver";
+import '../../styles/CampaignCard.css';
+
 import main1 from "../../assets/images/background.jpg";
 
-import '../../styles/CampaignCard.css';
 interface TeaserProps {
     title: string;
     description: string;
@@ -13,13 +11,7 @@ interface TeaserProps {
     children: React.ReactNode;
 }
 export default function CampaingnCard({ title, description, className, children }: TeaserProps) {
-  const [targetRefFirst, isVisibleFirst] = useIntersectionObserver({
-    root: null,
-    rootMargin: "0px",
-    threshold: 0.5,
-  });
-
-  const [targetRefSecond, isVisibleSecond] = useIntersectionObserver({
+  const [targetRef, isVisibleRef] = useIntersectionObserver({
     root: null,
     rootMargin: "0px",
     threshold: 0.5,
@@ -42,8 +34,8 @@ export default function CampaingnCard({ title, description, className, children 
         <div className="cmp-teaser__image">
           <div className="cmp-adaptive-image cmp-image">
             <picture
-              ref={targetRefFirst}
-              className={`loaded ${isVisibleFirst && "visible"}`}
+              ref={targetRef}
+              className={`loaded ${isVisibleRef && "visible"}`}
             >
               <source
                 srcSet={main1}
