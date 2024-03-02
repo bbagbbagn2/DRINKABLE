@@ -5,10 +5,11 @@ import Header from "../../layouts/Header";
 import Footer from "../../layouts/Footer";
 import Title from "../../components/ui/Title";
 
+import Button from "../../components/Button";
 import SecondaryHeader from "../../components/ui/SecondaryHeader";
 import DesktopBanner from "../../components/ui/DesktopBanner";
 import GitHubCard from "../../components/ui/GitHubCard";
-import SeperatorProps from "../../components/ui/Seperator";
+import CampaingnCard from "../../components/ui/CampaignCard";
 
 import main from '../../assets/images/background.jpg';
 
@@ -37,6 +38,12 @@ export default function Icondb() {
               </div>
             </div>
           </div>
+          <CampaingnCard className="content-on-left" title="자세한 ICONDB 정보" description="팀원과 함께 개발한 ICONDB 기록">
+            <Button buttonText="개발 과정 보기" />
+          </CampaingnCard>
+          <CampaingnCard className="content-on-right" title="ICONDB 회고록" description="프로젝트 시 발생한 문제점 및 해결 과정을 자세히 나타낸 회고록">
+            <Button buttonText="회고록 보기" />
+          </CampaingnCard>
           <div className="container responsivegrid">
             <div className="cmp-container">
               <Title>
@@ -122,7 +129,7 @@ export default function Icondb() {
               </div>
             </div>
           </div>
-          <GitHubCard />
+          <GitHubCard text="ICONDB" href="https://github.com/stack0801/Icon_DB" />
         </div>
       </main>
       <Footer />
