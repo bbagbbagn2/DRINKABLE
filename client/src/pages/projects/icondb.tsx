@@ -6,9 +6,8 @@ import Footer from "../../layouts/Footer";
 import Title from "../../components/ui/Title";
 
 import SecondaryHeader from "../../components/ui/SecondaryHeader";
+import DesktopBanner from "../../components/ui/DesktopBanner";
 import GitHubCard from "../../components/ui/GitHubCard";
-import DesktopBanner from '../../assets/images/projects/home-images/icondb/icondb desktopbanner.png'
-import icondb from "../../assets/images/projects/icondb logo.png";
 
 export default function Icondb() {
   return (
@@ -20,28 +19,7 @@ export default function Icondb() {
           <div className="container responsivegrid">
             <div className="cmp-container" />
           </div>
-          <div className="container responsivegrid">
-            <div className="cmp-container">
-              <TeaserHero className="teaser hero hero--normal">
-                <div className="cmp-teaser">
-                  <div className="cmp-teaser__image">
-                    <div className="cmp-adaptive-image cmp-image">
-                      <a className="cmp-image__link" href="/projects/icondb">
-                        <picture className="visible loaded">
-                          <img
-                            src={DesktopBanner}
-                            className="cmp-image__image"
-                            itemProp="contentUrl"
-                            alt="ICONDB 배경화면"
-                          />
-                        </picture>
-                      </a>
-                    </div>
-                  </div>
-                </div>
-              </TeaserHero>
-            </div>
-          </div>
+          <DesktopBanner />
           <div className="container responsivegrid">
             <div className="cmp-container" />
           </div>

@@ -330,31 +330,55 @@ const GlobalStyle = createGlobalStyle`
 
   .hero {
     position: relative;
+  }
 
-    .hero--normal {
-      .cmp-teaser__image {
-        aspect-ratio: .6066790353;
-        margin-left: 0;
-        width: 100%;
-      }
-    }
+  .hero .cmp-teaser {
+    height: 100%;
+    margin: 0 auto;
+    max-width: 551px;
+    position: relative;
+  }
 
-    .cmp-teaser {
-      height: 100%;
-      margin: 0 auto;
-      max-width: 551px;
-      position: relative;
-    }
+  .hero:not(.design-token--disabled) .cmp-teaser__content {
+    color: #fff;
+  }
 
-    .cmp-teaser_image {
-      aspect-ratio: .7496871089;
-      bottom: 0;
-      margin-left: -24px;
-      max-width: calc(100% + 48px);
-      position: relative;
-      top: 0;
-      width: min(100vw - var(--scrollWidth),1440px);
-    }
+  .hero .cmp-teaser__content {
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    justify-content: center;
+    padding: 24px 0 0;
+    position: absolute;
+    text-align: center;
+    width: 100%;
+    z-index: 1;
+  }
+
+  .hero .cmp-teaser__image {
+    aspect-ratio: .7496871089;
+    bottom: 0;
+    margin-left: -24px;
+    max-width: calc(100% + 48px);
+    position: relative;
+    top: 0;
+    width: min(100vw - var(--scrollWidth),1440px);
+  }
+
+  .hero.hero .cmp-teaser__image:after {
+    content: "";
+    inset: 0;
+    position: absolute;
+  }
+
+  .hero .cmp-teaser__image .cmp-image {
+    height: 100%;
+  }
+
+  .hero .cmp-teaser__image img {
+    height: 100%;
+    object-fit: cover;
   }
 
   .cmp-adaptive-image picture {
@@ -559,29 +583,16 @@ const GlobalStyle = createGlobalStyle`
       }
     }
 
-    .hero {
-      .hero--normal {
-        .cmp-teaser__image {
-          aspect-ratio: 2.119205298;
-          margin-left: 0;
-        }
-      }
+    .hero .cmp-teaser {
+      margin-left: 24px;
+      max-width: unset;
+      width: min(100vw - var(--scrollWidth),1440px);
+    }
 
-      .cmp-teaser__image {
-        aspect-ratio: 2.3225806452;
-        margin: 0;
-        max-width: unset;
-
-        .cmp-image {
-          height: 100%;
-        }
-
-        &::after {
-          content: "";
-          inset: 0;
-          position: absolute;
-        }
-      }
+    .hero .cmp-teaser__image {
+      aspect-ratio: 2.3225806452;
+      margin: 0;
+      max-width: unset;
     }
 
     .text {
