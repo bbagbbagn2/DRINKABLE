@@ -57,97 +57,6 @@ const GlobalStyle = createGlobalStyle`
     margin-inline: -8px;
   }
 
-  .campaign-card {
-    margin-bottom: 0;
-    margin-top: 56px;
-    width: 100%;
-
-    &:not(.design-token--disabled) {
-      .cmp-teaser {
-        color: #000;
-      }
-
-      .cmp-teaser__action-link {
-        border-color: #000;
-        color: #000;
-
-        &:hover {
-          background-color: rgba(0,0,0,.12);
-        }
-      }
-    }
-
-    .cmp-teaser {
-      display: flex;
-      flex-direction: column;
-      flex-wrap: unset;
-      margin-inline: -8px;
-      margin: 0;
-    }
-
-    .cmp-teaser__content {
-      display: flex;
-      flex: 0 0 100%;
-      flex-direction: column;
-      justify-content: flex-start;
-      min-width: 100%;
-      padding: 32px 24px;
-      position: relative;
-      z-index: 1;
-
-      &::before {
-        border-radius: 16px;
-        content: "";
-        box-shadow: 0 14px 18px rgba(0,0,0,.06);
-        inset: 0;
-        position: absolute;
-        z-index: -1;
-        background-color: #fff;
-      }
-    }
-
-    .cmp-teaser__title {
-      margin: 0;
-    }
-
-    .cmp-teaser__description {
-      &>p {
-        margin: 16px 0 0;
-      }
-    }
-
-    .cmp-teaser__action-container {
-      margin-top: 36px;
-    }
-
-    .cmp-teaser__action-link {
-      align-items: center;
-      background-color: transparent;
-      border: 2px solid #000;
-      border-radius: 48px;
-      display: flex;
-      height: 40px;
-      justify-content: center;
-      margin-bottom: 0;
-      padding: 0;
-      text-decoration: none;
-      width: 100%;
-      cursor: pointer;
-    }
-
-    .cmp-teaser__image {
-      flex: 0 0 100%;
-      flex-grow: 1;
-      margin-left: -24px;
-      margin-top: -80px;
-      min-width: 100%;
-      padding-inline: 8px;
-      padding: 0;
-      position: relative;
-      width: calc(100vw - var(--scrollWidth));
-    }
-  }
-
   html {
     -webkit-text-size-adjust: 100%;
     line-height: 1.15;
@@ -229,7 +138,7 @@ const GlobalStyle = createGlobalStyle`
 
   h3 {
     margin-top: 0;
-    font: 600 20px/28px 'Noto Sans KR', 'Montserrat', sans-serif;
+    font: 700 20px/28px 'Noto Sans KR', 'Montserrat', sans-serif;
     letter-spacing: 0;
   }
 
@@ -596,6 +505,7 @@ const GlobalStyle = createGlobalStyle`
         min-width: 33.3333333333%;
         padding-inline: 16px;
     }
+
     .projects-list+.button {
       .cmp-button {
         margin-top: 32px;
@@ -614,61 +524,6 @@ const GlobalStyle = createGlobalStyle`
     .button.button--secondary .cmp-button:hover {
       background-color: var(--surface-action-alpha-main-hover,rgba(0,0,0,.12));
     } 
-
-    .campaign-card {
-      margin-top: 120px;
-
-      &.content-on-left {
-        .cmp-teaser {
-          flex-direction: row;
-        }
-
-        .cmp-teaser__image {
-          left: auto;
-          right: 8.3333333333%;
-        }
-      }
-
-      .cmp-teaser {
-        align-items: flex-start;
-        flex-direction: row-reverse;
-        margin-inline: -16px;
-        padding: 0;
-      }
-
-      .cmp-teaser__content {
-        margin: 0;
-        min-height: 552px;
-        padding: 64px 80px;
-        flex: 0 0 50%;
-        min-width: 50%;
-
-        &::before {
-          inset: 0 16px;
-        }
-      }
-
-      .cmp-teaser__action-container {
-        margin-top: auto;
-      }
-
-      .cmp-teaser__action-link {
-        width: 327px;
-      }
-      
-      .cmp-teaser__image {
-        left: 8.3333333333%;
-        margin-left: calc((1120px - 100vw + var(--scrollWidth))/2);
-        margin-left: unset;
-        margin-top: 80px;
-      }
-
-      .cmp-teaser__image {
-        flex: 0 0 58.3333333333%;
-        min-width: 58.3333333333%;
-        padding-inline: 16px;
-      }
-    }
 
     .hero .cmp-teaser {
       margin-left: 24px;
