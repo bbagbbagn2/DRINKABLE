@@ -142,21 +142,6 @@ const GlobalStyle = createGlobalStyle`
     }
   }
 
-  #footer {
-    margin: 50px auto 0;
-    margin-top: 0;
-    padding: 0;
-    width: 100%;
-    border: 0;
-    border-top: 1px solid #e5e5e5;
-    background-color: #000;
-
-    @media screen and (max-width: 767.98px){
-      margin: 0;
-      margin-top: 20px;
-    }
-  }
-
   html {
     -webkit-text-size-adjust: 100%;
     line-height: 1.15;
@@ -178,32 +163,32 @@ const GlobalStyle = createGlobalStyle`
 
   main {
     display: block;
+  }
 
-    &.container {
-      .cmp-container {
-        & :is(.projects-list, .secondary-header-logo) picture {
-          background: none;
+  main.container :is(.adaptiveImage,.countdown-card__event-image,.teaser,.content-wrapper__image,.recipeHero,.image--hero-image,.prize-catalog__image-wrapper,.countdown-card--image,.countdown-card__background,.cmp-embed--thumbnail) picture {
+    background-color: transparent;
+  }
 
-          img {
-            opacity: 1;
-            transition: none;
-          }
-        }
-      }
+  main.container :is(.adaptiveImage,.countdown-card__event-image,.teaser,.content-wrapper__image,.recipeHero,.image--hero-image,.prize-catalog__image-wrapper,.countdown-card--image,.countdown-card__background,.cmp-embed--thumbnail):not(.design-token--disabled) picture {
+    background-color: transparent;
+  }
 
-      & :is(.adaptiveImage, .teaser) picture {
-        background-color: var(--surface-brand-primary-regular,transparent);
-        
-        &.loaded.visible img {
-          opacity: 1;
-        }
+  main.container .cmp-container :is(.brands-list,.secondary-header,.secondary-header-with-navigation,.secondary-header-logo,.youtube-subscribe,.cmp-experiencefragment--footer,.container--mobile-app-buttons) picture {
+    background: none;
+  }
 
-        img {
-          opacity: 0;
-          transition: opacity .4s ease;
-        }
-      }
-    }
+  main.container :is(.adaptiveImage,.countdown-card__event-image,.teaser,.content-wrapper__image,.recipeHero,.image--hero-image,.prize-catalog__image-wrapper,.countdown-card--image,.countdown-card__background,.cmp-embed--thumbnail) picture img {
+    opacity: 0;
+    transition: opacity .4s ease;
+  }
+
+  main.container .cmp-container :is(.brands-list,.secondary-header,.secondary-header-with-navigation,.secondary-header-logo,.youtube-subscribe,.cmp-experiencefragment--footer,.container--mobile-app-buttons) picture img {
+    opacity: 1;
+    transition: none;
+  }
+
+  main.container :is(.adaptiveImage,.countdown-card__event-image,.teaser,.content-wrapper__image,.recipeHero,.image--hero-image,.prize-catalog__image-wrapper,.countdown-card--image,.countdown-card__background,.cmp-embed--thumbnail) picture.loaded.visible img {
+    opacity: 1;
   }
 
   a {

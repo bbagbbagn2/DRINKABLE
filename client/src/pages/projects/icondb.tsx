@@ -5,7 +5,7 @@ import Header from "../../layouts/Header";
 import Footer from "../../layouts/Footer";
 import Title from "../../components/ui/Title";
 
-import ProjectsListComponent from "../../components/ui/BrandsItemComponent";
+import SecondaryHeader from "../../components/ui/SecondaryHeader";
 
 import icondb from "../../assets/images/projects/icondb logo.png";
 
@@ -15,21 +15,7 @@ export default function Icondb() {
       <Header />
       <main className="container responsivegrid">
         <div className="cmp-container">
-          <SeconraryHeader className="container responsivegrid secondary-header-logo">
-            <div className="cmp-container">
-              <div className="adaptiveImage image no-renditions">
-                <div className="cmp-adaptive-image cmp-image">
-                  <picture className="visible loaded">
-                    <img
-                      src={icondb}
-                      alt="icondb 로고"
-                      className="cmp-image__image"
-                    />
-                  </picture>
-                </div>
-              </div>
-            </div>
-          </SeconraryHeader>
+          <SecondaryHeader />
           <div className="container responsivegrid">
             <div className="cmp-container" />
           </div>
