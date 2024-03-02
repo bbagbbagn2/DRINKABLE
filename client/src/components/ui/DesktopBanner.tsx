@@ -10,6 +10,7 @@ export default function DesktopBanner() {
     rootMargin: "0px",
     threshold: 0.5,
   });
+  
   return (
     <div className="container responsivegrid">
       <div className="cmp-container">

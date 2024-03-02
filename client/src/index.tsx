@@ -525,6 +525,7 @@ const GlobalStyle = createGlobalStyle`
       background-color: var(--surface-action-alpha-main-hover,rgba(0,0,0,.12));
     } 
 
+
     .hero .cmp-teaser {
       margin-left: 24px;
       max-width: unset;

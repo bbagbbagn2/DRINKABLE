@@ -9,7 +9,7 @@ import Title from "../../components/ui/Title";
 
 import ProjectsListComponent from '../../components/ui/BrandsItemComponent';
 
-import icondb from '../../assets/images/projects/icondb logo.png'
+import icondb from '../../assets/images/projects/icondb logo.png';
 
 export default function Projects() {
   return (
