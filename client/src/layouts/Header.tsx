@@ -41,7 +41,8 @@ export default function Header() {
   }, []);
 
   const location = useLocation();
-  const isProjectssPage = location.pathname === "/projects";
+  const isAboutmePage = location.pathname === "/about-me";
+  const isProjectsPage = location.pathname.includes("/projects");
 
   return (
     <header className="experincefragment">
@@ -76,24 +77,27 @@ export default function Header() {
                             <li>
                               <b>
                                 <a
-                                  href="/projects"
+                                  href="/about-me"
                                   role="button"
                                   className={
-                                    isProjectssPage ? "active-element" : ""
+                                    isAboutmePage ? "active-element" : ""
                                   }
                                 >
-                                  Projects
+                                  About me
                                 </a>
                               </b>
                             </li>
                             <li className="has-submenu">
                               <a
-                                href="/about-me"
+                                href="/projects"
                                 role="button"
                                 data-text="About me"
                                 aria-expanded="false"
+                                className={
+                                  isProjectsPage ? "active-element" : ""
+                                }
                               >
-                                About me
+                                Projects
                               </a>
                               <ul className="submenu">
                                 <li>
