@@ -19,7 +19,7 @@ export default function Projects() {
         <div className="cmp-container">
           <div className="container responsivegrid">
             <div className="cmp-container">
-                <Title titleProps="Projects" marginTop="120px" mobileMarginTop="56px" />
+                <Title><h1 className="cmp-title__text">Projects</h1></Title>
                 <ProjectsList className="container responsivegrid projects-list">
                   <div className="cmp-container">
                     <ProjectsListComponent href="/projects/icondb" alt="ICONDB" src={icondb} />

@@ -11,7 +11,6 @@ import icondb from "../../../assets/images/projects/icondb logo.png";
 export default function AllergySection() {
   return (
     <Main>
-      <Title titleProps="프로젝트" marginTop="64px" />
       <ProjectsList className="container responsivegrid projects-list">
         <div className="cmp-container">
           <ProjectsListComponent

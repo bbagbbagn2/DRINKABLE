@@ -311,6 +311,13 @@ const GlobalStyle = createGlobalStyle`
     width: 40px;
   }
 
+  .cmp-title__text {
+    color: #000;
+    margin-bottom: 0;
+    margin-top: 56px;
+    text-align: center;
+  }
+
   .cmp-button {
     align-items: center;
     background-color: transparent;
@@ -593,6 +600,10 @@ const GlobalStyle = createGlobalStyle`
       aspect-ratio: 2.3225806452;
       margin: 0;
       max-width: unset;
+    }
+
+    .cmp-title__text {
+      margin-top: 120px;
     }
 
     .text {
