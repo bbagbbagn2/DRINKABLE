@@ -6,7 +6,8 @@ import Footer from "../../layouts/Footer";
 import Title from "../../components/ui/Title";
 
 import SecondaryHeader from "../../components/ui/SecondaryHeader";
-
+import GitHubCard from "../../components/ui/GitHubCard";
+import DesktopBanner from '../../assets/images/projects/home-images/icondb/icondb desktopbanner.png'
 import icondb from "../../assets/images/projects/icondb logo.png";
 
 export default function Icondb() {
@@ -28,7 +29,7 @@ export default function Icondb() {
                       <a className="cmp-image__link" href="/projects/icondb">
                         <picture className="visible loaded">
                           <img
-                            src={icondb}
+                            src={DesktopBanner}
                             className="cmp-image__image"
                             itemProp="contentUrl"
                             alt="ICONDB 배경화면"
@@ -44,34 +45,7 @@ export default function Icondb() {
           <div className="container responsivegrid">
             <div className="cmp-container" />
           </div>
-          <div className="container responsivegrid">
-            <div className="cmp-container">
-              <div className="experiencefragment">
-                <div className="cmp-experiencefragment cmp-experiencefragment--social-share-black">
-                  <div className="cmp-container">
-                    <div className="container responsivegrid action-card black-bg">
-                      <div className="cmp-container">
-                        <div className="text">
-                          <div className="cmp-text">
-                            <h2>GitHub에서 ICONDB를 확인하세요</h2>
-                          </div>
-                        </div>
-                        <div className="container responsivegrid">
-                          <div className="cmp-container">
-                            <div className="button button--secondary button--white button--icon">
-                              <a className="cmp-button" aria-label="GitHub" target="_blank" href="https://github.com/stack0801/Icon_DB">
-
-                              </a>
-                            </div>  
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
+          <GitHubCard />
         </div>
       </main>
       <Footer />

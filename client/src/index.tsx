@@ -261,13 +261,6 @@ const GlobalStyle = createGlobalStyle`
   .button .cmp-button {
     display: flex;
     justify-content: center;
-
-    .button--icon {
-      .cmp-button, .button--white.cmp-button {
-        height: 40px;
-        width: 40px;
-      }
-    }
   }
 
   .projects-list+.button {
@@ -311,6 +304,11 @@ const GlobalStyle = createGlobalStyle`
 
   .button.button--secondary .cmp-button .cmp-button__text {
     margin-top: 1px;
+  }
+
+  .button.button--icon .cmp-button, .button.button--icon.button--white .cmp-button {
+    height: 40px;
+    width: 40px;
   }
 
   .cmp-button {
@@ -388,6 +386,17 @@ const GlobalStyle = createGlobalStyle`
     background-color: #000;
     color: #fff;
   }
+
+  .experiencefragment:not(.design-token--disabled) .action-card.black-bg .button .cmp-button {
+    border-color: #fff;
+    color: #fff;
+  }
+
+  .experiencefragment:not(.design-token--disabled) .action-card .button .cmp-button {
+    border-color: #000;
+    color: #000;
+  }
+
   .experiencefragment:not(.design-token--disabled) {
     .action-card {
       background-color: #fff;
@@ -418,11 +427,6 @@ const GlobalStyle = createGlobalStyle`
     margin-top: 56px;
 
     >.cmp-container {
-      display: flex;
-      flex-direction: column;
-      flex-wrap: wrap;
-      justify-content: center;
-      padding: 40px 24px;
 
       :is(.button, .button .button--white) {
         .cmp-button {
@@ -430,24 +434,6 @@ const GlobalStyle = createGlobalStyle`
           color: #000;
           margin-block: 0;
         }
-      }
-
-      .text {
-        flex-grow: 1;
-
-        .cmp-text {
-          margin-bottom: 32px;
-          text-align: center;
-
-          h2 {
-            margin-top: 0;
-          }
-        }
-      }
-
-      .cmp-container {
-        display: flex;
-        justify-content: center;
       }
     }
   }
@@ -614,23 +600,6 @@ const GlobalStyle = createGlobalStyle`
 
     .action-card {
       margin-top: 120px;
-
-      >.cmp-container {
-        align-items: center;
-        flex-direction: row;
-        flex-wrap: nowrap;
-        justify-content: center;
-        padding: 48px 96px;
-
-        .text .cmp-text {
-          margin-bottom: 0;
-          text-align: start;
-        }
-
-        .container {
-          margin-inline-start: 56px;
-        }
-      }
     }
   }
 `;
