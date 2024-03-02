@@ -374,6 +374,20 @@ const GlobalStyle = createGlobalStyle`
     width: 100%;
   }
 
+  .action-card.black-bg {
+    background-color: #000;
+    color: #fff;
+  }
+
+  .experiencefragment:not(.design-token--disabled) .action-card {
+    background-color: #fff;
+    color: #000;
+  }
+
+  .experiencefragment:not(.design-token--disabled) .action-card.black-bg {
+    background-color: #000;
+    color: #fff;
+  }
   .experiencefragment:not(.design-token--disabled) {
     .action-card {
       background-color: #fff;
