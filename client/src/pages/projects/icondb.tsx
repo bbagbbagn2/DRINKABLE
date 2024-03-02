@@ -25,6 +25,9 @@ export default function Icondb() {
               <Title>
                 <h2 className="cmp-title__text">Skills</h2>
               </Title>
+              <div className="container responsivegrid grid three-columns">
+                <div className="cmp-container"></div>
+              </div>
             </div>
           </div>
           <GitHubCard />

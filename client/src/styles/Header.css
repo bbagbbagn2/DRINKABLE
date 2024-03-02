@@ -124,7 +124,7 @@
 
     .header .header-wrapper .header__navigation .cmp-text>ul>li {
         color: #000;
-        font: 600 14px / 17px 'Noto Sans KR', 'Montserrat', sans-serif;
+        font: 700 14px / 17px 'Noto Sans KR', 'Montserrat', sans-serif;
         height: 100%;
         letter-spacing: 0;
         margin: 0 20px;
@@ -142,11 +142,19 @@
         color: #000;
         cursor: pointer;
         display: flex;
-        font: 600 14px / 17px 'Noto Sans KR', 'Montserrat', sans-serif;
+        font: 700 14px / 17px 'Noto Sans KR', 'Montserrat', sans-serif;
         height: 100%;
         letter-spacing: 0;
         position: relative;
         text-decoration: none;
+    }
+
+    .header .header-wrapper .header__navigation .cmp-text>ul>li a.active-element {
+        font-weight: 700;
+    }
+
+    .header .header-wrapper .header__navigation .cmp-text>ul>li a.active-element:before {
+        display: block;
     }
 
     .header .header-wrapper .header__navigation .cmp-text>ul>li>a {
@@ -183,6 +191,7 @@
     .header .header-wrapper .header__navigation .cmp-text>ul>li>ul {
         background-color: #fff;
         align-items: flex-start;
+        box-shadow: 0 14px 24px rgba(0,0,0,.06);
         display: none;
         height: auto;
         left: -20px;

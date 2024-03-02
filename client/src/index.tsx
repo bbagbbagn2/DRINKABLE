@@ -51,6 +51,12 @@ const GlobalStyle = createGlobalStyle`
     max-width: none;
   }
 
+  .container.grid>.cmp-container {
+    display: flex;
+    flex-wrap: wrap;
+    margin-inline: -8px;
+  }
+
   .campaign-card {
     margin-bottom: 0;
     margin-top: 56px;
@@ -216,7 +222,7 @@ const GlobalStyle = createGlobalStyle`
   }
 
   h2 {
-    font: 600 24px/32px 'Noto Sans KR', 'Montserrat', sans-serif;
+    font: 700 24px/32px 'Noto Sans KR', 'Montserrat', sans-serif;
     letter-spacing: 0;
     margin-top: 0;
   }
@@ -247,14 +253,12 @@ const GlobalStyle = createGlobalStyle`
     border-style: none;
   }
 
-  .text {
-    & :is(h1,h2,h3,h4,h5,h6) {
+  .text :is(h1,h2,h3,h4,h5,h6) {
       margin: 56px 0 0;
-    }
+  }
 
-    p {
-      margin: 16px 0 0;
-    }
+  .text p {
+    margin: 16px 0 0;
   }
 
   .button,
@@ -469,6 +473,18 @@ const GlobalStyle = createGlobalStyle`
     }
   }
 
+  .grid.three-columns>.cmp-container {
+    display: flex;
+    flex-wrap: wrap;
+    margin-inline: -8px;
+  }
+
+  .grid.three-columns>.cmp-container>* {
+    flex: 0 0 100%;
+    min-width: 100%;
+    padding-inline: 8px;
+  }
+
   @media only screen and (min-width: 1200px) {
     html, body {
       margin: 0;
@@ -516,6 +532,19 @@ const GlobalStyle = createGlobalStyle`
       max-width: 1120px;
     }
 
+    .container.grid>.cmp-container {
+      margin-inline: -16px;
+    }
+    
+    .grid.three-columns>.cmp-container {
+        margin-inline: -16px;
+    }
+
+    .grid.three-columns>.cmp-container>* {
+        flex: 0 0 33.3333333333%;
+        min-width: 33.3333333333%;
+        padding-inline: 16px;
+    }
     .projects-list+.button {
       .cmp-button {
         margin-top: 32px;
@@ -606,14 +635,12 @@ const GlobalStyle = createGlobalStyle`
       margin-top: 120px;
     }
 
-    .text {
-      & :is(h1,h2,h3,h4,h5,h6) {
-        margin-top: 64px;
-      }
+    .text :is(h1,h2,h3,h4,h5,h6) {
+      margin-top: 64px;
+    }
 
-      p {
-        margin-top: 24px;
-      }
+    .text p {
+      margin-top: 24px;
     }
 
     .image {
