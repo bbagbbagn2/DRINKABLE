@@ -4,6 +4,8 @@ import styled from "styled-components";
 import Header from "../../layouts/Header";
 import Footer from "../../layouts/Footer";
 
+import SeperatorProps from "../../components/ui/Separator";
+
 export default function Sitemap() {
   return (
     <div className="cmp-container">
@@ -15,37 +17,44 @@ export default function Sitemap() {
               <h1>사이트 맵</h1>
             </div>
           </div>
-          <div className="seperator">
-            <CmpSeperator>
-              <hr className="cmp-seperator__horizontal-rule" />
-            </CmpSeperator>
-          </div>
+          <SeperatorProps />
           <div className="text">
             <div className="cmp-text">
               <h2>Projects</h2>
               <p>
                 <a href="/projects" target="_self" rel="noopener noreferrer">
-                  프로젝트&nbsp;보기
+                  프로젝트&nbsp;전체&nbsp;보기
                 </a>
               </p>
             </div>
           </div>
-          <div className="seperator">
-            <CmpSeperator>
-              <hr className="cmp-seperator__horizontal-rule" />
-            </CmpSeperator>
+          <div className="container responsivegrid grid three-columns">
+            <div className="cmp-container">
+              <div className="text text--external-links">
+                <div className="cmp-text">
+                  <p>
+                    <a href='/projects/icondb'>ICONDB</a>
+                  </p>
+                </div>
+              </div>
+
+            </div>
           </div>
+          <SeperatorProps />
           <div className="text">
             <div className="cmp-text">
               <h2>Footer</h2>
             </div>
           </div>
-          <Container className="container responsivegrid grid three-columns">
+          <div className="container responsivegrid grid three-columns">
             <div className="cmp-container">
               <div className="text text--external-links">
                 <div className="cmp-text">
                   <p>
                     <b>소 개</b>
+                  </p>
+                  <p>
+                    <a href="/about-me">About me</a>
                   </p>
                 </div>
               </div>
@@ -60,26 +69,13 @@ export default function Sitemap() {
                 </div>
               </div>
             </div>
-          </Container>
+          </div>
         </div>
       </main>
       <Footer />
     </div>
   );
 }
-
-const CmpSeperator = styled.div`
-  margin-top: 56px;
-
-  .cmp-seperator__horizontal-rule {
-    border: 0;
-    border-top: 1px solid #d5d5d5;
-  }
-
-  @media only screen and (min-width: 1200px) {
-    margin-top: 64px;
-  }
-`;
 
 const Container = styled.div`
   &.grid.three-columns > .cmp-container {

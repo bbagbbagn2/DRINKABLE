@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 
-import Button from "../../../components/Button";
+import Button from "../../../components/ui/Button";
 import Main from '../../../components/ui/Main';
 import useIntersectionObserver from "../../../hooks/useIntersectionObserver";
 import main1 from "../../../assets/images/background.jpg";

@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
-import styled from "styled-components";
 
 import logo from "../assets/brand/icons/jihun-logo-black.svg";
 
@@ -9,6 +8,7 @@ import axios from "axios";
 import "../styles/Header.css";
 
 import { MdMenu } from "react-icons/md";
+
 interface profileData {
   username: string;
 }
@@ -41,7 +41,8 @@ export default function Header() {
   }, []);
 
   const location = useLocation();
-  const isProjectssPage = location.pathname === "/projects";
+  const isAboutmePage = location.pathname === "/about-me";
+  const isProjectsPage = location.pathname.includes("/projects");
 
   return (
     <header className="experincefragment">
@@ -76,28 +77,34 @@ export default function Header() {
                             <li>
                               <b>
                                 <a
-                                  href="/projects"
+                                  href="/about-me"
                                   role="button"
                                   className={
-                                    isProjectssPage ? "active-element" : ""
+                                    isAboutmePage ? "active-element" : ""
                                   }
                                 >
-                                  Projects
+                                  About me
                                 </a>
                               </b>
                             </li>
                             <li className="has-submenu">
                               <a
-                                href="/about-me"
+                                href="/projects"
                                 role="button"
                                 data-text="About me"
                                 aria-expanded="false"
+                                className={
+                                  isProjectsPage ? "active-element" : ""
+                                }
                               >
-                                About me
+                                Projects
                               </a>
                               <ul className="submenu">
                                 <li>
-                                  <a href="/projects/icondb" data-text='ICONDB'>ICONDB</a>
+                                  <a href="/projects/icondb" data-text='ICONDB Project'>ICONDB Project</a>
+                                </li>
+                                <li>
+                                  <a href="/projects/pjh-portfolio" data-text='PJH-Portfolio Project'>PJH-Portfolio Project</a>
                                 </li>
                               </ul>
                             </li>

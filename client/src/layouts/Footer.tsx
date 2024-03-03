@@ -1,10 +1,11 @@
 import React from "react";
-import styled from "styled-components";
 
-import SeperatorProps from "../components/ui/Seperator";
+import Separator from "../components/ui/Separator";
 import Logo from "../assets/brand/icons/jihun-logo-white.svg";
 
 import '../styles/Footer.css';
+
+import { IoLogoGithub } from "react-icons/io";
 
 export default function Footer() {
   return (
@@ -26,7 +27,7 @@ export default function Footer() {
                   </picture>
                 </div>
               </div>
-              <SeperatorProps />
+              <Separator />
               <div className="container responsivegrid footer__navigation">
                 <div className="cmp-container">
                   <div className="text footer__mobile-accordion">
@@ -55,9 +56,15 @@ export default function Footer() {
                 <hr />
               </div>
               <div className="container responsivegrid footer__social-media">
-
+                <div className="cmp-container">
+                  <div className="button footer__button--social-media">
+                    <a className="cmp-button" rel="noreferrer" aria-label="github" target="_blank" href="https://github.com/bbagbbagn2">
+                      <IoLogoGithub />
+                    </a>
+                  </div>
+                </div>
               </div>
-              <SeperatorProps />
+              <Separator />
               <div className="text footer__bottom--privacy">
                 <div className="cmp-text">
                   <p>

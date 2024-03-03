@@ -1,7 +1,7 @@
 import React from "react";
 import '../../styles/Separator.css';
 
-export default function SeperatorProps() {
+export default function Separator() {
   return (
     <div className="separator">
         <div className="cmp-separator">

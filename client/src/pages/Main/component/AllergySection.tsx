@@ -1,17 +1,16 @@
 import React from "react";
 import styled from "styled-components";
 
-import Main from "../../../components/ui/Main";
-import ProjectsListComponent from "../../../components/ui/BrandsItemComponent";
-import Button from "../../../components/Button";
+import MainContainer from "../../../components/ui/Main";
+import ProjectsListComponent from "../../../components/ui/ProjectList";
+import Button from "../../../components/ui/Button";
 import Title from "../../../components/ui/Title";
 
 import icondb from "../../../assets/images/projects/icondb logo.png";
 
 export default function AllergySection() {
   return (
-    <Main>
-      <Title titleProps="프로젝트" marginTop="64px" />
+    <MainContainer>
       <ProjectsList className="container responsivegrid projects-list">
         <div className="cmp-container">
           <ProjectsListComponent
@@ -26,7 +25,7 @@ export default function AllergySection() {
           <span className="cmp-button__text">모두 보기</span>
         </a>
       </div>
-    </Main>
+    </MainContainer>
   );
 }
 
@@ -92,21 +91,6 @@ const ProjectsList = styled.div`
 
     & .cmp-image__link {
       padding: 32px;
-    }
-  }
-`;
-
-const ButtonContainer = styled.div`
-  display: flex;
-  justify-content: center;
-
-  & .cmp-button {
-    margin: 24px 0 0;
-  }
-
-  @media only screen and (min-width: 1200px) {
-    & .cmp-button {
-      margin-top: 32px;
     }
   }
 `;

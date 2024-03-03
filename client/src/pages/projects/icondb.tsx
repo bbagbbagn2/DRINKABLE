@@ -1,13 +1,17 @@
-import React, { useEffect } from "react";
-import styled from "styled-components";
+import React from "react";
 
 import Header from "../../layouts/Header";
 import Footer from "../../layouts/Footer";
 import Title from "../../components/ui/Title";
 
+import Button from "../../components/ui/Button";
 import SecondaryHeader from "../../components/ui/SecondaryHeader";
+import DesktopBanner from "../../components/ui/DesktopBanner";
+import GitHubCard from "../../components/ui/GitHubCard";
+import CampaingnCard from "../../components/ui/CampaignCard";
+import SkillCard from "../../components/ui/SkillCard";
 
-import icondb from "../../assets/images/projects/icondb logo.png";
+import main from "../../assets/images/background.jpg";
 
 export default function Icondb() {
   return (
@@ -17,134 +21,76 @@ export default function Icondb() {
         <div className="cmp-container">
           <SecondaryHeader />
           <div className="container responsivegrid">
-            <div className="cmp-container" />
+            <div className="cmp-container"></div>
           </div>
+          <DesktopBanner />
           <div className="container responsivegrid">
             <div className="cmp-container">
-              <TeaserHero className="teaser hero hero--normal">
-                <div className="cmp-teaser">
-                  <div className="cmp-teaser__image">
-                    <div className="cmp-adaptive-image cmp-image">
-                      <a className="cmp-image__link" href="/projects/icondb">
-                        <picture className="visible loaded">
-                          <img
-                            src={icondb}
-                            className="cmp-image__image"
-                            itemProp="contentUrl"
-                            alt="ICONDB 배경화면"
-                          />
-                        </picture>
-                      </a>
-                    </div>
-                  </div>
-                </div>
-              </TeaserHero>
-            </div>
-          </div>
-          <div className="container responsivegrid">
-            <div className="cmp-container" />
-          </div>
-          <div className="container responsivegrid">
-            <div className="cmp-container">
-              <div className="experiencefragment">
-                <div className="cmp-experiencefragment cmp-experiencefragment--social-share-black">
-                  <div className="cmp-container">
-                    <div className="container responsivegrid action-card black-bg">
-                      <div className="cmp-container">
-                        <div className="text">
-                          <div className="cmp-text">
-                            <h2>GitHub에서 ICONDB를 확인하세요</h2>
-                          </div>
-                        </div>
-                        <div className="container responsivegrid">
-                          <div className="cmp-container">
-                            <div className="button button--secondary button--white button--icon">
-                              <a className="cmp-button" aria-label="GitHub" target="_blank" href="https://github.com/stack0801/Icon_DB">
-
-                              </a>
-                            </div>  
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
+              <Title>
+                <h2 className="cmp-title__text">프로젝트 정보</h2>
+              </Title>
+              <div className="text">
+                <div className="cmp-text">
+                  <p style={{ textAlign: "center" }}>
+                    무료로 아이콘을 다운받을 수 있는 웹 서비스로, 해시태그 및
+                    소셜 로그인 등 사용자의 편의성을 고려하여 제작했습니다.
+                  </p>
                 </div>
               </div>
             </div>
           </div>
+          <CampaingnCard
+            className="content-on-left"
+            title="자세한 ICONDB 정보"
+            description="팀원과 함께 개발한 ICONDB 개발 과정을 기록하였습니다."
+          >
+            <Button buttonText="개발 과정 보기" />
+          </CampaingnCard>
+          <CampaingnCard
+            className="content-on-right"
+            title="개발 회고록"
+            description="프로젝트 개발 시 발생한 문제점 및 해결 과정, 리패토링을 자세히 나타낸 회고록"
+          >
+            <Button buttonText="회고록 보기" />
+          </CampaingnCard>
+          <div className="container responsivegrid">
+            <div className="cmp-container">
+              <Title>
+                <h2 className="cmp-title__text">Skills</h2>
+              </Title>
+              <div className="container responsivegrid grid three-columns">
+                <div className="cmp-container">
+                  <SkillCard title="Fron-End" src={main}>
+                    HTML, CSS, JavaScript
+                    <hr />
+                    React, styled-components
+                    <hr />
+                    Axios
+                    <hr />
+                  </SkillCard>
+                  <SkillCard title="Back-End" src={main}>
+                    Node.js, Express.js
+                    <hr />
+                    MySQL
+                    <hr />
+                  </SkillCard>
+                  <SkillCard title="Communication" src={main}>
+                    Git & GitHub
+                    <hr />
+                    Notion
+                    <hr />
+                  </SkillCard>
+                </div>
+              </div>
+            </div>
+          </div>
+          <GitHubCard
+            text="ICONDB"
+            href="https://github.com/stack0801/Icon_DB"
+          />
         </div>
       </main>
       <Footer />
     </div>
   );
 }
-
-const SeconraryHeader = styled.div`
-  align-items: center;
-  background-color: #fff;
-  box-shadow: 0 14px 16px rgba(0, 0, 0, 0.04);
-  display: flex;
-  justify-content: center;
-  height: 88px;
-  margin-left: -24px;
-  width: calc(100vw - var(--scrollWidth));
-
-  .image {
-    height: 88px;
-    margin: 0;
-  }
-
-  .cmp-image {
-    align-items: center;
-    display: flex;
-    height: 100%;
-    justify-content: center;
-  }
-
-  .cmp-image__image {
-    height: 100%;
-    max-height: 56px;
-    width: auto;
-  }
-
-  @media only screen and (min-width: 1200px) {
-    height: 96px;
-    margin-left: calc((1120px - 100vw + var(--scrollWidth)) / 2);
-
-    .image {
-      height: 96px;
-      margin: 0;
-    }
-
-    .cmp-image__image {
-      max-height: 64px;
-    }
-  }
-`;
-
-const TeaserHero = styled.div`
-  margin-left: 24px;
-  margin-top: 24px;
-  padding: 0 24px;
-  width: min(100vw - var(--scrollWidth), 1440px);
-
-  .cmp-teaser {
-    border-radius: 16px;
-    display: flex;
-    justify-content: center;
-    margin: 0 auto;
-    max-width: 599px;
-    overflow: hidden;
-  }
-
-  @media only screen and (min-width: 1200px) {
-    margin-left: calc((1120px - min(100vw - var(--scrollWidth), 1440px)) / 2);
-    margin-top: 32px;
-
-    .cmp-teaser {
-      margin: 0 auto;
-      max-width: 1280px;
-      width: 100%;
-    }
-  }
-`;

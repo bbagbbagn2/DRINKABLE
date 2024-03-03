@@ -1,5 +1,4 @@
 import React from "react";
-
 import '../../styles/SecondaryHeader.css';
 
 import icondb from "../../assets/images/projects/icondb logo.png";

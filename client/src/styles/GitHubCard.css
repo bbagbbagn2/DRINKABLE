@@ -1,3 +1,56 @@
-.action-card {
-    
+.action-card > .cmp-container {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 40px 24px;
+}
+
+.action-card > .cmp-container .text {
+    flex-grow: 1;
+}
+
+.action-card>.cmp-container .text .cmp-text {
+    margin-bottom: 32px;
+    text-align: center;
+}
+
+.action-card > .cmp-container .text .cmp-text h2 {
+    margin-top: 0;
+}
+
+.action-card>.cmp-container .cmp-container {
+    display: flex;
+    justify-content: center;
+}
+
+.action-card.black-bg :is(.button,.button.button--white) .cmp-button {
+    border-color: #fff;
+    color: #fff;
+}
+
+.action-card>.cmp-container :is(.button,.button.button--white) .cmp-button {
+    border-color: #000;
+    color: #000;
+    margin-block: 0;
+}
+
+@media only screen and (min-width: 1200px) {
+    .action-card > .cmp-container {
+        align-items: center;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        justify-content: space-between;
+        padding: 48px 96px;
+    }
+
+    .action-card>.cmp-container .text .cmp-text {
+        margin-bottom: 0;
+        text-align: start;
+    }
+
+    .action-card>.cmp-container>.button,
+    .action-card>.cmp-container>.container {
+        margin-inline-start: 56px;
+    }
 }
