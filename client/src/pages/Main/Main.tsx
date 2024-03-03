@@ -2,7 +2,7 @@ import React from 'react';
 
 import Header from '../../layouts/Header';
 import Footer from '../../layouts/Footer';
-import AllergySection from './component/AllergySection';
+import ProjectsSection from './component/ProjectsSection';
 import BannerSection from './component/BannerSection';
 import CampaingnSection from './component/CampaignSection';
 
@@ -12,7 +12,7 @@ export default function Main() {
             <Header />
             <BannerSection />
             <CampaingnSection />
-            <AllergySection />
+            <ProjectsSection />
             <Footer />
         </div>
     );

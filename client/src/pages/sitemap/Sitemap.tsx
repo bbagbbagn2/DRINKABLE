@@ -35,6 +35,9 @@ export default function Sitemap() {
                   <p>
                     <a href='/projects/icondb'>ICONDB</a>
                   </p>
+                  <p>
+                    <a href='/projects/icondb'>JIHUN</a>
+                  </p>
                 </div>
               </div>
 
@@ -76,27 +79,3 @@ export default function Sitemap() {
     </div>
   );
 }
-
-const Container = styled.div`
-  &.grid.three-columns > .cmp-container {
-    display: flex;
-    flex-wrap: wrap;
-    margin-inline: -8px;
-
-    > * {
-      flex: 0 0 100%;
-      min-width: 100%;
-      padding-inline: 8px;
-    }
-
-    @media only screen and (min-width: 1200px) {
-      margin-inline: -16px;
-
-      > * {
-        flex: 0 0 33.33333333%;
-        min-width: 33.33333333%;
-        padding-inline: 16px;
-      }
-    }
-  }
-`;

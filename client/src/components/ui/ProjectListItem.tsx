@@ -6,7 +6,7 @@ interface ProjectsListProps {
   src: string;
 }
 
-export default function ProjectsListComponent({ alt, src, href }: ProjectsListProps) {
+export default function ProjectsListItem({ alt, src, href }: ProjectsListProps) {
   return (
     <div className="adaptiveImage image">
       <div className="cmp-adaptive-image cmp-image">

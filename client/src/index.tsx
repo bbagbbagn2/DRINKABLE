@@ -91,7 +91,7 @@ const GlobalStyle = createGlobalStyle`
     background-color: transparent;
   }
 
-  main.container .cmp-container :is(.brands-list,.secondary-header,.secondary-header-with-navigation,.secondary-header-logo,.youtube-subscribe,.cmp-experiencefragment--footer,.container--mobile-app-buttons) picture {
+  main.container .cmp-container :is(.projects-list,.secondary-header,.secondary-header-with-navigation,.secondary-header-logo,.youtube-subscribe,.cmp-experiencefragment--footer,.container--mobile-app-buttons) picture {
     background: none;
   }
 
@@ -100,7 +100,7 @@ const GlobalStyle = createGlobalStyle`
     transition: opacity .4s ease;
   }
 
-  main.container .cmp-container :is(.brands-list,.secondary-header,.secondary-header-with-navigation,.secondary-header-logo,.youtube-subscribe,.cmp-experiencefragment--footer,.container--mobile-app-buttons) picture img {
+  main.container .cmp-container :is(.projects-list,.secondary-header,.secondary-header-with-navigation,.secondary-header-logo,.youtube-subscribe,.cmp-experiencefragment--footer,.container--mobile-app-buttons) picture img {
     opacity: 1;
     transition: none;
   }
@@ -177,12 +177,6 @@ const GlobalStyle = createGlobalStyle`
   .button .cmp-button {
     display: flex;
     justify-content: center;
-  }
-
-  .projects-list+.button {
-    .cmp-button {
-      margin: 24px 0 0;
-    }
   }
 
   .button .cmp-button {
@@ -507,12 +501,6 @@ const GlobalStyle = createGlobalStyle`
         flex: 0 0 33.3333333333%;
         min-width: 33.3333333333%;
         padding-inline: 16px;
-    }
-
-    .projects-list+.button {
-      .cmp-button {
-        margin-top: 32px;
-      }
     }
 
     .button .cmp-button {
