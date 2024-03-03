@@ -10,6 +10,7 @@ import ProjectsListItem from "../../components/ui/ProjectListItem";
 
 import icondb from "../../assets/images/projects/icondb logo.png";
 import jihun from "../../assets/images/projects/jihun-logo.png";
+import pjh from '../../assets/images/projects/Pjh-Portfolio logo.png';
 
 export default function Projects() {
   return (
@@ -21,6 +22,7 @@ export default function Projects() {
         </Title>
         <ProjectsList>
           <ProjectsListItem href="/projects/icondb" alt="ICONDB" src={icondb} />
+          <ProjectsListItem href="/projects/icondb" alt="Pjh-Portfolio" src={pjh} />
           <ProjectsListItem href="/projects/icondb" alt="JIHUN" src={jihun} />
         </ProjectsList>
         <div className="container responsivegrid">

@@ -163,6 +163,7 @@ const GlobalStyle = createGlobalStyle`
     width: 100%;
     height: auto;
     border-style: none;
+
   }
 
   .text :is(h1,h2,h3,h4,h5,h6) {
@@ -502,7 +503,7 @@ const GlobalStyle = createGlobalStyle`
         min-width: 33.3333333333%;
         padding-inline: 16px;
     }
-
+    
     .button .cmp-button {
       margin-top: 64px;
       width: 327px;
@@ -563,6 +564,11 @@ const GlobalStyle = createGlobalStyle`
 
     .content-card .cmp-teaser__description p {
       margin-bottom: 24px;
+    }
+
+    .hero.hero.content-on-bottom,
+    .hero.hero.content-on-top {
+      background: none;
     }
   }
 `;

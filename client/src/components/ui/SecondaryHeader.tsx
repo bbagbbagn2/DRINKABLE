@@ -1,9 +1,12 @@
 import React from "react";
 import '../../styles/SecondaryHeader.css';
 
-import icondb from "../../assets/images/projects/icondb logo.png";
+interface SecondaryHeaderProps {
+    src: string;
+    alt: string;
+}
 
-export default function SecondaryHeader() {
+export default function SecondaryHeader({ src, alt }: SecondaryHeaderProps) {
     return (
         <div className="container responsivegrid secondary-header-logo">
             <div className="cmp-container">
@@ -11,8 +14,8 @@ export default function SecondaryHeader() {
                     <div className="cmp-adaptive-image cmp-image">
                         <picture className="visible loaded">
                             <img
-                                src={icondb}
-                                alt="icondb 로고"
+                                src={src}
+                                alt={alt}
                                 className="cmp-image__image"
                             />
                         </picture>
