@@ -1,16 +1,24 @@
 import React from "react";
 import useIntersectionObserver from "../../hooks/useIntersectionObserver";
-import '../../styles/CampaignCard.css';
+import "../../styles/CampaignCard.css";
 
 import main1 from "../../assets/images/background.jpg";
 
 interface TeaserProps {
-    title: string;
-    description: string;
-    className: string;
-    children: React.ReactNode;
+  title: string;
+  description: string;
+  className: string;
+  children: React.ReactNode;
+  src: string;
 }
-export default function CampaingnCard({ title, description, className, children }: TeaserProps) {
+
+export default function CampaingnCard({
+  title,
+  description,
+  className,
+  src,
+  children,
+}: TeaserProps) {
   const [targetRef, isVisibleRef] = useIntersectionObserver({
     root: null,
     rootMargin: "0px",
@@ -23,13 +31,9 @@ export default function CampaingnCard({ title, description, className, children 
         <div className="cmp-teaser__content">
           <h3 className="cmp-teaser__title">{title}</h3>
           <div className="cmp-teaser__description">
-            <p>
-              {description}
-            </p>
+            <p>{description}</p>
           </div>
-          <div className="cmp-teaser__action-container">
-            {children}
-          </div>
+          <div className="cmp-teaser__action-container">{children}</div>
         </div>
         <div className="cmp-teaser__image">
           <div className="cmp-adaptive-image cmp-image">
@@ -38,13 +42,13 @@ export default function CampaingnCard({ title, description, className, children 
               className={`loaded ${isVisibleRef && "visible"}`}
             >
               <source
-                srcSet={main1}
+                srcSet={src}
                 media="(min-width: 1200px)"
                 width="1280"
                 height="1024"
               />
               <img
-                src={main1}
+                src={src}
                 loading="lazy"
                 className="cmp-image__image"
                 itemProp="contentUrl"

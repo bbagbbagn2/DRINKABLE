@@ -43,6 +43,7 @@ export default function Portfolio() {
             className="content-on-left"
             title="개발 회고록"
             description="Pjh-Portfolio를 개발하면서 발생한 문제점과 해결 과정을 나타낸 회고록"
+            src={main}
           >
             <Button buttonText="개발 과정 보기" />
           </CampaingnCard>
