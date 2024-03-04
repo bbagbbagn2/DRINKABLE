@@ -22,7 +22,7 @@ export default function Projects() {
         </Title>
         <ProjectsList>
           <ProjectsListItem href="/projects/icondb" alt="ICONDB" src={icondb} />
-          <ProjectsListItem href="/projects/icondb" alt="Pjh-Portfolio" src={pjh} />
+          <ProjectsListItem href="/projects/pjh-portfolio" alt="Pjh-Portfolio" src={pjh} />
           <ProjectsListItem href="/projects/icondb" alt="JIHUN" src={jihun} />
         </ProjectsList>
         <div className="container responsivegrid">

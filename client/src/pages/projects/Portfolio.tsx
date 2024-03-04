@@ -11,8 +11,10 @@ import GitHubCard from "../../components/ui/GitHubCard";
 import CampaingnCard from "../../components/ui/CampaignCard";
 import SkillCard from "../../components/ui/SkillCard";
 
-import portfolio from '../../assets/images/projects/Pjh-Portfolio logo.png'
+import portfolio from "../../assets/images/projects/Pjh-Portfolio logo.png";
 import main from "../../assets/images/background.jpg";
+import frontend from "../../assets/images/projects/home-images/cards_frontend.png";
+import devops from "../../assets/images/projects/home-images/cards_backend.png";
 
 export default function Portfolio() {
   return (
@@ -54,7 +56,7 @@ export default function Portfolio() {
               </Title>
               <div className="container responsivegrid grid three-columns">
                 <div className="cmp-container">
-                  <SkillCard title="Fron-End" src={main}>
+                  <SkillCard title="Fron-End" src={frontend}>
                     HTML, CSS
                     <hr />
                     JavaScript, TypeScript
@@ -62,18 +64,13 @@ export default function Portfolio() {
                     React, styled-components
                     <hr />
                   </SkillCard>
-                  <SkillCard title="DevOps" src={main}>
-                    VSCode
-                    <hr />
-                    Pigma
-                    <hr />
-                    Netlify
-                    <hr />
-                  </SkillCard>
-                  <SkillCard title="Tools" src={main}>
+                  <div />
+                  <SkillCard title="DevOps" src={devops}>
                     Git & GitHub
                     <hr />
                     Notion
+                    <hr />
+                    Netlify
                     <hr />
                   </SkillCard>
                 </div>
