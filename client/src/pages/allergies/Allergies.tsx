@@ -9,7 +9,7 @@ import ProjectsList from "../../components/ui/ProjectsList";
 import ProjectsListItem from "../../components/ui/ProjectListItem";
 
 import icondb from "../../assets/images/projects/icondb logo.png";
-import jihun from "../../assets/images/projects/jihun-logo.png";
+import jihun from "../../assets/images/projects/jihun logo.png";
 import pjh from '../../assets/images/projects/Pjh-Portfolio logo.png';
 
 export default function Projects() {
@@ -23,7 +23,7 @@ export default function Projects() {
         <ProjectsList>
           <ProjectsListItem href="/projects/icondb" alt="ICONDB" src={icondb} />
           <ProjectsListItem href="/projects/pjh-portfolio" alt="Pjh-Portfolio" src={pjh} />
-          <ProjectsListItem href="/projects/icondb" alt="JIHUN" src={jihun} />
+          <ProjectsListItem href="/projects/jihun" alt="JIHUN" src={jihun} />
         </ProjectsList>
         <div className="container responsivegrid">
           <div className="cmp-container" />

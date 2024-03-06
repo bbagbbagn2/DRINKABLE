@@ -246,11 +246,6 @@ const GlobalStyle = createGlobalStyle`
     margin-top: 24px;
   }
 
-  .hero .cmp-teaser__image img {
-    height: 100%;
-    object-fit: cover;
-  }
-
   .cmp-adaptive-image picture {
     align-items: center;
     display: flex;

@@ -1,7 +1,4 @@
 import React from "react";
-import Slider from "react-slick";
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
 
 import Header from "../../layouts/Header";
 import Footer from "../../layouts/Footer";
@@ -13,42 +10,23 @@ import DesktopBanner from "../../components/ui/DesktopBanner";
 import GitHubCard from "../../components/ui/GitHubCard";
 import CampaingnCard from "../../components/ui/CampaignCard";
 import SkillCard from "../../components/ui/SkillCard";
-import Carousel from "../../components/ui/Carousel";
 
-import icondb from "../../assets/images/projects/icondb logo.png";
+import jihun from "../../assets/images/projects/jihun logo.png";
 import main from "../../assets/images/background.jpg";
 import frontend from "../../assets/images/projects/home-images/cards_frontend.png";
-import backend from "../../assets/images/projects/home-images/cards_backend.png";
-import communication from "../../assets/images/projects/home-images/cards_communication.png";
+import devops from "../../assets/images/projects/home-images/cards_backend.png";
 
-export default function Icondb() {
-  var settings = {
-    dots: true,
-    arrows: false,
-    lazyLoad: true,
-    slidesToShow: 1,
-    speed: 500,
-  }
+export default function Portfolio() {
   return (
     <div className="cmp-container">
       <Header />
       <main className="container responsivegrid">
         <div className="cmp-container">
-          <SecondaryHeader src={icondb} alt="ICODB 로고" />
+          <SecondaryHeader src={jihun} alt="JIHUN 로고" />
           <div className="container responsivegrid">
             <div className="cmp-container"></div>
           </div>
-          <Slider {...settings}>
-            <div className="" style={{width: "1112.36px"}}>
-
-            <img src={icondb} />
-            </div>
-            
-            <DesktopBanner />
-            
-            <DesktopBanner />
-          </Slider>
-          <Carousel />
+          <DesktopBanner />
           <div className="container responsivegrid">
             <div className="cmp-container">
               <Title>
@@ -57,8 +35,7 @@ export default function Icondb() {
               <div className="text">
                 <div className="cmp-text">
                   <p style={{ textAlign: "center" }}>
-                    무료로 아이콘을 다운받을 수 있는 웹 서비스로, 해시태그 및
-                    소셜 로그인 등 사용자의 편의성을 고려하여 제작했습니다.
+                    웹 포트폴리오를 목적으로 제작한 웹사이트입니다.
                   </p>
                 </div>
               </div>
@@ -66,19 +43,11 @@ export default function Icondb() {
           </div>
           <CampaingnCard
             className="content-on-left"
-            title="자세한 ICONDB 정보"
-            description="팀원과 함께 개발한 ICONDB 개발 과정을 기록하였습니다."
+            title="개발 회고록"
+            description="JIHUN 웹사이트를 개발하면서 발생한 문제점과 해결 과정을 나타낸 회고록"
             src={main}
           >
             <Button buttonText="개발 과정 보기" />
-          </CampaingnCard>
-          <CampaingnCard
-            className="content-on-right"
-            title="개발 회고록"
-            description="프로젝트 개발 시 발생한 문제점 및 해결 과정, 리패토링을 자세히 나타낸 회고록"
-            src={main}
-          >
-            <Button buttonText="회고록 보기" />
           </CampaingnCard>
           <div className="container responsivegrid">
             <div className="cmp-container">
@@ -88,23 +57,20 @@ export default function Icondb() {
               <div className="container responsivegrid grid three-columns">
                 <div className="cmp-container">
                   <SkillCard title="Fron-End" src={frontend}>
-                    HTML, CSS, JavaScript
+                    HTML, CSS
+                    <hr />
+                    JavaScript, TypeScript
                     <hr />
                     React, styled-components
                     <hr />
-                    Axios
-                    <hr />
                   </SkillCard>
-                  <SkillCard title="Back-End" src={backend}>
-                    Node.js, Express.js
-                    <hr />
-                    MySQL
-                    <hr />
-                  </SkillCard>
-                  <SkillCard title="Communication" src={communication}>
+                  <div />
+                  <SkillCard title="DevOps" src={devops}>
                     Git & GitHub
                     <hr />
                     Notion
+                    <hr />
+                    Netlify
                     <hr />
                   </SkillCard>
                 </div>
@@ -112,8 +78,8 @@ export default function Icondb() {
             </div>
           </div>
           <GitHubCard
-            text="ICONDB"
-            href="https://github.com/stack0801/Icon_DB"
+            text="PJH-Portfolio"
+            href="https://github.com/bbagbbagn2/JH-Portfolio"
           />
         </div>
       </main>
