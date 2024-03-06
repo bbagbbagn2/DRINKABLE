@@ -13,22 +13,17 @@ import DesktopBanner from "../../components/ui/DesktopBanner";
 import GitHubCard from "../../components/ui/GitHubCard";
 import CampaingnCard from "../../components/ui/CampaignCard";
 import SkillCard from "../../components/ui/SkillCard";
-import Carousel from "../../components/ui/Carousel";
 
 import icondb from "../../assets/images/projects/icondb logo.png";
 import main from "../../assets/images/background.jpg";
+import icondb1 from '../../assets/images/icondb/icondb-main-1.png';
+import icondb2 from '../../assets/images/icondb/icondb-main-2.png';
 import frontend from "../../assets/images/projects/home-images/cards_frontend.png";
 import backend from "../../assets/images/projects/home-images/cards_backend.png";
 import communication from "../../assets/images/projects/home-images/cards_communication.png";
 
+
 export default function Icondb() {
-  var settings = {
-    dots: true,
-    arrows: false,
-    lazyLoad: true,
-    slidesToShow: 1,
-    speed: 500,
-  }
   return (
     <div className="cmp-container">
       <Header />
@@ -36,19 +31,9 @@ export default function Icondb() {
         <div className="cmp-container">
           <SecondaryHeader src={icondb} alt="ICODB 로고" />
           <div className="container responsivegrid">
-            <div className="cmp-container"></div>
-          </div>
-          <Slider {...settings}>
-            <div className="" style={{width: "1112.36px"}}>
-
-            <img src={icondb} />
+            <div className="cmp-container">
             </div>
-            
-            <DesktopBanner />
-            
-            <DesktopBanner />
-          </Slider>
-          <Carousel />
+          </div>
           <div className="container responsivegrid">
             <div className="cmp-container">
               <Title>
@@ -68,7 +53,7 @@ export default function Icondb() {
             className="content-on-left"
             title="자세한 ICONDB 정보"
             description="팀원과 함께 개발한 ICONDB 개발 과정을 기록하였습니다."
-            src={main}
+            src={icondb1}
           >
             <Button buttonText="개발 과정 보기" />
           </CampaingnCard>
@@ -76,7 +61,7 @@ export default function Icondb() {
             className="content-on-right"
             title="개발 회고록"
             description="프로젝트 개발 시 발생한 문제점 및 해결 과정, 리패토링을 자세히 나타낸 회고록"
-            src={main}
+            src={icondb2}
           >
             <Button buttonText="회고록 보기" />
           </CampaingnCard>
