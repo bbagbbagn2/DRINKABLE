@@ -1,8 +1,4 @@
 import React from "react";
-import Slider from "react-slick";
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
-
 import Header from "../../layouts/Header";
 import Footer from "../../layouts/Footer";
 import Title from "../../components/ui/Title";
@@ -15,7 +11,6 @@ import CampaingnCard from "../../components/ui/CampaignCard";
 import SkillCard from "../../components/ui/SkillCard";
 
 import icondb from "../../assets/images/projects/icondb logo.png";
-import main from "../../assets/images/background.jpg";
 import icondb1 from '../../assets/images/icondb/icondb-main-1.png';
 import icondb2 from '../../assets/images/icondb/icondb-main-2.png';
 import frontend from "../../assets/images/projects/home-images/cards_frontend.png";

@@ -1,7 +1,7 @@
 import React from "react";
 
 import Separator from "../components/ui/Separator";
-import Logo from "../assets/brand/icons/jihun-logo-white.svg";
+import Logo from "../assets/brand/icons/jihun-logo2-white.svg";
 
 import '../styles/Footer.css';
 

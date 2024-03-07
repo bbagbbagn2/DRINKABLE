@@ -2,7 +2,7 @@ import React from "react";
 
 import TeaserHero from "../../../components/ui/TeaserHero";
 import Main from "../../../components/ui/Main";
-import main1 from "../../../assets/images/background.jpg";
+import main1 from "../../../assets/images/main.png";
 
 export default function BannerSection() {
   return (

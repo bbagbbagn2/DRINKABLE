@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
 
-import logo from "../assets/brand/icons/jihun-logo-black.svg";
+import logo from "../assets/brand/icons/jihun-logo2.svg";
 
 import axios from "axios";
 
