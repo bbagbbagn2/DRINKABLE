@@ -4,7 +4,11 @@ import '../../styles/DesktopBanner.css';
 import useIntersectionObserver from "../../hooks/useIntersectionObserver";
 import Desktop from "../../assets/images/projects/home-images/icondb/desktop.png";
 
-export default function DesktopBanner() {
+interface Props {
+  src: string;
+  alt: string;
+}
+export default function DesktopBanner({ src, alt}: Props) {
   const [targetRef, isVisibleRef] = useIntersectionObserver({
     root: null,
     rootMargin: "0px",
@@ -25,10 +29,10 @@ export default function DesktopBanner() {
                   className={`loaded ${isVisibleRef && "visible"}`}
                   >
                     <img
-                      src={Desktop}
+                      src={src}
                       className="cmp-image__image"
                       itemProp="contentUrl"
-                      alt="ICONDB 배경화면"
+                      alt={alt}
                     />
                   </picture>
                 </a>

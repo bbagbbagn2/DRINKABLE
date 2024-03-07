@@ -15,6 +15,7 @@ import portfolio from "../../assets/images/projects/Pjh-Portfolio logo.png";
 import main from "../../assets/images/background.jpg";
 import frontend from "../../assets/images/projects/home-images/cards_frontend.png";
 import devops from "../../assets/images/projects/home-images/cards_backend.png";
+import banner from '../../assets/images/projects/home-images/pjh-portfolio/desktop2.png'
 
 export default function Portfolio() {
   return (
@@ -26,7 +27,7 @@ export default function Portfolio() {
           <div className="container responsivegrid">
             <div className="cmp-container"></div>
           </div>
-          <DesktopBanner />
+          <DesktopBanner src={banner} alt="Pjh-Portfolio 배너"  />
           <div className="container responsivegrid">
             <div className="cmp-container">
               <Title>

@@ -26,7 +26,7 @@ export default function Portfolio() {
           <div className="container responsivegrid">
             <div className="cmp-container"></div>
           </div>
-          <DesktopBanner />
+          <DesktopBanner src={main} alt="ICONDB 배너" />
           <div className="container responsivegrid">
             <div className="cmp-container">
               <Title>

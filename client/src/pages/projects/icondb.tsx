@@ -16,7 +16,7 @@ import icondb2 from '../../assets/images/icondb/icondb-main-2.png';
 import frontend from "../../assets/images/projects/home-images/cards_frontend.png";
 import backend from "../../assets/images/projects/home-images/cards_backend.png";
 import communication from "../../assets/images/projects/home-images/cards_communication.png";
-
+import Desktop from "../../assets/images/projects/home-images/icondb/desktop.png";
 
 export default function Icondb() {
   return (
@@ -28,7 +28,7 @@ export default function Icondb() {
           <div className="container responsivegrid">
             <div className="cmp-container">
             </div>
-            <DesktopBanner />
+            <DesktopBanner src={Desktop} alt="ICONDB 배너" />
           </div>
           <div className="container responsivegrid">
             <div className="cmp-container">
