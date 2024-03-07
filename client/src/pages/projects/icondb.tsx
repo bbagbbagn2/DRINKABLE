@@ -28,6 +28,7 @@ export default function Icondb() {
           <div className="container responsivegrid">
             <div className="cmp-container">
             </div>
+            <DesktopBanner />
           </div>
           <div className="container responsivegrid">
             <div className="cmp-container">

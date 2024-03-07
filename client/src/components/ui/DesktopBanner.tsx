@@ -2,7 +2,7 @@ import React from "react";
 import '../../styles/DesktopBanner.css';
 
 import useIntersectionObserver from "../../hooks/useIntersectionObserver";
-import Desktop from "../../assets/images/projects/home-images/icondb/desktopbanner.png";
+import Desktop from "../../assets/images/projects/home-images/icondb/desktop.png";
 
 export default function DesktopBanner() {
   const [targetRef, isVisibleRef] = useIntersectionObserver({

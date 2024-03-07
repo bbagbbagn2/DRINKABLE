@@ -4,7 +4,7 @@ import Header from "../../layouts/Header";
 import Footer from "../../layouts/Footer";
 import TeaserHero from "../../components/ui/TeaserHero";
 
-import main1 from "../../assets/images/background.jpg";
+import main1 from "../../assets/images/main.png";
 
 export default function BannerSection() {
 

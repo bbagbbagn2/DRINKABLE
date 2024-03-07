@@ -177,7 +177,7 @@
     }
 
     .header .header-wrapper .header__navigation .cmp-text>ul>li a:before {
-        background-color: #000;
+        background-color: #EB3F3F;
         content: "";
         display: none;
         height: 4px;
