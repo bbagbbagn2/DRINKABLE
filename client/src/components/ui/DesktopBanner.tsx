@@ -2,12 +2,12 @@ import React from "react";
 import '../../styles/DesktopBanner.css';
 
 import useIntersectionObserver from "../../hooks/useIntersectionObserver";
-import Desktop from "../../assets/images/projects/home-images/icondb/desktop.png";
 
 interface Props {
   src: string;
   alt: string;
 }
+
 export default function DesktopBanner({ src, alt}: Props) {
   const [targetRef, isVisibleRef] = useIntersectionObserver({
     root: null,
