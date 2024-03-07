@@ -116,9 +116,6 @@ export default function Header() {
                                 <a
                                   href="/"
                                   role="button"
-                                  className={
-                                    isAboutmePage ? "active-element" : ""
-                                  }
                                 >
                                   Resume
                                 </a>
