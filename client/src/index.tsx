@@ -339,6 +339,18 @@ const GlobalStyle = createGlobalStyle`
     padding-inline: 8px;
   }
 
+  .grid.two-columns>.cmp-container {
+    display: flex;
+    flex-wrap: wrap;
+    margin-inline: -8px;
+  }
+
+  .grid.two-columns>.cmp-container>* {
+    flex: 0 0 100%;
+    min-width: 100%;
+    padding-inline: 8px;
+  }
+
   .content-card {
     margin-top: 32px;
     margin-bottom: 0;
@@ -388,6 +400,38 @@ const GlobalStyle = createGlobalStyle`
 
   .content-card .cmp-teaser__description p {
     margin-bottom: 32px;
+  }
+
+  .content-card .cmp-teaser__action-container {
+    margin-top: auto;
+  }
+
+  .content-card:not(.design-token--disabled) .cmp-teaser__action-link {
+    color: #000;
+  }
+
+  .content-card .cmp-teaser__action-link {
+    align-items: center;
+    justify-content: center;
+    background-color: transparent;
+    border: none;
+    border-radius: 48px;
+    display: inline-flex;
+    height: 24px;
+    margin-bottom: 0;
+    padding: 0;
+    text-decoration: none;
+    width: auto;
+    font: 700 16px / 24px 'Noto Sans KR', 'Montserrat', sans-serif;
+  }
+
+  .publicationDate {
+    margin-top: 24px;
+  }
+
+  .publicationDate .cmp-publication-date {
+    font-weight: 700;
+    margin-bottom: 0;
   }
 
   @media only screen and (min-width: 1200px) {
@@ -450,6 +494,16 @@ const GlobalStyle = createGlobalStyle`
         min-width: 33.3333333333%;
         padding-inline: 16px;
     }
+
+    .grid.two-columns>.cmp-container {
+      margin-inline: -16px;
+    }
+
+    .grid.two-columns>.cmp-container>* {
+      flex: 0 0 50%;
+      min-width: 50%;
+      padding-inline: 16px;
+    }
     
     .button .cmp-button {
       margin-top: 64px;
@@ -500,9 +554,21 @@ const GlobalStyle = createGlobalStyle`
       margin-bottom: 24px;
     }
 
+    .content-card .cmp-teaser__action-link {
+      margin-bottom: 0;
+    }
+
+    .content-card:not(.design-token--disabled):hover .cmp-teaser__action-link {
+      color: #717171;
+    }
+
     .hero.hero.content-on-bottom,
     .hero.hero.content-on-top {
       background: none;
+    }
+
+    .publicationDate {
+      margin-top: 32px;
     }
   }
 `;

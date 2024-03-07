@@ -109,7 +109,20 @@ export default function Header() {
                                 <li>
                                   <a href="/projects/jihun" data-text='JIHUN Project'>JIHUN Project</a>
                                 </li>
-                              </ul>
+                              </ul> 
+                            </li>
+                            <li>
+                              <b>
+                                <a
+                                  href="/"
+                                  role="button"
+                                  className={
+                                    isAboutmePage ? "active-element" : ""
+                                  }
+                                >
+                                  Resume
+                                </a>
+                              </b>
                             </li>
                           </ul>
                         </div>
