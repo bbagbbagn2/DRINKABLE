@@ -63,7 +63,7 @@ export default function Icondb() {
               </Title>
               <div className="container responsivegrid grid three-columns">
                 <div className="cmp-container">
-                  <SkillCard title="Fron-End" src={frontend}>
+                  <SkillCard title="Fron-End" showImage={false}>
                     HTML, CSS, JavaScript
                     <hr />
                     React, styled-components
@@ -71,13 +71,13 @@ export default function Icondb() {
                     Axios
                     <hr />
                   </SkillCard>
-                  <SkillCard title="Back-End" src={backend}>
+                  <SkillCard title="Back-End" showImage={false}>
                     Node.js, Express.js
                     <hr />
                     MySQL
                     <hr />
                   </SkillCard>
-                  <SkillCard title="Communication" src={communication}>
+                  <SkillCard title="Tools" showImage={false}>
                     Git & GitHub
                     <hr />
                     Notion

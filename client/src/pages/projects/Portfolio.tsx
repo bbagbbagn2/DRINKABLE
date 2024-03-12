@@ -57,7 +57,7 @@ export default function Portfolio() {
               </Title>
               <div className="container responsivegrid grid two-columns">
                 <div className="cmp-container">
-                  <SkillCard title="Fron-End" src={frontend}>
+                  <SkillCard title="Front-End" showImage={false}>
                     HTML, CSS
                     <hr />
                     JavaScript, TypeScript
@@ -65,7 +65,7 @@ export default function Portfolio() {
                     React, styled-components
                     <hr />
                   </SkillCard>  
-                  <SkillCard title="DevOps" src={devops}>
+                  <SkillCard title="Tools" showImage={false}>
                     Git & GitHub
                     <hr />
                     Notion
