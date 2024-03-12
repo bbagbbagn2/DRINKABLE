@@ -7,6 +7,8 @@ import SkillCard from "../../components/ui/SkillCard";
 import main1 from "../../assets/images/main.png";
 import Title from "../../components/ui/Title";
 import Text from "../../components/ui/Text";
+import github from "../../assets/images/about-me/aboutme github.png";
+import portfolio from "../../assets/images/about-me/aboutme pjh-portfolio.png";
 
 export default function BannerSection() {
   return (
@@ -41,13 +43,13 @@ export default function BannerSection() {
                 <hr />
                 1999.01.13
                 <hr />
-                Busan, South Korea
+                부산광역시
                 <hr />
               </SkillCard>
               <SkillCard title="Contact" src={main1}>
-                010-9207-8758
-                <hr />
                 pyoungh137@gamil.com
+                <hr />
+                010-9207-8758
                 <hr />
               </SkillCard>
             </div>
@@ -59,7 +61,7 @@ export default function BannerSection() {
               </Title>
               <div className="container responsivegrid grid three-columns">
                 <div className="cmp-container">
-                  <SkillCard title="Fron-End" src={main1}>
+                  <SkillCard title="Fron-End" src={main1} showImage={false}>
                     HTML, CSS, JS, TS
                     <hr />
                     React, Next.js, Axios
@@ -67,13 +69,19 @@ export default function BannerSection() {
                     styled-components
                     <hr />
                   </SkillCard>
-                  <SkillCard title="Back-End" src={main1}>
-                    Node.js, Express.js
+                  <SkillCard title="Back-End" src={main1} showImage={false}>
+                    Node.js
+                    <hr />
+                    Express.js
                     <hr />
                     MySQL
                     <hr />
                   </SkillCard>
-                  <SkillCard title="Communication" src={main1}>
+                  <SkillCard
+                    title="Communication"
+                    src={main1}
+                    showImage={false}
+                  >
                     Git
                     <hr />
                     GitHub
@@ -92,7 +100,7 @@ export default function BannerSection() {
                 <div className="cmp-container">
                   <SkillCard
                     title="GitHub"
-                    src={main1}
+                    src={github}
                     showActionLink={true}
                     href="https://github.com/bbagbbagn2"
                   >
@@ -101,7 +109,7 @@ export default function BannerSection() {
                   </SkillCard>
                   <SkillCard
                     title="Pjh-Portfolio"
-                    src={main1}
+                    src={portfolio}
                     showActionLink={true}
                     href="https://pjh-portfolio.netlify.app/"
                   >

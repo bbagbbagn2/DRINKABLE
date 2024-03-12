@@ -64,7 +64,7 @@ export default function Portfolio() {
                     <hr />
                     React, styled-components
                     <hr />
-                  </SkillCard>
+                  </SkillCard>  
                   <SkillCard title="DevOps" src={devops}>
                     Git & GitHub
                     <hr />

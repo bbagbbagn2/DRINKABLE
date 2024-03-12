@@ -9,7 +9,7 @@ import "../styles/Header.css";
 
 import { MdMenu } from "react-icons/md";
 
-interface profileData {
+interface profileData { 
   username: string;
 }
 
