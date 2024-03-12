@@ -2,7 +2,6 @@ import React from 'react';
 import styled, { css } from 'styled-components';
 import PropTypes from 'prop-types';
 
-import useImageFadeIn from '../../hooks/useImageFadeIn';
 import Button from './Button';
 
 type CampaignContainerComponent = {
@@ -26,7 +25,6 @@ export default function ContainerComponent({
   imageSrc,
   imageAlt,
 }: CampaignContainerComponent) {
-  const imageOpacity = useImageFadeIn();
 
   return (
     <CampaignContainer>
@@ -45,7 +43,6 @@ export default function ContainerComponent({
                 src={imageSrc}
                 alt={imageAlt}
                 style={{
-                  opacity: imageOpacity,
                   transition: 'opacity .4s ease',
                 }}
               />

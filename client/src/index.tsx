@@ -6,9 +6,78 @@ import { createGlobalStyle } from "styled-components";
 import App from "./App";
 
 const GlobalStyle = createGlobalStyle`
-  *, 
-  *::before,
-  *::after {
+  body {
+    margin: 0;
+  }
+
+  main {
+    display: block;
+  }
+
+  h1 {
+    font-size: 2em;
+    margin: .67em 0;
+  }
+
+  hr {
+    box-sizing: content-box;
+    height: 0;
+    overflow: visible;
+  }
+
+  pre {
+    font-size: 1em;
+  }
+
+  a {
+    background-color: transparent;
+  }
+
+  abbr[title] {
+    border-bottom: none;
+    text-decoration: underline;
+
+  }
+
+  b, strong {
+    font-weight: bolder;
+  }
+
+  code, kbd, samp {
+    font-size: 1em;
+  }
+
+  small {
+    font-size: 80%;
+  }
+
+  sub, sup {
+    font-size: 75%;
+    line-height: 0;
+    position: relative;
+    vertical-align: baseline;
+  }
+
+  img {
+    border-style: none;
+  }
+
+  button,input,optgroup,select,textarea {
+    font-family: inherit;
+    font-size: 100%;
+    line-height: 1.15;
+    margin: 0;
+  }
+
+  button,input {
+    overflow: visible;
+  }
+
+  button,select {
+    text-transform: none;
+  }
+
+  * {
     box-sizing: border-box;
   }
   
@@ -79,9 +148,6 @@ const GlobalStyle = createGlobalStyle`
     letter-spacing: 0;
   }
 
-  main {
-    display: block;
-  }
 
   main.container :is(.adaptiveImage,.countdown-card__event-image,.teaser,.content-wrapper__image,.recipeHero,.image--hero-image,.prize-catalog__image-wrapper,.countdown-card--image,.countdown-card__background,.cmp-embed--thumbnail) picture {
     background-color: transparent;
@@ -109,13 +175,19 @@ const GlobalStyle = createGlobalStyle`
     opacity: 1;
   }
 
+  @media only percy {
+    picture img {
+      opacity: 1 !important;
+      transition: none;
+    }
+  }
+
   a {
     word-wrap: break-word;
     color: #000;
     font: 600 14px/24px 'Noto Sans KR', 'Montserrat', sans-serif;
     letter-spacing: 0;
     text-decoration: underline;
-    background-color: transparent;
   }
 
   ul {
@@ -125,7 +197,6 @@ const GlobalStyle = createGlobalStyle`
   }
 
   h1 {
-    margin: 0.67em 0;
     margin-top: 0;
     font-size: 28px;
     line-height: 36px;
@@ -149,21 +220,9 @@ const GlobalStyle = createGlobalStyle`
     font: 400 14px/24px 'Noto Sans KR', 'Montserrat', sans-serif;
   }
 
-  b, strong {
-    font-weight: bolder;
-  }
-
-  hr {
-    box-sizing: content-box;
-    height: 0;
-    overflow: visible;
-  }
-
   img {
     width: 100%;
     height: auto;
-    border-style: none;
-
   }
 
   .text :is(h1,h2,h3,h4,h5,h6) {

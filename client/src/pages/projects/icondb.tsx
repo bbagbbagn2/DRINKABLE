@@ -17,6 +17,7 @@ import frontend from "../../assets/images/projects/home-images/cards_frontend.pn
 import backend from "../../assets/images/projects/home-images/cards_backend.png";
 import communication from "../../assets/images/projects/home-images/cards_communication.png";
 import Desktop from "../../assets/images/projects/home-images/icondb/desktop.png";
+import banner from '../../assets/images/projects/home-images/icondb/icondb.png'; 
 
 export default function Icondb() {
   return (
@@ -27,7 +28,7 @@ export default function Icondb() {
           <SecondaryHeader src={icondb} alt="ICODB 로고" />
           <div className="container responsivegrid">
             <div className="cmp-container"></div>
-            <DesktopBanner src={Desktop} alt="ICONDB 배너" />
+            <DesktopBanner src={banner} alt="ICONDB 배너" />
           </div>
 
           <div className="container responsivegrid">

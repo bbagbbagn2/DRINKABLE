@@ -12,7 +12,11 @@ import icondb from "../../assets/images/projects/icondb logo.png";
 import jihun from "../../assets/images/projects/jihun logo.png";
 import pjh from '../../assets/images/projects/Pjh-Portfolio logo.png';
 
+import usePageTitle from "../../hooks/usePageTitle";
+
 export default function Projects() {
+  usePageTitle({ title: "Projects | JIHUN" });
+
   return (
     <div className="cmp-container">
       <Header />

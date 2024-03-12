@@ -16,9 +16,9 @@ export default function BannerSection() {
       <Header />
       <main className="container responsivegrid">
         <div className="cmp-container">
-          <TeaserHero src={main1}>ABOUT ME</TeaserHero>
+          <TeaserHero src={main1}>About Me</TeaserHero>
           <Title>
-            <h1 className="cmp-title__text">Welcome to JIHUN</h1>
+            <h1 className="cmp-title__text">프론트엔드 개발자 박지훈입니다.</h1>
           </Title>
           <Text>
             <p style={{ textAlign: "center" }}>
@@ -33,9 +33,6 @@ export default function BannerSection() {
               </b>
             </p>
           </Text>
-          <TeaserHero className="hero--normal content-on-top content-on-left">
-            
-          </TeaserHero>
           <Title>
             <h1 className="cmp-title__text">Profile</h1>
           </Title>
