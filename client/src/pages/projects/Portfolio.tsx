@@ -13,9 +13,7 @@ import SkillCard from "../../components/ui/SkillCard";
 
 import portfolio from "../../assets/images/projects/Pjh-Portfolio logo.png";
 import main from "../../assets/images/background.jpg";
-import frontend from "../../assets/images/projects/home-images/cards_frontend.png";
-import devops from "../../assets/images/projects/home-images/cards_backend.png";
-import banner from "../../assets/images/projects/home-images/pjh-portfolio/desktop2.png";
+import banner from "../../assets/images/projects/home-images/pjh-portfolio/portfolio.png";
 
 export default function Portfolio() {
   return (
@@ -83,7 +81,7 @@ export default function Portfolio() {
                   <div className="text">
                     <div className="cmp-text">
                       <p>
-                        웹 포트폴리오는 간단한 자기소개 및 슬로건, 개발
+                        PJH-Portfolio는 간단한 자기소개 및 슬로건, 개발
                         프로젝트, 이력서, 연락처로 구성되어 있습니다.&nbsp; 개발
                         진행 중 스타일 코드가 방대해져 이를 해결하기 위해
                         useLocation을 활용해 URL 경로를 달리 할 때마다 스타일이
