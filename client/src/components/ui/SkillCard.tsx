@@ -6,7 +6,7 @@ import { BsArrowRight } from "react-icons/bs";
 
 interface SkillCardProps {
   title: string;
-  src: string;
+  src?: string;
   children: ReactNode;
   showActionLink?: boolean;
   showImage?: boolean;

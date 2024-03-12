@@ -33,6 +33,9 @@ export default function BannerSection() {
               </b>
             </p>
           </Text>
+          <TeaserHero className="hero--normal content-on-top content-on-left">
+            
+          </TeaserHero>
           <Title>
             <h1 className="cmp-title__text">Profile</h1>
           </Title>
@@ -61,15 +64,17 @@ export default function BannerSection() {
               </Title>
               <div className="container responsivegrid grid three-columns">
                 <div className="cmp-container">
-                  <SkillCard title="Fron-End" src={main1} showImage={false}>
+                  <SkillCard title="Fron-End" showImage={false}>
+                    다양한 프로젝트에서 프론트엔드 개발 시에 자주 사용했던 기술입니다.
+                    <br/><br/>
                     HTML, CSS, JS, TS
                     <hr />
-                    React, Next.js, Axios
+                    React, styled-components
                     <hr />
-                    styled-components
+                    Axios
                     <hr />
                   </SkillCard>
-                  <SkillCard title="Back-End" src={main1} showImage={false}>
+                  <SkillCard title="Back-End" showImage={false}>
                     Node.js
                     <hr />
                     Express.js
@@ -78,8 +83,7 @@ export default function BannerSection() {
                     <hr />
                   </SkillCard>
                   <SkillCard
-                    title="Communication"
-                    src={main1}
+                    title="Tools"
                     showImage={false}
                   >
                     Git
