@@ -13,8 +13,6 @@ import SkillCard from "../../components/ui/SkillCard";
 
 import jihun from "../../assets/images/projects/jihun logo.png";
 import main from "../../assets/images/background.jpg";
-import frontend from "../../assets/images/projects/home-images/cards_frontend.png";
-import devops from "../../assets/images/projects/home-images/cards_backend.png";
 
 export default function Portfolio() {
   return (

@@ -13,10 +13,6 @@ import SkillCard from "../../components/ui/SkillCard";
 import icondb from "../../assets/images/projects/icondb logo.png";
 import icondb1 from "../../assets/images/icondb/icondb-main-1.png";
 import icondb2 from "../../assets/images/icondb/icondb-main-2.png";
-import frontend from "../../assets/images/projects/home-images/cards_frontend.png";
-import backend from "../../assets/images/projects/home-images/cards_backend.png";
-import communication from "../../assets/images/projects/home-images/cards_communication.png";
-import Desktop from "../../assets/images/projects/home-images/icondb/desktop.png";
 import banner from '../../assets/images/projects/home-images/icondb/icondb.png'; 
 
 export default function Icondb() {
@@ -63,12 +59,12 @@ export default function Icondb() {
               </Title>
               <div className="container responsivegrid grid three-columns">
                 <div className="cmp-container">
-                  <SkillCard title="Fron-End" showImage={false}>
+                  <SkillCard title="Front-End" showImage={false}>
                     HTML / CSS
                     <hr />
                     JavaScript
                     <hr />
-                    React, styled-components
+                    React / styled-components
                     <hr />
                     Axios
                     <hr />
@@ -101,13 +97,12 @@ export default function Icondb() {
               <div className="text">
                 <div className="cmp-text">
                   <p>
-                    사용자 관련 기능으로 로그인 및 회원가입 기능을 추가했으며, 
-                    사용자의 편의성을 고려하여 소셜 로그인 기능도 추가했습니다.&nbsp;
-                    또한 제목 및 사용자를 통한 검색 엔진을 도입하고, 
-                    이후 해시태그를 이용한 검색 기능을 추가했습니다.&nbsp;
-                    좋아요 기능을 도입하여 위시리스트를 만들었고,
-                    사용자 간의 팔로우 기능을 추가하여 사용자의 아이콘을 쉽게 찾을 수 있도록 했습니다.&nbsp;
-                    또한 프로필 페이지를 개발하여 사용자가 자신의 닉네임과 프로필 사진을 설정할 수 있도록 했습니다.
+                    사용자 관련 기능으로 로그인 및 회원가입 기능을 개발했고, 
+                    사용자의 편의성을 고려해 소셜 로그인 기능 또한 추가했습니다.&nbsp;
+                    제목 및 사용자, 해시태그를 이용한 다양한 필터로 검색이 가능합니다.&nbsp;
+                    좋아요 를 눌러 자신만의 위시리스트를 만들어 좋아요를 누른 아이콘을 한번에 볼 수 있습니다.&nbsp;
+                    사용자 간 팔로우를 통해 팔로우한 사용자의 아이콘을 쉽게 찾을 수 있습니다.&nbsp;
+                    프로필 페이지에서 사용자의 닉네임과 프로필 사진을 설정할 수 있습니다.
                   </p>
                 </div>
               </div>
