@@ -13,7 +13,7 @@ import SkillCard from "../../components/ui/SkillCard";
 import icondb from "../../assets/images/projects/icondb logo.png";
 import icondb1 from "../../assets/images/icondb/icondb-main-1.png";
 import icondb2 from "../../assets/images/icondb/icondb-main-2.png";
-import banner from '../../assets/images/projects/home-images/icondb/icondb.png'; 
+import banner from "../../assets/images/projects/home-images/icondb/icondb.png";
 
 export default function Icondb() {
   return (
@@ -44,9 +44,9 @@ export default function Icondb() {
                     이미지의 색상 및 모양 등 제가 사용하는 목적에 완벽히
                     부합하는 아이콘을 찾는 것에 어려움이 있었습니다.&nbsp;
                     이러한 문제점들을 개선하기 위해 웹사이트 내에서 아이콘을
-                    수정할 수 있는 ICONDB 웹서비스를 팀원들과
-                    개발했습니다.&nbsp; 개발을 진행한 팀원은 총 3명이며, 저는
-                    FE개발 및 웹 디자인 역할을 수행하였습니다.
+                    직접 변경, 수정할 수 있는 웹서비스를 팀원들과
+                    개발했습니다.&nbsp; 개발 구성원은 프론트엔드 개발자 1명,
+                    백엔드 개발자 2명으로 구성되어 있습니다.
                   </p>
                 </div>
               </div>
@@ -97,12 +97,14 @@ export default function Icondb() {
               <div className="text">
                 <div className="cmp-text">
                   <p>
-                    사용자 관련 기능으로 로그인 및 회원가입 기능을 개발했고, 
-                    사용자의 편의성을 고려해 소셜 로그인 기능 또한 추가했습니다.&nbsp;
-                    제목 및 사용자, 해시태그를 이용한 다양한 필터로 검색이 가능합니다.&nbsp;
-                    좋아요 를 눌러 자신만의 위시리스트를 만들어 좋아요를 누른 아이콘을 한번에 볼 수 있습니다.&nbsp;
-                    사용자 간 팔로우를 통해 팔로우한 사용자의 아이콘을 쉽게 찾을 수 있습니다.&nbsp;
-                    프로필 페이지에서 사용자의 닉네임과 프로필 사진을 설정할 수 있습니다.
+                    사용자 관련 기능으로 로그인 및 회원가입 기능을 개발했고,
+                    사용자의 편의성을 고려해 소셜 로그인 기능 또한
+                    추가했습니다.&nbsp; 제목 및 사용자, 해시태그를 이용한 다양한
+                    필터로 검색이 가능합니다.&nbsp; 좋아요 를 눌러 자신만의
+                    위시리스트를 만들어 좋아요를 누른 아이콘을 한번에 볼 수
+                    있습니다.&nbsp; 사용자 간 팔로우를 통해 팔로우한 사용자의
+                    아이콘을 쉽게 찾을 수 있습니다.&nbsp; 프로필 페이지에서
+                    사용자의 닉네임과 프로필 사진을 설정할 수 있습니다.
                   </p>
                 </div>
               </div>
