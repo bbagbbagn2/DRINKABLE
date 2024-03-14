@@ -72,6 +72,8 @@ export default function BannerSection() {
                     <hr />
                   </SkillCard>
                   <SkillCard title="Back-End" showImage={false}>
+                    팀 프로젝트 개발 시 사용한 백엔드 기술입니다.
+                    <br/><br/>
                     Node.js
                     <hr />
                     Express.js
@@ -83,6 +85,8 @@ export default function BannerSection() {
                     title="Tools"
                     showImage={false}
                   >
+                    개발 중 코드 관리 및 팀원 일정 관리에 사용한 도구입니다
+                    <br/><br/>
                     Git
                     <hr />
                     GitHub

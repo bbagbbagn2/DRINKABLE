@@ -5,10 +5,10 @@ import "../../styles/CampaignCard.css";
 import main1 from "../../assets/images/background.jpg";
 
 interface TeaserProps {
-  title: string;
-  description: string;
-  className: string;
-  children: React.ReactNode;
+  title?: string;
+  description?: string;
+  className?: string;
+  children?: React.ReactNode;
   src: string;
 }
 

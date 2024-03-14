@@ -56,11 +56,13 @@ export default function Portfolio() {
               <div className="container responsivegrid grid two-columns">
                 <div className="cmp-container">
                   <SkillCard title="Front-End" showImage={false}>
-                    HTML, CSS
+                    HTML / CSS
                     <hr />
-                    JavaScript, TypeScript
+                    JavaScript
                     <hr />
-                    React, styled-components
+                    TypeScript
+                    <hr />
+                    React / styled-components
                     <hr />
                   </SkillCard>  
                   <SkillCard title="Tools" showImage={false}>

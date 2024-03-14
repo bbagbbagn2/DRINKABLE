@@ -64,7 +64,9 @@ export default function Icondb() {
               <div className="container responsivegrid grid three-columns">
                 <div className="cmp-container">
                   <SkillCard title="Fron-End" showImage={false}>
-                    HTML, CSS, JavaScript
+                    HTML / CSS
+                    <hr />
+                    JavaScript
                     <hr />
                     React, styled-components
                     <hr />
@@ -72,9 +74,13 @@ export default function Icondb() {
                     <hr />
                   </SkillCard>
                   <SkillCard title="Back-End" showImage={false}>
-                    Node.js, Express.js
+                    Node.js
+                    <hr />
+                    Express.js
                     <hr />
                     MySQL
+                    <hr />
+                    AWS
                     <hr />
                   </SkillCard>
                   <SkillCard title="Tools" showImage={false}>

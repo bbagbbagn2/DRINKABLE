@@ -218,6 +218,7 @@ const GlobalStyle = createGlobalStyle`
 
   p {
     font: 400 14px/24px 'Noto Sans KR', 'Montserrat', sans-serif;
+    margin-block: 0 12px;
   }
 
   img {
@@ -368,6 +369,53 @@ const GlobalStyle = createGlobalStyle`
     }
   }
 
+  .carousel--hero {
+    margin-left: -24px;
+    width: min(100vw - var(--scrollWidth),1440px)
+  }
+
+  @media only screen and (min-width: 1200px) {
+      .carousel--hero {
+          margin-left:calc((1120px - min(100vw - var(--scrollWidth),1440px))/2)
+      }
+  }
+
+  .carousel--hero .cmp-carousel {
+      margin-top: 0;
+      max-width: 599px
+  }
+
+  @media only screen and (min-width: 1200px) {
+      .carousel--hero .cmp-carousel {
+          max-width:unset
+      }
+  }
+
+  .cmp-carousel {
+    margin-top: 24px;
+    padding-inline:24px}
+
+  @media only screen and (min-width: 1200px) {
+    .cmp-carousel {
+        margin-top:32px;
+        padding: 0
+    }
+  }
+
+  .swiper-pointer-events {
+    -ms-touch-action: pan-y;
+    touch-action: pan-y
+  }
+
+  .swiper {
+    list-style: none;
+    margin-left: auto;
+    margin-right: auto;
+    overflow: hidden;
+    padding: 0;
+    position: relative;
+    z-index: 1
+  }
   .action-card {
     background-color: #fff;
     color: #000;

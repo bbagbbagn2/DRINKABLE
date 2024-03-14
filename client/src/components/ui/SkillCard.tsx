@@ -33,7 +33,7 @@ export default function SkillCard({
         <h3 className="cmp-teaser__title">{title}</h3>
         <div className="cmp-teaser__description">
           <p>
-            <b>{children}</b>
+            {children}
           </p>
         </div>
         {showActionLink && (
