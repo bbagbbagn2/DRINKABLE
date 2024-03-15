@@ -369,6 +369,23 @@ const GlobalStyle = createGlobalStyle`
     }
   }
 
+  .carousel:not(.carousel--microcarousel) .cmp-carousel.swiper-initialized .cmp-carousel__item {
+    display: block;
+  }
+
+  .carousel:not(.carousel--microcarousel) .cmp-carousel__item--active {
+    display: block;
+  }
+
+  .carousel:not(.carousel--microcarousel) .cmp-carousel__item:is(.hidden,:not(.cmp-carousel__item--active)) {
+    display: none;
+  }
+
+  .swiper-backface-hidden .swiper-slide {
+    backface-visibility: hidden;
+    transform: translateZ(0);
+  }
+
   .carousel--hero {
     margin-left: -24px;
     width: min(100vw - var(--scrollWidth),1440px)
@@ -389,6 +406,76 @@ const GlobalStyle = createGlobalStyle`
       .carousel--hero .cmp-carousel {
           max-width:unset
       }
+  }
+
+  .carousel--hero .cmp-carousel__content {
+    margin-left: 0;
+  }
+
+  @media only screen and (min-width: 1200px) {
+    .carousel--hero .cmp-carousel__item {
+      max-width: unset;
+    }
+  }
+
+  .carousel--hero .cmp-carousel__item .teaser {
+    aspect-ratio: .6066790353;
+  }
+
+  @media only screen and (min-width: 1200px) {
+    .carousel--hero .cmp-carousel__item .teaser {
+      aspect-ratio: 2.119205298;
+    }
+  }
+
+  .carousel--hero .hero {
+    border-radius: 8px;
+    margin-bottom: 0;
+    margin-top: 24px;
+    overflow: hidden;
+  }
+
+  @media only screen and (min-width: 1200px) {
+    .carousel--hero .hero {
+      border-radius: 16px;
+      margin-top: 32px;
+    }
+  }
+
+  @media only screen and (min-width: 1200px) {
+    .carousel--hero .hero .cmp-teaser { 
+      margin-left: unset;
+      width: unset;
+    }
+  }
+
+  .carousel--hero .hero .cmp-teaser__image {
+    aspect-ratio: unset;
+    height: 100%;
+    margin-left: 0;
+    width: 100%;
+  }
+  
+  .swiper-slide {
+    flex-shrink: 0;
+    height: auto;
+    position: relative;
+    transition-property: transform;
+    width: 100%;
+  }
+
+  .swiper-android .swiper-slide, .swiper-wrapper {
+    transform: translateZ(0);
+  }
+
+  .swiper-wrapper {
+    box-sizing: content-box;
+    display: flex;
+    height: 100%;
+    position: relative;
+    transition-property: transform;
+    width: 100%;
+    z-index: 1;
   }
 
   .cmp-carousel {
@@ -416,6 +503,7 @@ const GlobalStyle = createGlobalStyle`
     position: relative;
     z-index: 1
   }
+  
   .action-card {
     background-color: #fff;
     color: #000;

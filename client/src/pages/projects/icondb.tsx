@@ -50,7 +50,7 @@ export default function Icondb() {
               <div className="text">
                 <div className="cmp-text">
                   <p>
-                    저는 이 프로젝트를 진행하면서 프론트엔드 개발자의 역할 뿐만
+                    프로젝트를 진행하면서 프론트엔드 개발자의 역할 뿐만
                     아니라 페이지 디자인, 팀원의 일정 관리 등 설계부터 개발 및
                     배포까지 다양한 경험을 쌓을 수 있었습니다.
                   </p>

@@ -17,7 +17,7 @@ export default function CampaingnSection() {
         className="content-on-left"
         src={Main1}
       >
-        <Button href="/projects" buttonText="프로젝트 보기" />
+        <Button href="/about-me" buttonText="About Me" />
       </CampaingnCard>
       <CampaingnCard
         title="Refactoring"
