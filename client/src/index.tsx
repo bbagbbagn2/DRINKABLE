@@ -141,11 +141,11 @@ const GlobalStyle = createGlobalStyle`
   }
 
   html, body {
-    margin: 0;
-    margin-block: 0 12px;
     color: #000;
     font: 400 14px/24px 'Noto Sans KR', 'Montserrat', sans-serif;
     letter-spacing: 0;
+    margin-block: 0 12px;
+    margin: 0;
   }
 
 

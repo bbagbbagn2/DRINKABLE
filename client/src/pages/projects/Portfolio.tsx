@@ -38,11 +38,25 @@ export default function Portfolio() {
               </div>
               <div className="text">
                 <div className="cmp-text">
+                  <p>PJH-Portfolio는 React로 제작한 웹 포트폴리오입니다.</p>
+                </div>
+              </div>
+              <div className="text">
+                <div className="cmp-text">
                   <p>
-                    졸업 후, 프론트엔드 개발자로의 전환을 위해 React 및 다양한
-                    프론트엔드 기술에 대한 공부를 시작했습니다.&nbsp;이를 통해
-                    저의 개발 실력을 확인하고자 웹 포트폴리오를
-                    개발했습니다.&nbsp;
+                    팀 프로젝트가 아닌, 개인 프로젝트였기 때문에 프로젝트
+                    디자인, 설계 개발을 혼자서 하는 경험을 얻었습니다.
+                  </p>
+                </div>
+              </div>
+              <div className="text">
+                <div className="cmp-text">
+                  <p>
+                    PJH-Portfolio는 메인 페이지, 프로젝트 페이지, 각 프로젝트의
+                    상세 정보 페이지로 구성되었습니다.
+                    <br />
+                    Header를 통해 빠른 창 이동을 할 수 있도록 설정했고, Footer를
+                    통해 서비스 정보를 한 눈으로 볼 수 있도록 개발했습니다.
                   </p>
                 </div>
               </div>
@@ -64,7 +78,7 @@ export default function Portfolio() {
                     <hr />
                     React / styled-components
                     <hr />
-                  </SkillCard>  
+                  </SkillCard>
                   <SkillCard title="Tools" showImage={false}>
                     Git & GitHub
                     <hr />
@@ -75,23 +89,20 @@ export default function Portfolio() {
                   </SkillCard>
                 </div>
               </div>
-              <div className="container responsivegrid">
-                <div className="cmp-container">
-                  <Title>
-                    <h2 className="cmp-title__text">Key Features</h2>
-                  </Title>
-                  <div className="text">
-                    <div className="cmp-text">
-                      <p>
-                        PJH-Portfolio는 간단한 자기소개 및 슬로건, 개발
-                        프로젝트, 이력서, 연락처로 구성되어 있습니다.&nbsp; 개발
-                        진행 중 스타일 코드가 방대해져 이를 해결하기 위해
-                        useLocation을 활용해 URL 경로를 달리 할 때마다 스타일이
-                        달라지도록 개발했습니다.&nbsp;이를 통해 Header, Footer의
-                        스타일 변경을 쉽게 할 수 있었습니다.
-                      </p>
-                    </div>
-                  </div>
+              <Title>
+                <h2 className="cmp-title__text" />
+              </Title>
+              <div className="text">
+                <div className="cmp-text">
+                  <p>
+                    PJH-Portfolio는 2023.04 - 2023.06 동안 1차 개발을 했고,
+                    2023.10 - 2023.12 동안 전체적인 수정을 가했습니다.
+                    <br />
+                    개발 진행 중 스타일 코드가 방대해져 이를 해결하기 위해
+                    useLocation을 활용해 URL 경로를 달리 할 때마다 스타일이
+                    달라지도록 개발했습니다. 이를 통해 Header, Footer의 스타일
+                    변경을 쉽게 할 수 있었습니다.
+                  </p>
                 </div>
               </div>
             </div>
@@ -104,7 +115,7 @@ export default function Portfolio() {
           >
             <Button buttonText="회고록 보기" />
           </CampaingnCard>
-          
+
           <GitHubCard
             text="PJH-Portfolio"
             href="https://github.com/bbagbbagn2/JH-Portfolio"

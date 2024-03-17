@@ -19,10 +19,21 @@ export default function Sitemap() {
           <SeperatorProps />
           <div className="text">
             <div className="cmp-text">
+              <h2>About Me</h2>
+              <p>
+                <a href="/about-me" target="_self" rel="noopener noreferrer">
+                  About Me
+                </a>
+              </p>
+            </div>
+          </div>
+          <SeperatorProps />
+          <div className="text">
+            <div className="cmp-text">
               <h2>Projects</h2>
               <p>
                 <a href="/projects" target="_self" rel="noopener noreferrer">
-                  프로젝트&nbsp;전체&nbsp;보기
+                  프로젝트 전체 보기
                 </a>
               </p>
             </div>
@@ -35,11 +46,13 @@ export default function Sitemap() {
                     <a href='/projects/icondb'>ICONDB</a>
                   </p>
                   <p>
-                    <a href='/projects/icondb'>JIHUN</a>
+                    <a href='/projects/pjh-portfolio'>PJH-Portfolio</a>
+                  </p>
+                  <p>
+                    <a href='/projects/jihun'>JIHUN</a>
                   </p>
                 </div>
               </div>
-
             </div>
           </div>
           <SeperatorProps />

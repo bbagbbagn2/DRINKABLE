@@ -113,15 +113,12 @@ export default function BannerSection() {
                     소스코드 저장소입니다.
                   </SkillCard>
                   <SkillCard
-                    title="Pjh-Portfolio"
+                    title="PJH-Portfolio"
                     src={portfolio}
                     showActionLink={true}
                     href="https://pjh-portfolio.netlify.app/"
                   >
                     프론트엔드를 학습한 초창기 때 만든 웹 포트폴리오입니다.
-                  </SkillCard>
-                  <SkillCard title="Resume" src={main1} showActionLink={true}>
-                    Notion을 활용하여 제작한 이력서입니다.
                   </SkillCard>
                 </div>
               </div>
