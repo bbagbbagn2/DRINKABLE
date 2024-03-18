@@ -23,13 +23,12 @@ export default function BannerSection() {
           <Text>
             <p style={{ textAlign: "center" }}>
               <b>
-                프론트엔드 개발자 박지훈입니다.&nbsp;저는 React 뿐만 아니라
+                프론트엔드 개발자 박지훈입니다. 저는 React 뿐만 아니라
                 styled-components, Next.js 등 개인 및 팀 프로젝트를 통해 다양한
-                기술을 사용한 경험이 있습니다.&nbsp;또한, 코드의 가독성과
-                유지보수를 높이기 위한 리팩토링을 꾸준히 하고 있습니다.&nbsp;
-                조금씩이라도 코드를 효율적으로 수정하고, 리팩토링을 꾸준히
-                함으로써 제가 프로젝트에 임하는 자세와 저의 성실함을 나타낼 수
-                있습니다.
+                기술을 사용한 경험이 있습니다. 또한, 코드의 가독성과 유지보수를
+                높이기 위한 리팩토링을 꾸준히 하고 있습니다. 조금씩이라도 코드를
+                효율적으로 수정하고, 리팩토링을 꾸준히 함으로써 제가 프로젝트에
+                임하는 자세와 저의 성실함을 나타낼 수 있습니다.
               </b>
             </p>
           </Text>
@@ -62,8 +61,10 @@ export default function BannerSection() {
               <div className="container responsivegrid grid three-columns">
                 <div className="cmp-container">
                   <SkillCard title="Fron-End" showImage={false}>
-                    다양한 프로젝트에서 프론트엔드 개발 시에 자주 사용했던 기술입니다.
-                    <br/><br/>
+                    다양한 프로젝트에서 프론트엔드 개발 시에 자주 사용했던
+                    기술입니다.
+                    <br />
+                    <br />
                     HTML, CSS, JS, TS
                     <hr />
                     React, styled-components
@@ -73,7 +74,8 @@ export default function BannerSection() {
                   </SkillCard>
                   <SkillCard title="Back-End" showImage={false}>
                     팀 프로젝트 개발 시 사용한 백엔드 기술입니다.
-                    <br/><br/>
+                    <br />
+                    <br />
                     Node.js
                     <hr />
                     Express.js
@@ -81,12 +83,10 @@ export default function BannerSection() {
                     MySQL
                     <hr />
                   </SkillCard>
-                  <SkillCard
-                    title="Tools"
-                    showImage={false}
-                  >
+                  <SkillCard title="Tools" showImage={false}>
                     개발 중 코드 관리 및 팀원 일정 관리에 사용한 도구입니다
-                    <br/><br/>
+                    <br />
+                    <br />
                     Git
                     <hr />
                     GitHub
