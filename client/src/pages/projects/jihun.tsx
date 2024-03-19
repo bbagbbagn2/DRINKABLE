@@ -55,7 +55,7 @@ export default function Portfolio() {
               <div className="container responsivegrid grid three-columns">
                 <div className="cmp-container">
                   <SkillCard title="Fron-End" showImage={false}>
-                    HTML, CSS
+                    HTML5, CSS3
                     <hr />
                     JavaScript, TypeScript
                     <hr />
@@ -64,7 +64,7 @@ export default function Portfolio() {
                   </SkillCard>
                   <div />
                   <SkillCard title="Tools" showImage={false}>
-                    Git & GitHub
+                    Git, GitHub
                     <hr />
                     Notion
                     <hr />
