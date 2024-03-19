@@ -32,7 +32,7 @@ export default function Portfolio() {
               </Title>
               <div className="text">
                 <div className="cmp-text">
-                  <p style={{ textAlign: "center" }}>
+                  <p>
                     웹 포트폴리오를 목적으로 제작한 웹사이트입니다.
                   </p>
                 </div>
@@ -54,21 +54,24 @@ export default function Portfolio() {
               </Title>
               <div className="container responsivegrid grid three-columns">
                 <div className="cmp-container">
-                  <SkillCard title="Fron-End" showImage={false}>
+                  <SkillCard title="Front-End" showImage={false}>
                     HTML5, CSS3
                     <hr />
-                    JavaScript, TypeScript
+                    JavaScript
+                    <hr />
+                    TypeScript
                     <hr />
                     React, styled-components
                     <hr />
                   </SkillCard>
-                  <div />
-                  <SkillCard title="Tools" showImage={false}>
-                    Git, GitHub
-                    <hr />
-                    Notion
-                    <hr />
+                  <SkillCard title="DevOps" showImage={false}>
                     Netlify
+                    <hr />
+                  </SkillCard>
+                  <SkillCard title="Tools" showImage={false}>
+                    VSCode
+                    <hr />
+                    Git, GitHub
                     <hr />
                   </SkillCard>
                 </div>

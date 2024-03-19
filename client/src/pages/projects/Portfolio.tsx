@@ -13,7 +13,7 @@ import Title from "../../components/ui/Title";
 import Text from "../../components/ui/Text";
 
 import portfolio from "../../assets/images/projects/Pjh-Portfolio logo.png";
-import main from "../../assets/images/projects/home-images/pjh-portfolio/desktop.png";
+import main from "../../assets/images/portfolio/portfolio-main-2.png";
 import banner from "../../assets/images/projects/home-images/pjh-portfolio/portfolio.png";
 
 export default function Portfolio() {
