@@ -34,7 +34,7 @@ export default function Portfolio() {
               </Title>
               <div className="publicationDate">
                 <p className="cmp-publication-date">
-                  2023.06 - 2023.07 / 2023.11 - 2023.12
+                  2023.04 - 2023.05 / 2023.11 - 2023.12
                 </p>
               </div>
               <Text>

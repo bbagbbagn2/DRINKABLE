@@ -110,7 +110,7 @@ export default function Header() {
                                   <a href="/projects/jihun" data-text='JIHUN Project'>JIHUN Project</a>
                                 </li>
                                 <li>
-                                  <a href="/projects/beats" data-text='beats Project'>beats Project</a>
+                                  <a href="/projects/beats" data-text='beats Project'>beats Main Project</a>
                                 </li>
                               </ul> 
                             </li>
