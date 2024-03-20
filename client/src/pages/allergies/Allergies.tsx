@@ -25,9 +25,9 @@ export default function Projects() {
           <h1 className="cmp-title__text">Projects</h1>
         </Title>
         <ProjectsList>
-          <ProjectsListItem href="/projects/icondb" alt="ICONDB" src={icondb} />
-          <ProjectsListItem href="/projects/pjh-portfolio" alt="Pjh-Portfolio" src={pjh} />
           <ProjectsListItem href="/projects/jihun" alt="JIHUN" src={jihun} />
+          <ProjectsListItem href="/projects/pjh-portfolio" alt="Pjh-Portfolio" src={pjh} />
+          <ProjectsListItem href="/projects/icondb" alt="ICONDB" src={icondb} />
         </ProjectsList>
         <div className="container responsivegrid">
           <div className="cmp-container" />

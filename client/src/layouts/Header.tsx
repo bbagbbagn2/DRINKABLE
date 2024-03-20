@@ -1,45 +1,13 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { useLocation } from "react-router-dom";
 
 import logo from "../assets/brand/icons/jihun-logo-black.svg";
-
-import axios from "axios";
 
 import "../styles/Header.css";
 
 import { MdMenu } from "react-icons/md";
 
-interface profileData { 
-  username: string;
-}
-
 export default function Header() {
-  const [sign, setSign] = useState<string | null>(null);
-  const [profileData, setProfileData] = useState<profileData>({
-    username: "admin_user",
-  });
-  const GET_AUTH_URL = "/get_auth";
-  const GET_PROFILE_URL = "/get_profile";
-
-  const fetchData = async () => {
-    try {
-      const authResponse = await axios.post<string>(GET_AUTH_URL);
-      const userData = authResponse.data;
-      setSign(userData);
-
-      const profileResponse = await axios.post<profileData[]>(GET_PROFILE_URL, {
-        user: userData,
-      });
-      setProfileData(profileResponse.data[0]);
-    } catch (error) {
-      console.error("Error fetching data:", error);
-    }
-  };
-
-  useEffect(() => {
-    fetchData();
-  }, []);
-
   const location = useLocation();
   const isAboutmePage = location.pathname === "/about-me";
   const isProjectsPage = location.pathname.includes("/projects");
@@ -101,16 +69,16 @@ export default function Header() {
                               </a>
                               <ul className="submenu">
                                 <li>
-                                  <a href="/projects/icondb" data-text='ICONDB Project'>ICONDB Project</a>
+                                  <a href="/projects/jihun" data-text='JIHUN Project'>JIHUN Project</a>
                                 </li>
                                 <li>
                                   <a href="/projects/pjh-portfolio" data-text='PJH-Portfolio Project'>PJH-Portfolio Project</a>
                                 </li>
                                 <li>
-                                  <a href="/projects/jihun" data-text='JIHUN Project'>JIHUN Project</a>
+                                  <a href="/projects/beats" data-text='beats Project'>beats Main Project</a>
                                 </li>
                                 <li>
-                                  <a href="/projects/beats" data-text='beats Project'>beats Main Project</a>
+                                  <a href="/projects/icondb" data-text='ICONDB Project'>ICONDB Project</a>
                                 </li>
                               </ul> 
                             </li>
