@@ -109,6 +109,9 @@ export default function Header() {
                                 <li>
                                   <a href="/projects/jihun" data-text='JIHUN Project'>JIHUN Project</a>
                                 </li>
+                                <li>
+                                  <a href="/projects/beats" data-text='beats Project'>beats Project</a>
+                                </li>
                               </ul> 
                             </li>
                             <li>

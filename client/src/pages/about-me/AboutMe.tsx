@@ -9,7 +9,6 @@ import Title from "../../components/ui/Title";
 import Text from "../../components/ui/Text";
 import github from "../../assets/images/about-me/aboutme github.png";
 import portfolio from "../../assets/images/about-me/aboutme pjh-portfolio.png";
-import profile from '../../assets/images/about-me/aboutme profile.png';
 
 export default function BannerSection() {
   return (
