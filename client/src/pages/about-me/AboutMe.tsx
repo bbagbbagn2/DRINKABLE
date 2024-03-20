@@ -9,6 +9,7 @@ import Title from "../../components/ui/Title";
 import Text from "../../components/ui/Text";
 import github from "../../assets/images/about-me/aboutme github.png";
 import portfolio from "../../assets/images/about-me/aboutme pjh-portfolio.png";
+import profile from '../../assets/images/about-me/aboutme profile.png';
 
 export default function BannerSection() {
   return (
@@ -32,20 +33,17 @@ export default function BannerSection() {
               </b>
             </p>
           </Text>
-          <Title>
-            <h1 className="cmp-title__text">Profile</h1>
-          </Title>
           <div className="container responsivegrid grid two-columns">
             <div className="cmp-container">
-              <SkillCard title="Profile" src={main1}>
+              <SkillCard title="Profile" showImage={false}>
                 박지훈
                 <hr />
                 1999.01.13
                 <hr />
-                부산광역시
+                부산광역시 연제구
                 <hr />
               </SkillCard>
-              <SkillCard title="Contact" src={main1}>
+              <SkillCard title="Contact" showImage={false}>
                 pyoungh137@gamil.com
                 <hr />
                 010-9207-8758
