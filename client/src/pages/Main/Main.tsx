@@ -1,7 +1,7 @@
 import React from "react";
 
-import Header from "../../layouts/Header";
-import Footer from "../../layouts/Footer";
+import Header from "../../layouts/Header/Header";
+import Footer from "../../layouts/Footer/Footer";
 import ProjectsSection from "./component/ProjectsSection";
 import BannerSection from "./component/BannerSection";
 import CampaingnSection from "./component/CampaignSection";

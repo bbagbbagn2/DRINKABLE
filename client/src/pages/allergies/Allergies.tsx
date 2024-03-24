@@ -1,7 +1,7 @@
 import React from "react";
 
-import Header from "../../layouts/Header";
-import Footer from "../../layouts/Footer";
+import Header from "../../layouts/Header/Header";
+import Footer from "../../layouts/Footer/Footer";
 
 import Main from "../../components/ui/Main";
 import Title from "../../components/ui/Title";

@@ -1,7 +1,7 @@
 import React from "react";
 
-import Header from "../../layouts/Header";
-import Footer from "../../layouts/Footer";
+import Header from "../../layouts/Header/Header";
+import Footer from "../../layouts/Footer/Footer";
 import TeaserHero from "../../components/ui/TeaserHero";
 import SkillCard from "../../components/ui/SkillCard";
 import main1 from "../../assets/images/main.png";
