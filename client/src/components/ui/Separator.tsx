@@ -1,12 +1,24 @@
 import React from "react";
-import '../../styles/Separator.css';
+import styled from "styled-components";
+import "../../styles/Separator.css";
 
 export default function Separator() {
   return (
-    <div className="separator">
-        <div className="cmp-separator">
-          <hr className="cmp-separator__horizontal-rule" />
-        </div>
-    </div>
+    <Wrapper>
+      <SeparatorHr />
+    </Wrapper>
   );
 }
+
+const Wrapper = styled.div`
+  margin-top: 56px;
+
+  @media only screen and (min-width: 1200px) {
+    margin-top: 64px;
+  }
+`;
+
+const SeparatorHr = styled.hr`
+  border: 0;
+  border-top: 1px solid #d5d5d5;
+`;

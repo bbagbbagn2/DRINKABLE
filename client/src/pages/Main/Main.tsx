@@ -5,15 +5,16 @@ import Footer from "../../layouts/Footer";
 import ProjectsSection from "./component/ProjectsSection";
 import BannerSection from "./component/BannerSection";
 import CampaingnSection from "./component/CampaignSection";
+import InnerContainer from "../../components/ui/InnerContainer";
 
 export default function Main() {
   return (
-    <div className="cmp-container">
+    <InnerContainer>
       <Header />
       <BannerSection />
       <CampaingnSection />
       <ProjectsSection />
       <Footer />
-    </div>
+    </InnerContainer>
   );
 }
