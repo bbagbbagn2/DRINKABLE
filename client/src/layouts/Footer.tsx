@@ -3,7 +3,9 @@ import styled from "styled-components";
 import Separator from "../components/ui/Separator";
 import Logo from "../assets/brand/icons/jihun-logo2-white.svg";
 import LogoContainer from "./LogoContainer";
+import FooterNavigation from "./FooterNavigation";
 import BottomContainer from "./BottomContainer";
+
 import "../styles/Footer.css";
 
 import { IoLogoGithub } from "react-icons/io";
@@ -17,30 +19,7 @@ export default function FooterContainer() {
           <SeparatorContainer>
             <Separator />
           </SeparatorContainer>
-          <div className="container responsivegrid footer__navigation">
-            <div className="cmp-container">
-              <div className="text footer__mobile-accordion">
-                <div className="cmp-text">
-                  <h2>소 개</h2>
-                  <ul>
-                    <li>
-                      <a href="/about-me">About Me</a>
-                    </li>
-                  </ul>
-                </div>
-              </div>
-              <div className="text footer__mobile-accordion">
-                <div className="cmp-text">
-                  <h2>도움이 필요하세요?</h2>
-                  <ul>
-                    <li>
-                      <a href="/sitemap">사이트 맵</a>
-                    </li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-          </div>
+          <FooterNavigation />
           <div className="separator--dynamic separator--mobile-nav">
             <hr />
           </div>

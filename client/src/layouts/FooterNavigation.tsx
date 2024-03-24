@@ -1,11 +1,10 @@
 import React from "react";
 import styled from "styled-components";
-import "../styles/Footer.css";
 
-export default function FooterContainer() {
+export default function FooterNavigation() {
   return (
     <Container>
-      <div className="cmp-container">
+      <Wrapper>
         <div className="text footer__mobile-accordion">
           <div className="cmp-text">
             <h2>소 개</h2>
@@ -26,7 +25,7 @@ export default function FooterContainer() {
             </ul>
           </div>
         </div>
-      </div>
+      </Wrapper>
     </Container>
   );
 }
@@ -52,38 +51,12 @@ const Wrapper = styled.div`
   display: flex;
   flex-wrap: wrap;
   margin-inline: -8px;
-  padding: 56px 0;
 
   @media only screen and (min-width: 600px) {
-    padding: 72px 0 96px;
     margin-inline: -12px;
   }
 
   @media only screen and (min-width: 1200px) {
     margin-inline: -16px;
-  }
-`;
-
-const SeparatorContainer = styled.div`
-  flex: 0 0 100%;
-  min-width: 100%;
-  margin-top: 56px;
-  padding-inline: 8px;
-
-  @media only screen and (min-width: 600px) {
-    padding-inline: 12px;
-  }
-
-  @media only screen and (min-width: 1200px) {
-    margin-top: 48px;
-    padding-inline: 16px;
-  }
-`;
-
-const SeparatorBottomContainer = styled(SeparatorContainer)`
-  display: none;
-
-  @media only screen and (min-width: 1200px) {
-    display: block;
   }
 `;
