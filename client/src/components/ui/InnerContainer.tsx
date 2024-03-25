@@ -4,6 +4,7 @@ import styled from "styled-components";
 type InnerContainerProps = {
   children: ReactNode;
 };
+
 export default function InnerContainer({ children }: InnerContainerProps) {
   return <Container>{children}</Container>;
 }

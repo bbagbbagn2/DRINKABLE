@@ -4,8 +4,6 @@ import LogoContainer from "./components/LogoContainer";
 import HeaderNavigation from "./components/HeaderNavigation/HeaderNavigation";
 import { HeaderContainer } from "../Wrapper";
 
-import "../../styles/Header.css";
-
 export default function Header() {
   return (
     <HeaderHeader>
