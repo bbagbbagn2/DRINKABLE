@@ -2,26 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import { SocialContainer } from "../Container/FooterContainer";
 import { IoLogoGithub } from "react-icons/io";
-
-export default function Social() {
-  return (
-    <SocialContainer>
-      <Wrapper>
-        <LinkWrapper>
-          <Link
-            className="cmp-button"
-            rel="noreferrer"
-            aria-label="github"
-            target="_blank"
-            href="https://github.com/bbagbbagn2"
-          >
-            <IoLogoGithub />
-          </Link>
-        </LinkWrapper>
-      </Wrapper>
-    </SocialContainer>
-  );
-}
+import IconWrapper from "../../../components/ui/IconWrapper";
 
 const Wrapper = styled.div`
   display: flex;
@@ -35,32 +16,41 @@ const Wrapper = styled.div`
   }
 `;
 
-const LinkWrapper = styled.div`
-  display: flex;
-  justify-content: center;
-`;
-
-const Link = styled.a`
-  cursor: pointer;
-  align-items: center;
+const IconLink = styled.a`
+  padding: 0;
   background-color: transparent;
+  color: #fff;
+  cursor: pointer;
   border: 2px solid #fff;
   border-radius: 48px;
-  color: #fff;
   display: flex;
-  height: 32px;
+  align-items: center;
   justify-content: center;
+  text-decoration: none;
+  height: 32px;
+  width: 32px;
   margin-top: 0;
   margin-inline: 0 16px;
-  padding: 0;
-  text-decoration: none;
-  width: 32px;
 
   @media only screen and (min-width: 1200px) {
     margin-inline: 16px 0;
 
     &:hover {
-        background-color: hsla(0,0%,100%,.12);
+      background-color: hsla(0, 0%, 100%, 0.12);
     }
   }
 `;
+
+export default function Social() {
+  return (
+    <SocialContainer>
+      <Wrapper>
+        <IconWrapper>
+          <IconLink aria-label="GitHub" target="_blank" href="/">
+            <IoLogoGithub />
+          </IconLink>
+        </IconWrapper>
+      </Wrapper>
+    </SocialContainer>
+  );
+}

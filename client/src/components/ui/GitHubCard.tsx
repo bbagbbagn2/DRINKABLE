@@ -15,7 +15,7 @@ export default function GitHubCard({ text, href }: GitHubCardProps) {
     <Container>
       <Wrapper>
         <Text>
-          <h2>GitHub에서 {text} 개발 정보를 확인하세요</h2>
+          <h2 className="heading">GitHub에서 {text} 개발 정보를 확인하세요</h2>
         </Text>
         <SocialContainer text="GitHub" href={href}>
           <IoLogoGithub size="24" />
@@ -34,6 +34,10 @@ const Container = styled.div`
   @media only screen and (min-width: 1200px) {
     margin-top: 120px;
   }
+
+  .heading {
+    margin-top: 0;
+  }
 `;
 
 const Wrapper = styled.div`
@@ -49,9 +53,5 @@ const Wrapper = styled.div`
     flex-wrap: nowrap;
     justify-content: space-between;
     padding: 48px 96px;
-  }
-
-  h2 {
-    margin-top: 0;
   }
 `;

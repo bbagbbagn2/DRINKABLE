@@ -1,5 +1,6 @@
 import React, { ReactNode } from "react";
 import styled from "styled-components";
+import IconWrapper from "./IconWrapper";
 
 type SocialContainerProps = {
   text: string;
@@ -16,14 +17,9 @@ export default function SocialContainer({
     <Container>
       <Wrapper>
         <IconWrapper>
-          <IconLink
-            aria-label={text}
-            target="_blank"
-            rel="noreferrer"
-            href={href}
-          >
+          <Link aria-label={text} target="_blank" rel="noreferrer" href={href}>
             {children}
-          </IconLink>
+          </Link>
         </IconWrapper>
       </Wrapper>
     </Container>
@@ -41,30 +37,24 @@ const Wrapper = styled.div`
   justify-content: center;
 `;
 
-const IconWrapper = styled.div`
-  display: flex;
-  justify-content: center;
-`;
-
-const IconLink = styled.a`
-  border-color: #fff;
+const Link = styled.a`
+  padding: 0;
+  background-color: transparent;
   color: #fff;
   cursor: pointer;
-  margin-block: 0;
-  height: 40px;
-  width: 40px;
-  align-items: center;
-  background-color: transparent;
   border: 2px solid #fff;
   border-radius: 48px;
   display: flex;
+  align-items: center;
   justify-content: center;
-  padding: 0;
   text-decoration: none;
+  margin-block: 0;
+  height: 40px;
+  width: 40px;
 
   @media only screen and (min-width: 1200px) {
     &:hover {
-      background-color: hsla(0,0%,100%,.12);
+      background-color: hsla(0, 0%, 100%, 0.12);
     }
   }
 `;
