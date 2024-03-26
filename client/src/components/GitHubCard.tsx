@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
-import Text from "./Text";
-import SocialContainer from "./SocialContainer";
+import Text from "./ui/Text";
+import SocialContainer from "./ui/SocialContainer";
 
 import { IoLogoGithub } from "react-icons/io";
 

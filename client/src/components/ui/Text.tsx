@@ -1,14 +1,24 @@
 import React, { ReactNode } from "react";
+import styled from "styled-components";
 
-interface Props {
-    children: ReactNode;
-}
-export default function Text({ children }: Props) {
+type TextProps = {
+  children: ReactNode;
+};
+
+export default function Text({ children }: TextProps) {
   return (
-    <div className="text">
-      <div className="cmp-text">
-        {children}
-      </div>
-    </div>
+    <Container>
+      <div>{children}</div>
+    </Container>
   );
 }
+
+const Container = styled.div`
+  p {
+    margin: 16px 0 0;
+
+    @media only screen and (min-width: 1200px) {
+      margin-top: 24px;
+    }
+  }
+`

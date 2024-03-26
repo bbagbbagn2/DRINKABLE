@@ -2,8 +2,6 @@ import React from "react";
 import useIntersectionObserver from "../../hooks/useIntersectionObserver";
 import "../../styles/CampaignCard.css";
 
-import main1 from "../../assets/images/background.jpg";
-
 interface TeaserProps {
   title?: string;
   description?: string;

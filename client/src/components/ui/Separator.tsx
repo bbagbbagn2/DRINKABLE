@@ -1,6 +1,5 @@
 import React from "react";
 import styled from "styled-components";
-import "../../styles/Separator.css";
 
 export default function Separator() {
   return (

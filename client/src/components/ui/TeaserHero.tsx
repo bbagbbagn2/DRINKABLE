@@ -9,7 +9,11 @@ interface TeaserHeroProps {
   className?: string;
 }
 
-export default function TeaserHero({ src, children, className = "" }: TeaserHeroProps) {
+export default function TeaserHero({
+  src,
+  children,
+  className = "",
+}: TeaserHeroProps) {
   const [targetRef, isVisible] = useIntersectionObserver({
     root: null,
     rootMargin: "0px",

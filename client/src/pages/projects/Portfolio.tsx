@@ -6,7 +6,7 @@ import Footer from "../../layouts/Footer/Footer";
 import Button from "../../components/ui/Button";
 import SecondaryHeader from "../../components/ui/SecondaryHeader";
 import DesktopBanner from "../../components/ui/DesktopBanner";
-import GitHubCard from "../../components/ui/GitHubCard";
+import GitHubCard from "../../components/GitHubCard";
 import CampaingnCard from "../../components/ui/CampaignCard";
 import SkillCard from "../../components/ui/SkillCard";
 import Title from "../../components/ui/Title";

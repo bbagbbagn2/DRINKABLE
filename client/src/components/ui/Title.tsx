@@ -6,10 +6,8 @@ type TitleProps = {
 
 export default function Title({ children }: TitleProps) {
   return (
-    <div className="title">
-      <div className="cmp-title">
-        {children}
-      </div>
+    <div>
+      <div>{children}</div>
     </div>
   );
 }
