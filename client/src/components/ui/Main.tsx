@@ -6,11 +6,7 @@ type MainProps = {
 };
 
 export default function MainConatiner({ children }: MainProps) {
-  return (
-    <Container>
-      <div>{children}</div>
-    </Container>
-  );
+  return <Container>{children}</Container>;
 }
 
 const Container = styled.main`

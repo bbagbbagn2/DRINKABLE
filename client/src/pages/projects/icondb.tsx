@@ -9,7 +9,7 @@ import DesktopBanner from "../../components/ui/DesktopBanner";
 import GitHubCard from "../../components/GitHubCard";
 import CampaingnCard from "../../components/ui/CampaignCard";
 import SkillCard from "../../components/ui/SkillCard";
-import Title from "../../components/ui/Title";
+import Title from "../../components/ui/TitleContainer";
 import Text from "../../components/ui/Text";
 
 import icondb from "../../assets/images/projects/icondb logo.png";

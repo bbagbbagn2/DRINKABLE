@@ -2,8 +2,8 @@ import React from "react";
 
 import MainContainer from "../../../components/ui/Main";
 import ProjectsList from "../../../components/ui/ProjectsList";
-import ProjectsListItem from "../../../components/ui/ProjectListItem";
-import Title from "../../../components/ui/Title";
+import ProjectsListItem from "../../../components/ui/AdativeImage";
+import Title from "../../../components/ui/TitleContainer";
 
 import icondb from "../../../assets/images/projects/icondb logo.png";
 import jihun from '../../../assets/images/projects/jihun logo.png';

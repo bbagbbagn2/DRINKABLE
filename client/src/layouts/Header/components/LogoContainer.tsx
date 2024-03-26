@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import PictureContainer from "../../Picture";
+import PictureContainer from "../../../components/ui/Picture";
 import { HeaderImage } from "../../Image";
 import logo from "../../../assets/brand/icons/jihun-logo-black.svg";
 

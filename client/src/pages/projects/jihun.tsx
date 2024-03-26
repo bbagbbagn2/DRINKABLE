@@ -2,7 +2,7 @@ import React from "react";
 
 import Header from "../../layouts/Header/Header";
 import Footer from "../../layouts/Footer/Footer";
-import Title from "../../components/ui/Title";
+import Title from "../../components/ui/TitleContainer";
 
 import Button from "../../components/ui/Button";
 import SecondaryHeader from "../../components/ui/SecondaryHeader";

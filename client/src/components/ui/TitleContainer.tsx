@@ -1,10 +1,10 @@
 import React from "react";
 
-type TitleProps = {
+type TitleContainerProps = {
   children?: React.ReactNode;
 };
 
-export default function Title({ children }: TitleProps) {
+export default function Title({ children }: TitleContainerProps) {
   return (
     <div>
       <div>{children}</div>
