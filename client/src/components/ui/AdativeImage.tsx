@@ -9,7 +9,7 @@ interface ProjectsListProps {
   src: string;
 }
 
-export default function ProjectsListItem({
+export default function AdaptiveImage({
   alt,
   src,
   href,

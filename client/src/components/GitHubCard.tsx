@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import Text from "./ui/Text";
+import Text from "./ui/TextContainer";
 import SocialContainer from "./ui/SocialContainer";
 
 import { IoLogoGithub } from "react-icons/io";

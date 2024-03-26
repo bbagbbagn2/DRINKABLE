@@ -2,23 +2,24 @@ import React from "react";
 
 import Header from "../../layouts/Header/Header";
 import Footer from "../../layouts/Footer/Footer";
+import InnerContainer from "../../components/ui/InnerContainer";
 import MainConatiner from "../../components/ui/Main";
 import TeaserHero from "../../components/ui/TeaserHero";
 import SkillCard from "../../components/ui/SkillCard";
 import main1 from "../../assets/images/main.png";
 import Title from "../../components/ui/TitleContainer";
-import Text from "../../components/ui/Text";
+import Text from "../../components/ui/TextContainer";
 import github from "../../assets/images/about-me/aboutme github.png";
 import portfolio from "../../assets/images/about-me/aboutme pjh-portfolio.png";
 
 export default function BannerSection() {
   return (
-    <div className="cmp-container">
+    <InnerContainer>
       <Header />
       <MainConatiner>
         <TeaserHero src={main1}>About Me</TeaserHero>
         <Title>
-          <h1 className="cmp-title__text">프론트엔드 개발자 박지훈입니다.</h1>
+          <h1>프론트엔드 개발자 박지훈입니다.</h1>
         </Title>
         <Text>
           <p style={{ textAlign: "center" }}>
@@ -123,6 +124,6 @@ export default function BannerSection() {
         </div>
       </MainConatiner>
       <Footer />
-    </div>
+    </InnerContainer>
   );
 }

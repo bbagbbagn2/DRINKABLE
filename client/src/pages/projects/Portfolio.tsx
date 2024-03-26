@@ -10,7 +10,7 @@ import GitHubCard from "../../components/GitHubCard";
 import CampaingnCard from "../../components/ui/CampaignCard";
 import SkillCard from "../../components/ui/SkillCard";
 import Title from "../../components/ui/TitleContainer";
-import Text from "../../components/ui/Text";
+import Text from "../../components/ui/TextContainer";
 
 import portfolio from "../../assets/images/projects/Pjh-Portfolio logo.png";
 import main from "../../assets/images/portfolio/portfolio-main-2.png";

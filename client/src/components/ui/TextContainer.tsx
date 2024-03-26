@@ -6,14 +6,10 @@ type TextProps = {
 };
 
 export default function Text({ children }: TextProps) {
-  return (
-    <Container>
-      <div>{children}</div>
-    </Container>
-  );
+  return <TextContainer>{children}</TextContainer>;
 }
 
-const Container = styled.div`
+const TextContainer = styled.div`
   p {
     margin: 16px 0 0;
 
@@ -21,4 +17,4 @@ const Container = styled.div`
       margin-top: 24px;
     }
   }
-`
+`;

@@ -10,7 +10,7 @@ import GitHubCard from "../../components/GitHubCard";
 import CampaingnCard from "../../components/ui/CampaignCard";
 import SkillCard from "../../components/ui/SkillCard";
 import Title from "../../components/ui/TitleContainer";
-import Text from "../../components/ui/Text";
+import Text from "../../components/ui/TextContainer";
 
 import icondb from "../../assets/images/projects/icondb logo.png";
 import icondb1 from "../../assets/images/icondb/icondb-main-1.png";
