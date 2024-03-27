@@ -11,7 +11,7 @@ type ContentWrapperProps = {
 export default function ContentWrapper({
   title,
   children,
-  showActionLink,
+  showActionLink = false,
 }: ContentWrapperProps) {
   return (
     <Wrapper>

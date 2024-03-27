@@ -10,7 +10,7 @@ type ContentCardProps = {
   showActionLink?: boolean;
   showImage?: boolean;
   href?: string;
-}
+};
 
 export default function ContentCard({
   title,
@@ -22,7 +22,7 @@ export default function ContentCard({
 }: ContentCardProps) {
   const teaserContent = (
     <Wrapper>
-      <ContentWrapper title={title} children={children} showActionLink />
+      <ContentWrapper title={title} children={children} showActionLink={showActionLink} />
       {showImage && <ImageWrapper src={src} />}
     </Wrapper>
   );
