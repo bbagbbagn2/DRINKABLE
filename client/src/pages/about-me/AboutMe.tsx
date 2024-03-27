@@ -102,7 +102,7 @@ export default function BannerSection() {
             <h1>Links</h1>
           </Title>
           <GridThreeContainer>
-            <SkillCard
+            <ContentCard
               title="GitHub"
               src={github}
               showActionLink={true}
@@ -110,7 +110,7 @@ export default function BannerSection() {
             >
               대학시절부터 현재까지 진행한 프로젝트와 TIL 등 다양한 소스코드
               저장소입니다.
-            </SkillCard>
+            </ContentCard>
             <SkillCard
               title="PJH-Portfolio"
               src={portfolio}
