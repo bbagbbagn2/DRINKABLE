@@ -17,14 +17,28 @@ const GridContainer = styled.div`
   @media only screen and (min-width: 1200px) {
     margin-inline: -16px;
   }
-`;
 
-const GridThreeContainer = styled(GridContainer)`
   & > * {
     flex: 0 0 100%;
     min-width: 100%;
     padding-inline: 8px;
 
+    @media only screen and (min-width: 1200px) {
+      padding-inline: 16px;
+    }
+  }
+`;
+const GridTwoContainer = styled(GridContainer)`
+  & > * {
+    @media only screen and (min-width: 1200px) {
+      flex: 0 0 50%;
+      min-width: 50%;
+      padding-inline: 16px;
+    }
+  }
+`;
+const GridThreeContainer = styled(GridContainer)`
+  & > * {
     @media only screen and (min-width: 1200px) {
       flex: 0 0 33.3333333333%;
       min-width: 33.3333333333%;
@@ -33,4 +47,4 @@ const GridThreeContainer = styled(GridContainer)`
   }
 `;
 
-export { GridThreeContainer };
+export { GridTwoContainer, GridThreeContainer };
