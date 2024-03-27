@@ -5,6 +5,7 @@ import Footer from "../../layouts/Footer/Footer";
 import InnerContainer from "../../components/ui/InnerContainer";
 import MainConatiner from "../../components/ui/Main";
 import TeaserHero from "../../components/ui/TeaserHero";
+import { GridThreeContainer } from "../../components/ui/GridContainer";
 import SkillCard from "../../components/ui/SkillCard";
 import main1 from "../../assets/images/main.png";
 import Title from "../../components/ui/TitleContainer";
@@ -56,70 +57,66 @@ export default function BannerSection() {
             <Title>
               <h1 className="cmp-title__text">Skills</h1>
             </Title>
-            <div className="container responsivegrid grid three-columns">
-              <div className="cmp-container">
-                <SkillCard title="Fron-End" showImage={false}>
-                  다양한 프로젝트에서 프론트엔드 개발 시에 자주 사용했던
-                  기술입니다.
-                  <br />
-                  <br />
-                  HTML, CSS, JS, TS
-                  <hr />
-                  React, styled-components
-                  <hr />
-                  Axios
-                  <hr />
-                </SkillCard>
-                <SkillCard title="Back-End" showImage={false}>
-                  팀 프로젝트 개발 시 사용한 백엔드 기술입니다.
-                  <br />
-                  <br />
-                  Node.js
-                  <hr />
-                  Express.js
-                  <hr />
-                  MySQL
-                  <hr />
-                </SkillCard>
-                <SkillCard title="Tools" showImage={false}>
-                  개발 중 코드 관리 및 팀원 일정 관리에 사용한 도구입니다
-                  <br />
-                  <br />
-                  Git
-                  <hr />
-                  GitHub
-                  <hr />
-                  Notion
-                  <hr />
-                </SkillCard>
-              </div>
-            </div>
+            <GridThreeContainer>
+              <SkillCard title="Fron-End" showImage={false}>
+                다양한 프로젝트에서 프론트엔드 개발 시에 자주 사용했던
+                기술입니다.
+                <br />
+                <br />
+                HTML, CSS, JS, TS
+                <hr />
+                React, styled-components
+                <hr />
+                Axios
+                <hr />
+              </SkillCard>
+              <SkillCard title="Back-End" showImage={false}>
+                팀 프로젝트 개발 시 사용한 백엔드 기술입니다.
+                <br />
+                <br />
+                Node.js
+                <hr />
+                Express.js
+                <hr />
+                MySQL
+                <hr />
+              </SkillCard>
+              <SkillCard title="Tools" showImage={false}>
+                개발 중 코드 관리 및 팀원 일정 관리에 사용한 도구입니다
+                <br />
+                <br />
+                Git
+                <hr />
+                GitHub
+                <hr />
+                Notion
+                <hr />
+              </SkillCard>
+            </GridThreeContainer>
           </div>
           <div className="cmp-container">
             <Title>
-              <h1 className="cmp-title__text">Links</h1>
+              <h1>Links</h1>
             </Title>
-            <div className="container responsivegrid grid three-columns">
-              <div className="cmp-container">
-                <SkillCard
-                  title="GitHub"
-                  src={github}
-                  showActionLink={true}
-                  href="https://github.com/bbagbbagn2"
-                >
-                  대학시절부터 현재까지 진행한 프로젝트와 TIL 등 다양한 소스코드
-                  저장소입니다.
-                </SkillCard>
-                <SkillCard
-                  title="PJH-Portfolio"
-                  src={portfolio}
-                  showActionLink={true}
-                  href="https://pjh-portfolio.netlify.app/"
-                >
-                  프론트엔드를 학습한 초창기 때 만든 웹 포트폴리오입니다.
-                </SkillCard>
-              </div>
-            </div>
+            <GridThreeContainer>
+              <SkillCard
+                title="GitHub"
+                src={github}
+                showActionLink={true}
+                href="https://github.com/bbagbbagn2"
+              >
+                대학시절부터 현재까지 진행한 프로젝트와 TIL 등 다양한 소스코드
+                저장소입니다.
+              </SkillCard>
+              <SkillCard
+                title="PJH-Portfolio"
+                src={portfolio}
+                showActionLink={true}
+                href="https://pjh-portfolio.netlify.app/"
+              >
+                프론트엔드를 학습한 초창기 때 만든 웹 포트폴리오입니다.
+              </SkillCard>
+            </GridThreeContainer>
           </div>
         </div>
       </MainConatiner>
