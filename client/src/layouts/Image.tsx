@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 
 type ImageContainerProps = {
-  src: string;
+  src?: string;
   alt: string;
 };
 
@@ -12,6 +12,7 @@ export default function ImageContainer({ src, alt }: ImageContainerProps) {
 
 const Image = styled.img`
   display: block;
+  width: 100%;
 `;
 
 const FooterImage = styled(Image)`

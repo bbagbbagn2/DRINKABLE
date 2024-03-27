@@ -1,9 +1,9 @@
 import React, { ReactNode } from "react";
 import styled from "styled-components";
 import ContentWrapper from "./ContentWrapper";
-import useIntersectionObserver from "../../hooks/useIntersectionObserver";
+import ImageWrapper from "./Imagewrapper";
 
-interface SkillCardProps {
+type ContentCardProps = {
   title: string;
   src?: string;
   children: ReactNode;
@@ -19,39 +19,24 @@ export default function ContentCard({
   showActionLink = false,
   showImage = true,
   href,
-}: SkillCardProps) {
-  const [targetRef, isVisibleRef] = useIntersectionObserver({
-    root: null,
-    rootMargin: "0px",
-    threshold: 0.5,
-  });
-
+}: ContentCardProps) {
   const teaserContent = (
     <Wrapper>
       <ContentWrapper title={title} children={children} showActionLink />
-      {showImage && (
-        <div className="cmp-teaser__image">
-          <div className="cmp-adaptive-image cmp-image">
-            <picture
-              ref={targetRef}
-              className={`loaded ${isVisibleRef && "visible"}`}
-            >
-              <img src={src} loading="lazy" alt="" />
-            </picture>
-          </div>
-        </div>
-      )}
+      {showImage && <ImageWrapper src={src} />}
     </Wrapper>
   );
 
-  return showActionLink ? (
+  return (
     <Container>
-      <a href={href} target="_blank" rel="noreferrer">
-        {teaserContent}
-      </a>
+      {showActionLink ? (
+        <a href={href} target="_blank" rel="noreferrer">
+          {teaserContent}
+        </a>
+      ) : (
+        teaserContent
+      )}
     </Container>
-  ) : (
-    <Container>{teaserContent}</Container>
   );
 }
 

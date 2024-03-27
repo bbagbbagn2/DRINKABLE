@@ -2,11 +2,11 @@ import React, { ReactNode } from "react";
 import { BsArrowRight } from "react-icons/bs";
 import styled from "styled-components";
 
-interface ContentWrapperProps {
+type ContentWrapperProps = {
   title: string;
   children: ReactNode;
   showActionLink: boolean;
-}
+};
 
 export default function ContentWrapper({
   title,
@@ -69,7 +69,7 @@ const LinkWrapper = styled.div`
     background-color: transparent;
     display: inline-flex;
     height: 24px;
-    font: 700 16px / 24px 'Noto Sans KR', 'Montserrat', sans-serif;
+    font: 700 16px / 24px "Noto Sans KR", "Montserrat", sans-serif;
     margin-bottom: 0;
     padding: 0;
     width: auto;
