@@ -2,12 +2,13 @@ import React from "react";
 import { GridThreeContainer } from "../../../components/ui/GridContainer";
 import ContentCard from "../../../components/ui/ContentCard";
 import Title from "../../../components/ui/TitleContainer";
+import { AboutmeSkillsData } from "../../../data/data";
 
 export default function SkillsWrapper() {
   return (
     <div>
       <Title>
-        <h1 className="cmp-title__text">Skills</h1>
+        <h1>Skills</h1>
       </Title>
       <GridThreeContainer>
         <ContentCard title="Fron-End" showImage={false}>

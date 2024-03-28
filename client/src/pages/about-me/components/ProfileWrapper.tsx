@@ -3,6 +3,7 @@ import { GridTwoContainer } from "../../../components/ui/GridContainer";
 import ContentCard from "../../../components/ui/ContentCard";
 import Title from "../../../components/ui/TitleContainer";
 import Text from "../../../components/ui/TextContainer";
+import { AboutmeProfileData, AboutmeContactData } from "../../../data/data";
 
 export default function ProfileWrapper() {
   return (
@@ -24,17 +25,17 @@ export default function ProfileWrapper() {
       </Text>
       <GridTwoContainer>
         <ContentCard title="Profile" showImage={false}>
-          박지훈
+          {AboutmeProfileData.name}
           <hr />
-          1999.01.13
+          {AboutmeProfileData.birth}
           <hr />
-          부산광역시 연제구
+          {AboutmeProfileData.address}
           <hr />
         </ContentCard>
         <ContentCard title="Contact" showImage={false}>
-          pyoungh137@gamil.com
+          {AboutmeContactData.email}
           <hr />
-          010-9207-8758
+          {AboutmeContactData.phone}
           <hr />
         </ContentCard>
       </GridTwoContainer>
