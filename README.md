@@ -1,12 +1,16 @@
 # DRINKABLE
-<br/><br/>
+## 칵테일을 처음 접하는 사람들을 위한 안내 웹사이트
 ![logo](https://github.com/bbagbbagn2/DRINKABLE/assets/89950902/0607f718-d1d0-44b1-b1af-1cfc10e62b28)
-<br/><br/>
-## 프로젝트 정보
-
-### 개발 기간
+## 
+## Features
+### 위시리스트
 <p>
-  2023.04 ~ 2023.08 약 4개월동안 진행<br/><br/>
+  이용자가 선호하는 칵테일을 위시리스트에 담아 나중에도 해당 칵테일의 정보를 쉽게 찾을 수 있습니다.
+</p>
+
+### 카테고리
+<p>
+  맛(Flavor), 양(Amount), 비알코올성(Non-Alcoholic)에 따라 칵테일을 분류하여 이용자가 원하는 정보를 편리하게 찾을 수 있도록 제공합니다.<br/><br/>
 </p>
 
 ### 프로젝트 소개
@@ -15,8 +19,7 @@
   더불어, 맛, 양, 논알콜 여부에 따라 칵테일을 효과적으로 분류할 수 있어, 사용자는 자신의 기분에 맞는 칵테일을 쉽게 선택할 수 있습니다.<br/><br/>
 </p>
 
-## 시작 가이드
-
+## Getting Start
 ### Installation
 ``` bash
   $ git clone https://github.com/bbagbbagn2/DRINKABLE.git
@@ -37,8 +40,7 @@ npm run dev
 ```
 <br/><br/>
 
-## Stacks
-
+## Skills
 ### Environment
 <p>
   <img src="https://img.shields.io/badge/VSCode-007ACC?style=flat-square&logo=visualstudiocode&logoColor=white"/>
@@ -74,14 +76,3 @@ npm run dev
 
 <br/><br/>
 
-## 중요 기능
-
-### 위시리스트
-<p>
-  이용자가 선호하는 칵테일을 위시리스트에 담아 나중에도 해당 칵테일의 정보를 쉽게 찾을 수 있습니다.
-</p>
-
-### 카테고리
-<p>
-  맛(Flavor), 양(Amount), 비알코올성(Non-Alcoholic)에 따라 칵테일을 분류하여 이용자가 원하는 정보를 편리하게 찾을 수 있도록 제공합니다.<br/><br/>
-</p>
