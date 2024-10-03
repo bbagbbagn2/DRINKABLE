@@ -3,17 +3,17 @@
 ![logo](https://github.com/bbagbbagn2/DRINKABLE/assets/89950902/0607f718-d1d0-44b1-b1af-1cfc10e62b28)
 ## 
 
-## Features
-⚡️ styled-components를 이용한 스타일 적용<br/>
-⚡️ media-query를 이용한 반응형 제작<br/>
-⚡️ React, TypeScript를 이용한 프론트엔드 개발<br/>
-⚡️ Node.js를 이용한 백엔드 개발
+## Key Features
+🌟 이용자가 선호하는 칵테일을 위시리스트에 담을 수 있습니다.<br/>
+🌟 다양한 카테고리에 따라 칵테일을 분류하여 이용자가 원하는 칵테일을 쉽게 찾을 수 있습니다.
 
-## Important Features
-- 이용자가 선호하는 칵테일을 위시리스트에 담을 수 있습니다.
-- 다양한 카테고리에 따라 칵테일을 분류하여 이용자가 원하는 칵테일을 쉽게 찾을 수 있습니다.
+## Features 👩‍💻
+- styled-components를 이용한 스타일 적용
+- media-query를 이용한 반응형 제작
+- React, TypeScript를 이용한 프론트엔드 개발
+- Node.js를 이용한 백엔드 개발
 
-## Getting Start 🔧
+## Getting Start 🚀
 Clone DRINKABLE
 ``` bash
   # Clone the repository
@@ -42,7 +42,7 @@ npm install
 npm run dev
 ```
 
-## Skills used 🛠️
+## Skills used 🔧
 <p>
   <img src="https://img.shields.io/badge/React-61DAFB?style=flat-square&logo=React&logoColor=black"/>
   <img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=flat-square&logo=JavaScript&logoColor=black"/>
@@ -54,7 +54,7 @@ npm run dev
 
 - [styled-components](https://styled-components.com/) - CSS-in-JS 라이브러리
 
-## Page composition
+## Page composition 🎨
 ### (1) 메인 화면
 ![main](https://github.com/bbagbbagn2/DRINKABLE/assets/89950902/666a193a-e543-44a3-852d-0136d5ff5570)
 
