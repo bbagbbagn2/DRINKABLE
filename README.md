@@ -2,77 +2,62 @@
 ## 칵테일을 처음 접하는 사람들을 위한 안내 사이트
 ![logo](https://github.com/bbagbbagn2/DRINKABLE/assets/89950902/0607f718-d1d0-44b1-b1af-1cfc10e62b28)
 ## 
+
 ## Features
-### 위시리스트
-<p>
-  이용자가 선호하는 칵테일을 위시리스트에 담아 나중에도 해당 칵테일의 정보를 쉽게 찾을 수 있습니다.
-</p>
+⚡️ styled-components를 이용한 스타일 적용<br/>
+⚡️ media-query를 이용한 반응형 제작<br/>
+⚡️ React, TypeScript를 이용한 프론트엔드 개발<br/>
+⚡️ Node.js를 이용한 백엔드 개발
 
-### 카테고리
-<p>
-  맛(Flavor), 양(Amount), 비알코올성(Non-Alcoholic)에 따라 칵테일을 분류하여 이용자가 원하는 정보를 편리하게 찾을 수 있도록 제공합니다.<br/><br/>
-</p>
+## Important Features
+- 이용자가 선호하는 칵테일을 위시리스트에 담을 수 있습니다.
+- 다양한 카테고리에 따라 칵테일을 분류하여 이용자가 원하는 칵테일을 쉽게 찾을 수 있습니다.
 
-### 프로젝트 소개
-<p>
-  DRINKABLE은 다양한 칵테일을 소개하는 웹 프로젝트입니다. 사용자는 원하는 칵테일 정보와 필요한 재료를 쉽게 확인할 수 있습니다.<br/>
-  더불어, 맛, 양, 논알콜 여부에 따라 칵테일을 효과적으로 분류할 수 있어, 사용자는 자신의 기분에 맞는 칵테일을 쉽게 선택할 수 있습니다.<br/><br/>
-</p>
-
-## Getting Start
-### Installation
+## Getting Start 🔧
+Clone DRINKABLE
 ``` bash
+  # Clone the repository
   $ git clone https://github.com/bbagbbagn2/DRINKABLE.git
 ```
-
-### Frontend
+Install Frontend dependencies
 ```
+# Move into the client
 cd client
-npm install
-npm run start
-```
 
-### Backend
-```
-cd server
+# Install dependencies
 npm install
+
+# Start the client
+npm start
+```
+Install Backend dependencies
+```
+# Move into the server
+cd server
+
+# Install dependencies
+npm install
+
+# Start the server
 npm run dev
 ```
-<br/><br/>
 
-## Skills
-### Environment
+## Skills used 🛠️
 <p>
-  <img src="https://img.shields.io/badge/VSCode-007ACC?style=flat-square&logo=visualstudiocode&logoColor=white"/>
-  <img src="https://img.shields.io/badge/MySQL-00758F?style=flat-square&logo=MySQL&logoColor=white"/>
-  <img src="https://img.shields.io/badge/Git-F05032?style=flat-square&logo=Git&logoColor=white"/>
-  <img src="https://img.shields.io/badge/GitHub-000000?style=flat-square&logo=GitHub&logoColor=white"/>
-</p>
-
-### Config
-<p>
-  <img src="https://img.shields.io/badge/npm-CB3837?style=flat-square&logo=npm&logoColor=white"/>
-</p>
-
-### Development
-<p>
+  <img src="https://img.shields.io/badge/React-61DAFB?style=flat-square&logo=React&logoColor=black"/>
   <img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=flat-square&logo=JavaScript&logoColor=black"/>
   <img src="https://img.shields.io/badge/TypeScript-1976D2?style=flat-square&logo=TypeScript&logoColor=white"/>
-  <img src="https://img.shields.io/badge/React-61DAFB?style=flat-square&logo=React&logoColor=black"/>
-  <img src="https://img.shields.io/badge/styledcomponents-DB7093?style=flat-square&logo=styledcomponents&logoColor=white"/><br/>
   <img src="https://img.shields.io/badge/Node.js-3C873A?style=flat-square&logo=Node.js&logoColor=white"/>
-  <img src="https://img.shields.io/badge/Express-000000?style=flat-square&logo=Express&logoColor=white"/><br/><br/>
+  <img src="https://img.shields.io/badge/Express-000000?style=flat-square&logo=Express&logoColor=white"/>
+  <img src="https://img.shields.io/badge/MySQL-00758F?style=flat-square&logo=MySQL&logoColor=white"/>
 </p>
 
-## 페이지 구성
+- [styled-components](https://styled-components.com/) - CSS-in-JS 라이브러리
 
-|![main](https://github.com/bbagbbagn2/DRINKABLE/assets/89950902/666a193a-e543-44a3-852d-0136d5ff5570)|
-|:---:|
-|메인 화면|
+## Page composition
+### (1) 메인 화면
+![main](https://github.com/bbagbbagn2/DRINKABLE/assets/89950902/666a193a-e543-44a3-852d-0136d5ff5570)
 
-|![sign](https://github.com/bbagbbagn2/DRINKABLE/assets/89950902/0868d0cb-7297-4b32-96de-b1ad7fd86602)|
-|:---:|
-|로그인 및 화원가입 화면|
-
-<br/><br/>
+### (2) 로그인/화원가입 화면
+![sign](https://github.com/bbagbbagn2/DRINKABLE/assets/89950902/0868d0cb-7297-4b32-96de-b1ad7fd86602)
 
