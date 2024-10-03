@@ -1,4 +1,4 @@
-# DRINKABLE 🍸
+# Drinkable 🍸
 ## 칵테일을 처음 접하는 사람들을 위한 안내 사이트
 ![logo](https://github.com/bbagbbagn2/DRINKABLE/assets/89950902/0607f718-d1d0-44b1-b1af-1cfc10e62b28)
 ## 
