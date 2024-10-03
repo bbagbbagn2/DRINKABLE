@@ -26,10 +26,10 @@
 Clone DRINKABLE
 
 ```bash
-  # Clone the repository
-  $ git clone https://github.com/bbagbbagn2/DRINKABLE.git
-
+# Clone the repository
+$ git clone https://github.com/bbagbbagn2/DRINKABLE.git
 ```
+
 Install Frontend dependencies
 
 ```bash
@@ -46,7 +46,6 @@ $ npm start
 Install Backend dependencies
 
 ```bash
-
 # Move into the server
 $ cd server
 
