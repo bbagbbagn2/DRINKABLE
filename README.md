@@ -1,7 +1,11 @@
 # Drinkable 🍸
+
 ## 칵테일을 처음 접하는 사람들을 위한 안내 사이트
-![logo](https://github.com/bbagbbagn2/DRINKABLE/assets/89950902/0607f718-d1d0-44b1-b1af-1cfc10e62b28)
-## 
+
+<h2 align="center">
+  <img src="https://github.com/bbagbbagn2/DRINKABLE/assets/89950902/0607f718-d1d0-44b1-b1af-1cfc10e62b28" alt="Drinkable" width="600px" />
+  <br>
+</h2>
 
 ## Key Features
 
@@ -68,9 +72,12 @@ $ npm run dev
 - [styled-components](https://styled-components.com/) - CSS-in-JS 라이브러리
 
 ## Page composition 🎨
+
 ### (1) 메인 화면
+
 ![main](https://github.com/bbagbbagn2/DRINKABLE/assets/89950902/666a193a-e543-44a3-852d-0136d5ff5570)
 
 ### (2) 로그인/화원가입 화면
+
 ![sign](https://github.com/bbagbbagn2/DRINKABLE/assets/89950902/0868d0cb-7297-4b32-96de-b1ad7fd86602)
 
