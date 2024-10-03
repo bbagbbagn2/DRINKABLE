@@ -22,24 +22,24 @@ Clone DRINKABLE
 Install Frontend dependencies
 ```
 # Move into the client
-cd client
+$ cd client
 
 # Install dependencies
-npm install
+$ npm install
 
 # Start the client
-npm start
+$ npm start
 ```
 Install Backend dependencies
 ```
 # Move into the server
-cd server
+$ cd server
 
 # Install dependencies
-npm install
+$ npm install
 
 # Start the server
-npm run dev
+$ npm run dev
 ```
 
 ## Skills used 🔧
